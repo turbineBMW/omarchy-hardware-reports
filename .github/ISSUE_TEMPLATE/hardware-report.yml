@@ -1,0 +1,66 @@
+name: Hardware report
+description: Send the report the Omarchy Windows tool made for your Arm laptop.
+title: "Hardware report: "
+labels: [hardware-report]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you! The report helps write a Linux device tree for your laptop, so Omarchy can run on it.
+        The Windows tool fills in the fields below; all that is left is attaching the zip.
+  - type: textarea
+    id: zip
+    attributes:
+      label: Report
+      description: Drag the hardware-report-….zip file into this box. Nothing else is needed.
+      placeholder: Drop the zip file here
+    validations:
+      required: true
+  - type: input
+    id: drivers
+    attributes:
+      label: Driver downloads
+      description: If the manufacturer offers this model's drivers for download, the link to that page. Optional, but it helps people whose Windows is gone.
+      placeholder: https://
+  - type: dropdown
+    id: windows
+    attributes:
+      label: Is Windows still on this laptop?
+      description: Someone may ask you to run one more thing on it.
+      options:
+        - "Yes"
+        - "No, I replaced it"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: What you have tried on Linux already, anything that worked or didn't. Optional.
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Manufacturer
+  - type: input
+    id: product
+    attributes:
+      label: Product
+  - type: input
+    id: sku
+    attributes:
+      label: SKU
+  - type: input
+    id: processor
+    attributes:
+      label: Processor
+  - type: input
+    id: panel
+    attributes:
+      label: Panel
+  - type: input
+    id: report
+    attributes:
+      label: Report ID
+  - type: textarea
+    id: chids
+    attributes:
+      label: Hardware IDs (CHIDs)
+      render: text

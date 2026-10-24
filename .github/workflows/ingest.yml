@@ -1,0 +1,70 @@
+name: Ingest hardware report
+
+# An issue from the hardware-report form becomes a pull request that adds the
+# report under reports/, once the zip passes tools/ingest.py's checks.
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: ingest-${{ github.event.issue.number }}
+
+jobs:
+  ingest:
+    if: contains(github.event.issue.labels.*.name, 'hardware-report') && github.event.issue.state == 'open'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE: ${{ github.event.issue.number }}
+      # Untrusted text: only ever passed through the environment, never into the script.
+      BODY: ${{ github.event.issue.body }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check and unpack the report
+        id: ingest
+        run: |
+          printf '%s' "$BODY" > "$RUNNER_TEMP/body.md"
+          if folder=$(python3 tools/ingest.py --issue-body "$RUNNER_TEMP/body.md" 2> "$RUNNER_TEMP/error.txt"); then
+            echo "folder=$folder" >> "$GITHUB_OUTPUT"
+            echo "id=$(basename "$folder")" >> "$GITHUB_OUTPUT"
+          else
+            {
+              echo "The report could not be added: $(sed 's/^rejected: //' "$RUNNER_TEMP/error.txt")"
+              echo
+              echo "Edit the issue to fix it and this runs again."
+            } > "$RUNNER_TEMP/comment.md"
+            gh issue comment "$ISSUE" --body-file "$RUNNER_TEMP/comment.md"
+            exit 1
+          fi
+
+      - name: Open the pull request
+        env:
+          FOLDER: ${{ steps.ingest.outputs.folder }}
+          ID: ${{ steps.ingest.outputs.id }}
+        run: |
+          branch="report-$ID"
+          if git ls-remote --exit-code --heads origin "$branch" > /dev/null; then
+            echo "Report $ID already has a pull request"
+            exit 0
+          fi
+          python3 tools/index.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add "$FOLDER" MODELS.md
+          title=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); i=r.get("identity") or {}; print(" ".join(x for x in [i.get("manufacturer"), i.get("productName")] if x) or "Unknown computer")' "$FOLDER/report.json")
+          git commit -q -m "Add hardware report $ID: $title" -m "Closes #$ISSUE"
+          git push -q origin "$branch"
+          {
+            echo "Adds \`$FOLDER\` from #$ISSUE."
+            echo
+            cat "$FOLDER/summary.md"
+          } > "$RUNNER_TEMP/pr.md"
+          url=$(gh pr create --head "$branch" --title "Hardware report: $title" --body-file "$RUNNER_TEMP/pr.md")
+          gh issue comment "$ISSUE" --body "Thank you! The report checked out and is waiting to be added: $url"
