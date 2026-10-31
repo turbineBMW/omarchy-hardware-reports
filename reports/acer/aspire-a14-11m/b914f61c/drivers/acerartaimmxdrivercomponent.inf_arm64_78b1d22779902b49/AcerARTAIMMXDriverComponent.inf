@@ -1,0 +1,118 @@
+;
+; AcerARTAIMMXDriverComponent.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=SoftwareComponent
+ClassGuid={5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider=%ManufacturerName%
+CatalogFile=AcerARTAIMMXDriverComponent.cat
+DriverVer = 09/10/2026,2.0.3042.1
+PnPLockdown=1
+
+[Manufacturer]
+%ManufacturerName%=AcerInc,NTARM64.10.0...22621
+
+[AcerInc.NTARM64.10.0...22621]
+%AcerARTAIMMXDriverComponent.DeviceDesc%=AcerARTAIMMXDriverComponent_Device, SWC\SWComp_AcerARTAIMMX ;Change to your component ID after "SWC\".
+
+[AcerARTAIMMXDriverComponent_Device]
+CopyFiles=ExeFiles
+CopyFiles = ACERDMFT.CopyFiles
+AddReg = AcerDMFT_RegisterDlls_arm
+
+[ExeFiles]
+AAADSvc.exe
+DetectCameraDMFT.exe
+msvcp140.dll
+vcruntime140.dll
+vcruntime140_1.dll
+ARTAimmxService.exe
+UninstallAcerCameraDMFT.exe
+AcerPixyService.exe
+AimmxClientAPI.dll
+opencv_world455.dll
+concrt140.dll
+
+;;;;;AddService;;;;;
+[AcerARTAIMMXDriverComponent_Device.Services]
+AddService = ,0x00000002
+AddService = AcerARTAIMMXDriverService, 0x00000800, AcerARTAIMMXDriverService_Inst
+AddService = AcerARTAIMMXService, 0x00000800, AcerARTAIMMXService_Inst
+AddService = AcerPixyService, 0x00000800, AcerPixyService_Inst
+
+[AcerARTAIMMXDriverService_Inst]
+DisplayName    = "AcerARTAIMMXDriverService"
+ServiceType    = 0x00000010
+StartType      = 2
+ErrorControl   = 1
+ServiceBinary  = %13%\AAADSvc.exe
+
+[AcerARTAIMMXService_Inst]
+DisplayName    = "AcerARTAIMMXService"
+ServiceType    = 0x00000010
+StartType      = 2
+ErrorControl   = 1
+ServiceBinary  = %13%\ARTAimmxService.exe
+
+[AcerPixyService_Inst]
+DisplayName    = "AcerPixyService"
+ServiceType    = 0x00000010
+StartType      = 2
+ErrorControl   = 1
+ServiceBinary  = %13%\AcerPixyService.exe
+
+[DefaultUninstall.Services]
+DelService=AcerARTAIMMXDriverService, 0x200
+DelService=AcerARTAIMMXService, 0x200
+DelService=AcerPixyService, 0x200
+
+[SourceDisksNames]
+1 = %DiskDesc%,,,""
+
+[SourceDisksFiles]
+AAADSvc.exe = 1
+AcerMediaServicearmv.dll    = 1
+DetectCameraDMFT.exe = 1
+msvcp140.dll    = 1
+vcruntime140.dll    = 1
+vcruntime140_1.dll    = 1
+ARTAimmxService.exe    = 1
+UninstallAcerCameraDMFT.exe = 1
+AcerPixyService.exe    = 1
+AimmxClientAPI.dll    = 1
+opencv_world455.dll    = 1
+concrt140.dll    = 1
+
+[DestinationDirs]
+ExeFiles = 13
+ACERDMFT.CopyFiles = 11 ; %SystemRoot%\system32
+
+[ACERDMFT.CopyFiles]
+AcerMediaServicearmv.dll
+
+;;;;;AddSoftware;;;;;
+;[AcerARTAIMMXDriverComponent_Device.Software]
+;AddSoftware=SoftwareName,0,SoftwareInstall
+
+;[SoftwareInstall]
+;SoftwareType = 2
+;SoftwareID=pfn://AcerIncorporated.AcerRegistration_48frkmn4z8aw4 ;Change to your APP's pfn.
+;;;;;;;;;;
+
+[AcerDMFT_RegisterDlls_arm]
+HKCR,CLSID\%ACER_DMFT_GUID%,,,%ACER_DMFT%
+HKCR,CLSID\%ACER_DMFT_GUID%\InprocServer32,,%REG_EXPAND_SZ%,"%%SystemRoot%%\system32\AcerMediaServicearmv.dll"
+HKCR,CLSID\%ACER_DMFT_GUID%\InprocServer32,ThreadingModel,,Both
+
+[Strings]
+ManufacturerName="Acer Incorporated"
+DiskDesc="Acer ART AIMMX Installation Disk"
+AcerARTAIMMXDriverComponent.DeviceDesc = "Acer Pixy Service Software Component" ;Change to your name shown on Device Manager.
+ServiceDesc="Acer ART-AIMMX"
+AUTORUN="Software\Microsoft\Windows\CurrentVersion\Run"
+
+ACER_DMFT_GUID   = "{2EB17717-49CE-4B6C-85E7-58EE3AF41669}"
+ACER_DMFT        = "Acer Media Service"
+REG_EXPAND_SZ    = 0x00020000

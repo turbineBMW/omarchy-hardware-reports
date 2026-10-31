@@ -1,0 +1,82 @@
+;/*++
+; Copyright (c) I3D Technology Inc.  All rights reserved.
+; INF: acercc_sw.inf
+;--*/
+
+[Version]
+Signature = "$Windows NT$"
+Class = SoftwareComponent
+ClassGuid = {5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider = %ManufacturerName%
+CatalogFile = acercc_sw.cat
+DriverVer = 05/31/2024,1.3.21.1020
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName% = ACCSWComponent, NTAMD64.10.0...22000, NTARM64.10.0...22000
+
+[ACCSWComponent.NTAMD64.10.0...22000]
+%DeviceName% = ACCSWComponent_Install, SWC\SWComp_AcerCareCenterDriver
+
+[ACCSWComponent.NTARM64.10.0...22000]
+%DeviceName% = ACCSWComponent_Install, SWC\SWComp_AcerCareCenterDriver
+
+[SourceDisksFiles]
+AcerCCAgent.exe = 1
+ACCUserPS.exe = 1
+Launcher.exe = 1
+server_crt.pem = 1
+server_key.pem = 1
+
+[SourceDisksNames]
+1 = %ACCExtensionDisc%
+
+[DestinationDirs]
+ACCService_CopyFiles = 11 ; %SystemRoot%\system32
+ACCService_DelFiles = 11 ; %SystemRoot%\system32
+ACCSWComponent_CopyFiles = 16422, AcerCCAgent ; %ProgramFiles%\AcerCCAgent
+ACCSWComponent_DelFiles = 16422, AcerCCAgent ; %ProgramFiles%\AcerCCAgent
+
+[ACCSWComponent_Install.NT]
+CopyFiles = ACCService_CopyFiles, ACCSWComponent_CopyFiles
+DelFiles = ACCService_DelFiles, ACCSWComponent_DelFiles
+
+[ACCSWComponent_Install.NT.Services]
+AddService = , 0x00000002
+AddService = AcerCCAgentSvis, 0x00000800, ACCSWComponent_ServiceInstall
+
+[ACCSWComponent_ServiceInstall]
+DisplayName   = %ServiceName%
+Description   = %ServiceDesc%
+ServiceType   = 0x00000010
+StartType     = 2                        ; SERVICE_WIN32_OWN_PROCESS
+ErrorControl  = 1                        ; SERVICE_AUTO_START
+DelayedAutoStart = 1                     ; Automatic delayed start for WOA
+ServiceBinary = "%11%\AcerCCAgent.exe"
+
+[ACCService_CopyFiles]
+AcerCCAgent.exe
+
+[ACCSWComponent_CopyFiles]
+;AcerCCAgent.exe
+ACCUserPS.exe
+Launcher.exe
+server_crt.pem
+server_key.pem
+
+[ACCService_DelFiles]
+AcerCCAgent.exe
+
+[ACCSWComponent_DelFiles]
+AcerCCAgent.exe
+ACCUserPS.exe
+Launcher.exe
+server_crt.pem
+server_key.pem
+
+[Strings]
+ManufacturerName = "Acer Incorporated"
+ServiceName      = "Acer Care Center"
+ServiceDesc      = "Acer Care Center Service"
+ACCExtensionDisc = "Acer Care Center Software Component Disk"
+DeviceName = "Acer Care Center Software Component"

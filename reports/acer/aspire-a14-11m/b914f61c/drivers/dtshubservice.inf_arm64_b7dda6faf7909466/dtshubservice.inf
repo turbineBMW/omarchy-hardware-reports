@@ -1,0 +1,54 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = SoftwareComponent
+ClassGuid   = {5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider    = %OEM%
+DriverVer   = 04/28/2025,2025.2.3.0
+CatalogFile = DtsHubService.cat
+PnpLockdown = 1
+
+[SourceDisksNames]
+222 = %DiskId1%
+
+[SourceDisksFiles]
+DtsHubService.exe=222
+
+[SignatureAttributes]
+DtsHubService.exe=SignatureAttributes.PETrust
+
+[SignatureAttributes.DRM]
+DRMLevel=1300
+
+[SignatureAttributes.PETrust]
+PETrust=true
+
+[Manufacturer]
+%OEM% = DTSService,NTARM64
+
+[DTSService.NTARM64]
+%Service.ComponentDesc% = DTSService_InstallArm64,SWC\VEN_DTSI&HID_DTSIAPO5xSERVICE
+
+[DestinationDirs]
+Bin.CopyList         =11, DTS\PC\APO5x\bin
+
+[DTSService_InstallArm64]
+CopyFiles = Bin.CopyList
+
+[DTSService_InstallArm64.Services]
+AddService = ,2  ; to mask Infverif warning
+AddService = DtsHubService, 0x00000800, DTS_Usersrv_ServiceInstall
+
+[Bin.CopyList]
+DtsHubService.exe
+
+[DTS_Usersrv_ServiceInstall]
+DisplayName    = "DtsHubService"
+ServiceType    = 0x00000010      ; SERVICE_WIN32_SHARE_PROCESS
+StartType      = 0x2             ; SERVICE_AUTO_START
+ErrorControl   = 0x1             ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %11%\DTS\PC\APO5x\bin\DtsHubService.exe
+
+[Strings]
+OEM                   = "DTS"
+Service.ComponentDesc = "DTS Hub Service"
+DiskId1               = "DTS APO5x Service Installation Disk"
