@@ -1,0 +1,40 @@
+name: Index the models
+
+# MODELS.md is written from every report on main after each one lands, so the
+# report pull requests never touch it and never conflict with each other.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "reports/**"
+      - "tools/index.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Runs one at a time; a run queued behind another is replaced by the newest,
+# which indexes everything on main anyway.
+concurrency:
+  group: index
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Rewrite MODELS.md
+        run: |
+          python3 tools/index.py
+          if git diff --quiet -- MODELS.md; then
+            echo "MODELS.md is up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add MODELS.md
+          git commit -q -m "Index the models"
+          git push -q origin HEAD:main

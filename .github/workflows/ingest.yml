@@ -1,7 +1,9 @@
 name: Ingest hardware report
 
 # An issue from the hardware-report form becomes a pull request that adds the
-# report under reports/, once the zip passes tools/ingest.py's checks.
+# report under reports/, once the zip passes tools/ingest.py's checks. The
+# pull request adds only the report's folder; index.yml rewrites MODELS.md on
+# main once it is merged, so two reports never conflict over it.
 on:
   issues:
     types: [opened, edited, labeled]
@@ -53,11 +55,10 @@ jobs:
             echo "Report $ID already has a pull request"
             exit 0
           fi
-          python3 tools/index.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$branch"
-          git add "$FOLDER" MODELS.md
+          git add "$FOLDER"
           title=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); i=r.get("identity") or {}; print(" ".join(x for x in [i.get("manufacturer"), i.get("productName")] if x) or "Unknown computer")' "$FOLDER/report.json")
           git commit -q -m "Add hardware report $ID: $title" -m "Closes #$ISSUE"
           git push -q origin "$branch"
