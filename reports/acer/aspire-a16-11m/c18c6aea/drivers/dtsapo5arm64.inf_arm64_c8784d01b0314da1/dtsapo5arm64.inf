@@ -1,0 +1,252 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       =  AudioProcessingObject ; SoftwareDevice 
+ClassGuid   = {5989fce8-9cd0-467d-8a6a-5419e31529d4}
+Provider    = %DTS%
+DriverVer   = 05/02/2025,2.5.4.0
+CatalogFile = dtsApo5Arm64.cat
+PnpLockdown = 1
+
+[SourceDisksNames]
+222 = %DiskId1%
+
+[SourceDisksFiles]
+dts-bass-enhancement-generic-sdk-compiler-f32.dll=222
+dts-bass-enhancement-generic-sdk-definition-f32.dll=222
+dts-bass-enhancement-generic-sdk-processor-f32.dll=222
+dts-content-eq-generic-sdk-compiler-f32.dll=222
+dts-content-eq-generic-sdk-definition-f32.dll=222
+dts-content-eq-generic-sdk-processor-f32.dll=222
+dts-dialog-enhancement-generic-sdk-compiler-f32.dll=222
+dts-dialog-enhancement-generic-sdk-definition-f32.dll=222
+dts-dialog-enhancement-generic-sdk-processor-f32.dll=222
+dts-graphic-equalizer-generic-sdk-compiler-f32.dll=222
+dts-graphic-equalizer-generic-sdk-definition-f32.dll=222
+dts-graphic-equalizer-generic-sdk-processor-f32.dll=222
+dts-hard-limiter-generic-sdk-compiler-f32.dll=222
+dts-hard-limiter-generic-sdk-definition-f32.dll=222
+dts-hard-limiter-generic-sdk-processor-f32.dll=222
+dts-multi-band-compressor-generic-sdk-compiler-f32.dll=222
+dts-multi-band-compressor-generic-sdk-processor-f32.dll=222
+dts-multi-band-compressor-generic-sdk-definition-f32.dll=222
+dts-parametric-equalizer-generic-sdk-compiler-f32.dll=222
+dts-parametric-equalizer-generic-sdk-definition-f32.dll=222
+dts-parametric-equalizer-generic-sdk-processor-f32.dll=222
+dts-treble-enhancement-generic-sdk-compiler-f32.dll=222
+dts-treble-enhancement-generic-sdk-definition-f32.dll=222
+dts-treble-enhancement-generic-sdk-processor-f32.dll=222
+dts-stereo-widener-wrapper-generic-sdk-compiler-f32.dll=222
+dts-stereo-widener-wrapper-generic-sdk-definition-f32.dll=222
+dts-stereo-widener-wrapper-generic-sdk-processor-f32.dll=222
+dts-dynamic-ctc-generic-sdk-compiler-f32.dll=222
+dts-dynamic-ctc-generic-sdk-definition-f32.dll=222
+dts-dynamic-ctc-generic-sdk-processor-f32.dll=222
+dts-downmix-generic-sdk-compiler-f32.dll=222
+dts-downmix-generic-sdk-definition-f32.dll=222
+dts-downmix-generic-sdk-processor-f32.dll=222
+dts-ultra2-apo.dll=222
+dts-general-purpose-translator-shared.dll=222
+DAP2DtsUserSettingsPlugin.dll=222
+ULTRA2DtsUserSettingsPlugin.dll=222
+
+[SignatureAttributes]
+dts-bass-enhancement-generic-sdk-compiler-f32.dll=SignatureAttributes.PETrust
+dts-bass-enhancement-generic-sdk-definition-f32.dll=SignatureAttributes.PETrust
+dts-bass-enhancement-generic-sdk-processor-f32.dll=SignatureAttributes.PETrust
+dts-content-eq-generic-sdk-compiler-f32.dll=SignatureAttributes.PETrust
+dts-content-eq-generic-sdk-definition-f32.dll=SignatureAttributes.PETrust
+dts-content-eq-generic-sdk-processor-f32.dll=SignatureAttributes.PETrust
+dts-dialog-enhancement-generic-sdk-compiler-f32.dll=SignatureAttributes.PETrust
+dts-dialog-enhancement-generic-sdk-definition-f32.dll=SignatureAttributes.PETrust
+dts-dialog-enhancement-generic-sdk-processor-f32.dll=SignatureAttributes.PETrust
+dts-graphic-equalizer-generic-sdk-compiler-f32.dll=SignatureAttributes.PETrust
+dts-graphic-equalizer-generic-sdk-definition-f32.dll=SignatureAttributes.PETrust
+dts-graphic-equalizer-generic-sdk-processor-f32.dll=SignatureAttributes.PETrust
+dts-hard-limiter-generic-sdk-compiler-f32.dll=SignatureAttributes.PETrust
+dts-hard-limiter-generic-sdk-definition-f32.dll=SignatureAttributes.PETrust
+dts-hard-limiter-generic-sdk-processor-f32.dll=SignatureAttributes.PETrust
+dts-multi-band-compressor-generic-sdk-compiler-f32.dll=SignatureAttributes.PETrust
+dts-multi-band-compressor-generic-sdk-definition-f32.dll=SignatureAttributes.PETrust
+dts-multi-band-compressor-generic-sdk-processor-f32.dll=SignatureAttributes.PETrust
+dts-parametric-equalizer-generic-sdk-compiler-f32.dll=SignatureAttributes.PETrust
+dts-parametric-equalizer-generic-sdk-definition-f32.dll=SignatureAttributes.PETrust
+dts-parametric-equalizer-generic-sdk-processor-f32.dll=SignatureAttributes.PETrust
+dts-treble-enhancement-generic-sdk-compiler-f32.dll=SignatureAttributes.PETrust
+dts-treble-enhancement-generic-sdk-definition-f32.dll=SignatureAttributes.PETrust
+dts-treble-enhancement-generic-sdk-processor-f32.dll=SignatureAttributes.PETrust
+dts-stereo-widener-wrapper-generic-sdk-compiler-f32.dll=SignatureAttributes.PETrust
+dts-stereo-widener-wrapper-generic-sdk-definition-f32.dll=SignatureAttributes.PETrust
+dts-stereo-widener-wrapper-generic-sdk-processor-f32.dll=SignatureAttributes.PETrust
+dts-dynamic-ctc-generic-sdk-compiler-f32.dll=SignatureAttributes.PETrust
+dts-dynamic-ctc-generic-sdk-definition-f32.dll=SignatureAttributes.PETrust
+dts-dynamic-ctc-generic-sdk-processor-f32.dll=SignatureAttributes.PETrust
+dts-downmix-generic-sdk-compiler-f32.dll=SignatureAttributes.PETrust
+dts-downmix-generic-sdk-definition-f32.dll=SignatureAttributes.PETrust
+dts-downmix-generic-sdk-processor-f32.dll=SignatureAttributes.PETrust
+dts-ultra2-apo.dll=SignatureAttributes.PETrust
+dts-general-purpose-translator-shared.dll=SignatureAttributes.PETrust
+DAP2DtsUserSettingsPlugin.dll=SignatureAttributes.PETrust
+ULTRA2DtsUserSettingsPlugin.dll=SignatureAttributes.PETrust
+
+[SignatureAttributes.DRM]
+DRMLevel=1300
+
+[SignatureAttributes.PETrust]
+PETrust=true
+
+[Manufacturer]
+%DTS% = ApoComponents,NTARM64.10.0...26080
+
+[ApoComponents.NTARM64.10.0...26080]
+%Apo.ComponentDesc% = ApoComponent_Install,SWC\VEN_DTSI&AID_DTSIAPO5X
+
+[DestinationDirs]
+ApoComponent_Install.Copylist=11, DTS\PC\APO5x
+ApoSdks.Copylist=11, DTS\PC\APO5x\bin\sdks
+Translators.CopyList =11, DTS\PC\APO5x\bin\translators
+UserSettingsPlugin.CopyList=11, DTS\PC\APO5x\bin\UserSettingsPlugin
+
+[ApoComponent_Install.Services]
+AddService = ,2  ; to mask Infverif warning   
+
+[ApoComponent_Install]
+CopyFiles = ApoComponent_Install.Copylist, ApoSdks.Copylist, Translators.CopyList, UserSettingsPlugin.CopyList
+AddReg    = ApoComponent_Install.AddReg
+
+[ApoComponent_Install.Copylist]
+dts-ultra2-apo.dll
+
+[ApoSdks.Copylist]
+dts-bass-enhancement-generic-sdk-compiler-f32.dll
+dts-bass-enhancement-generic-sdk-definition-f32.dll
+dts-bass-enhancement-generic-sdk-processor-f32.dll
+dts-content-eq-generic-sdk-compiler-f32.dll
+dts-content-eq-generic-sdk-definition-f32.dll
+dts-content-eq-generic-sdk-processor-f32.dll
+dts-dialog-enhancement-generic-sdk-compiler-f32.dll
+dts-dialog-enhancement-generic-sdk-definition-f32.dll
+dts-dialog-enhancement-generic-sdk-processor-f32.dll
+dts-graphic-equalizer-generic-sdk-compiler-f32.dll
+dts-graphic-equalizer-generic-sdk-definition-f32.dll
+dts-graphic-equalizer-generic-sdk-processor-f32.dll
+dts-hard-limiter-generic-sdk-compiler-f32.dll
+dts-hard-limiter-generic-sdk-definition-f32.dll
+dts-hard-limiter-generic-sdk-processor-f32.dll
+dts-multi-band-compressor-generic-sdk-compiler-f32.dll
+dts-multi-band-compressor-generic-sdk-definition-f32.dll
+dts-multi-band-compressor-generic-sdk-processor-f32.dll
+dts-parametric-equalizer-generic-sdk-compiler-f32.dll
+dts-parametric-equalizer-generic-sdk-definition-f32.dll
+dts-parametric-equalizer-generic-sdk-processor-f32.dll
+dts-treble-enhancement-generic-sdk-compiler-f32.dll
+dts-treble-enhancement-generic-sdk-definition-f32.dll
+dts-treble-enhancement-generic-sdk-processor-f32.dll
+dts-stereo-widener-wrapper-generic-sdk-compiler-f32.dll
+dts-stereo-widener-wrapper-generic-sdk-definition-f32.dll
+dts-stereo-widener-wrapper-generic-sdk-processor-f32.dll
+dts-dynamic-ctc-generic-sdk-compiler-f32.dll
+dts-dynamic-ctc-generic-sdk-definition-f32.dll
+dts-dynamic-ctc-generic-sdk-processor-f32.dll
+dts-downmix-generic-sdk-compiler-f32.dll
+dts-downmix-generic-sdk-definition-f32.dll
+dts-downmix-generic-sdk-processor-f32.dll
+
+[UserSettingsPlugin.CopyList]
+DAP2DtsUserSettingsPlugin.dll
+ULTRA2DtsUserSettingsPlugin.dll
+
+[Translators.CopyList]
+dts-general-purpose-translator-shared.dll
+
+[ApoComponent_Install.AddReg]
+
+; DTS Stream effect APO registration
+HKR,AudioEngine\AudioProcessingObjects\%DTS_SFX_CLSID%,FriendlyName,,"DtsApo5xSFX"
+HKR,AudioEngine\AudioProcessingObjects\%DTS_SFX_CLSID%,Copyright,,"Copyright (c) 2025 DTS, Inc.."
+HKR,AudioEngine\AudioProcessingObjects\%DTS_SFX_CLSID%,MajorVersion,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_SFX_CLSID%,MinorVersion,%REG_DWORD%,0x00000000
+HKR,AudioEngine\AudioProcessingObjects\%DTS_SFX_CLSID%,Flags,%REG_DWORD%,%APO_FLAG_DEFAULT%
+HKR,AudioEngine\AudioProcessingObjects\%DTS_SFX_CLSID%,MinInputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_SFX_CLSID%,MaxInputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_SFX_CLSID%,MinOutputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_SFX_CLSID%,MaxOutputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_SFX_CLSID%,MaxInstances,%REG_DWORD%,0xFFFFFFFF
+HKR,AudioEngine\AudioProcessingObjects\%DTS_SFX_CLSID%,NumAPOInterfaces,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_SFX_CLSID%,APOInterface0,,"{AE8CA9D6-E3CD-48BB-A182-EECDBF116270}"
+
+; DTS Mode effect APO registration
+HKR,AudioEngine\AudioProcessingObjects\%DTS_MFX_CLSID%,FriendlyName,,"DtsApo5xMFX"
+HKR,AudioEngine\AudioProcessingObjects\%DTS_MFX_CLSID%,Copyright,,"Copyright (c) 2025 DTS, Inc.."
+HKR,AudioEngine\AudioProcessingObjects\%DTS_MFX_CLSID%,MajorVersion,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_MFX_CLSID%,MinorVersion,%REG_DWORD%,0x00000000
+HKR,AudioEngine\AudioProcessingObjects\%DTS_MFX_CLSID%,Flags,%REG_DWORD%,%APO_FLAG_DEFAULT%
+HKR,AudioEngine\AudioProcessingObjects\%DTS_MFX_CLSID%,MinInputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_MFX_CLSID%,MaxInputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_MFX_CLSID%,MinOutputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_MFX_CLSID%,MaxOutputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_MFX_CLSID%,MaxInstances,%REG_DWORD%,0xFFFFFFFF
+HKR,AudioEngine\AudioProcessingObjects\%DTS_MFX_CLSID%,NumAPOInterfaces,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_MFX_CLSID%,APOInterface0,,"{278C207F-0963-4FD3-BBE6-41D895D59798}"
+
+; DTS Offload Stream effect APO registration
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OSFX_CLSID%,FriendlyName,,"DtsApo5xOSFX"
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OSFX_CLSID%,Copyright,,"Copyright (c) 2025 DTS, Inc.."
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OSFX_CLSID%,MajorVersion,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OSFX_CLSID%,MinorVersion,%REG_DWORD%,0x00000000
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OSFX_CLSID%,Flags,%REG_DWORD%,%APO_FLAG_DEFAULT%
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OSFX_CLSID%,MinInputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OSFX_CLSID%,MaxInputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OSFX_CLSID%,MinOutputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OSFX_CLSID%,MaxOutputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OSFX_CLSID%,MaxInstances,%REG_DWORD%,0xFFFFFFFF
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OSFX_CLSID%,NumAPOInterfaces,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OSFX_CLSID%,APOInterface0,,"{B616734E-E657-47BC-A073-6BD7661267B9}"
+
+; DTS Offload Mode effect APO registration
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OMFX_CLSID%,FriendlyName,,"DtsApo5xOMFX"
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OMFX_CLSID%,Copyright,,"Copyright (c) 2025 DTS, Inc.."
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OMFX_CLSID%,MajorVersion,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OMFX_CLSID%,MinorVersion,%REG_DWORD%,0x00000000
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OMFX_CLSID%,Flags,%REG_DWORD%,%APO_FLAG_DEFAULT%
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OMFX_CLSID%,MinInputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OMFX_CLSID%,MaxInputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OMFX_CLSID%,MinOutputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OMFX_CLSID%,MaxOutputConnections,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OMFX_CLSID%,MaxInstances,%REG_DWORD%,0xFFFFFFFF
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OMFX_CLSID%,NumAPOInterfaces,%REG_DWORD%,0x00000001
+HKR,AudioEngine\AudioProcessingObjects\%DTS_OMFX_CLSID%,APOInterface0,,"{A60ADE75-5138-4224-A680-1B34C223E811}"
+
+; DTS Stream effect APO COM registration
+HKR,Classes\CLSID\%DTS_SFX_CLSID%,,,"DtsApoSFX Class"
+HKR,Classes\CLSID\%DTS_SFX_CLSID%\InprocServer32,,%REG_EXPAND_SZ%,"%13%\dts-ultra2-apo.dll"
+HKR,Classes\CLSID\%DTS_SFX_CLSID%\InprocServer32,ThreadingModel,,"Both"
+
+; DTS Mode effect APO COM registration
+HKR,Classes\CLSID\%DTS_MFX_CLSID%,,,"DtsApoMFX Class"
+HKR,Classes\CLSID\%DTS_MFX_CLSID%\InprocServer32,,%REG_EXPAND_SZ%,"%13%\dts-ultra2-apo.dll"
+HKR,Classes\CLSID\%DTS_MFX_CLSID%\InprocServer32,ThreadingModel,,"Both"
+
+; DTS Offload Stream effect APO COM registration
+HKR,Classes\CLSID\%DTS_OSFX_CLSID%,,,"DtsApoOSFX Class"
+HKR,Classes\CLSID\%DTS_OSFX_CLSID%\InprocServer32,,%REG_EXPAND_SZ%,"%13%\dts-ultra2-apo.dll"
+HKR,Classes\CLSID\%DTS_OSFX_CLSID%\InprocServer32,ThreadingModel,,"Both"
+
+; DTS Offload Mode effect APO COM registration
+HKR,Classes\CLSID\%DTS_OMFX_CLSID%,,,"DtsApoOMFX Class"
+HKR,Classes\CLSID\%DTS_OMFX_CLSID%\InprocServer32,,%REG_EXPAND_SZ%,"%13%\dts-ultra2-apo.dll"
+HKR,Classes\CLSID\%DTS_OMFX_CLSID%\InprocServer32,ThreadingModel,,"Both"
+
+[Strings]
+DTS               = "DTS"
+Apo.ComponentDesc = "DTS APO5x"
+DiskId1           = "DTS APO5x Core Installation Disk"
+
+DTS_SFX_CLSID  = "{5AE158DB-FBB2-4428-8840-92E6C23F9FF8}"
+DTS_MFX_CLSID  = "{C2B0A001-8789-47C9-B1C6-D51E111BAB92}"
+DTS_OSFX_CLSID = "{9B3B42FC-B1EF-410B-B9D6-21AA92A382FC}"
+DTS_OMFX_CLSID = "{ABA50C18-7F12-4339-A680-9D2368A087B9}"
+
+APO_FLAG_DEFAULT = 0x0000000E
+
+REG_EXPAND_SZ = 0x00020000
+REG_DWORD = 0x00010001
