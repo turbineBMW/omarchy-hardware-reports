@@ -1,0 +1,80 @@
+;
+; AcerORDServiceComponent.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=SoftwareComponent
+ClassGuid={5c4c3332-344d-483c-8739-259e934c9cc8} ; TODO: specify appropriate ClassGuid
+Provider=%ManufacturerName%
+;CatalogFile.NTamd64=AcerORDServiceamd64.cat
+;CatalogFile.NTarm64=AcerORDServicearm64.cat
+CatalogFile=AcerORDServiceComponent.cat
+DriverVer = 10/07/2025,1.0.0.3004
+PnpLockdown=1
+
+;*****************************************
+; Install Section
+;*****************************************
+[Manufacturer]
+%ManufacturerName%=Microsoft,NTamd64.10.0...26100,NTarm64.10.0...26100 ; for Testing
+
+[Microsoft.NTamd64.10.0...26100]
+%DeviceDesc%=AcerORDServiceComponent_amd64_Device, SWC\SWComp_AcerORD_202407 ;Change to your component ID after "SWC\".
+
+[Microsoft.NTarm64.10.0...26100]
+%DeviceDesc%=AcerORDServiceComponent_arm64_Device, SWC\SWComp_AcerORD_202407 ;Change to your component ID after "SWC\".
+
+[AcerORDServiceComponent_amd64_Device]
+CopyFiles=SysCopy
+CopyFiles=ExeCopy
+
+[AcerORDServiceComponent_arm64_Device]
+CopyFiles=SysCopy
+CopyFiles=ExeCopy
+
+[ExeCopy]
+AcerORDService.exe
+AcerORDServiceBW.exe
+AcerORDUpdate.exe
+
+[SysCopy]
+
+;;;;;AddService;;;;;
+[AcerORDServiceComponent_amd64_Device.Services]
+AddService=,0x00000002
+AddService=AcerORDService, 0x00000800, AcerORDService_Inst
+
+[AcerORDServiceComponent_arm64_Device.Services]
+AddService=,0x00000002
+AddService=AcerORDService, 0x00000800, AcerORDService_Inst
+
+[AcerORDService_Inst]
+DisplayName    = "Acer ORD Sevice"
+ServiceType    = 0x00000010
+StartType      = 2
+ErrorControl   = 1
+ServiceBinary  = %13%\AcerORDService.exe
+
+[DefaultUninstall.Services]
+DelService=AcerORDService, 0x200
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+AcerORDService.exe=1
+AcerORDServiceBW.exe=1
+AcerORDUpdate.exe=1
+
+[DestinationDirs]
+SysCopy=13
+ExeCopy=13
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Acer Incorporated"
+DiskName = "AcerORDServiceComponent Installation Disk"
+DeviceDesc = "Acer ORD Service Software Component"
+ServiceDesc = "Acer ORD Service"
+AUTORUN="Software\Microsoft\Windows\CurrentVersion\Run"

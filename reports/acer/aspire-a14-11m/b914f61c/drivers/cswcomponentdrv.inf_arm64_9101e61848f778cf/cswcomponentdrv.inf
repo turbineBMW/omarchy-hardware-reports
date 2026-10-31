@@ -1,0 +1,72 @@
+;
+; CSWComponentDrv.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=SoftwareComponent ; TODO: edit Class
+ClassGuid={5c4c3332-344d-483c-8739-259e934c9cc8} ; TODO: edit ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=CSWComponentDrv.cat
+DriverVer = 02/05/2025,1.0.0.5
+PnPLockdown=1
+
+;*****************************************
+; Install Section
+;*****************************************
+[Manufacturer]
+%ManufacturerName%=CompalService,NTARM64.10.0...22621
+
+[CompalService.NTARM64.10.0...22621]
+%CSWComponentDrv.DeviceDesc%=CompalServiceComponent_Device, SWC\SWComp_CompalService ;Change to your component ID after "SWC\".
+
+[CompalServiceComponent_Device]
+CopyFiles=SysFiles
+CopyFiles=ExeFiles
+
+[SysFiles]
+CSWComponentDrv.sys
+
+[ExeFiles]
+AcerDeviceLedService.exe
+WindowsService.exe
+
+;;;;;AddService;;;;;
+[CompalServiceComponent_Device.Services]
+AddService = CompalServiceComponentService, 0x00000002, CompalServiceComponent_Inst
+AddService = CompalService, 0x00000800, CompalService_Inst
+
+[CompalServiceComponent_Inst]
+DisplayName    = %ServiceDesc%
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 1
+ServiceBinary  = %13%\CSWComponentDrv.sys
+
+[CompalService_Inst]
+DisplayName    = "Comapl Sevice"
+ServiceType    = 0x00000010 
+StartType      = 2
+ErrorControl   = 1
+ServiceBinary  = %13%\WindowsService.exe
+
+[DefaultUninstall.Services]
+DelService=CompalService, 0x200
+
+[SourceDisksNames]
+1 = %DiskDesc%,,,""
+
+[SourceDisksFiles]
+CSWComponentDrv.sys = 1
+AcerDeviceLedService.exe = 1
+WindowsService.exe = 1
+
+[DestinationDirs]
+SysFiles = 13
+ExeFiles = 13
+
+[Strings]
+ManufacturerName="Compal Incorporated"
+DiskDesc="Compal Sevice Installation Disk"
+CSWComponentDrv.DeviceDesc = "ADLS Software Component" ;Change to your name shown on Device Manager.
+ServiceDesc="Compal Sevice"
