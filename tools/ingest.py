@@ -19,14 +19,22 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
+# Format 2 adds windows.json, the registry keys with their large values as
+# blobs, and the INF files of each driver store folder. No path part may start
+# with a dot, so nothing unpacks outside the report's folder.
 ALLOWED = re.compile(
-    r"^(report\.json|summary\.md|devices\.json|firmware\.json|hwids\.json|smbios/dmi\.bin"
-    r"|acpi/[a-z0-9_]{1,8}[0-9]{0,3}\.dat|edid/[0-9]{1,2}-[A-Za-z0-9]{1,16}(-internal)?\.bin)$"
+    r"^(report\.json|summary\.md|devices\.json|firmware\.json|hwids\.json|windows\.json|smbios/dmi\.bin"
+    r"|acpi/[a-z0-9_]{1,8}[0-9]{0,3}\.dat|edid/[0-9]{1,2}-[A-Za-z0-9]{1,16}(-internal)?\.bin"
+    r"|registry/(devices|services|system)\.json|registry/blobs/[0-9a-f]{64}\.bin"
+    r"|drivers/[A-Za-z0-9_][A-Za-z0-9._-]*/([A-Za-z0-9_][A-Za-z0-9._ -]*/)*[A-Za-z0-9_][A-Za-z0-9._ -]*\.[Ii][Nn][Ff])$"
 )
+JSON_FILES = ("devices.json", "firmware.json", "hwids.json", "windows.json",
+              "registry/devices.json", "registry/services.json", "registry/system.json")
 MAX_ZIP = 32 << 20
 MAX_ENTRY = 16 << 20
 MAX_TOTAL = 64 << 20
-MAX_ENTRIES = 300
+# Format 2 carries an INF file per driver package; real reports run near 200 entries.
+MAX_ENTRIES = 1000
 ATTACHMENT = re.compile(r"https://github\.com/user-attachments/files/\d+/[A-Za-z0-9._-]+\.zip")
 
 
@@ -84,9 +92,9 @@ def check(data):
         report = json.loads(files["report.json"])
     except ValueError:
         raise Rejected("report.json is not valid JSON")
-    if report.get("format") != 1 or not re.fullmatch(r"[0-9a-f]{8}", str(report.get("id", ""))):
+    if report.get("format") not in (1, 2) or not re.fullmatch(r"[0-9a-f]{8}", str(report.get("id", ""))):
         raise Rejected("report.json is not from a version of the tool this repository knows")
-    for name in ("devices.json", "firmware.json", "hwids.json"):
+    for name in JSON_FILES:
         if name in files:
             try:
                 json.loads(files[name])
