@@ -1,0 +1,55 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Provider    = %Provider%
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+DriverVer   = 05/22/2026,10.1.2.311
+CatalogFile = S3607QA_311.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%MfgName% = Firmware,NTarm64.10.0...17134
+; Prior to Windows 10, version 1803, the above should instead be:
+; %MfgName% = Firmware,NTarm64
+
+[Firmware.NTarm64.10.0...17134]
+; Prior to Windows 10, version 1803, the above should instead be:
+; [Firmware.NTarm64]
+%FirmwareDesc% = Firmware_Install,UEFI\RES_{9ee2d47b-9126-5b8b-ba6c-b058e5296f55}
+
+[Firmware_Install.NT]
+CopyFiles = Firmware_CopyFiles
+
+[Firmware_CopyFiles]
+S3607QA.311
+
+[Firmware_Install.NT.Hw]
+AddReg = Firmware_AddReg
+
+[Firmware_AddReg]
+HKR,,FirmwareId,,{9ee2d47b-9126-5b8b-ba6c-b058e5296f55}
+HKR,,FirmwareVersion,%REG_DWORD%,0x00000311
+HKR,,FirmwareFilename,,%13%\S3607QA.311
+; Prior to Windows 10, version 1803, the above should instead be:
+; HKR,,FirmwareFilename,,{9ee2d47b-9126-5b8b-ba6c-b058e5296f55}\S3607QA.311
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+S3607QA.311 = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+; Prior to Windows 10, version 1803, the above should be:
+; DefaultDestDir = 10,Firmware\{9ee2d47b-9126-5b8b-ba6c-b058e5296f55}
+
+[Strings]
+; localizable
+Provider     = "ASUSTeK COMPUTER INC."
+MfgName      = "ASUSTeK COMPUTER INC."
+FirmwareDesc = "Asus Vivobook S 16 UEFI"
+DiskName     = "Firmware Update"
+
+; non-localizable
+REG_DWORD     = 0x00010001
