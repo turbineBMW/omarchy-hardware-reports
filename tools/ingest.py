@@ -33,7 +33,8 @@ JSON_FILES = ("devices.json", "firmware.json", "hwids.json", "windows.json",
 MAX_ZIP = 32 << 20
 MAX_ENTRY = 16 << 20
 MAX_TOTAL = 64 << 20
-MAX_ENTRIES = 300
+# Format 2 carries an INF file per driver package; real reports run near 200 entries.
+MAX_ENTRIES = 1000
 ATTACHMENT = re.compile(r"https://github\.com/user-attachments/files/\d+/[A-Za-z0-9._-]+\.zip")
 
 
