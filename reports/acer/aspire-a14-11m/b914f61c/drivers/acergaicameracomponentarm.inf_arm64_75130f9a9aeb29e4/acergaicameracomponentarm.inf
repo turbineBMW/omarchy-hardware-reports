@@ -1,0 +1,84 @@
+;
+; AcerGAICameraComponentARM.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=SoftwareComponent
+ClassGuid={5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider=%ManufacturerName%
+CatalogFile=AcerGAICameraComponentARM.cat
+DriverVer = 05/15/2026,1.0.2.3014
+PnPLockdown=1
+
+[Manufacturer]
+%ManufacturerName%=AcerInc,NTARM64.10.0...26100
+
+[AcerInc.NTARM64.10.0...26100]
+%AcerGAICameraComponent.DeviceDesc%=AcerGAICameraComponentARM_Device, SWC\SWComp_AcerGAICamera_QC ;Change to your component ID after "SWC\".
+;All One ID & Remove Multiple IDs as above
+;%AcerGAICameraComponent.DeviceDesc%=AcerGAICameraComponentARM_Device, SWC\SWComp_AcerGAICamera ;Change to your component ID after "SWC\".
+
+[AcerGAICameraComponentARM_Device]
+CopyFiles=ExeFiles
+
+[ExeFiles]
+AcerGAICameraService.exe
+AcerGAICameraW.exe ; if #define _EnableInference  
+AimmxClientAPI.dll
+openpose.bin
+deeplabv3_resnet50.serialized.bin
+depth_quantized.bin
+edge_quantized.serialized.v73.bin
+QnnHtp.dll
+QnnSystem.dll
+concrt140.dll
+msvcp140.dll
+vcruntime140.dll
+vcruntime140_1.dll
+opencv_world455.dll
+
+
+;;;;;AddService;;;;;
+[AcerGAICameraComponentARM_Device.Services]
+AddService = ,0x00000002
+AddService = AcerGAICameraService, 0x00000800, AcerGAICameraService_Inst
+
+[AcerGAICameraService_Inst]
+DisplayName    = "AcerGAICameraService"
+ServiceType    = 0x00000010
+StartType      = 2
+ErrorControl   = 1
+ServiceBinary  = %13%\AcerGAICameraService.exe
+
+[DefaultUninstall.Services]
+DelService=AcerGAICameraService, 0x200
+
+[SourceDisksNames]
+1 = %DiskDesc%,,,""
+
+[SourceDisksFiles]
+AcerGAICameraService.exe = 1
+AcerGAICameraW.exe = 1 ; if #define _EnableInference  
+AimmxClientAPI.dll = 1
+openpose.bin = 1
+deeplabv3_resnet50.serialized.bin = 1
+depth_quantized.bin = 1
+edge_quantized.serialized.v73.bin = 1
+QnnHtp.dll = 1
+QnnSystem.dll = 1
+concrt140.dll = 1
+msvcp140.dll = 1
+vcruntime140.dll = 1
+vcruntime140_1.dll = 1
+opencv_world455.dll = 1
+
+[DestinationDirs]
+ExeFiles = 13
+
+[Strings]
+ManufacturerName="Acer Incorporated"
+DiskDesc="Acer GAI Camera Extension Installation Disk"
+AcerGAICameraComponent.DeviceDesc = "Acer GAI Camera Software Component" ;Change to your name shown on Device Manager.
+ServiceDesc="Acer GAI Camera Extension"
+AUTORUN="Software\Microsoft\Windows\CurrentVersion\Run"

@@ -1,0 +1,99 @@
+[Version]
+PnpLockdown=1
+Signature="$Windows NT$"
+Provider=%SoftPerfect%
+Class=SCSIAdapter
+ClassGuid={4D36E97B-E325-11CE-BFC1-08002BE10318}
+DriverVer=01/08/2026,26.1.0.0
+CatalogFile=spvdbus.cat
+
+; ----------------------------------------------------------
+; MANUFACTURER
+; ----------------------------------------------------------
+
+[Manufacturer]
+%SoftPerfect%=Models,NTamd64.10.0...16299,NTarm64.10.0...16299
+
+[Models.NTamd64.10.0...16299]
+%VDBus.DeviceDesc%=Port, Root\SPVD
+
+[Models.NTarm64.10.0...16299]
+%VDBus.DeviceDesc%=Port, Root\SPVD
+
+; ----------------------------------------------------------
+; DEVICE INSTALLATION
+; ----------------------------------------------------------
+
+[Port]
+CopyFiles=DriverFiles
+AddReg=PortRegistry
+
+[PortRegistry]
+HKR,,DeviceCharacteristics,0x10001,0x0100         ; Use same security checks on relative opens
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"      ; Allow generic-all access to Built-in administrators and Local system
+
+
+; ----------------------------------------------------------
+; FILES - Both drivers go to Driver Store (DIRID 13)
+; ----------------------------------------------------------
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[DriverFiles]
+spvdbus.sys
+spvve.sys
+
+[SourceDisksNames.amd64]
+1 = %DiskId1%,,,
+
+[SourceDisksNames.arm64]
+1 = %DiskId1%,,,
+
+[SourceDisksFiles]
+spvdbus.sys = 1
+spvve.sys = 1
+spvdbus.inf = 1
+
+
+; ----------------------------------------------------------
+; SERVICES - Both services defined in INF
+; ----------------------------------------------------------
+
+[Port.Services]
+AddService = SPVDPort,%SPSVCINST_ASSOCSERVICE%, PortService
+AddService = SPVVEngine,, EngineService
+
+[PortService]
+DisplayName    = %VD.SVCNAME%
+Description    = %VD.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 1               ; SERVICE_SYSTEM_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\spvdbus.sys
+LoadOrderGroup = SCSI Class
+
+[EngineService]
+DisplayName    = %VV.SVCNAME%
+Description    = %VV.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 1               ; SERVICE_SYSTEM_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\spvve.sys
+; LoadOrderGroup removed - load after SCSI Class group to ensure bus is ready
+Dependencies   = SPVDPort
+
+
+; ----------------------------------------------------------
+; STRINGS
+; ----------------------------------------------------------
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+SoftPerfect = "SoftPerfect Pty Ltd"
+DiskId1 = "SoftPerfect RAM Disk Driver Package"
+VDBus.DeviceDesc = "SoftPerfect Virtual Bus"
+VD.SVCNAME = "SoftPerfect Virtual Disk Port"
+VD.SVCDESC = "Provides virtual SCSI bus for RAM disk and disk image enumeration"
+VV.SVCNAME = "SoftPerfect Virtual Volume Engine"
+VV.SVCDESC = "Manages RAM disk creation, disk image mounting and I/O operations"

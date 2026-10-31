@@ -1,0 +1,169 @@
+;/*++
+; Copyright (c) I3D Technology Inc.  All rights reserved.
+; INF: acerqa_sw.inf
+;--*/
+
+[Version]
+Signature = "$Windows NT$"
+Class = SoftwareComponent
+ClassGuid = {5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider = %ManufacturerName%
+CatalogFile = acerqa_sw.cat
+DriverVer = 05/31/2024,1.3.26.1024
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName% = AQASWComponent, NTAMD64.10.0...22000, NTARM64.10.0...22000
+
+[AQASWComponent.NTAMD64.10.0...22000]
+%DeviceName% = AQASWComponent_Install, SWC\SWComp_AcerQuickAccessDriver
+
+[AQASWComponent.NTARM64.10.0...22000]
+%DeviceName% = AQASWComponent_Install, SWC\SWComp_AcerQuickAccessDriver
+
+[SourceDisksFiles]
+AcerQAAgent.exe = 1
+AQAUserPS.exe = 1
+Launcher.exe = 1
+server_crt.pem = 1
+server_key.pem = 1
+
+; WebSocket
+brotlienc.dll = 1
+brotlicommon.dll = 1
+drogon.dll = 1
+trantor.dll = 1
+cares.dll = 1
+jsoncpp.dll = 1
+libcrypto-3-x64.dll = 1
+libssl-3-x64.dll = 1
+zlib1.dll = 1
+brotlidec.dll = 1
+
+; Color Profile
+acerGraphic.dll = 1
+SetGraphicCpp.exe = 1
+SGProfileConsole.exe = 1
+
+; Visual Studio 2019
+msvcp140.dll = 1
+msvcp140_1.dll = 1
+msvcp140_2.dll = 1
+vcruntime140.dll = 1
+vcruntime140_1.dll = 1
+ucrtbase.dll = 1
+vccorlib140.dll = 1
+msvcp140_codecvt_ids.dll = 1
+msvcp140_atomic_wait.dll = 1
+concrt140.dll = 1
+
+
+[SourceDisksNames]
+1 = %AQAExtensionDisc%
+
+[DestinationDirs]
+AQAService_CopyFiles = 11 ; %SystemRoot%\system32
+AQAService_DelFiles = 11 ; %SystemRoot%\system32
+AQASWComponent_CopyFiles = 16422, AcerQAAgent ; %ProgramFiles%\AcerQAAgent
+AQASWComponent_DelFiles = 16422, AcerQAAgent ; %ProgramFiles%\AcerQAAgent
+
+[AQASWComponent_Install]
+CopyFiles = AQAService_CopyFiles, AQASWComponent_CopyFiles
+DelFiles = AQAService_DelFiles, AQASWComponent_DelFiles
+
+[AQASWComponent_Install.Services]
+AddService = , 0x00000002
+AddService = AcerQAAgentSvis, 0x00000800, AQASWComponent_ServiceInstall
+
+[AQASWComponent_ServiceInstall]
+DisplayName   = %ServiceName%
+Description   = %ServiceDesc%
+ServiceType   = 0x00000010               ; SERVICE_WIN32_OWN_PROCESS
+StartType     = 2                        ; SERVICE_AUTO_START
+ErrorControl  = 1
+DelayedAutoStart = 1                     ; Automatic delayed start for WOA
+ServiceBinary = "%11%\AcerQAAgent.exe"
+
+[AQAService_CopyFiles]
+AcerQAAgent.exe
+
+[AQASWComponent_CopyFiles]
+;AcerQAAgent.exe
+AQAUserPS.exe
+Launcher.exe
+server_crt.pem
+server_key.pem
+brotlienc.dll
+brotlicommon.dll
+drogon.dll
+trantor.dll
+cares.dll
+jsoncpp.dll
+libcrypto-3-x64.dll
+libssl-3-x64.dll
+zlib1.dll
+brotlidec.dll
+
+; Color Profile
+acerGraphic.dll
+SetGraphicCpp.exe
+SGProfileConsole.exe
+
+; Visual Studio 2019
+ucrtbase.dll
+vcruntime140_1.dll
+vcruntime140.dll
+vccorlib140.dll
+msvcp140_codecvt_ids.dll
+msvcp140_atomic_wait.dll
+msvcp140_2.dll
+msvcp140_1.dll
+msvcp140.dll
+concrt140.dll
+
+[AQAService_DelFiles]
+AcerQAAgent.exe
+
+[AQASWComponent_DelFiles]
+AcerQAAgent.exe
+AQAUserPS.exe
+Launcher.exe
+server_crt.pem
+server_key.pem
+
+; Color Profile
+acerGraphic.dll
+SetGraphicCpp.exe
+SGProfileConsole.exe
+
+; WebSocket
+brotlienc.dll
+brotlicommon.dll
+drogon.dll
+trantor.dll
+cares.dll
+jsoncpp.dll
+libcrypto-3-x64.dll
+libssl-3-x64.dll
+zlib1.dll
+brotlidec.dll
+
+; Visual Studio 2019
+ucrtbase.dll
+vcruntime140_1.dll
+vcruntime140.dll
+vccorlib140.dll
+msvcp140_codecvt_ids.dll
+msvcp140_atomic_wait.dll
+msvcp140_2.dll
+msvcp140_1.dll
+msvcp140.dll
+concrt140.dll
+
+
+[Strings]
+ManufacturerName = "Acer Incorporated"
+ServiceName      = "Acer Quick Access"
+ServiceDesc      = "Acer Quick Access Service"
+AQAExtensionDisc = "Acer Quick Access Software Component Disk"
+DeviceName = "Acer Quick Access Software Component"
