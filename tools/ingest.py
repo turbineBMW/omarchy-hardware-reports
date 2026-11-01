@@ -17,6 +17,9 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from scrub import scrub_files  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 
 # Format 2 adds windows.json, the registry keys with their large values as
@@ -100,6 +103,8 @@ def check(data):
                 json.loads(files[name])
             except ValueError:
                 raise Rejected(f"{name} is not valid JSON")
+    # Reports from the installer before 1.0.1 still carry the SoC serial number.
+    scrub_files(files)
     return report, files
 
 

@@ -311,7 +311,8 @@
     "The computer and user names, wherever they appear",
     "USB serial numbers and MAC addresses in device IDs",
     "Serial numbers and the system UUID, wherever else they appear",
-    "14 registry values and properties named as serial numbers, addresses or identifiers"
+    "14 registry values and properties named as serial numbers, addresses or identifiers",
+    "SoC serial number in the ACPI tables (SOSN)"
   ],
   "problems": []
 }
