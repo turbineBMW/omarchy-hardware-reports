@@ -52,6 +52,7 @@ Fields: M manufacturer, F family, P product, S SKU, m/p baseboard manufacturer/p
 
 ## Left out for privacy
 
+- SoC serial number in the ACPI tables (SOSN)
 - System serial number
 - System UUID
 - Baseboard serial number

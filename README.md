@@ -32,7 +32,7 @@ Reports from tool versions before 1.0.0 (format 1) hold only the first eight.
 
 ## What a report leaves out
 
-Serial numbers and asset tags, the system UUID, the Windows product key (the MSDM table), display serial numbers, USB serial numbers and MAC addresses in device IDs, registry values and device properties named as serial numbers, addresses or identifiers, and anything paired or plugged in: Bluetooth devices, printers, drives, volumes and audio endpoints. Everything left in describes the model, not the person or the one machine. Look inside the zip before sending it if you like; it is plain files.
+Serial numbers and asset tags, the system UUID, the SoC serial number the firmware writes into the DSDT (`SOSN`), the Windows product key (the MSDM table), display serial numbers, USB serial numbers and MAC addresses in device IDs, registry values and device properties named as serial numbers, addresses or identifiers, and anything paired or plugged in: Bluetooth devices, printers, drives, volumes and audio endpoints. Everything left in describes the model, not the person or the one machine. Look inside the zip before sending it if you like; it is plain files.
 
 ## Checking a report by hand
 

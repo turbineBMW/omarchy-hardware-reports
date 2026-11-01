@@ -271,7 +271,8 @@
     "56 Bluetooth, printer, drive, network and audio-endpoint devices",
     "USB serial numbers and MAC addresses in device IDs",
     "Serial numbers and the system UUID, wherever else they appear",
-    "13 registry values and properties named as serial numbers, addresses or identifiers"
+    "13 registry values and properties named as serial numbers, addresses or identifiers",
+    "SoC serial number in the ACPI tables (SOSN)"
   ],
   "problems": [
     "Windows\u0027 view of storage, power and drivers: An error occurred trying to start process \u0027powershell.exe\u0027 with working directory \u0027C:\\Users\\Nikos\\Desktop\u0027. The system cannot find the file specified."

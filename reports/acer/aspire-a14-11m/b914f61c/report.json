@@ -310,7 +310,8 @@
     "29 Bluetooth, printer, drive, network and audio-endpoint devices",
     "USB serial numbers and MAC addresses in device IDs",
     "Serial numbers and the system UUID, wherever else they appear",
-    "19 registry values and properties named as serial numbers, addresses or identifiers"
+    "19 registry values and properties named as serial numbers, addresses or identifiers",
+    "SoC serial number in the ACPI tables (SOSN)"
   ],
   "problems": []
 }
