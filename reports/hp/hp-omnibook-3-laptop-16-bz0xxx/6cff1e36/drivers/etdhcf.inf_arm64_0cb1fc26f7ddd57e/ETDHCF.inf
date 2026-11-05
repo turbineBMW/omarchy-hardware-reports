@@ -1,0 +1,98 @@
+;============================================================================ 
+; ETDHCF.inf Installation file (.inf) for Windows 10/11.
+;
+; All Rights Reserved, Copyright(C) ELAN Microelectronics Corp. 2003-2025
+;============================================================================
+
+[Version]
+Signature="$Windows NT$"
+Class=HIDClass
+ClassGuid={745a17a0-74d3-11d0-b6fe-00a0c90f57da}	; HIDClassGuid
+Provider=%VenderName%
+CatalogFile=ETDHCF.cat
+DriverVer=10/16/2025, 44.2.0.4
+PnpLockdown=1
+
+[SourceDisksNames]
+1=%DiskName%,,
+
+[SourceDisksFiles]
+ETDHCF.sys = 1
+
+;----------------------------------------------------------------------------
+; Manufacturer Sections
+;----------------------------------------------------------------------------
+
+[Manufacturer]
+%VenderName%   = ELANMfg, NTarm64.10.0
+
+[ELANMfg.NTarm64.10.0]
+%ETDHCFDeviceDesc%	= ETDHCF_Inst, HID\VEN_ELAN&DEV_0143&Col02 ; ClickPad (Huaqin QuadroX)
+%ETDHCFDeviceDesc%	= ETDHCF_Inst, HID\VEN_ELAN&DEV_0147&Col02 ; ClickPad (Inventec  Abe )
+%ETDHCFDeviceDesc%	= ETDHCF_Inst, HID\VEN_ELAN&DEV_014B&Col02 ; ClickPad (Quanta Bantie )
+%ETDHCFDeviceDesc%	= ETDHCF_Inst, HID\VEN_ELAN&DEV_0183&Col02 ; ClickPad (Wistron Nami )
+%ETDHCFDeviceDesc%	= ETDHCF_Inst, HID\VEN_ELAN&DEV_0189&Col02 ; ClickPad (Huaqin coda 16 )
+;----------------------------------------------------------------------------
+; Install Sections
+;----------------------------------------------------------------------------
+
+[DestinationDirs]
+CopyFiles_Drivers	= 12			; Driver directory
+
+[CopyFiles_Drivers]
+ETDHCF.sys,,,0x00000001
+
+;----------------------------------------------------------------------------
+[ETDHCF_Inst]
+CopyFiles=CopyFiles_Drivers
+
+AddReg=ETDHCF_Addreg
+
+[ETDHCF_Inst.Services]
+Include = input.inf
+Needs = HID_Raw_Inst.NT.Services
+AddService = ETDHCF,,ETDHCF_Service_Inst
+
+[ETDHCF_AddReg.HW]
+HKR,,"UpperFilters",0x00010000,"ETDHCF"
+
+[ETDHCF_Inst.HW]
+AddReg = ETDHCF_AddReg.HW
+
+;----------------------------------------------------------------------------
+
+[ETDHCF_Addreg]
+HKLM,%ServiceRoot%\Elantech\ETDHCF,ETDHidI2C_Report_Type,%REG_DWORD%,1		; 0 = Regular, 1 = New Design
+
+
+;----------------------------------------------------------------------------
+; Services Sections
+;----------------------------------------------------------------------------
+
+[ETDHCF_Service_Inst]
+DisplayName	= %ETDHCF.SVCDESC%
+ServiceType   	= 1			; SERVICE_KERNEL_DRIVER
+StartType     	= 3			; SERVICE_DEMAND_START
+ErrorControl  	= 1			; SERVICE_ERROR_NORMAL
+ServiceBinary 	= %12%\ETDHCF.sys 
+
+;----------------------------------------------------------------------------
+; User visible strings
+;----------------------------------------------------------------------------
+[Strings]
+ETDHCFDeviceDesc		= "ELAN HID Class Filter Driver"
+ETDHCF.SVCDESC			= "ELAN HID Class Filter Service"
+
+Publisher 			= "ELAN Microelectronic Corp."
+TargetDir			= "Elantech"
+DiskName  			= "ELAN HID Driver Installation Disk"
+VenderName			= "ELAN HID Device"
+ServiceRoot 			= "System\CurrentControlSet\Control"
+
+; Registry Type
+REG_EXPAND_SZ			= 0x00020000 
+REG_DWORD			= 0x00010001 
+REG_MULTI_SZ			= 0x00010000
+REG_BINARY			= 0x00000001
+REG_SZ				= 0x00000000
+

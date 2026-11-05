@@ -1,0 +1,21 @@
+{
+  "type": "devicetree",
+  "name": "HP HP OmniBook 3 Laptop 16-bz0xxx",
+  "compatible": "",
+  "hwids": [
+    "5589d4e3-b6b6-5687-baa5-1d41359674de",
+    "7f27f702-d531-5536-b5d3-8fcfcf7b5409",
+    "002e1741-544b-53ce-9908-32c5807ec301",
+    "49b4ab3f-62f5-56b4-ba81-978c5073ef3c",
+    "b64faaeb-bc4b-55e6-ae39-69b4e0ddc7cb",
+    "bc2007a5-78ce-5e00-8f56-af55b083bd69",
+    "f9b943c5-95bb-56c8-ae80-9b28e5dd5170",
+    "4a8965ba-59c7-5e8a-89dc-4e9176579608",
+    "54c75dff-89ed-5e18-974b-209e4dcf15ae",
+    "b69f7f62-0ab1-5dc1-9290-a732246a6add",
+    "99d095d0-4514-5c03-bfed-a6e17f882f66",
+    "81127a29-bb2a-5cde-aa7a-3d05b083326f",
+    "f5404785-f537-5676-80e9-7291217f1b27",
+    "c83d2314-a406-5861-a0e0-39a337da1f96"
+  ]
+}

@@ -1,0 +1,60 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Provider    = %Provider%
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+DriverVer   = %Driver_Date%,%Driver_Ver% ; 15 indicate to Hex value "F"
+CatalogFile = CAPSULE.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%MfgName% = Firmware,NTx86.10.0...17134, NTAMD64.10.0...17134, NTARM.10.0...17134, NTARM64.10.0...17134
+
+[Firmware.NTx86.10.0...17134]
+%FirmwareDesc% = Firmware_Install,UEFI\RES_{%RES_GUID%}
+
+[Firmware.NTAMD64.10.0...17134]
+%FirmwareDesc% = Firmware_Install,UEFI\RES_{%RES_GUID%}
+
+[Firmware.NTARM.10.0...17134]
+%FirmwareDesc% = Firmware_Install,UEFI\RES_{%RES_GUID%}
+
+[Firmware.NTARM64.10.0...17134]
+%FirmwareDesc% = Firmware_Install,UEFI\RES_{%RES_GUID%}
+
+[Firmware_Install.NT]
+CopyFiles = Firmware_CopyFiles
+
+[Firmware_CopyFiles]
+SystemFirmware.bin
+
+[Firmware_Install.NT.Hw]
+AddReg = Firmware_AddReg
+
+[Firmware_AddReg]
+HKR,,FirmwareId,,"{"%RES_GUID%"}"
+HKR,,FirmwareVersion,%REG_DWORD%,%Firmware_Ver%
+HKR,,FirmwareFilename,,%13%\SystemFirmware.bin
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+SystemFirmware.bin = 1
+
+[DestinationDirs]
+DefaultDestDir = %13%,Firmware ; %SystemRoot%\Firmware
+
+[Strings]
+; localizable
+Provider     = "HP Inc."
+MfgName      = "HP Inc."
+FirmwareDesc = "System Firmware"
+DiskName     = "Firmware Update"
+
+; non-localizable
+REG_DWORD     = 0x00010001
+RES_GUID      = 7731a572-c7d8-4a7f-8fa2-cd0b7c66ef5e
+Driver_Ver    = 15.06.00.00
+Driver_Date   = 08/06/2026
+Firmware_Ver  = 0x0F060000
