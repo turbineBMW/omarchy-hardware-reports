@@ -1,0 +1,362 @@
+;
+; AcerLightServiceSoftwareComponent.inf
+;
+[Version]
+Signature="$WINDOWS NT$"
+Class=SoftwareComponent
+ClassGuid={5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider=%ProviderString%
+DriverVer = 01/30/2026,2.0.1013.4
+CatalogFile.NTamd64=AcerLightServiceSoftwareComponentamd64.cat
+CatalogFile.NTarm64=AcerLightServiceSoftwareComponentarm64.cat
+PnpLockDown=1
+; ================= Device section =====================
+
+[Manufacturer]
+%ManufacturerString%=Microsoft,NTamd64.10.0...19041,NTarm64.10.0...19041
+
+; Works on Win7 and later because we use inbox HID-KMDF mapper
+[Microsoft.NTamd64.10.0...19041]
+%DeviceDesc%=AcerLightService_x64,  SWC\VEN_1025&DEV_165F&SWComp_AcerLightServiceDriver
+%DeviceDesc%=DynamicLightingService,  SWC\VEN_1025&DEV_165F&SWComp_PredatorLightServiceDriver
+
+[Microsoft.NTarm64.10.0...19041]
+%DeviceDesc%=AcerLightService_arm64,  SWC\VEN_1025&DEV_165F&SWComp_AcerLightServiceDriver
+
+[AcerLightService_x64]
+CopyFiles=ExeCopy
+CopyFiles=FramesCopy
+CopyFiles=ExeCopy.NTamd64
+
+[AcerLightService_arm64]
+CopyFiles=ExeCopy
+CopyFiles=FramesCopy
+CopyFiles=ExeCopy.NTarm64
+
+[AcerLightService_x64.Services]
+;AddService=AcerLightService,	0x00000002,	AcerLightService_Service_Inst,
+AddService=,0x00000002,
+AddService=ALSSvc, 0x00000800, ALSSvc_x64_ServiceInstall
+
+[AcerLightService_arm64.Services]
+;AddService=AcerLightService,	0x00000002,	AcerLightService_Service_Inst,
+AddService=,0x00000002,
+AddService=ALSSvc, 0x00000800, ALSSvc_arm64_ServiceInstall
+
+[DynamicLightingService]
+CopyFiles=ExeCopy
+CopyFiles=ExeCopy.NTamd64
+
+[DynamicLightingService.Services]
+;AddService=AcerLightService,	0x00000002,	AcerLightService_Service_Inst,
+AddService=,0x00000002,
+AddService=ALSSvc, 0x00000800, ALSSvc_x64_ServiceInstall
+
+[DynamicLightingService.Software]
+AddSoftware=AcerLightingBackgroundController, , AcerLightingBackground_Controller_Inst
+
+;[AcerLightService_Service_Inst]
+;DisplayName    = %ServiceDesc%
+;ServiceType    = 1
+;StartType      = 3
+;ErrorControl   = 1
+;ServiceBinary  = %13%\AcerLightServiceSoftwareComponent.sys
+
+[ALSSvc_x64_ServiceInstall]
+DisplayName    = "Acer Lighting Component"
+ServiceType    = 0x00000010      ; SERVICE_WIN32_SHARE_PROCESS
+StartType      = 2               ; SERVICE_AUTO_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\x64\AcerLightingComponent.exe
+
+[ALSSvc_arm64_ServiceInstall]
+DisplayName    = "Acer Lighting Component"
+ServiceType    = 0x00000010      ; SERVICE_WIN32_SHARE_PROCESS
+StartType      = 2               ; SERVICE_AUTO_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\ARM64\AcerLightingComponent.exe
+
+[AcerLightingBackground_Controller_Inst]
+SoftwareType=2
+SoftwareID=pfn://AcerIncorporated.AcerLightingBackgroundController_48frkmn4z8aw4
+
+;[AcerLightService.Wdf]
+;KmdfService=AcerLightService, AcerLightService_wdfsect
+
+;[AcerLightService_wdfsect]
+;KmdfLibraryVersion=$KMDFVERSION$
+
+;[DefaultUninstall.Services]
+;DelService=ALSSvc, 0x200
+
+; ================= copy files =====================
+[ExeCopy]
+
+[ExeCopy.NTamd64]
+AcerLightingComponent.exe
+AcerLightingBackgroundApp.exe
+
+;MS Libraries
+msvcp140.dll
+vcruntime140.dll
+vcruntime140_1.dll
+
+[ExeCopy.NTarm64]
+AcerLightingComponent.exe
+AcerLightingBackgroundApp.exe
+
+;MS Libraries
+msvcp140.dll
+vcruntime140.dll
+vcruntime140_1.dll
+
+[FramesCopy]
+; Circle_R
+Circle_R.ini
+Circle_R_01.ini
+Circle_R_02.ini
+Circle_R_03.ini
+Circle_R_04.ini
+Circle_R_05.ini
+Circle_R_06.ini
+Circle_R_07.ini
+Circle_R_08.ini
+Circle_R_09.ini
+Circle_R_10.ini
+
+Circle_R_11.ini
+Circle_R_12.ini
+Circle_R_13.ini
+Circle_R_14.ini
+Circle_R_15.ini
+Circle_R_16.ini
+Circle_R_17.ini
+Circle_R_18.ini
+Circle_R_19.ini
+Circle_R_20.ini
+
+Circle_R_21.ini
+Circle_R_22.ini
+Circle_R_23.ini
+Circle_R_24.ini
+Circle_R_25.ini
+Circle_R_26.ini
+Circle_R_27.ini
+Circle_R_28.ini
+Circle_R_29.ini
+Circle_R_30.ini
+
+Circle_R_31.ini
+Circle_R_32.ini
+Circle_R_33.ini
+Circle_R_34.ini
+Circle_R_35.ini
+Circle_R_36.ini
+Circle_R_37.ini
+Circle_R_38.ini
+Circle_R_39.ini
+Circle_R_40.ini
+
+Circle_R_41.ini
+Circle_R_42.ini
+Circle_R_43.ini
+Circle_R_44.ini
+
+;Twinkle_R
+Twinkle_R.ini
+Twinkle_R_01.ini
+Twinkle_R_02.ini
+Twinkle_R_03.ini
+Twinkle_R_04.ini
+Twinkle_R_05.ini
+Twinkle_R_06.ini
+Twinkle_R_07.ini
+Twinkle_R_08.ini
+Twinkle_R_09.ini
+Twinkle_R_10.ini
+
+Twinkle_R_11.ini
+Twinkle_R_12.ini
+Twinkle_R_13.ini
+Twinkle_R_14.ini
+Twinkle_R_15.ini
+Twinkle_R_16.ini
+Twinkle_R_17.ini
+Twinkle_R_18.ini
+Twinkle_R_19.ini
+Twinkle_R_20.ini
+
+Twinkle_R_21.ini
+Twinkle_R_22.ini
+Twinkle_R_23.ini
+Twinkle_R_24.ini
+Twinkle_R_25.ini
+Twinkle_R_26.ini
+Twinkle_R_27.ini
+Twinkle_R_28.ini
+Twinkle_R_29.ini
+Twinkle_R_30.ini
+
+Twinkle_R_31.ini
+Twinkle_R_32.ini
+Twinkle_R_33.ini
+Twinkle_R_34.ini
+Twinkle_R_35.ini
+Twinkle_R_36.ini
+Twinkle_R_37.ini
+Twinkle_R_38.ini
+Twinkle_R_39.ini
+Twinkle_R_40.ini
+
+Twinkle_R_41.ini
+
+;Blink
+Blink.json
+
+;Breath
+Breath.json
+
+[SourceDisksNames]
+1=%DiskDesc%,,,
+
+[SourceDisksFiles]
+;Circle_R
+Circle_R.ini=1,\Frames
+Circle_R_01.ini=1,\Frames
+Circle_R_02.ini=1,\Frames
+Circle_R_03.ini=1,\Frames
+Circle_R_04.ini=1,\Frames
+Circle_R_05.ini=1,\Frames
+Circle_R_06.ini=1,\Frames
+Circle_R_07.ini=1,\Frames
+Circle_R_08.ini=1,\Frames
+Circle_R_09.ini=1,\Frames
+Circle_R_10.ini=1,\Frames
+
+Circle_R_11.ini=1,\Frames
+Circle_R_12.ini=1,\Frames
+Circle_R_13.ini=1,\Frames
+Circle_R_14.ini=1,\Frames
+Circle_R_15.ini=1,\Frames
+Circle_R_16.ini=1,\Frames
+Circle_R_17.ini=1,\Frames
+Circle_R_18.ini=1,\Frames
+Circle_R_19.ini=1,\Frames
+Circle_R_20.ini=1,\Frames
+
+Circle_R_21.ini=1,\Frames
+Circle_R_22.ini=1,\Frames
+Circle_R_23.ini=1,\Frames
+Circle_R_24.ini=1,\Frames
+Circle_R_25.ini=1,\Frames
+Circle_R_26.ini=1,\Frames
+Circle_R_27.ini=1,\Frames
+Circle_R_28.ini=1,\Frames
+Circle_R_29.ini=1,\Frames
+Circle_R_30.ini=1,\Frames
+
+Circle_R_31.ini=1,\Frames
+Circle_R_32.ini=1,\Frames
+Circle_R_33.ini=1,\Frames
+Circle_R_34.ini=1,\Frames
+Circle_R_35.ini=1,\Frames
+Circle_R_36.ini=1,\Frames
+Circle_R_37.ini=1,\Frames
+Circle_R_38.ini=1,\Frames
+Circle_R_39.ini=1,\Frames
+Circle_R_40.ini=1,\Frames
+
+Circle_R_41.ini=1,\Frames
+Circle_R_42.ini=1,\Frames
+Circle_R_43.ini=1,\Frames
+Circle_R_44.ini=1,\Frames
+
+;Twinkle_R
+Twinkle_R.ini=1,\Frames
+Twinkle_R_01.ini=1,\Frames
+Twinkle_R_02.ini=1,\Frames
+Twinkle_R_03.ini=1,\Frames
+Twinkle_R_04.ini=1,\Frames
+Twinkle_R_05.ini=1,\Frames
+Twinkle_R_06.ini=1,\Frames
+Twinkle_R_07.ini=1,\Frames
+Twinkle_R_08.ini=1,\Frames
+Twinkle_R_09.ini=1,\Frames
+Twinkle_R_10.ini=1,\Frames
+
+Twinkle_R_11.ini=1,\Frames
+Twinkle_R_12.ini=1,\Frames
+Twinkle_R_13.ini=1,\Frames
+Twinkle_R_14.ini=1,\Frames
+Twinkle_R_15.ini=1,\Frames
+Twinkle_R_16.ini=1,\Frames
+Twinkle_R_17.ini=1,\Frames
+Twinkle_R_18.ini=1,\Frames
+Twinkle_R_19.ini=1,\Frames
+Twinkle_R_20.ini=1,\Frames
+
+Twinkle_R_21.ini=1,\Frames
+Twinkle_R_22.ini=1,\Frames
+Twinkle_R_23.ini=1,\Frames
+Twinkle_R_24.ini=1,\Frames
+Twinkle_R_25.ini=1,\Frames
+Twinkle_R_26.ini=1,\Frames
+Twinkle_R_27.ini=1,\Frames
+Twinkle_R_28.ini=1,\Frames
+Twinkle_R_29.ini=1,\Frames
+Twinkle_R_30.ini=1,\Frames
+
+Twinkle_R_31.ini=1,\Frames
+Twinkle_R_32.ini=1,\Frames
+Twinkle_R_33.ini=1,\Frames
+Twinkle_R_34.ini=1,\Frames
+Twinkle_R_35.ini=1,\Frames
+Twinkle_R_36.ini=1,\Frames
+Twinkle_R_37.ini=1,\Frames
+Twinkle_R_38.ini=1,\Frames
+Twinkle_R_39.ini=1,\Frames
+Twinkle_R_40.ini=1,\Frames
+
+Twinkle_R_41.ini=1,\Frames
+
+;Blink
+Blink.json=1,\Frames
+
+;Breath
+Breath.json=1,\Frames
+
+[SourceDisksFiles.amd64]
+AcerLightingComponent.exe = 1,\x64
+AcerLightingBackgroundApp.exe = 1,\x64
+
+;MS Libraries
+msvcp140.dll=1,\x64
+vcruntime140.dll=1,\x64
+vcruntime140_1.dll=1,\x64
+
+[SourceDisksFiles.arm64]
+AcerLightingComponent.exe = 1,\ARM64
+AcerLightingBackgroundApp.exe = 1,\ARM64
+
+;MS Libraries
+msvcp140.dll=1,\ARM64
+vcruntime140.dll=1,\ARM64
+vcruntime140_1.dll=1,\ARM64
+
+[DestinationDirs]
+SysCopy=13
+ExeCopy=13
+FramesCopy=13,\Frames
+ExeCopy.NTamd64=13,\x64
+ExeCopy.NTarm64=13,\ARM64
+
+;---------------------------------------------------------------;
+
+[Strings]
+ProviderString			= "Acer Incorporated"
+ManufacturerString		= "Acer Incorporated"
+ClassName				= "Acer Lighting Software Component"
+DeviceDesc				= "Acer Lighting Software Component"
+ServiceDesc				= "Acer Lighting Software Component"
+DiskDesc				= "Acer Lighting Software Somponent Installation Disk"
+AUTORUN					= "Software\Microsoft\Windows\CurrentVersion\Run"

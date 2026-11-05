@@ -1,0 +1,79 @@
+;
+; AcerDeviceEnablingServiceComponent.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=SoftwareComponent
+ClassGuid={5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider=%ManufacturerName%
+CatalogFile=AcerDeviceEnablingService.cat
+DriverVer = 10/01/2025,1.0.0.3020
+PnPLockdown=1
+
+;*****************************************
+; Install Section
+;*****************************************
+[Manufacturer]
+%ManufacturerName%=Microsoft,NTamd64.10.0...26100,NTarm64.10.0...26100	; 24H2
+
+[Microsoft.NTamd64.10.0...26100]
+%DeviceDesc%=AcerDeviceEnablingServiceComponent_amd64_Device, SWC\SWComp_ADES ;Change to your component ID after "SWC\".
+
+[Microsoft.NTarm64.10.0...26100]
+%DeviceDesc%=AcerDeviceEnablingServiceComponent_arm64_Device, SWC\SWComp_ADES ;Change to your component ID after "SWC\".
+
+[AcerDeviceEnablingServiceComponent_amd64_Device]
+CopyFiles=SysCopy
+CopyFiles=ExeCopy
+
+[AcerDeviceEnablingServiceComponent_arm64_Device]
+CopyFiles=SysCopy
+CopyFiles=ExeCopy
+
+[SysCopy]
+
+[ExeCopy]
+ADESv2Svc.exe
+ADESv2BW.exe
+FUB.exe
+DataUpdate.exe
+
+;;;;;AddService;;;;;
+[AcerDeviceEnablingServiceComponent_amd64_Device.Services]
+AddService=, 0x00000002
+AddService=AcerDeviceEnablingServiceV2, 0x00000800, AcerDeviceEnablingServiceV2_Inst
+
+[AcerDeviceEnablingServiceComponent_arm64_Device.Services]
+AddService=, 0x00000002
+AddService=AcerDeviceEnablingServiceV2, 0x00000800, AcerDeviceEnablingServiceV2_Inst
+
+[AcerDeviceEnablingServiceV2_Inst]
+DisplayName    = "Acer Device Enabling Sevice V2"
+ServiceType    = 0x00000010
+StartType      = 2
+ErrorControl   = 1
+ServiceBinary  = %13%\ADESv2Svc.exe
+
+[DefaultUninstall.Services]
+DelService=AcerDeviceEnablingServiceV2, 0x200
+
+[SourceDisksNames]
+1 = %DiskDesc%,,,""
+
+[SourceDisksFiles]
+ADESv2Svc.exe = 1
+ADESv2BW.exe = 1
+FUB.exe = 1
+DataUpdate.exe = 1
+
+[DestinationDirs]
+SysCopy=13
+ExeCopy=13
+
+[Strings]
+ManufacturerName="Acer Incorporated"
+DiskDesc="Acer Device Enabling Sevice V2 Installation Disk"
+DeviceDesc="ADES v2.0 Software Component" ;Change to your name shown on Device Manager.
+ServiceDesc="Acer Device Enabling Sevice V2"
+AUTORUN="Software\Microsoft\Windows\CurrentVersion\Run"

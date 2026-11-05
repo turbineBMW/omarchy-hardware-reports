@@ -1,0 +1,63 @@
+;/*++
+;
+;Copyright (c) 2012,2017 by QUALCOMM, Incorporated.  All Rights Reserved.
+;
+;Module Name:
+;
+;    BIOS_1.27.INF
+;
+;Abstract:
+;    INF file for firmware driver package
+;
+;--*/
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+Provider    = %DRIVER_PROVIDER%
+DriverVer = 12/10/2025,1.0.27.0	
+CatalogFile = BIOS_1.27.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%DRIVER_MANUFACTURER% = Firmware,NTarm64.10.0...17134
+
+[Firmware.NTarm64.10.0...17134]
+%DRIVER_DESC% = Firmware_Install,UEFI\RES_{ea6f3c05-071a-4bcf-8461-b43c6523cc00}
+
+[Firmware_Install.NT]
+CopyFiles = Firmware_CopyFiles
+
+[Firmware_Install.NT.Services]
+AddService=,2
+
+[Firmware_Install.NT.Hw]
+AddReg = Firmware_AddReg.Hw
+
+[Firmware_AddReg.Hw]
+HKR,,FirmwareId,,{ea6f3c05-071a-4bcf-8461-b43c6523cc00}
+HKR,,FirmwareVersion,%REG_DWORD%,0x7F
+HKR,,FirmwareFilename,,%13%\BIOS_1.27.cap
+
+[Firmware_CopyFiles]
+BIOS_1.27.cap
+
+[DestinationDirs]
+DefaultDestDir = %DIRID_WINDOWS%
+
+[SourceDisksFiles]
+BIOS_1.27.cap = 1
+
+[SourceDisksNames]
+1 = %DISK_NAME%
+
+[Strings]
+; localizable strings
+DRIVER_PROVIDER  = "Acer Inc."                                      
+DRIVER_MANUFACTURER  = "Acer Inc."                                      
+DRIVER_DESC = "Acer System Firmware 1.27"
+DISK_NAME     = "Firmware Update"
+
+; non-localizable strings
+REG_DWORD = 0x00010001
+DIRID_WINDOWS = 13

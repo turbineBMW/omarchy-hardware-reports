@@ -1,0 +1,96 @@
+;/*++
+;
+;Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;   THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+;   KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+;   IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+;   PURPOSE.
+;
+;Module Name:
+;
+;  MicrosoftEffectPack_extension.INF
+;
+;Abstract:
+;
+;    Extension inf for Microsoft Effect Pack installation
+;
+;--*/
+
+[Version]
+Signature = "$WINDOWS NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider = %ManufacturerName%
+ExtensionId = {e39d28d8-f67c-4f19-aff7-3f146906737b}
+CatalogFile = MicrosoftEffectPack_ext.cat
+DriverVer = 04/01/2026,2.0.30.0
+PnpLockDown=1
+
+[Manufacturer]
+%ManufacturerName% = MEPExtension, NTarm64.10.0...22621
+
+[MEPExtension.NTarm64.10.0...22621]
+%MEP.ExtensionDesc% = MEPExtension_Install, ACPI\QCOMFFE9
+
+[MEPExtension_Install.NTARM64]
+CopyFiles = MEPExtension_CopyFiles
+
+[MEPExtension_CopyFiles]
+PerceptionCore.dll
+PerceptionCoreResources.dll
+SNPE.dll
+SnpeHtpV73Stub.dll
+libSnpeHtpV73Skel.so
+
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+PerceptionCore.dll = 1
+PerceptionCoreResources.dll = 1
+SNPE.dll = 1
+SnpeHtpV73Stub.dll = 1
+libSnpeHtpV73Skel.so = 1
+
+
+
+[DestinationDirs]
+MEPExtension_CopyFiles=13
+;Driver package's Driver Store directory
+
+[SignatureAttributes]
+perceptioncore.dll = SignatureAttributes.PETrust
+PerceptionCoreResources.dll = SignatureAttributes.PETrust
+snpe.dll = SignatureAttributes.PETrust
+SnpeHtpV73Stub.dll = SignatureAttributes.PETrust
+
+[SignatureAttributes.PETrust]
+PETrust = true
+
+[MEPExtension_Install.NTARM64.HW]
+AddReg = MEPExtension.AddReg
+
+[MEPExtension.AddReg]
+HKR,,MEPAssets,,%13%
+
+[MEPExtension_Install.NTARM64.Components]
+AddComponent = mep_audio_component,,MEPAudio_ComponentInstall
+AddComponent = mep_camera_component,,MEPCamera_ComponentInstall
+
+[MEPAudio_ComponentInstall]
+ComponentIDs=MEP_AUD&VEN_MSFT_VOICEFOCUS_V2
+Description = "Windows Studio Effects Voice Clarity APO"
+
+[MEPCamera_ComponentInstall]
+ComponentIDs=MEP_CAM&VEN_MSFT_DEV_0CB0
+Description = "Windows Studio Effects Camera"
+
+
+
+[Strings]
+ManufacturerName = "Microsoft Corporation"
+MEP.ExtensionDesc = "Windows Studio Effects Driver"
+DiskName = "install source"
+

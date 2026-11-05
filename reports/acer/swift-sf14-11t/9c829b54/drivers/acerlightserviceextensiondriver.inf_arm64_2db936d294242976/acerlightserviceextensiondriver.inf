@@ -1,0 +1,51 @@
+;
+; AcerLightServiceExtensionDriver.inf
+;
+[Version]
+Signature="$WINDOWS NT$"
+Class=Extension
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%ProviderString%
+DriverVer = 12/08/2025,2.0.1013.1
+ExtensionId = {769C2230-ABCF-4938-BB32-6B437407F12B}
+CatalogFile=AcerLightServiceExtensionDriver.cat
+PnpLockDown=1
+; ================= Device section =====================
+
+[Manufacturer]
+%ManufacturerString%=AcerInc,NTamd64.10.0...19041,NTarm64.10.0...19041
+
+; Works on Win7 and later because we use inbox HID-KMDF mapper
+[AcerInc.NTamd64.10.0...19041]
+;Next Gen x86 
+;Aspire : Tiramisu
+%Acer.ExtensionDesc%=AcerLightServiceExtensionDriver, ACPI\VEN_1025&DEV_165F&SUBSYS_11031025
+;Swift : Icefish
+%Acer.ExtensionDesc%=AcerLightServiceExtensionDriver, ACPI\VEN_1025&DEV_165F&SUBSYS_11041025
+;TravelMate : Viola
+%Acer.ExtensionDesc%=AcerLightServiceExtensionDriver, ACPI\VEN_1025&DEV_165F&SUBSYS_11051025
+
+;Next Gen AMD Swift : Beluga
+%Acer.ExtensionDesc%=AcerLightServiceExtensionDriver, ACPI\VEN_1025&DEV_165F&SUBSYS_13041025
+
+[AcerInc.NTarm64.10.0...19041]
+;Next Gen ARM Swift : Bluetang
+%Acer.ExtensionDesc%=AcerLightServiceExtensionDriver, ACPI\VEN_1025&DEV_165F&SUBSYS_12041025
+
+[AcerLightServiceExtensionDriver]
+
+[AcerLightServiceExtensionDriver.Components]
+AddComponent = AcerDriverComponent,,AcerDriverComponent_ComponentInstall
+
+[AcerDriverComponent_ComponentInstall]
+ComponentIds=VEN_1025&DEV_165F&SWComp_AcerLightServiceDriver
+
+[Strings]
+ProviderString			= "Acer Incorporated"
+ManufacturerString		= "Acer Incorporated"
+ClassName				= "Acer Light Service Extension"
+DeviceDesc				= "Acer Light Service Extension"
+ServiceDesc				= "Acer Light Service Extension"
+DiskDesc				= "Acer Light Service Extension Installation Disk"
+AUTORUN					= "Software\Microsoft\Windows\CurrentVersion\Run"
+Acer.ExtensionDesc		= "Acer Light Extension Service"

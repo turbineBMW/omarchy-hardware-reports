@@ -1,0 +1,109 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Extension
+ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+ExtensionId = {F203916A-EC54-4FA7-AAE3-7F78BAA24B0A} ; Morpho DMFT Extension GUID
+Provider    = %MORPHO%
+DriverVer = 05/06/2025,2.1.12.0
+CatalogFile = mordmft.cat
+;PnpLockDown = 1
+
+[TargetComputers]
+
+[SourceDisksNames]
+1 = %DiskName%,,,,
+
+[SourceDisksFiles]
+ai_filter.dll = 1
+libcrypto-3-x64.dll = 1
+libssl-3-x64.dll = 1
+lib_am_fb.dll = 1
+lib_am_fl.dll = 1
+mordmft.dll = 1
+MorphoPixyService.exe = 1
+QnnHtp.dll = 1
+QnnSystem.dll = 1
+texture_model_044_20240214_ep13_2560x1440_rm_ca_dc0_dc_tu_dc.dnn = 1
+
+[DestinationDirs]
+MORDMFT.CopyFiles = 11 ; %SystemRoot%\system32
+DefaultDestDir = 11
+
+[MORDMFT.CopyFiles]
+ai_filter.dll
+libcrypto-3-x64.dll
+libssl-3-x64.dll
+lib_am_fb.dll
+lib_am_fl.dll
+mordmft.dll
+MorphoPixyService.exe
+QnnHtp.dll
+QnnSystem.dll
+texture_model_044_20240214_ep13_2560x1440_rm_ca_dc0_dc_tu_dc.dnn
+
+[Manufacturer]
+%MORPHO% = MorphoDMFT,NTARM64
+
+[MorphoDMFT.NTARM64]
+%Device.ExtensionDesc% = MorphoDMFT.Device_ARM64, VIDEO\QCOM_AVStream_8380
+
+[MorphoDMFT.Device_ARM64.NTARM64]
+CopyFiles = MORDMFT.CopyFiles
+
+[MorphoDMFT.Device_ARM64.NTARM64.HW]
+AddReg = MORDMFT_RegisterDlls_64
+
+[MORDMFT_RegisterDlls_64]
+HKCR,CLSID\%MOR_DMFT_GUID%,,,%MOR_DMFT%
+HKCR,CLSID\%MOR_DMFT_GUID%\InprocServer32,,%REG_EXPAND_SZ%,"%%SystemRoot%%\system32\mordmft.dll"
+HKCR,CLSID\%MOR_DMFT_GUID%\InprocServer32,DmftVersion,,%DmftVer%
+HKCR,CLSID\%MOR_DMFT_GUID%\InprocServer32,ThreadingModel,,Both
+
+[MorphoDMFT.Device_ARM64.NTARM64.Interfaces]
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%, "%FrontSensor.RefGuid%", MorphoDMFT.Device_ARM64.VideoCapture
+AddInterface=%KSCATEGORY_CAPTURE%, "%FrontSensor.RefGuid%", MorphoDMFT.Device_ARM64.VideoCapture
+AddInterface=%KSCATEGORY_VIDEO%, "%FrontSensor.RefGuid%", MorphoDMFT.Device_ARM64.VideoCapture
+
+[MorphoDMFT.Device_ARM64.VideoCapture]
+AddReg=MorphoDMFT.Device_ARM64.VideoCapture.AddReg
+
+[MorphoDMFT.Device_ARM64.VideoCapture.AddReg]
+HKR,,CameraDeviceMftClsidChain, 0x00010000,%QCT_DMFT_GUID%,%MOR_DMFT_GUID%
+
+[MorphoDMFT.Device_ARM64.NTARM64.Services]
+AddService=MorphoPixyService,0x800,filter_PixyServiceInstallSection
+
+;[filter_ServiceInstallSection]
+;DisplayName="Morpho DMFT Service"
+;ServiceType   = 0x10
+;StartType     = 2
+;ErrorControl  = 1
+;ServiceBinary = %12%\morpho\mercury\MorphoDmftService.exe
+
+[filter_PixyServiceInstallSection]
+DisplayName="Morpho Pixy Service"
+ServiceType   = 0x10
+StartType     = 2
+ErrorControl  = 1
+ServiceBinary = %11%\MorphoPixyService.exe
+
+[Strings]
+MORPHO              = "Morpho Inc."
+Device.ExtensionDesc = "MIPI Device Extension"
+DiskName          = "Morpho DMFT Install Disk"
+
+KSCATEGORY_CAPTURE = "{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_VIDEO   = "{6994AD05-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_VIDEO_CAMERA = "{E5323777-F976-4f5b-9B55-B94699C46E44}"
+KSCATEGORY_SENSOR_CAMERA ="{24E552D7-6523-47F7-A647-D3465BF1F5CA}"
+
+MOR_DMFT_GUID   = "{F0811008-E0BE-4C12-B07F-D8139040DC96}"
+MOR_DMFT        = "Morpho Device MFT"
+REG_EXPAND_SZ = 0x00020000
+DmftVer         = "2.1.12.0"
+
+BackSensor.RefGuid="{5584F823-3830-4CFD-947F-78DE17A8B14C}"
+FrontSensor.RefGuid="{4FAEAFD4-041B-4E46-85FD-400473891182}"
+AuxSensor.RefGuid="{193F2ACD-143D-4440-A3C4-0A2B8E5539E0}"
+
+QCT_DMFT_GUID = "{4C2331F0-66BE-4177-9841-2FCBA8CCF5CA}"
