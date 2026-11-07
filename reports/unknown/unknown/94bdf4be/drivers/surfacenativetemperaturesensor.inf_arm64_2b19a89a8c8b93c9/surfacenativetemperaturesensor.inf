@@ -1,0 +1,106 @@
+;/*++
+;
+;Copyright (c) Microsoft Corporation All rights Reserved
+;
+;Module Name:
+;
+;    SurfaceNativeTemperatureSensor.inf
+;
+;Abstract:
+;
+;    INF file for installing Surface Native Temperature Sensor driver.
+;
+;--*/
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Thermal
+ClassGuid   = {ca301ce1-74fc-45ea-a557-461ef48b9e37}
+Provider    = %VENDOR%
+CatalogFile = SurfaceNativeTemperatureSensor.cat
+DriverVer = 01/09/2026,0.0.22.0
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SurfaceNativeTemperatureSensor.sys=1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%VENDOR%=Vendor,NTARM64.10.0...19041
+
+[Vendor.NTARM64.10.0...19041]
+%SurfaceNativeTemperatureSensor%=SurfaceNativeTemperatureSensor.Inst,  ACPI\MSHW0800
+
+[SurfaceNativeTemperatureSensor.Inst.NT]
+CopyFiles = Drivers_Dir
+
+[SurfaceNativeTemperatureSensor.Inst.NT.HW]
+AddReg = SurfaceNativeTemperatureSensor.Inst.NT.AddReg
+
+[SurfaceNativeTemperatureSensor.Inst.NT.AddReg]
+HKR,,"ThermalDeviceCapabilities",%REG_DWORD%,0x01           ; Declare as temperature sensor for thermal device class.
+HKR,,"Security",,"D:P(A;;GA;;;SY)(A;;GA;;;BA)(A;;GA;;;UD)"  ; Allow access to system, administrators group, and user-mode drivers
+
+[Drivers_Dir]
+SurfaceNativeTemperatureSensor.sys
+
+;-------------- Service installation
+
+[SurfaceNativeTemperatureSensor.Inst.NT.Services]
+AddService = SurfaceNativeTemperatureSensor,%SERVICE_DEMAND_START%,SurfaceNativeTemperatureSensor_Service_Inst
+
+[SurfaceNativeTemperatureSensor.Inst.NT.Events]
+AddEventProvider = {0A7F5BBF-1A62-44EB-9A89-89839BFF85B2},SurfaceNativeTemperatureSensor_EventProviderInstall
+
+[SurfaceNativeTemperatureSensor_Service_Inst]
+DisplayName    = %SurfaceNativeTemperatureSensor%
+ServiceType    = %SERVICE_KERNEL_DRIVER% 
+StartType      = %SERVICE_DEMAND_START% 
+ErrorControl   = %SERVICE_ERROR_NORMAL% 
+ServiceBinary  = %13%\SurfaceNativeTemperatureSensor.sys
+
+[SurfaceNativeTemperatureSensor_EventProviderInstall]
+ProviderName	= Microsoft-Surface-SurfaceNativeTemperatureSensor
+ResourceFile	= %13%\SurfaceNativeTemperatureSensor.sys
+MessageFile		= %13%\SurfaceNativeTemperatureSensor.sys
+AddChannel		= Microsoft-Surface-SurfaceNativeTemperatureSensor/Operational,0x2,SurfaceNativeTemperatureSensor_ChannelInstall
+
+[SurfaceNativeTemperatureSensor_ChannelInstall]
+Isolation         = 2
+Enabled           = 1
+ServiceBinary     = %13%\SurfaceNativeTemperatureSensor.sys 
+
+[Strings] 
+VENDOR                         = "Surface"
+SurfaceNativeTemperatureSensor = "Surface Native Temperature Sensor Driver"
+DiskName                       = "Surface Native Temperature Sensor Driver Installation Disk"
+ClassName                      = "Thermal"
+
+SERVICE_BOOT_START     = 0x0 
+SERVICE_SYSTEM_START   = 0x1 
+SERVICE_AUTO_START     = 0x2 
+SERVICE_DEMAND_START   = 0x3 
+SERVICE_DISABLED       = 0x4 
+
+SERVICE_KERNEL_DRIVER  = 0x1 
+SERVICE_ERROR_IGNORE   = 0x0 
+SERVICE_ERROR_NORMAL   = 0x1 
+SERVICE_ERROR_SEVERE   = 0x2 
+SERVICE_ERROR_CRITICAL = 0x3 
+
+REG_EXPAND_SZ          = 0x00020000 
+REG_DWORD              = 0x00010001 
+REG_MULTI_SZ           = 0x00010000
+REG_BINARY             = 0x00000001
+REG_SZ                 = 0x00000000

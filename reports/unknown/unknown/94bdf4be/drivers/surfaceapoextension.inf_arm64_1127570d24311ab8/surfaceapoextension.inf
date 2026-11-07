@@ -1,0 +1,165 @@
+;===================================================================
+; Surface APO Driver Extension
+; Copyright (c)2020, Microsoft Corporation
+;===================================================================
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Extension
+ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+ExtensionId = {06FF0735-E049-447F-B701-879A3DE533C4}
+Provider    = %SURFACE_APO_ProviderName%
+DriverVer = 01/15/2026,1.216.97.0
+CatalogFile = SurfaceAPOExtension.cat
+PnpLockDown = 1
+
+[SourceDisksNames]
+1 = Disk
+
+[SourceDisksFiles]
+SurfaceAPO_883.json = 1
+
+[DestinationDirs]
+Config_CopyFiles = 13 ; Driver Package's DriverStore Directory
+
+[Manufacturer]
+%SURFACE_APO_MfgName% = DeviceExtensions,NTARM64.10.0...19041
+
+[DeviceExtensions.NTARM64.10.0...19041]
+%Device.ExtensionDesc% = DeviceExtension_Install_Surface_883, QCASD\VEN_QCOM&DEV_0FCD&SUBSYS_MSHW0777&REV_0A
+%Device.ExtensionDesc% = DeviceExtension_Install_Surface_883, QCASD\VEN_QCOM&DEV_0FCD&SUBSYS_MSHW0777&REV_0B
+
+[DeviceExtension_Install_Surface_883.NT]
+CopyFiles = Config_CopyFiles
+
+[DeviceExtension_Install_Surface_883.NT.Components]
+AddComponent = SurfaceApo,,SurfaceApo_AddComponent
+
+[DeviceExtension_Install_Surface_883.NT.Interfaces]
+;
+; Interfaces for speaker (internal) render endpoint.
+;
+AddInterface=%KSCATEGORY_AUDIO%, %KSNAME_Speaker%, SurfaceAPO_Install_883
+AddInterface=%KSCATEGORY_RENDER%, %KSNAME_Speaker%, SurfaceAPO_Install_883
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_Speaker%, SurfaceAPO_Install_883
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_Speaker%, SurfaceAPO_Install_883
+
+;======================================================
+; APO per-interface registry
+;======================================================
+[SurfaceAPO_Install_883]
+AddReg = APO.I.Association0.AddReg_Common,APO.I.Association0.AddReg_883
+
+[APO.I.Association0.AddReg_883]
+HKR,FX\0\%SURFACE_APO_CONTEXT%\Default,%PKEY_SurfaceApoConfigFilename%,%REG_SZ%,%13%\SurfaceAPO_883.json
+
+[APO.I.Association0.AddReg_Common]
+; for installing on QC
+HKR,FX\0\%SURFACE_APO_CONTEXT%,%PKEY_FX_Association%,,%KSNODETYPE_ANY%
+HKR,FX\0\%SURFACE_APO_CONTEXT%\User,%PKEY_SurfaceApoEnableMteMode%,%REG_DWORD%,0
+;HKR,FX\0,%PKEY_FX_ModeEffectClsid%,,%SURFACE_RENDER_MFX_CLSID%
+;HKR,FX\0,%PKEY_FX_Offload_ModeEffectClsid%,,%SURFACE_RENDER_MFX_CLSID%
+;HKR, "FX\\0", %PKEY_MFX_Offload_ProcessingModes_Supported_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%,%AUDIO_SIGNALPROCESSINGMODE_MEDIA%,%AUDIO_SIGNALPROCESSINGMODE_MOVIE%,%AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS%,%AUDIO_SIGNALPROCESSINGMODE_RAW%
+;HKR, "FX\\0", %PKEY_MFX_ProcessingModes_Supported_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%,%AUDIO_SIGNALPROCESSINGMODE_MEDIA%,%AUDIO_SIGNALPROCESSINGMODE_MOVIE%,%AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS%,%AUDIO_SIGNALPROCESSINGMODE_RAW%
+; Set SAF proxy settings
+; No SAF proxy for this product configuration
+
+[Config_CopyFiles]
+SurfaceAPO_883.json
+
+[SurfaceApo_AddComponent]
+ComponentIds = VEN_MSFT&PID_SURFACEAPO ; HWID: SWC\VEN_MSFT&PID_SURFACEAPO
+
+[Strings]
+QC_FX_MODE_CLSID													= "{A9E1B46A-0E16-4136-BCC5-668D34ABEB20}"
+
+; Surface APO strings
+Device.ExtensionDesc                                                = "Microsoft Surface APO"
+SURFACE_APO_FriendlyName                                            = "Microsoft Surface APO"
+SURFACE_APO_VirtualDeviceDesc                                       = "Surface APO Virtual Device"
+SURFACE_APO_MfgName                                                 = "Surface"
+SURFACE_APO_ProviderName                                            = "Surface"
+SURFACE_APO_Copyright                                               = "Copyright (c) 2021 Microsoft"
+SURFACE_RENDER_MFX_FriendlyName                                     = "Microsoft Surface Render APO - MFX"
+SURFACE_RENDER_MFX_CLSID                                            = "{34d30cd8-370e-4229-85be-3346c594c805}"
+SURFACE_RENDER_EFX_FriendlyName                                     = "Microsoft Surface Render APO - EFX"
+SURFACE_RENDER_EFX_CLSID                                            = "{501c3309-d524-4613-83a1-445cc9217e11}"
+SURFACE_RENDER_EFX_PROXY_UUID                                       = "{f8b10b85-0562-4f93-940f-a0d27cb5d9c9}"
+SURFACE_CAPTURE_SFX_FriendlyName                                    = "Microsoft Surface Capture APO - SFX"
+SURFACE_CAPTURE_SFX_CLSID                                           = "{0400C31F-FF92-42E4-B0E5-79E3FB248749}"
+PKEY_SurfaceApoConfigFilename                                       = "{c1f75c4c-3243-11ea-850d-2e728ce88125},0"
+PKEY_SurfaceApoEfxProxyNames                                        = "{c1f75c4c-3243-11ea-850d-2e728ce88125},1"
+PKEY_SurfaceApoEnableMteMode                                        = "{c1f75c4c-3243-11ea-850d-2e728ce88125},7"
+PKEY_SurfaceAudioBlurEnable                                         = "{c1f75c4c-3243-11ea-850d-2e728ce88125},8"
+PKEY_SurfaceCaptureApoAudioBlurAssetsLocation                       = "{c1f75c4c-3243-11ea-850d-2e728ce88125},9"
+SURFACE_APO_CONTEXT                                                 = "{FF53A876-FAEF-4367-80BA-0AED198F9F6D}"
+
+; System defined CLSIDs
+PKEY_ItemNameDisplay                                                = "{B725F130-47EF-101A-A5F1-02608C9EEBAC},10"
+PKEY_FX_Association                                                 = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},0"
+PKEY_AudioEndpoint_Association                                      = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
+PKEY_AudioEndpoint_Supports_EventDriven_Mode                        = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},7"
+PKEY_SYSFX_UiClsid                                                  = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},3"
+PKEY_CompositeFX_EndpointEffectClsid                                = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},15"
+PKEY_CompositeFX_ModeEffectClsid                                    = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},14"
+PKEY_CompositeFX_StreamEffectClsid                                  = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},13"
+PKEY_CompositeFX_Offload_ModeEffectClsid                            = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},20"
+PKEY_CompositeFX_Offload_StreamEffectClsid                          = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},19"
+PKEY_FX_EndpointEffectClsid                                         = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},7"
+PKEY_FX_ModeEffectClsid                                             = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},6"
+PKEY_FX_StreamEffectClsid                                           = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},5"
+PKEY_FX_Offload_ModeEffectClsid                                     = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},12"
+PKEY_FX_Offload_StreamEffectClsid                                   = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},11"
+PKEY_CompositeFX_KeywordDetector_EndpointEffectClsid                = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},18"
+PKEY_CompositeFX_KeywordDetector_ModeEffectClsid                    = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},17"
+PKEY_CompositeFX_KeywordDetector_StreamEffectClsid                  = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},16"
+PKEY_FX_KeywordDetector_EndpointEffectClsid                         = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},10"
+PKEY_FX_KeywordDetector_ModeEffectClsid                             = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},9"
+PKEY_FX_KeywordDetector_StreamEffectClsid                           = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},8"
+PKEY_EFX_ProcessingModes_Supported_For_Streaming                    = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},7"
+PKEY_MFX_ProcessingModes_Supported_For_Streaming                    = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},6"
+PKEY_SFX_ProcessingModes_Supported_For_Streaming                    = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},5"
+PKEY_MFX_Offload_ProcessingModes_Supported_For_Streaming            = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},12"
+PKEY_SFX_Offload_ProcessingModes_Supported_For_Streaming            = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},11"
+PKEY_EFX_KeywordDetector_ProcessingModes_Supported_For_Streaming    = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},10"
+PKEY_MFX_KeywordDetector_ProcessingModes_Supported_For_Streaming    = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},9"
+PKEY_SFX_KeywordDetector_ProcessingModes_Supported_For_Streaming    = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},8"
+AUDIO_SIGNALPROCESSINGMODE_DEFAULT                                  = "{C18E2F7E-933D-4965-B7D1-1EEF228D2AF3}"
+AUDIO_SIGNALPROCESSINGMODE_RAW                                      = "{9E90EA20-B493-4FD1-A1A8-7E1361A956CF}"
+AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS                           = "{98951333-B9CD-48B1-A0A3-FF40682D73F7}"
+AUDIO_SIGNALPROCESSINGMODE_SPEECH                                   = "{FC1CFC9B-B9D6-4CFA-B5E0-4BB2166878B2}"
+AUDIO_SIGNALPROCESSINGMODE_MEDIA                                    = "{4780004E-7133-41D8-8C74-660DADD2C0EE}"
+AUDIO_SIGNALPROCESSINGMODE_MOVIE                                    = "{B26FEB0D-EC94-477C-9494-D1AB8E753F6E}"
+AUDIO_SIGNALPROCESSINGMODE_NOTIFICATION                             = "{9CF2A70B-F377-403B-BD6B-360863E0355C}"
+PKEY_SYSFX_Association          									= "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},0"
+KSCATEGORY_AUDIO                                                    = "{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_RENDER                                                   = "{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_CAPTURE                                                  = "{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_REALTIME                                                 = "{EB115FFC-10C8-4964-831D-6DCB02E6F23F}"
+KSCATEGORY_TOPOLOGY                                                 = "{DDA54A40-1E4C-11D1-A050-405705C10000}"
+KSNODETYPE_ANY                                                      = "{00000000-0000-0000-0000-000000000000}" 
+KSNODETYPE_SPEAKER                                                  = "{DFF21CE1-F70F-11D0-B917-00A0C9223196}"
+REG_SZ                                                              = 0x00000000
+REG_MULTI_SZ                                                        = 0x00010000
+REG_EXPAND_SZ                                                       = 0x00020000
+REG_BINARY                                                          = 0x00000001
+REG_DWORD                                                           = 0x00010001
+REG_NONE                                                            = 0x00020001
+FLG_ADDREG_DELVAL                                                   = 0x00000004
+APO_FLAG_DEFAULT                                                    = 0x0000000e
+REG_MULTI_SZ_APPEND                                                 = 0x00010008
+KSNAME_Speaker           = "Speaker0"
+KSNAME_ExternalDisplay00 = "ExternalDisplay00"
+KSNAME_ExternalDisplay01 = "ExternalDisplay01"
+KSNAME_ExternalDisplay10 = "ExternalDisplay10"
+KSNAME_ExternalDisplay11 = "ExternalDisplay11"
+KSNAME_ExternalDisplay20 = "ExternalDisplay20"
+KSNAME_ExternalDisplay21 = "ExternalDisplay21"
+KSNAME_Microphone        = "Microphone0"
+KSNAME_MicArray1         = "MicrophoneArray0"
+KSNAME_BTHFPMic          = "BluetoothHandsFreeMic0"
+KSNAME_BTHFPSpeaker      = "BluetoothHandsFreeSpeaker0"
+KSNAME_A2dpSpeaker       = "A2DPSpeaker0"
+KSNAME_BLESpeaker        = "BleSpeaker0"
+KSNAME_BLEMicrophone     = "BleMicrophone0"
+KSNAME_HeadsetSpeaker    = "HeadsetSpeaker"
+KSNAME_HeadsetMicrophone = "HeadsetMic"

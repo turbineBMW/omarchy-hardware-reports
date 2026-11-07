@@ -1,0 +1,118 @@
+[Version]
+Signature="$Windows NT$"
+Class=Extension
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%ManufacturerName%
+CatalogFile=SurfaceOemPanelCustomization.cat
+ExtensionId = {D7B1F289-3E4C-4B25-9202-1C6E38B3A7C9}
+DriverVer = 02/25/2026,0.0.30.0
+PnpLockdown=1
+
+[Manufacturer]
+%ManufacturerName%=SurfaceOemPanelCustomization,NTARM64.10.0...19041
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SurfacesRGB.icm = 1
+SurfaceVivid.icm = 1
+SurfaceHDR.icm = 1
+PQConfig.dv = 1
+DisplayCalibrationConfigOutcell13.bin = 1
+DisplayCalibrationMeasurementsOutcell13.bin = 1
+DisplayCalibrationConfigIncell15.bin = 1
+DisplayCalibrationMeasurementsIncell15.bin = 1
+
+
+[DestinationDirs]
+;23 == Windows\system32\spool\drivers\color
+;13 == driverstore
+ProfilesCopy=23
+CalibrationCopySHP15B2=13
+CalibrationCopyLGD07CC=13
+
+[SurfaceOemPanelCustomization.NTARM64.10.0...19041]
+%DeviceName%=SurfaceOemPanelCustomization_Install_SHP15B2, Monitor\SHP15B2	; _883_ROT Outcell 13"
+%DeviceName%=SurfaceOemPanelCustomization_Install_SHP15B2, Monitor\SHP1572	; _883_ROT Outcell 13"
+%DeviceName%=SurfaceOemPanelCustomization_Install_LGD07CC, Monitor\LGD07CC	; _883_ROT Incell 15"
+
+; =================== Monitor\SHP15B2 ==============================
+[SurfaceOemPanelCustomization_Install_SHP15B2.NT]
+DelReg = DEL_CURRENT_REG
+CopyFiles=ProfilesCopy, CalibrationCopySHP15B2
+AddReg=SurfaceOemPanelCustomization_Install_NT_AddReg_SHP15B2
+
+[SurfaceOemPanelCustomization_Install_SHP15B2.NT.Components]
+AddComponent = Vision_SoftwareComponent,, Vision_SoftwareComponent_Inst
+
+[CalibrationCopySHP15B2]
+DisplayCalibrationMeasurementsOutcell13.bin
+DisplayCalibrationConfigOutcell13.bin
+
+[SurfaceOemPanelCustomization_Install_NT_AddReg_SHP15B2]
+HKR,,ICMProfile,0x00010000,"SurfacesRGB.icm"
+HKR,,ICMProfile,0x00010008,"SurfaceVivid.icm"
+HKR,,ICMProfileAC,0x00010000,"SurfaceHDR.icm"
+HKR,,CalibrationMeasurementTypicalBlobFile, REG_EXPAND_SZ, "%13%\DisplayCalibrationMeasurementsOutcell13.bin"
+HKR,,CalibrationConfigTypicalBlobFile, REG_EXPAND_SZ, "%13%\DisplayCalibrationConfigOutcell13.bin"
+HKR,,EnableBoostRefreshRateByDefault,%REG_DWORD%,1
+HKR,,MicrosoftApprovedAcmSupport,%REG_DWORD%,1
+HKR,,EnableIntegratedPanelHdrByDefault,%REG_DWORD%,0
+; HDR certification GUIDs below: DOLBYVISION_LOWLATENCY, DOLBYVISION_GENERIC
+HKR,,DisplayHdrLevel,0x00010008,6363AA90-A651-4154-A9E1-2D765C08E68F,4DDABBE3-5BC1-4F5C-9AA8-D611BC96F6ED
+
+[SurfaceOemPanelCustomization_Install_SHP15B2.NT.HW]
+;
+
+; =================== Monitor\LGD07CC ==============================
+[SurfaceOemPanelCustomization_Install_LGD07CC.NT]
+DelReg = DEL_CURRENT_REG
+CopyFiles=ProfilesCopy, CalibrationCopyLGD07CC
+AddReg=SurfaceOemPanelCustomization_Install_NT_AddReg_LGD07CC
+
+[SurfaceOemPanelCustomization_Install_LGD07CC.NT.Components]
+AddComponent = Vision_SoftwareComponent,, Vision_SoftwareComponent_Inst
+
+[CalibrationCopyLGD07CC]
+DisplayCalibrationMeasurementsIncell15.bin
+DisplayCalibrationConfigIncell15.bin
+
+[SurfaceOemPanelCustomization_Install_NT_AddReg_LGD07CC]
+HKR,,ICMProfile,0x00010000,"SurfacesRGB.icm"
+HKR,,ICMProfile,0x00010008,"SurfaceVivid.icm"
+HKR,,ICMProfileAC,0x00010000,"SurfaceHDR.icm"
+HKR,,CalibrationMeasurementTypicalBlobFile, REG_EXPAND_SZ, "%13%\DisplayCalibrationMeasurementsIncell15.bin"
+HKR,,CalibrationConfigTypicalBlobFile, REG_EXPAND_SZ, "%13%\DisplayCalibrationConfigIncell15.bin"
+HKR,,EnableBoostRefreshRateByDefault,%REG_DWORD%,1
+HKR,,MicrosoftApprovedAcmSupport,%REG_DWORD%,1
+HKR,,EnableIntegratedPanelHdrByDefault,%REG_DWORD%,0
+; HDR certification GUIDs below: DOLBYVISION_LOWLATENCY, DOLBYVISION_GENERIC
+HKR,,DisplayHdrLevel,0x00010008,6363AA90-A651-4154-A9E1-2D765C08E68F,4DDABBE3-5BC1-4F5C-9AA8-D611BC96F6ED
+
+[SurfaceOemPanelCustomization_Install_LGD07CC.NT.HW]
+;
+
+; =================== Generic ==================================
+
+[Vision_SoftwareComponent_Inst]
+ComponentIDs = VEN_DOLBY&PID_HSA_DolbyVisionExt
+
+[ProfilesCopy]
+SurfacesRGB.icm
+SurfaceVivid.icm
+SurfaceHDR.icm
+PQConfig.dv
+
+[DEL_CURRENT_REG]
+HKR,,ICMProfile
+
+[Strings]
+ManufacturerName="Surface"
+DeviceName="Surface Panel"
+DiskName="Surface Panel Driver Customization Installation Disk"
+REG_EXPAND_SZ          = 0x00020000
+REG_DWORD              = 0x00010001
+REG_MULTI_SZ           = 0x00010000
+REG_BINARY             = 0x00000001
+REG_SZ                 = 0x00000000
