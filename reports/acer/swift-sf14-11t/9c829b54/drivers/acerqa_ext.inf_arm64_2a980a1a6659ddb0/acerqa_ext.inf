@@ -1,0 +1,49 @@
+;/*++
+; Copyright (c) I3D Technology Inc.  All rights reserved.
+; INF: acerqa_ext.inf
+;--*/
+
+[Version]
+Signature = "$WINDOWS NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider = %ManufacturerName%
+ExtensionId = {f0ccc0ca-0b24-465e-a9c5-b60fb2a16b4a}
+CatalogFile = acerqa_ext.cat
+DriverVer = 05/28/2024,1.3.25.1023
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName% = AQAExtension, NTAMD64.10.0...22000, NTARM64.10.0...22000
+
+[AQAExtension.NTAMD64.10.0...22000]
+%AQAExtensionDisc% = AQAExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12031025 ; Aspire
+%AQAExtensionDisc% = AQAExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12041025 ; Swift
+%AQAExtensionDisc% = AQAExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12051025 ; TravelMate
+%AQAExtensionDisc% = AQAExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12061025 ; Extensa
+%AQAExtensionDisc% = AQAExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12071025 ; Enduro
+%AQAExtensionDisc% = AQAExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12091025 ; ConceptD
+
+[AQAExtension.NTARM64.10.0...22000]
+%AQAExtensionDisc% = AQAExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12031025 ; Aspire
+%AQAExtensionDisc% = AQAExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12041025 ; Swift
+%AQAExtensionDisc% = AQAExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12051025 ; TravelMate
+
+[AQAExtension_Install.NT]
+; Empty
+
+[AQAExtension_Install.NT.HW]
+AddReg = AQAExtension_AddReg
+
+[AQAExtension_AddReg]
+; Empty
+
+[AQAExtension_Install.NT.Components]
+AddComponent = AQA_DCHU_component,,AQAExtension_ComponentInstall
+
+[AQAExtension_ComponentInstall]
+ComponentIds=SWComp_AcerQuickAccessDriver
+
+[Strings]
+ManufacturerName = "Acer Incorporated"
+AQAExtensionDisc = "Acer Quick Access Extension Disk"

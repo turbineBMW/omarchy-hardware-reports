@@ -1,0 +1,82 @@
+;
+; Copyright (c) ULIC Tek Inc.  All rights reserved.
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=SoftwareComponent
+ClassGuid={5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider=%ManufacturerName%
+CatalogFile=EZServiceComponent.cat
+DriverVer = 08/03/2026,0.504.0.0
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+vccorlib140.dll = 1,,
+MSVCP140.dll = 1,,
+vcruntime140.dll = 1,,
+vcruntime140_1.dll = 1,,
+AcerEZService.exe = 1,,
+Helper.dll = 1,,
+server.crt = 1,,
+server.key = 1,,
+localhost.pfx = 1,,
+main.zip = 1,,
+sensehome_patch.json = 1,,
+sensehome_patch.zip = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64.10.0...19041,NTarm64.10.0...19041
+
+[Standard.NTamd64.10.0...19041]
+%EZServiceComponentDeviceDesc%=ServiceComponentInst, SWC\SWComp_EZServiceComponent
+
+[Standard.NTarm64.10.0...19041]
+%EZServiceComponentDeviceDesc%=ServiceComponentInst, SWC\SWComp_EZServiceComponent
+
+[ServiceComponentInst]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+vccorlib140.dll
+MSVCP140.dll
+vcruntime140.dll
+vcruntime140_1.dll
+AcerEZService.exe
+Helper.dll
+server.crt
+server.key
+localhost.pfx
+main.zip
+sensehome_patch.json
+sensehome_patch.zip
+
+;-------------- Service installation
+[ServiceComponentInst.Services]
+AddService = , 0x00000002
+AddService = AcerEZSvc, 0x00000800, AcerEZSvc_Inst
+
+[AcerEZSvc_Inst]
+DisplayName    = %EZServiceComponentSVCDESC%
+Description    = %EZServiceComponentSVCDESC%
+ServiceType    = 0x00000010
+StartType      = 2               ; SERVICE_WIN32_OWN_PROCESS
+ErrorControl   = 1               ; SERVICE_AUTO_START
+;DelayedAutoStart = 0x1
+ServiceBinary  = %13%\AcerEZService.exe
+
+[Strings]
+ManufacturerName="ULIC Tek Inc."
+DiskName = "Acer Experience Zone Component Installation Disk"
+EZServiceComponentDeviceDesc = "Acer Experience Zone Software Component"
+EZServiceComponentSVCDESC = "Acer Experience Zone Component Service"

@@ -1,0 +1,207 @@
+;
+; SysMonitorService.inf
+;
+[Version]
+Signature="$WINDOWS NT$"
+Class=SoftwareComponent
+ClassGuid={5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider=%ProviderString%
+DriverVer = 06/15/2026,1.0.20.2
+CatalogFile.NTamd64=SysMonitorServiceamd64.cat
+CatalogFile.NTarm64=SysMonitorServicearm64.cat
+PnpLockdown=1
+
+; ================= Device section =====================
+
+[Manufacturer]
+%ManufacturerString%=Microsoft,NTamd64.10.0...19041,NTarm64.10.0...19041,NTarm64.10.0...26100
+
+[Microsoft.NTamd64.10.0...19041]
+%DeviceDesc%=SysMonitorService_x64, SWC\VEN_1025&DEV_165F&SWComp_AcerSysMonitorServiceDriver
+%DeviceDesc%=SysMonitorService_Intel, SWC\VEN_1025&DEV_165F&SUBSYS_11&SWComp_AcerSysMonitorServiceDriver
+%DeviceDesc%=SysMonitorService_AMD, SWC\VEN_1025&DEV_165F&SUBSYS_13&SWComp_AcerSysMonitorServiceDriver
+; Gaming platform
+%DeviceDesc%=SysMonitorService_x64, SWC\VEN_1025&DEV_165F&Gaming&SWComp_AcerSysMonitorServiceDriver
+%DeviceDesc%=SysMonitorService_Intel, SWC\VEN_1025&DEV_165F&Gaming_11&SWComp_AcerSysMonitorServiceDriver
+%DeviceDesc%=SysMonitorService_AMD, SWC\VEN_1025&DEV_165F&Gaming_13&SWComp_AcerSysMonitorServiceDriver
+
+[Microsoft.NTarm64.10.0...19041]
+%DeviceDesc%=SysMonitorService_arm64, SWC\VEN_1025&DEV_165F&SWComp_AcerSysMonitorServiceDriver
+%DeviceDesc%=SysMonitorService_Qcom, SWC\VEN_1025&DEV_165F&SUBSYS_12&SWComp_AcerSysMonitorServiceDriver
+
+[Microsoft.NTarm64.10.0...26100]
+%DeviceDesc%=SysMonitorService_arm64, SWC\VEN_1025&DEV_165F&SWComp_AcerSysMonitorServiceDriver
+%DeviceDesc%=SysMonitorService_Qcom, SWC\VEN_1025&DEV_165F&SUBSYS_12&SWComp_AcerSysMonitorServiceDriver
+%DeviceDesc%=SysMonitorService_Nv, SWC\VEN_1025&DEV_165F&SUBSYS_16&SWComp_AcerSysMonitorServiceDriver
+; Gaming platform
+%DeviceDesc%=SysMonitorService_arm64, SWC\VEN_1025&DEV_165F&Gaming&SWComp_AcerSysMonitorServiceDriver
+%DeviceDesc%=SysMonitorService_Qcom, SWC\VEN_1025&DEV_165F&Gaming_12&SWComp_AcerSysMonitorServiceDriver
+%DeviceDesc%=SysMonitorService_Nv, SWC\VEN_1025&DEV_165F&Gaming_16&SWComp_AcerSysMonitorServiceDriver
+
+[SysMonitorService_x64]
+CopyFiles=ExeCopy
+CopyFiles=ExeCopy.NTamd64
+
+[SysMonitorService_arm64]
+CopyFiles=ExeCopy
+CopyFiles=ExeCopy.NTarm64
+
+[SysMonitorService_Intel]
+CopyFiles=ExeCopy
+CopyFiles=ExeCopy.NTamd64
+CopyFiles=ExeCopy_Intel
+
+[SysMonitorService_AMD]
+CopyFiles=ExeCopy
+CopyFiles=ExeCopy.NTamd64
+CopyFiles=ExeCopy_AMD
+
+[SysMonitorService_Qcom]
+CopyFiles=ExeCopy
+CopyFiles=ExeCopy.NTarm64
+CopyFiles=ExeCopy_Qcom
+
+[SysMonitorService_Nv]
+CopyFiles=ExeCopy
+CopyFiles=ExeCopy.NTarm64
+CopyFiles=ExeCopy_Nv
+
+[SysMonitorService_x64.Services]
+AddService=,0x00000002,
+AddService=ASMSvc, 0x00000800, ASMSvc_x64_ServiceInstall
+
+[SysMonitorService_arm64.Services]
+AddService=,0x00000002,
+AddService=ASMSvc, 0x00000800, ASMSvc_arm64_ServiceInstall
+
+[SysMonitorService_Intel.Services]
+AddService=,0x00000002
+AddService=ASMSvc, 0x00000800, ASMSvc_x64_ServiceInstall
+
+[SysMonitorService_AMD.Services]
+AddService=,0x00000002
+AddService=ASMSvc, 0x00000800, ASMSvc_x64_ServiceInstall
+
+[SysMonitorService_Qcom.Services]
+AddService=,0x00000002
+AddService=ASMSvc, 0x00000800, ASMSvc_arm64_ServiceInstall
+
+[SysMonitorService_Nv.Services]
+AddService=,0x00000002
+AddService=ASMSvc, 0x00000800, ASMSvc_arm64_ServiceInstall
+
+[ASMSvc_x64_ServiceInstall]
+DisplayName    = %ServiceDesc%
+Description    = %ServiceDesc%
+ServiceType    = 0x00000010      ; SERVICE_WIN32_SHARE_PROCESS
+StartType      = 2               ; SERVICE_AUTO_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\x64\AcerSystemCentralService.exe
+
+[ASMSvc_arm64_ServiceInstall]
+DisplayName    = %ServiceDesc%
+Description    = %ServiceDesc%
+ServiceType    = 0x00000010      ; SERVICE_WIN32_SHARE_PROCESS
+StartType      = 2               ; SERVICE_AUTO_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\ARM64\AcerSystemCentralService.exe
+
+; ================= copy files =====================
+[ExeCopy]
+License.txt
+
+[ExeCopy.NTamd64]
+AcerSystemCentralService.exe
+AcerSysMonitorService.exe
+AcerSysHardwareService.exe
+LaunchUWPApp.exe
+msvcp140_1.dll
+msvcp140.dll
+msvcp140_2.dll
+vccorlib140.dll
+vcruntime140.dll
+vcruntime140_1.dll
+DPS.ini
+
+[ExeCopy.NTarm64]
+AcerSystemCentralService.exe
+AcerSysMonitorService.exe
+AcerSysHardwareService.exe
+LaunchUWPApp.exe
+msvcp140_1.dll
+msvcp140.dll
+msvcp140_2.dll
+vccorlib140.dll
+vcruntime140.dll
+vcruntime140_1.dll
+
+[ExeCopy_Intel]
+
+[ExeCopy_Qcom]
+
+[ExeCopy_AMD]
+
+[ExeCopy_Nv]
+
+[SourceDisksNames]
+1=%DiskDesc%,,,
+
+[SourceDisksFiles]
+License.txt=1
+
+[SourceDisksFiles.amd64]
+;SysMonitorServiceSoftwareComponent.sys=1,\x64
+AcerSystemCentralService.exe=1,\x64
+AcerSysMonitorService.exe=1,\x64
+AcerSysHardwareService.exe=1,\x64
+LaunchUWPApp.exe=1,\x64
+msvcp140_1.dll=1,\x64
+msvcp140.dll=1,\x64
+msvcp140_2.dll=1,\x64
+vccorlib140.dll=1,\x64
+vcruntime140.dll=1,\x64
+vcruntime140_1.dll=1,\x64
+DPS.ini=1,\x64
+
+[SourceDisksFiles.arm64]
+;SysMonitorServiceSoftwareComponent.sys=1,\ARM64
+AcerSystemCentralService.exe=1,\ARM64
+AcerSysMonitorService.exe=1,\ARM64
+AcerSysHardwareService.exe=1,\ARM64
+LaunchUWPApp.exe=1,\ARM64
+msvcp140_1.dll=1,\ARM64
+msvcp140.dll=1,\ARM64
+msvcp140_2.dll=1,\ARM64
+vccorlib140.dll=1,\ARM64
+vcruntime140.dll=1,\ARM64
+vcruntime140_1.dll=1,\ARM64
+
+[DestinationDirs]
+SysCopy=13
+SysCopy.NTamd64=13,\x64
+SysCopy.NTarm64=13,\ARM64
+ExeCopy=13
+ExeCopy.NTamd64=13,\x64
+ExeCopy.NTarm64=13,\ARM64
+ExeCopy_Intel=13,\x64
+ExeCopy_Qcom=13,\ARM64
+ExeCopy_AMD=13,\x64
+ExeCopy_Nv=13,\ARM64
+
+;---------------------------------------------------------------;
+
+[Strings]
+ProviderString			= "Acer Incorporated"
+ManufacturerString		= "Acer Incorporated"
+ClassName				= "Acer System Monitor Service"
+DeviceDesc				= "Acer SystemMonitoring Software Component"
+DeviceDesc_Intel		= "Acer SystemMonitoring Software Component Intel Platform"
+DeviceDesc_Qcom			= "Acer SystemMonitoring Software Component Qualcomm Platform"
+DeviceDesc_AMD			= "Acer SystemMonitoring Software Component AMD Platform"
+DeviceDesc_Gaming       = "Acer SystemMonitoring Gaming Software Component"
+ServiceDesc				= "Acer System Monitor Service"
+DiskDesc				= "Acer System Monitor Service Installation Disk"
+DiskDesc_x64			= "Acer System Monitor Service Installation Disk for x64"
+DiskDesc_arm64			= "Acer System Monitor Service Installation Disk for arm64"
+AUTORUN					= "Software\Microsoft\Windows\CurrentVersion\Run"
+;SysMonitorService_UNINSTALL	= "Software\Microsoft\Windows\CurrentVersion\Uninstall\{5AF1E4FF-6524-47FF-AF52-671D028DF7DE}"

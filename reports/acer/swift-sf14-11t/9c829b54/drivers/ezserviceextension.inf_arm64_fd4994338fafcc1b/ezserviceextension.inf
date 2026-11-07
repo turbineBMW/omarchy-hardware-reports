@@ -1,0 +1,75 @@
+;
+; Copyright (c) ULIC Tek Inc.  All rights reserved.
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Extension
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+ExtensionId={AE5A75CE-90FA-40B6-8F71-F05E6924F03B}
+Provider=%ManufacturerName%
+CatalogFile=EZServiceExtension.cat
+DriverVer = 09/06/2024,0.404.0.0
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64.10.0...19041,NTarm64.10.0...19041
+
+[Standard.NTamd64.10.0...19041]
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10011025 ; Predator
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10021025 ; Nitro
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10031025 ; Aspire
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10041025 ; Swift
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10051025 ; TravelMate
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10061025 ; Extensa
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_11011025 ; Predator
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_11021025 ; Nitro
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_11031025 ; Aspire
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_11041025 ; Swift
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_11051025 ; TravelMate
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_11061025 ; Extensa
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_13011025 ; Predator
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_13021025 ; Nitro
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_13031025 ; Aspire
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_13041025 ; Swift
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_13051025 ; TravelMate
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_13061025 ; Extensa
+
+[Standard.NTarm64.10.0...19041]
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10011025 ; Predator
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10021025 ; Nitro
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10031025 ; Aspire
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10041025 ; Swift
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10051025 ; TravelMate
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10061025 ; Extensa
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_12011025 ; Predator
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_12021025 ; Nitro
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_12031025 ; Aspire
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_12041025 ; Swift
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_12051025 ; TravelMate
+%EZServiceExtension.DeviceDesc% = EZServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_12061025 ; Extensa
+
+[EZServiceExtension]
+
+[EZServiceExtension.Components]
+AddComponent=AcerEZServiceExtensionComponent,,AcerDriverComponent_Inst
+
+[AcerDriverComponent_Inst]
+ComponentIds=SWComp_EZServiceComponent
+
+[Strings]
+ManufacturerName="ULIC Tek Inc."
+DiskName = "Acer Experience Zone Extension Installation Disk"
+EZServiceExtension.DeviceDesc = "Acer Experience Zone Extension Device"

@@ -1,0 +1,132 @@
+;
+; AcerDeviceEnablingServiceExtension.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Extension
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+ExtensionId={3EE9160B-3129-4A9F-A380-8B41A40AC489} ;Change to your Extension ID, could be generated via Tools -> Create GUID. 
+Provider=%ManufacturerName%
+CatalogFile=AcerDeviceEnablingServiceExtension.cat
+DriverVer = 03/30/2026,1.0.0.3016
+PnPLockdown=1
+
+;*****************************************
+; Install Section
+;*****************************************
+[Manufacturer]
+%ManufacturerName%=ADES,NTamd64.10.0...15063, NTarm64.10.0...15063
+%ManufacturerName%=ADESNextGen,NTamd64.10.0...15063, NTarm64.10.0...15063
+
+[ADES.NTamd64.10.0...15063]
+;*****************************************
+; NB
+;*****************************************
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_10011025 ;Predator
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_10021025 ;Nitro
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_10031025 ;Aspire, Spin, Aspire Vero
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_10041025 ;Swift
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_10051025 ;TravelMate, TravelMate Vero
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_10061025 ;Extensa
+;*****************************************
+; DT
+;*****************************************
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_20011025 ;Predator
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_20021025 ;Nitro
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_20031025 ;Aspire
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_20041025 ;Veriton
+;*****************************************
+; CTE NB
+;*****************************************
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_30011025 ;Aspire, Aspire Lite
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_30021025 ;Swift, Swift Lite
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_30031025 ;TravelMate, TravelMate Lite
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_30041025 ;Predator, Predator Lite
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_30051025 ;Nitro, Nitro Lite
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_31011025 ;Aopen
+;*****************************************
+; CTE DT
+;*****************************************
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_40011025 ;Desktop PC
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_40021025 ;Mobile PC
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_40031025 ;Gaming Console
+
+[ADES.NTarm64.10.0...15063]
+;*****************************************
+; NB
+;*****************************************
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_10011025 ;Predator
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_10021025 ;Nitro
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_10031025 ;Aspire, Spin, Aspire Vero
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_10041025 ;Swift
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_10051025 ;TravelMate, TravelMate Vero
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_10061025 ;Extensa
+;*****************************************
+; DT
+;*****************************************
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_20011025 ;Predator
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_20021025 ;Nitro
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_20031025 ;Aspire
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_20041025 ;Veriton
+;*****************************************
+; CTE NB
+;*****************************************
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_30011025 ;Aspire, Aspire Lite
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_30021025 ;Swift, Swift Lite
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_30031025 ;TravelMate, TravelMate Lite
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_30041025 ;Predator, Predator Lite
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_30051025 ;Nitro, Nitro Lite
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_31011025 ;Aopen
+;*****************************************
+; CTE DT
+;*****************************************
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_40011025 ;Desktop PC
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_40021025 ;Mobile PC
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_1783&SUBSYS_40031025 ;Gaming Console
+
+[ADESNextGen.NTamd64.10.0...15063]
+;*****************************************
+; NB Next Gen Intel, AMD
+;*****************************************
+; Next Gen x64
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_11011025 ;Predator
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_11021025 ;Nitro
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_11031025 ;Aspire, Spin, Aspire Vero
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_11041025 ;Swift
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_11051025 ;TravelMate, TravelMate Vero
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_11061025 ;Extensa
+; Next Gen AMD
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_13011025 ;Predator
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_13021025 ;Nitro
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_13031025 ;Aspire, Spin, Aspire Vero
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_13041025 ;Swift
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_13051025 ;TravelMate, TravelMate Vero
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_13061025 ;Extensa
+; Gaming HH
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_14011025 ;Predator
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_14021025 ;Nitro
+
+[ADESNextGen.NTarm64.10.0...15063]
+;*****************************************
+; NB Next Gen ARM64
+;*****************************************
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_12011025 ;Predator
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_12021025 ;Nitro
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_12031025 ;Aspire, Spin, Aspire Vero
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_12041025 ;Swift
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_12051025 ;TravelMate, TravelMate Vero
+%Device.ExtensionDesc%=ADES.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_12061025 ;Extensa
+
+[ADES.Device]
+;
+
+[ADES.Device.Components]
+AddComponent=AcerDeviceEnablingServiceComponent,,AcerDeviceEnablingServiceComponent_Inst
+
+[AcerDeviceEnablingServiceComponent_Inst]
+ComponentIDs=SWComp_ADES ;Change to your component ID.
+
+[Strings]
+ManufacturerName     = "Acer Incorporated"
+Device.ExtensionDesc = "Acer Device Enabling Service Extension Driver"

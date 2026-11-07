@@ -1,0 +1,21 @@
+{
+  "type": "devicetree",
+  "name": "Acer Swift SF14-11T",
+  "compatible": "",
+  "hwids": [
+    "a50b2dc3-7665-5a92-9bc8-b389f0a4874a",
+    "d48fd4e5-a949-5411-8630-b9e7ea381b61",
+    "08b0c4ba-6cc5-5752-a254-5a68cba08c6a",
+    "c53429ce-93d9-5bf6-b6ef-afc52d51ef5a",
+    "b4bfd645-4767-5199-94f5-9dd92c91aa7d",
+    "de75b122-a838-5e2d-9607-747f4ac3b335",
+    "e4134d8a-ebe7-5893-b4ef-b09bbcd8e8b3",
+    "9625cffd-3b14-56dc-aa6f-c768e6dbf160",
+    "72c8065a-3a24-5c3b-bec7-b2358eab98ac",
+    "316441f6-8cc6-5fb9-9f12-943bee4d140a",
+    "ee8fa049-e5f4-51e4-89d8-89a0140b8f38",
+    "5d7535f1-2e8f-573e-950a-4652ba4cfe8f",
+    "0a043e05-97b8-526f-9096-69272917da77",
+    "f0da1a1f-bd6e-566a-a5e3-6d26687ada5f"
+  ]
+}

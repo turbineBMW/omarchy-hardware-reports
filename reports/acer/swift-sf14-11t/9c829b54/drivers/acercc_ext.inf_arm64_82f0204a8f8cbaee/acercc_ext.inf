@@ -1,0 +1,50 @@
+;/*++
+; Copyright (c) I3D Technology Inc.  All rights reserved.
+; INF: acercc_ext.inf
+;--*/
+
+[Version]
+Signature = "$WINDOWS NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider = %ManufacturerName%
+ExtensionId = {b9c0a3fd-da71-444e-b20d-2512e53ba30f}
+CatalogFile = acercc_ext.cat
+DriverVer = 05/28/2024,1.3.20.1020
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName% = ACCExtension, NTAMD64.10.0...22000, NTARM64.10.0...22000
+
+[ACCExtension.NTAMD64.10.0...22000]
+%ACCExtensionDisc% = ACCExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12031025 ; Aspire
+%ACCExtensionDisc% = ACCExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12041025 ; Swift
+%ACCExtensionDisc% = ACCExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12051025 ; TravelMate
+%ACCExtensionDisc% = ACCExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12061025 ; Extensa
+%ACCExtensionDisc% = ACCExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12071025 ; Enduro
+%ACCExtensionDisc% = ACCExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12091025 ; ConceptD
+
+
+[ACCExtension.NTARM64.10.0...22000]
+%ACCExtensionDisc% = ACCExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12031025 ; Aspire
+%ACCExtensionDisc% = ACCExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12041025 ; Swift
+%ACCExtensionDisc% = ACCExtension_Install, ACPI\VEN_1025&DEV_165F&SUBSYS_12051025 ; TravelMate
+
+[ACCExtension_Install.NT]
+; Empty
+
+[ACCExtension_Install.NT.HW]
+AddReg = ACCExtension_AddReg
+
+[ACCExtension_AddReg]
+; Empty
+
+[ACCExtension_Install.NT.Components]
+AddComponent = ACC_DCHU_component,,ACCExtension_ComponentInstall
+
+[ACCExtension_ComponentInstall]
+ComponentIds=SWComp_AcerCareCenterDriver
+
+[Strings]
+ManufacturerName = "Acer Incorporated"
+ACCExtensionDisc = "Acer Care Center Extension Disk"

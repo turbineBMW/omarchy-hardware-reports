@@ -1,0 +1,170 @@
+;
+; SysMonitorServiceExtension.inf
+;
+[Version]
+Signature="$WINDOWS NT$"
+Class=Extension
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%ProviderString%
+DriverVer = 02/10/2026,1.0.19.0
+ExtensionId = {2812DAFA-5323-4FAB-8A49-05A8EF73C700}
+CatalogFile=SysMonitorServiceExtension.cat
+PnpLockdown=1
+
+; ================= Device section =====================
+
+[Manufacturer]
+%ManufacturerString%=AcerInc,NTarm64.10.0...15063,NTamd64.10.0...15063,NTarm64.10.0...22631,NTamd64.10.0...22631
+
+[AcerInc.NTamd64.10.0...15063]
+; Old device;
+; Aspire
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10031025
+; Swift
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10041025
+; TravelMate
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10051025
+; Extensa
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10061025
+
+[AcerInc.NTarm64.10.0...15063]
+; Old device
+; Aspire
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10031025
+; Swift
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10041025
+; TravelMate
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10051025
+; Extensa
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10061025
+
+[AcerInc.NTamd64.10.0...22631]
+; Old device; 
+; Predator
+%Acer.ExtensionDesc%=SysMonitorServiceExtension_Gaming, ACPI\VEN_1025&DEV_165F&SUBSYS_10011025
+; Nitro
+%Acer.ExtensionDesc%=SysMonitorServiceExtension_Gaming, ACPI\VEN_1025&DEV_165F&SUBSYS_10021025
+; Aspire
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10031025
+; Swift
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10041025
+; TravelMate
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10051025
+; Extensa
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10061025
+; Next Gen Intel
+; Predator
+%Acer.ExtensionDesc.Sys11%=SysMonitorServiceExtension_Gaming_11, ACPI\VEN_1025&DEV_165F&SUBSYS_11011025
+; Nitro
+%Acer.ExtensionDesc.Sys11%=SysMonitorServiceExtension_Gaming_11, ACPI\VEN_1025&DEV_165F&SUBSYS_11021025
+; Aspire
+%Acer.ExtensionDesc.Sys11%=SysMonitorServiceExtension_SUBSYS_11, ACPI\VEN_1025&DEV_165F&SUBSYS_11031025
+; Swift
+%Acer.ExtensionDesc.Sys11%=SysMonitorServiceExtension_SUBSYS_11, ACPI\VEN_1025&DEV_165F&SUBSYS_11041025
+; TravelMate
+%Acer.ExtensionDesc.Sys11%=SysMonitorServiceExtension_SUBSYS_11, ACPI\VEN_1025&DEV_165F&SUBSYS_11051025
+; Extensa
+%Acer.ExtensionDesc.Sys11%=SysMonitorServiceExtension_SUBSYS_11, ACPI\VEN_1025&DEV_165F&SUBSYS_11061025
+; Next Gen AMD
+; Predator
+%Acer.ExtensionDesc.Sys13%=SysMonitorServiceExtension_Gaming_13, ACPI\VEN_1025&DEV_165F&SUBSYS_13011025
+; Nitro
+%Acer.ExtensionDesc.Sys13%=SysMonitorServiceExtension_Gaming_13, ACPI\VEN_1025&DEV_165F&SUBSYS_13021025
+; Aspire
+%Acer.ExtensionDesc.Sys13%=SysMonitorServiceExtension_SUBSYS_13, ACPI\VEN_1025&DEV_165F&SUBSYS_13031025
+; Swift
+%Acer.ExtensionDesc.Sys13%=SysMonitorServiceExtension_SUBSYS_13, ACPI\VEN_1025&DEV_165F&SUBSYS_13041025
+; TravelMate
+%Acer.ExtensionDesc.Sys13%=SysMonitorServiceExtension_SUBSYS_13, ACPI\VEN_1025&DEV_165F&SUBSYS_13051025
+; Extensa
+%Acer.ExtensionDesc.Sys13%=SysMonitorServiceExtension_SUBSYS_13, ACPI\VEN_1025&DEV_165F&SUBSYS_13061025
+
+[AcerInc.NTarm64.10.0...22631]
+; Old device
+; Aspire
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10031025
+; Swift
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10041025
+; TravelMate
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10051025
+; Extensa
+%Acer.ExtensionDesc%=SysMonitorServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10061025
+; Next Gen Qualcomm
+; Aspire
+%Acer.ExtensionDesc.Sys12%=SysMonitorServiceExtension_SUBSYS_12, ACPI\VEN_1025&DEV_165F&SUBSYS_12031025
+; Swift
+%Acer.ExtensionDesc.Sys12%=SysMonitorServiceExtension_SUBSYS_12, ACPI\VEN_1025&DEV_165F&SUBSYS_12041025
+; TravelMate
+%Acer.ExtensionDesc.Sys12%=SysMonitorServiceExtension_SUBSYS_12, ACPI\VEN_1025&DEV_165F&SUBSYS_12051025
+; Extensa
+%Acer.ExtensionDesc.Sys12%=SysMonitorServiceExtension_SUBSYS_12, ACPI\VEN_1025&DEV_165F&SUBSYS_12061025
+
+[SysMonitorServiceExtension]
+
+[SysMonitorServiceExtension.Components]
+AddComponent = AcerDriverComponent,,AcerDriverComponent_ComponentInstall
+
+[AcerDriverComponent_ComponentInstall]
+ComponentIds=VEN_1025&DEV_165F&SWComp_AcerSysMonitorServiceDriver
+
+[SysMonitorServiceExtension_SUBSYS_11]
+
+[SysMonitorServiceExtension_SUBSYS_11.Components]
+AddComponent = AcerDriverComponentSys11,,AcerDriverComponent_SUBSYS_11_ComponentInstall
+
+[AcerDriverComponent_SUBSYS_11_ComponentInstall]
+ComponentIds=VEN_1025&DEV_165F&SUBSYS_11&SWComp_AcerSysMonitorServiceDriver
+
+[SysMonitorServiceExtension_SUBSYS_12]
+
+[SysMonitorServiceExtension_SUBSYS_12.Components]
+AddComponent = AcerDriverComponentSys12,,AcerDriverComponent_SUBSYS_12_ComponentInstall
+
+[AcerDriverComponent_SUBSYS_12_ComponentInstall]
+ComponentIds=VEN_1025&DEV_165F&SUBSYS_12&SWComp_AcerSysMonitorServiceDriver
+
+[SysMonitorServiceExtension_SUBSYS_13]
+
+[SysMonitorServiceExtension_SUBSYS_13.Components]
+AddComponent = AcerDriverComponentSys13,,AcerDriverComponent_SUBSYS_13_ComponentInstall
+
+[AcerDriverComponent_SUBSYS_13_ComponentInstall]
+ComponentIds=VEN_1025&DEV_165F&SUBSYS_13&SWComp_AcerSysMonitorServiceDriver
+
+[SysMonitorServiceExtension_Gaming]
+
+[SysMonitorServiceExtension_Gaming.Components]
+AddComponent = AcerDriverComponentGaming,,AcerDriverComponent_Gaming_ComponentInstall
+
+[AcerDriverComponent_Gaming_ComponentInstall]
+ComponentIds=VEN_1025&DEV_165F&Gaming&SWComp_AcerSysMonitorServiceDriver
+
+[SysMonitorServiceExtension_Gaming_11]
+
+[SysMonitorServiceExtension_Gaming_11.Components]
+AddComponent = AcerDriverComponentGaming11,,AcerDriverComponent_Gaming_11_ComponentInstall
+
+[AcerDriverComponent_Gaming_11_ComponentInstall]
+ComponentIds=VEN_1025&DEV_165F&Gaming_11&SWComp_AcerSysMonitorServiceDriver
+
+[SysMonitorServiceExtension_Gaming_13]
+
+[SysMonitorServiceExtension_Gaming_13.Components]
+AddComponent = AcerDriverComponentGaming13,,AcerDriverComponent_Gaming_13_ComponentInstall
+
+[AcerDriverComponent_Gaming_13_ComponentInstall]
+ComponentIds=VEN_1025&DEV_165F&Gaming_13&SWComp_AcerSysMonitorServiceDriver
+
+[Strings]
+ProviderString			= "Acer Incorporated"
+ManufacturerString		= "Acer Incorporated"
+ClassName				= "Acer System Monitor Service Extension"
+DeviceDesc				= "Acer System Monitor Service Extension"
+ServiceDesc				= "Acer System Monitor Service Extension"
+DiskDesc				= "Acer System Monitor Service Extension Installation Disk"
+AUTORUN					= "Software\Microsoft\Windows\CurrentVersion\Run"
+Acer.ExtensionDesc		= "Acer System Monitor Extension Service"
+Acer.ExtensionDesc.Sys11= "Acer System Monitor Extension Service"
+Acer.ExtensionDesc.Sys12= "Acer System Monitor Extension Service"
+Acer.ExtensionDesc.Sys13= "Acer System Monitor Extension Service"
+;SysMonitorService_UNINSTALL	= "Software\Microsoft\Windows\CurrentVersion\Uninstall\{5AF1E4FF-6524-47FF-AF52-671D028DF7DE}"

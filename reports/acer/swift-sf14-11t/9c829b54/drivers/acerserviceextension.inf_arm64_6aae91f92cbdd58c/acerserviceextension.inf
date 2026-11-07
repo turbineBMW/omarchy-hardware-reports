@@ -1,0 +1,75 @@
+;
+; Copyright (c) ULIC Tek Inc.  All rights reserved.
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Extension
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+ExtensionId={B4C77636-A268-4C0D-8BDA-5DAC51DC16FC}
+Provider=%ManufacturerName%
+CatalogFile=AcerServiceExtension.cat
+DriverVer = 08/12/2024,1.0.266.0
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64.10.0...19041,NTarm64.10.0...19041
+
+[Standard.NTamd64.10.0...19041]
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10011025 ; Predator
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10021025 ; Nitro
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10031025 ; Aspire
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10041025 ; Swift
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10051025 ; TravelMate
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10061025 ; Extensa
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_11011025 ; Predator
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_11021025 ; Nitro
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_11031025 ; Aspire
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_11041025 ; Swift
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_11051025 ; TravelMate
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_11061025 ; Extensa
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_13011025 ; Predator
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_13021025 ; Nitro
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_13031025 ; Aspire
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_13041025 ; Swift
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_13051025 ; TravelMate
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_13061025 ; Extensa
+
+[Standard.NTarm64.10.0...19041]
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10011025 ; Predator
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10021025 ; Nitro
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10031025 ; Aspire
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10041025 ; Swift
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10051025 ; TravelMate
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_10061025 ; Extensa
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_12011025 ; Predator
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_12021025 ; Nitro
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_12031025 ; Aspire
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_12041025 ; Swift
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_12051025 ; TravelMate
+%AcerServiceExtension.DeviceDesc% = AcerServiceExtension, ACPI\VEN_1025&DEV_165F&SUBSYS_12061025 ; Extensa
+
+[AcerServiceExtension]
+
+[AcerServiceExtension.Components]
+AddComponent=AcerDriverComponent,,AcerDriverComponent_Inst
+
+[AcerDriverComponent_Inst]
+ComponentIds=SWComp_AcerServiceComponent
+
+[Strings]
+ManufacturerName="ULIC Tek Inc."
+DiskName = "Acer Service Extension Installation Disk"
+AcerServiceExtension.DeviceDesc = "Acer Service Extension Device"

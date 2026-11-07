@@ -1,0 +1,36 @@
+;
+; CExtensionDrv.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Extension ; TODO: edit Class
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57} ; TODO: edit ClassGuid
+ExtensionId={7fb965a8-e749-4097-aade-66bae894383e} ;Change to your Extension ID, could be generated via Tools -> Create GUID.
+Provider=%ManufacturerName%
+CatalogFile=CExtensionDrv.cat
+DriverVer = 02/05/2025,1.0.0.5
+PnPLockdown=1
+
+;*****************************************
+; Install Section
+;*****************************************
+[Manufacturer]
+%ManufacturerName% = CompalService,NTARM64.10.0...22621
+
+[CompalService.NTARM64.10.0...22621]
+%Device.ExtensionDesc%=CompalService.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_12041025 ;Swift 
+%Device.ExtensionDesc%=CompalService.Device, ACPI\VEN_1025&DEV_165F&SUBSYS_12031025 ;Aspire 
+
+[CompalService.Device]
+;
+
+[CompalService.Device.Components]
+AddComponent=CompalServiceComponent,,CompalServiceComponent_Inst
+
+[CompalServiceComponent_Inst]
+ComponentIDs=SWComp_CompalService ;Change to your component ID.
+
+[Strings]
+ManufacturerName     = "Compal Incorporated"
+Device.ExtensionDesc = "Compal Device Extension Driver"
