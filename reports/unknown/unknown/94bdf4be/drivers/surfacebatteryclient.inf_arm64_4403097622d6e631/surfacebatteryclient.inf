@@ -1,0 +1,86 @@
+;/*++
+;
+;Copyright (c) Microsoft Corporation All rights Reserved
+;
+;Module Name:
+;
+;    SurfaceBatteryClient.inf
+;
+;Abstract:
+;
+;    INF file for installing Surface Battery Client driver.
+;
+;--*/;
+[Version]
+Signature="$WINDOWS NT$"
+Class=Battery
+ClassGuid={72631e54-78a4-11d0-bcf7-00aa00b7b32a}
+Provider=%ProviderName%
+CatalogFile=SurfaceBatteryClient.cat
+DriverVer = 01/10/2026,0.0.23.0
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SurfaceBatteryClient.sys=1,,
+
+;*****************************************
+; Surface Battery Client Class Install Section
+;*****************************************
+
+[Manufacturer]
+%ProviderName%=Standard,NTARM64.10.0...19041
+
+[Standard.NTARM64.10.0...19041]
+%SurfaceBatteryClient%=SurfaceBatteryClient.Inst,  {4AC6B371-5C32-41C4-A184-057DD7B02F7F}\SurfaceBatteryClient
+%SurfaceBatteryClient%=SurfaceBatteryClient.Inst,  {4AC6B371-5C32-41C4-A184-057DD7B02F7F}\SurfaceBatteryMptfClient
+%SurfaceBatteryClient%=SurfaceBatteryClient.Inst,  {4AC6B371-5C32-41C4-A184-057DD7B02F7F}\Target_KIP&Category_Battery
+%SurfaceBatteryClient%=SurfaceBatteryClient.Inst,  ACPI\MSHW0146
+
+[SurfaceBatteryClient.Inst.NT]
+CopyFiles = Drivers_Dir
+
+[Drivers_Dir]
+SurfaceBatteryClient.sys
+
+;-------------- Service installation
+
+[SurfaceBatteryClient.Inst.NT.Services]
+AddService = SurfaceBatteryClient,%SERVICE_DEMAND_START%,SurfaceBatteryClient_Service_Inst
+
+[SurfaceBatteryClient_Service_Inst]
+DisplayName    = %SurfaceBatteryClient%
+ServiceType    = %SERVICE_KERNEL_DRIVER% 
+StartType      = %SERVICE_DEMAND_START% 
+ErrorControl   = %SERVICE_ERROR_NORMAL% 
+ServiceBinary  = %13%\SurfaceBatteryClient.sys 
+
+[Strings] 
+ProviderName="Surface"
+SurfaceBatteryClient="Surface Battery Client Driver"
+DiskName = "Surface Battery Client Driver Installation Disk"
+
+SERVICE_BOOT_START     = 0x0 
+SERVICE_SYSTEM_START   = 0x1 
+SERVICE_AUTO_START     = 0x2 
+SERVICE_DEMAND_START   = 0x3 
+SERVICE_DISABLED       = 0x4 
+
+SERVICE_KERNEL_DRIVER  = 0x1 
+SERVICE_ERROR_IGNORE   = 0x0 
+SERVICE_ERROR_NORMAL   = 0x1 
+SERVICE_ERROR_SEVERE   = 0x2 
+SERVICE_ERROR_CRITICAL = 0x3 
+
+REG_EXPAND_SZ          = 0x00020000 
+REG_DWORD              = 0x00010001 
+REG_MULTI_SZ           = 0x00010000
+REG_BINARY             = 0x00000001
+REG_SZ                 = 0x00000000

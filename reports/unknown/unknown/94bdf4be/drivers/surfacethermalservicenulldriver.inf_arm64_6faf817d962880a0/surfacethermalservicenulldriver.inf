@@ -1,0 +1,92 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; File:               SurfaceThermalServiceDriver.inf
+;
+; Description:        Installation file for the Surface Thermal Service.  This INX
+;                     will install/update SurfaceThermalService, and also install
+;                     a NULL driver on the ACPI node.
+;
+; Copyright (C) Microsoft Corporation.  All Rights Reserved.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Version]
+Signature="$Windows NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%ManufacturerName%
+CatalogFile=SurfaceThermalServiceDriver.cat
+DriverVer = 04/14/2026,0.1.5.0
+PnPLockDown=1
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+SurfaceThermalService.exe=1
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...19041
+
+[Standard.NTARM64.10.0...19041]
+%DeviceName%=SurfaceThermalServiceDriver, {FB8E32DD-12C2-4644-868F-D2CBAD208072}\SurfaceThermalService
+%DeviceName%=SurfaceThermalServiceDriver, ACPI\MSHW0802
+
+[SurfaceThermalServiceDriver.NT]
+CopyFiles=ServiceCopy
+
+[SurfaceThermalServiceDriver.NT.hw]
+
+[SurfaceThermalServiceDriver.NT.Events]
+AddEventProvider = {1E8D5623-6573-47F2-B69E-EEA8923CE036},EventProviderInstall
+
+[SurfaceThermalServiceDriver.NT.Services]
+AddService=SurfaceThermalService,0x00000800,SurfaceThermalServiceInstall  ; This installs SurfaceThermalService (NT Service)
+AddService=,%NULL_DRIVER%                                   ; NULL function driver
+
+
+[SurfaceThermalServiceInstall]
+DisplayName   = %ServiceDisplayName%
+Description   = %ServiceDescription%
+ServiceType   = %SERVICE_WIN32_SHARE_PROCESS%
+StartType     = %SERVICE_AUTO_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %13%\SurfaceThermalService.exe
+
+[EventProviderInstall]
+ProviderName=Microsoft-Surface-SurfaceThermalService
+ResourceFile=%13%\SurfaceThermalService.exe
+MessageFile=%13%\SurfaceThermalService.exe
+AddChannel=Microsoft-Surface-SurfaceThermalService/Operational,0x2,Channel_Install
+
+[Channel_Install]
+Isolation = 1
+Enabled   = 1
+
+[DestinationDirs]
+ServiceCopy=13
+
+[ServiceCopy]
+SurfaceThermalService.exe
+
+[Strings]
+ManufacturerName="Surface"
+DiskName = "Surface Thermal Service Driver Installation Disk"
+DeviceName="Surface Thermal Service"
+ServiceDisplayName="Surface Thermal Service"
+ServiceDescription="Provides support specific for Surface Hardware"
+
+;
+; Non-localizable
+;
+NULL_DRIVER                 = 2
+SPSVCINST_ASSOCSERVICE      = 0x00000002
+SERVICE_KERNEL_DRIVER       = 1
+SERVICE_BOOT_START          = 0
+SERVICE_SYSTEM_START        = 1
+SERVICE_AUTO_START          = 2
+SERVICE_DEMAND_START        = 3
+SERVICE_ERROR_NORMAL        = 1
+SERVICE_ERROR_IGNORE        = 0
+SERVICE_WIN32_SHARE_PROCESS = 0x00000020
+
+;; eof: SurfaceThermalServiceDriver.inx
+;;
