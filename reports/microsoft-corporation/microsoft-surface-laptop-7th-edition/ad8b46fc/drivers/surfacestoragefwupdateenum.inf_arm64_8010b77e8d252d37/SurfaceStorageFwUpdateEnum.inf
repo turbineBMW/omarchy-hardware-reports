@@ -1,0 +1,146 @@
+;/*++
+;
+;Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;Module Name:
+;    SurfaceStorageFwUpdateEnum.inx
+;
+;Abstract:
+;    INF file for installing the SurfaceStorageFwUpdateEnum package. This will create a software DevNode
+;    which will service as the target HWID for the Disk storage firmware package.
+;--*/
+
+[Version]
+Signature="$Windows NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%ManufacturerName%
+ExtensionId = {926368F9-7527-4514-99C9-6E7363E7AEAC}
+CatalogFile=SurfaceStorageFwUpdateEnum.cat
+DriverVer = 06/21/2024,1.2.14.0
+PnPLockDown=1
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...19041
+
+[Standard.NTARM64.10.0...19041]
+%SurfaceStorageFwUpdateKioxia_KBG50ZNS256G.DeviceDesc%=Kioxia_KBG50ZNS256G, SCSI\DiskNVMe____KBG50ZNS256G-KIO
+%SurfaceStorageFwUpdateKioxia_KBG50ZNS512G.DeviceDesc%=Kioxia_KBG50ZNS512G, SCSI\DiskNVMe____KBG50ZNS512G-KIO
+%SurfaceStorageFwUpdateKioxia_KBG50ZNS1T02.DeviceDesc%=Kioxia_KBG50ZNS1T02, SCSI\DiskNVMe____KBG50ZNS1T02-KIO
+%SurfaceStorageFwUpdateSamsung_MZ9L4256HCJQ00BMV.DeviceDesc%=Samsung_MZ9L4256HCJQ00BMV, SCSI\DiskNVMe____MZ9L4256HCJQ-00B
+%SurfaceStorageFwUpdateSamsung_MZ9L4512HBLU00BMV.DeviceDesc%=Samsung_MZ9L4512HBLU00BMV, SCSI\DiskNVMe____MZ9L4512HBLU-00B
+%SurfaceStorageFwUpdateSamsung_MZ9L41T0HBLB00BMV.DeviceDesc%=Samsung_MZ9L41T0HBLB00BMV, SCSI\DiskNVMe____MZ9L41T0HBLB-00B
+%SurfaceStorageFwUpdateWDC_SDDPTQD256G1124.DeviceDesc%=WDC_SDDPTQD256G1124, SCSI\DiskNVMe____SDDPTQD-256G-112
+%SurfaceStorageFwUpdateWDC_SDDPTQD512G1124.DeviceDesc%=WDC_SDDPTQD512G1124, SCSI\DiskNVMe____SDDPTQD-512G-112
+%SurfaceStorageFwUpdateWDC_SDDPTQD1T001124.DeviceDesc%=WDC_SDDPTQD1T001124, SCSI\DiskNVMe____SDDPTQD-1T00-112
+%SurfaceStorageFwUpdateHynix_HFS256GEJ3X108N.DeviceDesc%=Hynix_HFS256GEJ3X108N, SCSI\DiskNVMe____HFS256GEJ3X108N-
+%SurfaceStorageFwUpdateHynix_HFS512GEJ3X108N.DeviceDesc%=Hynix_HFS512GEJ3X108N, SCSI\DiskNVMe____HFS512GEJ3X108N-
+%SurfaceStorageFwUpdateHynix_HFS001TEJ3X108N.DeviceDesc%=Hynix_HFS001TEJ3X108N, SCSI\DiskNVMe____HFS001TEJ3X108N-
+
+;********************1*********************
+[Kioxia_KBG50ZNS256G.NT]
+[Kioxia_KBG50ZNS256G.NT.Components]
+AddComponent = Kioxia_KBG50ZNS256G_component,,Kioxia_KBG50ZNS256G_ComponentInstall
+
+[Kioxia_KBG50ZNS256G_ComponentInstall]
+ComponentIds=StorageFwUpdate_KBG50ZNS256G_KIO_
+;********************2*********************
+[Kioxia_KBG50ZNS512G.NT]
+[Kioxia_KBG50ZNS512G.NT.Components]
+AddComponent = Kioxia_KBG50ZNS512G_component,,Kioxia_KBG50ZNS512G_ComponentInstall
+
+[Kioxia_KBG50ZNS512G_ComponentInstall]
+ComponentIds=StorageFwUpdate_KBG50ZNS512G_KIO_
+;********************3*********************
+[Kioxia_KBG50ZNS1T02.NT]
+[Kioxia_KBG50ZNS1T02.NT.Components]
+AddComponent = Kioxia_KBG50ZNS1T02_component,,Kioxia_KBG50ZNS1T02_ComponentInstall
+
+[Kioxia_KBG50ZNS1T02_ComponentInstall]
+ComponentIds=StorageFwUpdate_KBG50ZNS1T02_KIO_
+;********************4*********************
+[Samsung_MZ9L4256HCJQ00BMV.NT]
+[Samsung_MZ9L4256HCJQ00BMV.NT.Components]
+AddComponent = Samsung_MZ9L4256HCJQ00BMV_component,,Samsung_MZ9L4256HCJQ00BMV_ComponentInstall
+
+[Samsung_MZ9L4256HCJQ00BMV_ComponentInstall]
+ComponentIds=StorageFwUpdate_MZ9L4256HCJQ_00B_
+;********************5*********************
+[Samsung_MZ9L4512HBLU00BMV.NT]
+[Samsung_MZ9L4512HBLU00BMV.NT.Components]
+AddComponent = Samsung_MZ9L4512HBLU00BMV_component,,Samsung_MZ9L4512HBLU00BMV_ComponentInstall
+
+[Samsung_MZ9L4512HBLU00BMV_ComponentInstall]
+ComponentIds=StorageFwUpdate_MZ9L4512HBLU_00B_
+;********************6*********************
+[Samsung_MZ9L41T0HBLB00BMV.NT]
+[Samsung_MZ9L41T0HBLB00BMV.NT.Components]
+AddComponent = Samsung_MZ9L41T0HBLB00BMV_component,,Samsung_MZ9L41T0HBLB00BMV_ComponentInstall
+
+[Samsung_MZ9L41T0HBLB00BMV_ComponentInstall]
+ComponentIds=StorageFwUpdate_MZ9L41T0HBLB_00B_
+;********************7*********************
+[WDC_SDDPTQD256G1124.NT]
+[WDC_SDDPTQD256G1124.NT.Components]
+AddComponent = WDC_SDDPTQD256G1124_component,,WDC_SDDPTQD256G1124_ComponentInstall
+
+[WDC_SDDPTQD256G1124_ComponentInstall]
+ComponentIds=StorageFwUpdate_SDDPTQD256G_112_
+;********************8*********************
+[WDC_SDDPTQD512G1124.NT]
+[WDC_SDDPTQD512G1124.NT.Components]
+AddComponent = WDC_SDDPTQD512G1124_component,,WDC_SDDPTQD512G1124_ComponentInstall
+
+[WDC_SDDPTQD512G1124_ComponentInstall]
+ComponentIds=StorageFwUpdate_SDDPTQD512G_112_
+;********************9*********************
+[WDC_SDDPTQD1T001124.NT]
+[WDC_SDDPTQD1T001124.NT.Components]
+AddComponent = WDC_SDDPTQD1T001124_component,,WDC_SDDPTQD1T001124_ComponentInstall
+
+[WDC_SDDPTQD1T001124_ComponentInstall]
+ComponentIds=StorageFwUpdate_WDC_SDDPTQD1T001124
+;********************10*********************
+[Hynix_HFS256GEJ3X108N.NT]
+[Hynix_HFS256GEJ3X108N.NT.Components]
+AddComponent = Hynix_HFS256GEJ3X108N_component,,Hynix_HFS256GEJ3X108N_ComponentInstall
+
+[Hynix_HFS256GEJ3X108N_ComponentInstall]
+ComponentIds=StorageFwUpdate_HFS256GEJ3X108N_
+;********************11*********************
+[Hynix_HFS512GEJ3X108N.NT]
+[Hynix_HFS512GEJ3X108N.NT.Components]
+AddComponent = Hynix_HFS512GEJ3X108N_component,,Hynix_HFS512GEJ3X108N_ComponentInstall
+
+[Hynix_HFS512GEJ3X108N_ComponentInstall]
+ComponentIds=StorageFwUpdate_HFS512GEJ3X108N_
+;********************12*********************
+[Hynix_HFS001TEJ3X108N.NT]
+[Hynix_HFS001TEJ3X108N.NT.Components]
+AddComponent = Hynix_HFS001TEJ3X108N_component,,Hynix_HFS001TEJ3X108N_ComponentInstall
+
+[Hynix_HFS001TEJ3X108N_ComponentInstall]
+ComponentIds=StorageFwUpdate_Hynix_HFS001TEJ3X108N
+
+;*****************************************
+; Strings section
+;*****************************************
+
+[Strings]
+ManufacturerName = "Surface"
+DiskName = "Surface Storage Firmware Update Enumerator package Installation"
+SurfaceStorageFwUpdateKioxia_KBG50ZNS256G.DeviceDesc = "Kioxia KBG50ZNS256G NVME 256GB Firmware Update Enumerator"
+SurfaceStorageFwUpdateKioxia_KBG50ZNS512G.DeviceDesc = "Kioxia KBG50ZNS512G NVME 512GB Firmware Update Enumerator"
+SurfaceStorageFwUpdateKioxia_KBG50ZNS1T02.DeviceDesc = "Kioxia KBG50ZNS1T02 NVME 1TB Firmware Update Enumerator"
+SurfaceStorageFwUpdateSamsung_MZ9L4256HCJQ00BMV.DeviceDesc = "Samsung MZ9L4256HCJQ-00BMV NVME 256GB Firmware Update Enumerator"
+SurfaceStorageFwUpdateSamsung_MZ9L4512HBLU00BMV.DeviceDesc = "Samsung MZ9L4512HBLU-00BMV NVME 512GB Firmware Update Enumerator"
+SurfaceStorageFwUpdateSamsung_MZ9L41T0HBLB00BMV.DeviceDesc = "Samsung MZ9L41T0HBLB-00BMV NVME 1TB Firmware Update Enumerator"
+SurfaceStorageFwUpdateWDC_SDDPTQD256G1124.DeviceDesc = "WDC SDDPTQD-256G-1124 NVME 256GB Firmware Update Enumerator"
+SurfaceStorageFwUpdateWDC_SDDPTQD512G1124.DeviceDesc = "WDC SDDPTQD-512G-1124 NVME 512GB Firmware Update Enumerator"
+SurfaceStorageFwUpdateWDC_SDDPTQD1T001124.DeviceDesc = "WDC SDDPTQD-1T00-1124 NVME 1TB Firmware Update Enumerator"
+SurfaceStorageFwUpdateHynix_HFS256GEJ3X108N.DeviceDesc = "Hynix HFS256GEJ3X108N NVME 256GB Firmware Update Enumerator"
+SurfaceStorageFwUpdateHynix_HFS512GEJ3X108N.DeviceDesc = "Hynix HFS512GEJ3X108N NVME 512GB Firmware Update Enumerator"
+SurfaceStorageFwUpdateHynix_HFS001TEJ3X108N.DeviceDesc = "Hynix HFS001TEJ3X108N NVME 1TB Firmware Update Enumerator"
