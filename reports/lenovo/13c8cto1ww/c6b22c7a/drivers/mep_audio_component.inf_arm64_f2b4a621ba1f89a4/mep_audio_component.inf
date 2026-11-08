@@ -1,0 +1,173 @@
+;/*++
+;
+;Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;   THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+;   KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+;   IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+;   PURPOSE.
+;
+;Module Name:
+;
+;    mep_audio_component.INF
+;
+;Abstract:
+;
+;    Installation inf for MS VoiceClarity APO based on
+;    AddComponent directives based on NPU Device extension inf
+;
+;--*/
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = AudioProcessingObject
+ClassGuid   = {5989fce8-9cd0-467d-8a6a-5419e31529d4}
+Provider    = %ProviderName%
+DriverVer = 04/01/2026,2.0.30.0
+CatalogFile = mep_audio_component.cat
+PnpLockDown = 1
+
+[Manufacturer]
+%MfgName% = MSVoiceClarityComponentAPO,NTarm64.10.0...22621
+
+[MSVoiceClarityComponentAPO.NTarm64.10.0...22621]
+%Apo.ComponentDesc% = MSVoiceClarityComponentAPO_Install, SWC\MEP_AUD&VEN_MSFT_VOICEFOCUS_V2
+
+[MSVoiceClarityComponentAPO_Install]
+Include     = umpass.inf
+Needs       = UmPass
+CopyFiles   = MSVoiceClarityComponentAPO_CopyFiles
+AddReg      = MSVoiceClarityComponentAPO_Effect.AddReg,MSVoiceClarityComponentAPO_EffectPack.AddReg
+
+[MSVoiceClarityComponentAPO_Install.HW]
+Include = umpass.inf
+Needs   = UmPass.HW
+AddReg  = MSVoiceClarityComponentAPO_Install.HW.AddReg
+
+[MSVoiceClarityComponentAPO_Install.Interfaces]
+Include      = umpass.inf
+Needs        = UmPass.Interfaces
+AddInterface = {8679405B-0F5D-4952-8EFE-3B79A4252624},,MSVoiceClarityComponentAPO.Interfaces.AddInterface
+
+[MSVoiceClarityComponentAPO_Install.Services]
+Include  = umpass.inf
+Needs    = UmPass.Services
+
+[MSVoiceClarityComponentAPO.Interfaces.AddInterface]
+AddReg = MSVoiceClarityComponentAPO.Interfaces.AddInterface.AddReg
+
+[MSVoiceClarityComponentAPO_CopyFiles]
+voiceclarityapo.dll
+
+[MSVoiceClarityComponentAPO_Install.HW.AddReg]
+; Add the interface for perception device interface class
+HKR,,InterfaceGUIDs,%REG_MULTI_SZ%, "{8679405B-0F5D-4952-8EFE-3B79A4252624}"
+
+[MSVoiceClarityComponentAPO.Interfaces.AddInterface.AddReg]
+; Path to VoiceClarity driver store
+HKR,,%VoiceClarityDriverStore%,%REG_SZ%,%13%\voiceclarityapo.dll
+
+[MSVoiceClarityComponentAPO_Effect.AddReg]
+; VoiceClarity Mode effect APO COM registration
+HKR,Classes\CLSID\%VoiceClarity_FX_MODE_CLSID%,,,%APO_MFX_FriendlyName%
+HKR,Classes\CLSID\%VoiceClarity_FX_MODE_CLSID%\InProcServer32,,%REG_EXPAND_SZ%,%13%\voiceclarityapo.dll
+HKR,Classes\CLSID\%VoiceClarity_FX_MODE_CLSID%\InProcServer32,ThreadingModel,,"Both"
+
+; VoiceClarity Mode effect APO registration
+HKR,AudioEngine\AudioProcessingObjects\%VoiceClarity_FX_MODE_CLSID%,"FriendlyName",,%APO_MFX_FriendlyName%
+HKR,AudioEngine\AudioProcessingObjects\%VoiceClarity_FX_MODE_CLSID%,"Copyright",,%Copyright%
+HKR,AudioEngine\AudioProcessingObjects\%VoiceClarity_FX_MODE_CLSID%,"MajorVersion",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%VoiceClarity_FX_MODE_CLSID%,"MinorVersion",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%VoiceClarity_FX_MODE_CLSID%,"Flags", %REG_DWORD%,%APO_FLAG_AEC%
+HKR,AudioEngine\AudioProcessingObjects\%VoiceClarity_FX_MODE_CLSID%,"MinInputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%VoiceClarity_FX_MODE_CLSID%,"MaxInputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%VoiceClarity_FX_MODE_CLSID%,"MinOutputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%VoiceClarity_FX_MODE_CLSID%,"MaxOutputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%VoiceClarity_FX_MODE_CLSID%,"MaxInstances",%REG_DWORD%,0xffffffff
+HKR,AudioEngine\AudioProcessingObjects\%VoiceClarity_FX_MODE_CLSID%,"NumAPOInterfaces",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%VoiceClarity_FX_MODE_CLSID%,"APOInterface0",,"{FD7F2B29-24D0-4B5C-B177-592C39F9CA10}"
+
+; Friendly Name
+HKR,,FriendlyName,,%Apo.ComponentDesc%
+
+[MSVoiceClarityComponentAPO_EffectPack.AddReg]
+; Effect pack registration
+HKR,EffectPackRegistration\%EFFECT_CLSID%,%PKEY_FX_EffectPackSchema_Version%, ,%PKEY_FX_EffectPack_Schema_Internal_V1%
+HKR,EffectPackRegistration\%EFFECT_CLSID%,%PKEY_ItemNameDisplay%, ,%Effect_Pack_FriendlyName%
+HKR,EffectPackRegistration\%EFFECT_CLSID%,%PKEY_FX_Author%, ,%Effect_Pack_Author%
+HKR,EffectPackRegistration\%EFFECT_CLSID%,%PKEY_FX_MEP_UserInterfaceClsid%,%REG_SZ%,%HSA_COM_CLASS_CLSID%
+HKR,EffectPackRegistration\%EFFECT_CLSID%,%PKEY_FX_VersionMajor%, %REG_DWORD%, 1
+HKR,EffectPackRegistration\%EFFECT_CLSID%,%PKEY_FX_VersionMinor%, %REG_DWORD%, 1
+HKR,EffectPackRegistration\%EFFECT_CLSID%\FxProperties,%PKEY_FX_ApplyToCapture%, %REG_DWORD%, 1
+HKR,EffectPackRegistration\%EFFECT_CLSID%\FxProperties,%PKEY_FX_Enumerator%,%REG_MULTI_SZ%,"QCASD"
+HKR,EffectPackRegistration\%EFFECT_CLSID%\FxProperties,%PKEY_FX_Association%,%REG_MULTI_SZ%,%KSNODETYPE_MICROPHONE_ARRAY%,%KSNODETYPE_MICROPHONE%
+HKR,EffectPackRegistration\%EFFECT_CLSID%\FxProperties\FX\0\%AUDIOBLUR_APO_MFX_CONTEXT%\Default,%PKEY_MFX_AudioBlur_Effect_State%,%REG_DWORD%,0x0
+HKR,EffectPackRegistration\%EFFECT_CLSID%\FxProperties\FX\0\%AUDIOBLUR_APO_MFX_CONTEXT%\User
+HKR,EffectPackRegistration\%EFFECT_CLSID%\FxProperties,%PKEY_FX_ModeEffectClsid%,,%VoiceClarity_FX_MODE_CLSID%
+HKR,EffectPackRegistration\%EFFECT_CLSID%\FxProperties,%PKEY_CompositeFX_ModeEffectClsid%,%REG_MULTI_SZ%,%VoiceClarity_FX_MODE_CLSID%
+HKR,EffectPackRegistration\%EFFECT_CLSID%\FxProperties,%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%,%AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS%
+HKR,Classes\CLSID\%HSA_COM_CLASS_CLSID%,,,%HSA_FriendlyName%
+HKR,Classes\CLSID\%HSA_COM_CLASS_CLSID%\InProcServer32,,%REG_EXPAND_SZ%,%13%\voiceclarityapo.dll
+HKR,Classes\CLSID\%HSA_COM_CLASS_CLSID%\InProcServer32,ThreadingModel,,"Both"
+HKR,Classes\CLSID\%HSA_COM_CLASS_CLSID%\Version,,,"1.0"
+
+[SourceDisksNames]
+1 = Disk
+
+[SourceDisksFiles]
+voiceclarityapo.dll = 1
+
+[DestinationDirs]
+MSVoiceClarityComponentAPO_CopyFiles = 13 ; 13=Package's DriverStore directory
+
+[SignatureAttributes]
+voiceclarityapo.dll  = SignatureAttributes.PETrust
+
+[SignatureAttributes.PETrust]
+PETrust = true
+
+[Strings]
+MfgName                     = "Microsoft Corporation"
+ProviderName                = "Microsoft Corporation"
+Apo.ComponentDesc           = "MSVoiceClarity APO"
+VoiceClarityDriverStore     = "VoiceClarityDriverStore"
+
+; VoiceClarity EffectPack and APO CLSID
+EFFECT_CLSID                = "{D38F837A-9439-4256-8D63-DD5885442FA2}"
+VoiceClarity_FX_MODE_CLSID  = "{1368974C-CCDA-45A2-B69F-A236C6BD255E}"
+AUDIOBLUR_APO_MFX_CONTEXT   = "{EC58D46D-DB28-4FD3-BFC2-051C5A3738FC}"
+HSA_COM_CLASS_CLSID         = "{4EFBD34D-29CF-47AE-B1D0-3807FB41437C}"
+
+; see audioenginebaseapo.idl for APO_FLAG enum values
+KSNODETYPE_MICROPHONE                                      = "{DFF21BE1-F70F-11D0-B917-00A0C9223196}
+APO_FLAG_AEC				                               = 0x0000000c
+APO_MFX_FriendlyName                                       = "Microsoft VoiceClarity APO"
+HSA_FriendlyName                                           = "Microsoft Windows Studio Voice Focus Settings Manager"
+Copyright                                                  = "Microsoft"
+Effect_Pack_FriendlyName                                   = "Windows Studio Effects Voice Clarity"
+Effect_Pack_Author                                         = "Microsoft Corporation"
+KSNODETYPE_MICROPHONE_ARRAY                                = "{DFF21BE5-F70F-11D0-B917-00A0C9223196}"
+PKEY_ItemNameDisplay	                                   = "{B725F130-47EF-101A-A5F1-02608C9EEBAC},10"
+PKEY_FX_SupportAppLauncher                                 = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},21"
+PKEY_FX_SupportedFormats                                   = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},22"
+PKEY_FX_Enumerator                                         = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},23"
+PKEY_FX_VersionMajor                                       = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},24" 
+PKEY_FX_VersionMinor                                       = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},25"
+PKEY_FX_Author                                             = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},26"
+PKEY_FX_EffectPackSchema_Version                           = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},29"
+PKEY_FX_ApplyToCapture                                     = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},33"
+PKEY_FX_EffectPack_Schema_Internal_V1                      = "{7abf23d9-727e-4d0b-86a3-dd501d260101}"
+PKEY_FX_MEP_UserInterfaceClsid                             = "{54B4320D-B63A-43AC-B1F0-6D26FCC6EDE8},0"
+PKEY_FX_Association                                        = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},0"
+PKEY_FX_ModeEffectClsid                                    = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},6"
+PKEY_CompositeFX_ModeEffectClsid                           = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},14"
+PKEY_MFX_AudioBlur_Effect_State                            = "{C050F28D-E127-4336-8DC5-E65320C09DFE},1"
+PKEY_MFX_ProcessingModes_Supported_For_Streaming           = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},6"
+AUDIO_SIGNALPROCESSINGMODE_DEFAULT                         = "{C18E2F7E-933D-4965-B7D1-1EEF228D2AF3}"
+AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS                  = "{98951333-B9CD-48B1-A0A3-FF40682D73F7}"
+
+; reg type strings
+REG_SZ                      = 0x00000000 ; FLG_ADDREG_TYPE_SZ
+REG_MULTI_SZ                = 0x00010000 ; FLG_ADDREG_TYPE_MULTI_SZ
+REG_DWORD                   = 0x00010001 ; FLG_ADDREG_TYPE_DWORD
+REG_EXPAND_SZ               = 0x00020000 ; FLG_ADDREG_TYPE_EXPAND_SZ

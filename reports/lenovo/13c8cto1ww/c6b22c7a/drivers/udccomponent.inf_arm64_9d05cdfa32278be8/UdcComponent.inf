@@ -1,0 +1,214 @@
+;
+; iMDriver.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = SoftwareComponent
+ClassGuid   = {5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider=%ManufacturerName%
+CatalogFile="udccomponent.cat"
+DriverVer=08/18/2026,26.9.1.4
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTarm64
+
+[Standard.NTarm64]
+%DeviceName%=LnvAppFrmDevice_Install, SWC\UdsUdcDriverComponent
+
+
+[SourceDisksNames]
+6 = %DiskName%,,,
+
+
+; =================== UMDF Device ==================================
+
+[LnvAppFrmDevice_Install.NTarm64]
+CopyFiles=PluginFiles, DriverInstaller, CabFiles_1
+
+[LnvAppFrmDevice_Install.NTarm64.Services]
+AddService = ,2 ; null service install
+
+[LnvAppFrmDevice_Install.NT.Software]
+AddSoftware = ContosoGrfx1CtrlPnl,, Software_Inst
+
+[Software_Inst]
+SoftwareType = 1
+SoftwareBinary = %12%\lenovo\udc\service\udcInfInstaller.exe
+SoftwareArguments = <<DeviceInstanceID>>
+SoftwareVersion = 2.0.0.0
+
+[DestinationDirs]
+PluginFiles=16425, drivers\Lenovo\udc\AddOnPlugins
+DriverInstaller=16425, drivers\Lenovo\udc\DriverInstaller
+CabFiles_1=16425, drivers\Lenovo\Udc\AddOnPlugins\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\vantageservice
+
+
+; =================== Generic ==================================
+
+[Strings]
+ManufacturerName="Lenovo" 
+DiskName = "Lenovo UDC Driver Installation Disk"
+UdcSvcDisplayName="Universal Device Client Service"
+DeviceName="Universal Device Client Device Plugins"
+DeviceNameMP="Universal Device Client Device"
+WudfRdDisplayName="Windows Driver Foundation - User-mode Driver Framework Reflector"
+
+[DriverInstaller]
+msvcp140.dll
+vcruntime140.dll
+vcruntime140_1.dll
+driverinstaller.exe
+
+;============= Specific =========================================
+[SourceDisksFiles]
+msvcp140.dll=6
+vcruntime140.dll=6
+vcruntime140_1.dll=6
+driverinstaller.exe=6
+
+; ====Plugin Source files below with relative path to packages\ folder in source disk=======
+
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@resourceloader.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@appprovision.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@arm64#@lenovo.certificatevalidation.native.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@arm64#@vantagerpcclient.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@cryptopp.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@dependency.tar=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@fluentvalidation.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.certificatevalidation.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.common.cryptographywrapper.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.common.utilities.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.vantage.addininterface.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.vantage.rpcclient.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.vantage.rpccommon.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.vantageservice.utilities.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.vantageservice.utilitiesextensions.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@license.pdf=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@newtonsoft.json.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@shamirsecretsharing.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@system.runtime.compilerservices.unsafe.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@system.threading.tasks.extensions.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@vantagebridgeplugin.dll=6
+vantageservice.5.1.2606.17.cab=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@vjslib.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@x64#@lenovo.certificatevalidation.native.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@x64#@vantagerpcclient.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@x86#@lenovo.certificatevalidation.native.dll=6
+618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@x86#@vantagerpcclient.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@resourceloader.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@arm64#@lenovo.certificatevalidation.native.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@arm64#@vantagerpcclient.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@bouncycastle.cryptography.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@de#@microsoft.win32.taskscheduler.resources.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@es#@microsoft.win32.taskscheduler.resources.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@fr#@microsoft.win32.taskscheduler.resources.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@it#@microsoft.win32.taskscheduler.resources.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@ja#@microsoft.win32.taskscheduler.resources.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovo.certificatevalidation.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovo.vantage.addininterface.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovo.vantage.rpcclient.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovo.vantage.rpccommon.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovo.vantageservice.utilities.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovo.vantageservice.utilitiesextensions.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovooobeplugin.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovooobeplugin.metrics.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovooobeplugin.shared.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovooobeplugin.shared.dll.config=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@microsoft.win32.taskscheduler.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@mysoftware.exe=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@mysoftware.exe.config=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@newtonsoft.json.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@pl#@microsoft.win32.taskscheduler.resources.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@pluginconfig.xml=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@ru#@microsoft.win32.taskscheduler.resources.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@sv#@microsoft.win32.taskscheduler.resources.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@tr#@microsoft.win32.taskscheduler.resources.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@x64#@lenovo.certificatevalidation.native.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@x64#@vantagerpcclient.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@x86#@lenovo.certificatevalidation.native.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@x86#@vantagerpcclient.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@zh-cn#@microsoft.win32.taskscheduler.resources.dll=6
+628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@zh-hant#@microsoft.win32.taskscheduler.resources.dll=6
+driverinstaller.exe=6
+msvcp140.dll=6
+vcruntime140.dll=6
+vcruntime140_1.dll=6
+
+
+; ====Plugin Destination files below with relative path to c:\programdata\lenovo\imcontroller\plugins folder =======
+[PluginFiles]
+
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\resourceloader.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@resourceloader.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\appprovision.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@appprovision.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\arm64\lenovo.certificatevalidation.native.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@arm64#@lenovo.certificatevalidation.native.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\arm64\vantagerpcclient.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@arm64#@vantagerpcclient.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\cryptopp.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@cryptopp.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\dependency.tar,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@dependency.tar,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\fluentvalidation.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@fluentvalidation.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\lenovo.certificatevalidation.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.certificatevalidation.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\lenovo.common.cryptographywrapper.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.common.cryptographywrapper.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\lenovo.common.utilities.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.common.utilities.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\lenovo.vantage.addininterface.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.vantage.addininterface.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\lenovo.vantage.rpcclient.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.vantage.rpcclient.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\lenovo.vantage.rpccommon.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.vantage.rpccommon.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\lenovo.vantageservice.utilities.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.vantageservice.utilities.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\lenovo.vantageservice.utilitiesextensions.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@lenovo.vantageservice.utilitiesextensions.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\license.pdf,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@license.pdf,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\newtonsoft.json.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@newtonsoft.json.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\shamirsecretsharing.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@shamirsecretsharing.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\system.runtime.compilerservices.unsafe.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@system.runtime.compilerservices.unsafe.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\system.threading.tasks.extensions.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@system.threading.tasks.extensions.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\vantagebridgeplugin.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@vantagebridgeplugin.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\vjslib.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@vjslib.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\x64\lenovo.certificatevalidation.native.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@x64#@lenovo.certificatevalidation.native.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\x64\vantagerpcclient.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@x64#@vantagerpcclient.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\x86\lenovo.certificatevalidation.native.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@x86#@lenovo.certificatevalidation.native.dll,,
+\618bf3cf-e6b6-4f49-a338-d564c832d07f\x64\x86\vantagerpcclient.dll,618bf3cf-e6b6-4f49-a338-d564c832d07f#@x64#@x86#@vantagerpcclient.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\resourceloader.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@resourceloader.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\arm64\lenovo.certificatevalidation.native.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@arm64#@lenovo.certificatevalidation.native.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\arm64\vantagerpcclient.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@arm64#@vantagerpcclient.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\bouncycastle.cryptography.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@bouncycastle.cryptography.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\de\microsoft.win32.taskscheduler.resources.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@de#@microsoft.win32.taskscheduler.resources.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\es\microsoft.win32.taskscheduler.resources.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@es#@microsoft.win32.taskscheduler.resources.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\fr\microsoft.win32.taskscheduler.resources.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@fr#@microsoft.win32.taskscheduler.resources.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\it\microsoft.win32.taskscheduler.resources.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@it#@microsoft.win32.taskscheduler.resources.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\ja\microsoft.win32.taskscheduler.resources.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@ja#@microsoft.win32.taskscheduler.resources.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\lenovo.certificatevalidation.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovo.certificatevalidation.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\lenovo.vantage.addininterface.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovo.vantage.addininterface.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\lenovo.vantage.rpcclient.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovo.vantage.rpcclient.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\lenovo.vantage.rpccommon.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovo.vantage.rpccommon.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\lenovo.vantageservice.utilities.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovo.vantageservice.utilities.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\lenovo.vantageservice.utilitiesextensions.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovo.vantageservice.utilitiesextensions.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\lenovooobeplugin.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovooobeplugin.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\lenovooobeplugin.metrics.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovooobeplugin.metrics.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\lenovooobeplugin.shared.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovooobeplugin.shared.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\lenovooobeplugin.shared.dll.config,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@lenovooobeplugin.shared.dll.config,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\microsoft.win32.taskscheduler.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@microsoft.win32.taskscheduler.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\mysoftware.exe,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@mysoftware.exe,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\mysoftware.exe.config,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@mysoftware.exe.config,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\newtonsoft.json.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@newtonsoft.json.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\pl\microsoft.win32.taskscheduler.resources.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@pl#@microsoft.win32.taskscheduler.resources.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\pluginconfig.xml,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@pluginconfig.xml,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\ru\microsoft.win32.taskscheduler.resources.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@ru#@microsoft.win32.taskscheduler.resources.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\sv\microsoft.win32.taskscheduler.resources.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@sv#@microsoft.win32.taskscheduler.resources.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\tr\microsoft.win32.taskscheduler.resources.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@tr#@microsoft.win32.taskscheduler.resources.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\x64\lenovo.certificatevalidation.native.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@x64#@lenovo.certificatevalidation.native.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\x64\vantagerpcclient.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@x64#@vantagerpcclient.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\x86\lenovo.certificatevalidation.native.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@x86#@lenovo.certificatevalidation.native.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\x86\vantagerpcclient.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@x86#@vantagerpcclient.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\zh-cn\microsoft.win32.taskscheduler.resources.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@zh-cn#@microsoft.win32.taskscheduler.resources.dll,,
+\628bf3cf-e6b6-4f49-a338-d564c832d08f\x64\zh-hant\microsoft.win32.taskscheduler.resources.dll,628bf3cf-e6b6-4f49-a338-d564c832d08f#@x64#@zh-hant#@microsoft.win32.taskscheduler.resources.dll,,
+\driverinstaller.exe,driverinstaller.exe,,
+\msvcp140.dll,msvcp140.dll,,
+\vcruntime140.dll,vcruntime140.dll,,
+\vcruntime140_1.dll,vcruntime140_1.dll,,
+
+
+; ====CAB files in dedicated sections (one per CAB) to preserve filename with 0x800=======
+
+[CabFiles_1]
+vantageservice.5.1.2606.17.cab,vantageservice.5.1.2606.17.cab,,0x800
+
+
