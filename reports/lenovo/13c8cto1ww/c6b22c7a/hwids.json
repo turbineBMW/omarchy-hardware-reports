@@ -1,0 +1,21 @@
+{
+  "type": "devicetree",
+  "name": "LENOVO 13C8CTO1WW",
+  "compatible": "",
+  "hwids": [
+    "d5da4d4a-0c03-51d6-b58f-c365e8e15eff",
+    "217044a3-c606-5bcb-b9c4-c243c723dd5f",
+    "8dcbd7fa-4549-54df-946a-f750aa15b261",
+    "7200c6a7-a129-5ad3-b60e-7bfb80367259",
+    "55f7cadf-29a7-5f44-b0da-5d60db2d3d62",
+    "a7d3802c-0b79-52ca-b0df-fce36f9d2488",
+    "b5330b6c-dd44-548a-ae34-4fb03d69d5f7",
+    "260c6642-8b04-55ec-acaf-dc4a1725d25d",
+    "9c47f1f2-1a86-5a79-b9ce-b24b9029fb76",
+    "48022068-676f-5db9-8495-1a786f70b5a5",
+    "659761ea-dc76-506e-bdc5-38eb5d394b39",
+    "80f34d32-665f-527e-a17d-9b6d15348485",
+    "de3a3d41-9cae-5a9d-868e-325517637580",
+    "bcfd0bfe-d961-5cb8-9170-fc395dc6762f"
+  ]
+}

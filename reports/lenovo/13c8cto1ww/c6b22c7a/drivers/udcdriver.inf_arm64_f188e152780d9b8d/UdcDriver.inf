@@ -1,0 +1,448 @@
+;
+; iMDriver.inf
+;
+
+[Version]
+Signature="$Windows NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile="udcdriver.cat"
+DriverVer=09/09/2026,26.9.0.9
+PnpLockDown=1
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTarm64.10.0...17763,NTarm64.10.0...22000
+
+[Standard.NTarm64.10.0...17763]
+%DeviceName%=LnvAppFrmDevice_InstallWin10, Root\UdsUdcDriverA64
+%DeviceNameMP%=LnvAppFrmDevice_InstallWin10, Root\UdcDriverV2
+
+[Standard.NTarm64.10.0...22000]
+%DeviceName%=LnvAppFrmDevice_InstallWin11, Root\UdsUdcDriverA64
+%DeviceNameMP%=LnvAppFrmDevice_InstallWin11, Root\UdcDriverV2
+
+[SourceDisksFiles]
+AppProvisioningagent.dll=8
+CertificateValidationWrapper.dll=8
+ClientBrokerAgent.dll=8
+CommonBase.dll=8
+ConfigPolicyAgent.dll=8
+DataSync.dll=8
+DBManager.dll=8
+DeployAgent.dll=8
+DiagnosticScanner.dll=8
+EventData.dll=8
+EventDataLogging.dll=8
+EventManager.dll=8
+ExtensionModule.dll=8
+FileStorageAgent.dll=8
+Lenovo.CertificateValidation.Native.dll=8
+libcrypto-3.dll=8
+LibJson.dll=8
+libssl-3.dll=8
+MDMAgent.dll=8
+MqttClientAdapter.dll=8
+msvcp140.dll=8
+NetworkInfoCollector.dll=8
+NotificationAgent.dll=8
+Lenovo.Udc.ClientBroker.Native.dll=8
+libzmq-v142-mt-4_3_5.dll=8
+paho-mqtt3a.dll=8
+paho-mqtt3as.dll=8
+paho-mqtt3c.dll=8
+paho-mqtt3cs.dll=8
+ShamirSecretSharing.Dll=8
+ShamirSecretSharingInterop.dll=8
+sqllite3.dll=8
+StorageCollector.dll=8
+UdcDriver.dll=9
+UDCInfInstaller.exe=8
+UDCInfDeviceHelper.exe=9
+UDClientService.exe=8
+UDCResourceLoader.dll=8
+UDCServiceDll.Dll=8
+UDCUserAgent.exe=8
+UdsCommandProcessor.dll=8
+Utility.dll=8
+vcruntime140.dll=8
+vcruntime140_1.dll=8
+vccorlib140.dll=8
+VitalSignsDataCollector.dll=8
+UdcWindows.Shared.Native.dll=8
+vjslib.dll=8
+CoreAdapterAgent.dll=8
+DeviceRegistrationAgent.dll=8
+udc-cli.exe=8
+udccore.dll=8
+WinrtUtils.dll=8
+zip.dll=8
+zlib1.dll=8
+bz2.dll=8
+
+arm_vcruntime140.dll=9
+arm_msvcp140.dll=9
+
+udcMonitorTask.sch=11
+README.txt=11
+ThirdPartyNotices.md=11
+Certs.pem=11
+lenovo_license_agreement.pdf=11
+UDCDiagnosticScanTask.sch=11
+LenovoUDCMaintainanceTask.sch=11
+LenovoUDCLazyDeploy.sch=11
+LibreHardwareMonitor-1.0.23.zip=11
+
+CoreTelemetryPlugin.dll=12
+System.Data.SQLite.dll=12
+Lenovo.Udc.Common.dll=12
+Lenovo.Udc.TelemetrySdk.dll=12
+LibreHardwareMonitorLib.dll=12
+
+SystemNotificationPlugin.dll=14
+SystemNotificationPlugin.dll.config = 14
+
+MessagingPlugin.dll=15
+Microsoft.Toolkit.Uwp.Notifications.dll=15
+System.Data.SQLite.dll=15
+Lenovo.Udc.Common.dll=15
+Lenovo.Udc.TelemetrySdk.dll=15
+MessagingPlugin.dll.config = 15
+Microsoft.IdentityModel.Abstractions.dll = 15
+Microsoft.IdentityModel.JsonWebTokens.dll= 15
+Microsoft.IdentityModel.Logging.dll= 15
+Microsoft.IdentityModel.Tokens.dll= 15
+System.IdentityModel.Tokens.Jwt.dll= 15
+System.Buffers.dll= 15
+System.Memory.dll= 15
+System.Numerics.Vectors.dll= 15
+System.Runtime.CompilerServices.Unsafe.dll= 15
+System.Text.Encodings.Web.dll= 15
+System.Text.Json.dll= 15
+System.Threading.Tasks.Extensions.dll= 15
+Lenovo.CertificateValidation.dll=15
+e_sqlite3.dll=15
+Lenovo.Vantage.AddinInterface.dll=15
+Lenovo.Vantage.RpcClient.dll=15
+Lenovo.Vantage.RpcCommon.dll=15
+Lenovo.VantageService.Utilities.dll=15
+Lenovo.VantageService.UtilitiesExtensions.dll=15
+McSysSecCheck.dll=20
+
+LenovoDB.png=16
+Lenovo.ico=16
+
+Support.ps1=17
+
+VantageRpcClient.dll=19
+
+Lenovo.Udc.ClientBroker.dotnet_x64.dll=13
+UdcPluginHost_x64.exe=13
+Newtonsoft.Json_x64.dll=13
+PluginUtilities.dll=13
+Microsoft.Win32.TaskScheduler.dll =13
+libjson_x64.dll =13
+libzmq-v142-mt-4_3_5_x64.dll =13
+msvcp140_x64.dll =13
+vcruntime140_x64.dll =13
+vcruntime140_1_x64.dll =13
+Lenovo.Udc.ClientBroker.Native_x64.dll =13
+
+Lenovo.Udc.ClientBroker.dotnet_arm64.dll=18
+UdcPluginHost_arm64.exe=18
+Newtonsoft.Json_arm64.dll=18
+libjson_arm64.dll =18
+libzmq-v142-mt-4_3_5_arm64.dll =18
+vcruntime140_1_arm64.dll =18
+Lenovo.Udc.ClientBroker.Native_arm64.dll =18
+
+[SourceDisksNames]
+1 = %DiskName%,,,
+7 = %DiskName%,,,"\x64\Service"
+8 = %DiskName%,,,"\Win32\Service"
+9 = %DiskName%,,,"\arm64\Service"
+11 = %DiskName%,,,"\Data"
+12 = %DiskName%,,,"\EmbeddedPlugins\fd9955eb-4fa6-4653-82d6-8c9785a95427\Release\x64"
+13 = %DiskName%,,,"\Hosts\Release\x64"
+14 = %DiskName%,,,"\EmbeddedPlugins\7465B7C2-BECF-4079-B110-05862C08067B\Release\x64"
+15 = %DiskName%,,,"\EmbeddedPlugins\46C44A27-EAAD-4593-9AA0-8FA0F87BF955\Release\x64"
+16 = %DiskName%,,,"\EmbeddedPlugins\46C44A27-EAAD-4593-9AA0-8FA0F87BF955\Release\x64\Resources"
+17 = %DiskName%,,,"\EmbeddedScripts"
+18 = %DiskName%,,,"\Hosts\Release\arm64"
+19 = %DiskName%,,,"\EmbeddedPlugins\46C44A27-EAAD-4593-9AA0-8FA0F87BF955\Release\x64\x64"
+20 = %DiskName%,,,"\EmbeddedPlugins\46C44A27-EAAD-4593-9AA0-8FA0F87BF955\Release\x64\McAfee\arm64"
+; =================== UMDF Device ==================================
+[LnvAppFrmDevice_InstallWin10.NTarm64]
+CopyFiles=Crt, udcService, arm64_udcService, Data, infhlpr_udcService, coretelemetryplugin, udcPluginHost, systemnotificationplugin, messagingplugin, messagingpluginResources, embeddedScripts, x64_embeddedUtilities, arm64_embeddedUtilities, arm64_udcPluginHost, messagingpluginVantageDependency
+
+[LnvAppFrmDevice_InstallWin11.NTarm64]
+CopyFiles=Crt, udcService, arm64_udcService, Data, infhlpr_udcService, coretelemetryplugin, udcPluginHost, systemnotificationplugin, messagingplugin, messagingpluginResources, embeddedScripts, x64_embeddedUtilities, arm64_embeddedUtilities, arm64_udcPluginHost, messagingpluginVantageDependency
+Include=WUDFRD.inf
+Needs=WUDFRD.NT
+
+[LnvAppFrmDevice_InstallWin11.NTarm64.HW]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT.HW
+
+[LnvAppFrmDevice_InstallWin10.NTarm64.Wdf]
+UmdfService=Udcdriver,Udcdriver_Install
+UmdfServiceOrder=Udcdriver
+UmdfHostProcessSharing=ProcessSharingDisabled
+
+[LnvAppFrmDevice_InstallWin11.NTarm64.Wdf]
+UmdfService=Udcdriver,Udcdriver_Install
+UmdfServiceOrder=Udcdriver
+UmdfHostProcessSharing=ProcessSharingDisabled
+
+[Udcdriver_Install]
+UmdfLibraryVersion=2.15.0 
+ServiceBinary=%12%\UMDF\hidtelephony.dll
+
+[WUDFRD_ServiceInstall]
+DisplayName = %WudfRdDisplayName%
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+ServiceBinary = %12%\WUDFRd.sys
+LoadOrderGroup = Base
+
+[LnvAppFrmDevice_InstallWin10.NTarm64.Services]
+AddService=WUDFRd,0x000001fa,WUDFRD_ServiceInstall
+AddService="UDCService",0x000000f8,UDC_ServiceInstall
+AddService="UDCInstallerService",0x000008f8,UDC_InstallerServiceInstall
+
+[LnvAppFrmDevice_InstallWin11.NTarm64.Services]
+AddService="UDCService",0x000000f8,UDC_ServiceInstall
+AddService="UDCInstallerService",0x000008f8,UDC_InstallerServiceInstall
+Include=WUDFRD.inf
+Needs=WUDFRD.NT.Services
+
+[UDC_ServiceInstall]
+DisplayName=%UdcSvcDisplayName%
+ServiceType = 0x10
+StartType = 2
+ErrorControl = 1
+ServiceBinary = %16425%\drivers\Lenovo\udc\Service\UDClientService.exe
+Description="The Universal Device Client Service provides deployment, event management and metrics etc"
+
+[UDC_InstallerServiceInstall]
+DisplayName = UDC Installer Service
+ServiceType = 0x10
+StartType = 2
+ErrorControl = 1
+ServiceBinary = %16425%\drivers\Lenovo\udc\Service\UDCInfInstaller.exe
+Description = "UDC Installer Service"
+
+[LnvAppFrmDevice_InstallWin10.NTarm64.Components]
+AddComponent = UdcComponent,, Component_Inst
+
+[LnvAppFrmDevice_InstallWin11.NTarm64.Components]
+AddComponent = UdcComponent,, Component_Inst
+
+[Component_Inst]
+ComponentIDs = UdsUdcDriverComponent
+
+[DestinationDirs]
+Crt=16425, drivers\Lenovo\udc\Service
+udcService=16425, drivers\Lenovo\udc\Service
+x64_udcService=16425, drivers\Lenovo\udc\Service
+arm64_udcService=16425, drivers\Lenovo\udc\Service
+infhlpr_udcService=16425, drivers\Lenovo\udc\Service\infhlpr
+Data=16425, drivers\Lenovo\udc\Data
+coretelemetryplugin=16425, drivers\Lenovo\udc\EmbeddedPlugins\fd9955eb-4fa6-4653-82d6-8c9785a95427\x64
+udcPluginHost=16425, drivers\Lenovo\udc\Service\Hosts\x64
+arm64_udcPluginHost=16425, drivers\Lenovo\udc\Service\Hosts\arm64
+systemnotificationplugin=16425, drivers\Lenovo\udc\EmbeddedPlugins\7465B7C2-BECF-4079-B110-05862C08067B\x64
+messagingplugin=16425, drivers\Lenovo\udc\EmbeddedPlugins\46C44A27-EAAD-4593-9AA0-8FA0F87BF955\x64
+messagingpluginResources=16425, drivers\Lenovo\udc\EmbeddedPlugins\46C44A27-EAAD-4593-9AA0-8FA0F87BF955\x64\Resources
+embeddedScripts=16425, drivers\Lenovo\udc\EmbeddedScripts
+x64_embeddedUtilities=16425, drivers\Lenovo\udc\Service\Hosts\x64\Utilities
+arm64_embeddedUtilities=16425, drivers\Lenovo\udc\Service\Hosts\Arm64\Utilities
+messagingpluginVantageDependency=16425, drivers\Lenovo\udc\EmbeddedPlugins\46C44A27-EAAD-4593-9AA0-8FA0F87BF955\x64\x64
+
+[udcService]
+AppProvisioningagent.dll
+CertificateValidationWrapper.dll
+ClientBrokerAgent.dll
+CommonBase.dll
+ConfigPolicyAgent.dll
+DataSync.dll
+DBManager.dll
+DeployAgent.dll
+DiagnosticScanner.dll
+EventData.dll
+EventDataLogging.dll
+EventManager.dll
+ExtensionModule.dll
+FileStorageAgent.dll
+Lenovo.CertificateValidation.Native.dll
+LibJson.dll
+MDMAgent.dll
+MqttClientAdapter.dll
+NetworkInfoCollector.dll
+NotificationAgent.dll
+Lenovo.Udc.ClientBroker.Native.dll
+libzmq-v142-mt-4_3_5.dll
+paho-mqtt3a.dll
+paho-mqtt3as.dll
+paho-mqtt3c.dll
+paho-mqtt3cs.dll
+ShamirSecretSharing.dll
+ShamirSecretSharingInterop.dll
+sqllite3.dll
+StorageCollector.dll
+UDCInfInstaller.exe
+UDClientService.exe
+UDCResourceLoader.dll
+UDCServiceDll.dll
+UDCUserAgent.exe
+UdsCommandProcessor.dll
+Utility.dll
+VitalSignsDataCollector.dll
+UdcWindows.Shared.Native.dll
+vjslib.dll
+CoreAdapterAgent.dll
+DeviceRegistrationAgent.dll
+udc-cli.exe
+udccore.dll
+WinrtUtils.dll
+zip.dll
+zlib1.dll
+bz2.dll
+
+[coretelemetryplugin]
+CoreTelemetryPlugin.dll
+System.Data.SQLite.dll
+Lenovo.Udc.Common.dll
+Lenovo.Udc.TelemetrySdk.dll
+LibreHardwareMonitorLib.dll
+e_sqlite3.dll
+
+
+[systemnotificationplugin]
+SystemNotificationPlugin.dll
+
+[messagingplugin]
+MessagingPlugin.dll
+Microsoft.Toolkit.Uwp.Notifications.dll
+System.Data.SQLite.dll
+Lenovo.Udc.Common.dll
+Lenovo.Udc.TelemetrySdk.dll
+e_sqlite3.dll
+MessagingPlugin.dll.config
+Lenovo.CertificateValidation.dll
+Lenovo.Vantage.AddinInterface.dll
+Lenovo.Vantage.RpcClient.dll
+Lenovo.Vantage.RpcCommon.dll
+Lenovo.VantageService.Utilities.dll
+Lenovo.VantageService.UtilitiesExtensions.dll
+McSysSecCheck.dll
+
+[messagingpluginResources]
+LenovoDB.png
+Lenovo.ico
+
+[messagingpluginVantageDependency]
+VantageRpcClient.dll
+
+[udcPluginHost]
+Lenovo.Udc.ClientBroker.dotnet.dll, Lenovo.Udc.ClientBroker.dotnet_x64.dll
+Lenovo.Udc.ClientBroker.Native.dll, Lenovo.Udc.ClientBroker.Native_x64.dll
+libjson.dll, libjson_x64.dll
+libzmq-v142-mt-4_3_5.dll, libzmq-v142-mt-4_3_5_x64.dll
+UdcPluginHost.exe, UdcPluginHost_x64.exe
+msvcp140.dll,arm_msvcp140.dll
+vcruntime140.dll,arm_vcruntime140.dll
+vcruntime140_1.dll, vcruntime140_1_x64.dll
+Newtonsoft.Json.dll, Newtonsoft.Json_x64.dll
+PluginUtilities.dll
+Microsoft.Win32.TaskScheduler.dll
+SystemNotificationPlugin.exe.config, SystemNotificationPlugin.dll.config
+MessagingPlugin.exe.config, MessagingPlugin.dll.config
+
+[arm64_udcPluginHost]
+Lenovo.Udc.ClientBroker.dotnet.dll, Lenovo.Udc.ClientBroker.dotnet_arm64.dll
+Lenovo.Udc.ClientBroker.Native.dll, Lenovo.Udc.ClientBroker.Native_arm64.dll
+libjson.dll, libjson_arm64.dll
+libzmq-v142-mt-4_3_5.dll, libzmq-v142-mt-4_3_5_arm64.dll
+UdcPluginHost.exe, UdcPluginHost_arm64.exe
+msvcp140.dll,arm_msvcp140.dll
+vcruntime140.dll,arm_vcruntime140.dll
+vcruntime140_1.dll, vcruntime140_1_arm64.dll
+Newtonsoft.Json.dll, Newtonsoft.Json_arm64.dll
+PluginUtilities.dll
+Microsoft.Win32.TaskScheduler.dll
+SystemNotificationPlugin.exe.config, SystemNotificationPlugin.dll.config
+MessagingPlugin.exe.config, MessagingPlugin.dll.config
+
+
+[arm64_udcService]
+libcrypto-3.dll
+libssl-3.dll
+
+[Crt]
+msvcp140.dll
+vcruntime140.dll
+vcruntime140_1.dll
+vccorlib140.dll
+
+[Data]
+udcMonitorTask.xml, udcMonitorTask.sch
+README.txt
+ThirdPartyNotices.md
+Certs.pem
+lenovo_license_agreement.pdf
+UDCDiagnosticScanTask.xml, UDCDiagnosticScanTask.sch
+LenovoUDCMaintainanceTask.xml, LenovoUDCMaintainanceTask.sch
+LenovoUDCLazyDeploy.xml, LenovoUDCLazyDeploy.sch
+LibreHardwareMonitor-1.0.23.zip
+
+[infhlpr_udcService]
+UDCInfDeviceHelper.exe
+msvcp140.dll,arm_msvcp140.dll
+vcruntime140.dll,arm_vcruntime140.dll
+vcruntime140_1.dll
+vccorlib140.dll
+
+[embeddedScripts]
+Support.ps1
+
+[x64_embeddedUtilities]
+Microsoft.IdentityModel.Abstractions.dll
+Microsoft.IdentityModel.JsonWebTokens.dll
+Microsoft.IdentityModel.Logging.dll
+Microsoft.IdentityModel.Tokens.dll
+System.IdentityModel.Tokens.Jwt.dll
+System.Buffers.dll
+System.Memory.dll
+System.Numerics.Vectors.dll
+System.Runtime.CompilerServices.Unsafe.dll
+System.Text.Encodings.Web.dll
+System.Text.Json.dll
+System.Threading.Tasks.Extensions.dll
+
+[arm64_embeddedUtilities]
+Microsoft.IdentityModel.Abstractions.dll
+Microsoft.IdentityModel.JsonWebTokens.dll
+Microsoft.IdentityModel.Logging.dll
+Microsoft.IdentityModel.Tokens.dll
+System.IdentityModel.Tokens.Jwt.dll
+System.Buffers.dll
+System.Memory.dll
+System.Numerics.Vectors.dll
+System.Runtime.CompilerServices.Unsafe.dll
+System.Text.Encodings.Web.dll
+System.Text.Json.dll
+System.Threading.Tasks.Extensions.dll
+
+[amd64_Data]
+
+; =================== Generic ==================================
+
+[Strings]
+ManufacturerName="Lenovo" 
+DiskName = "Lenovo UDC Driver Installation Disk"
+UdcSvcDisplayName="Universal Device Client Service"
+DeviceName="Universal Device Client Device"
+DeviceNameMP="Universal Device Client Device"
+WudfRdDisplayName="Windows Driver Foundation - User-mode Driver Framework Reflector"
