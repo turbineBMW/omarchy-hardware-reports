@@ -1,0 +1,21 @@
+{
+  "type": "devicetree",
+  "name": "SAMSUNG ELECTRONICS CO., LTD. Galaxy Book4 Edge",
+  "compatible": "",
+  "hwids": [
+    "91c24876-ebef-54f5-9f94-50a584778479",
+    "dfc30a39-3223-5468-8565-d6615fc5fa6d",
+    "2c4bad6d-c1cc-5877-ba64-92975a522632",
+    "adde1ac8-800d-531b-8358-335f24308e6f",
+    "f0353726-3e21-5ec9-ab33-d95d485c7109",
+    "613d0dcf-9d03-51a3-b87f-ce3fff939dd0",
+    "1518cf55-bd92-5038-8add-a122b0335fe0",
+    "e45a937a-853e-5c3b-aeb7-de037d453eab",
+    "45153613-8171-51b1-930b-8aea3ab5c055",
+    "0339244b-ab5d-5c54-a901-344543f4e40c",
+    "45153613-8171-51b1-930b-8aea3ab5c055",
+    "2d340d6e-a493-5dc0-9735-48a0d00dba48",
+    "a2672a02-da1b-5d69-adfb-7eff43eed6f0",
+    "380fa98c-b549-54d6-a774-cef10f572520"
+  ]
+}

@@ -1,0 +1,81 @@
+/*++
+;
+;Copyright (c) Samsung Electronics Co., Ltd.  All rights reserved.
+;
+;Module Name:
+; TSPHelper.inf
+;
+;Abstract:
+;    INF file for installing the Touch filter driver.
+;
+;--*/
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=HIDClass
+ClassGuid={745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Provider=%ManufacturerName%
+CatalogFile=TSPHelper.cat
+DriverVer = 05/01/2024,10.2.8.95
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+TSPHelper.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...16299
+
+[Standard.NTARM64.10.0...16299]
+%TSPHelper.DeviceDesc%=TSPHelper_Device, HID\VEN_GXTP&DEV_7936&Col01
+
+[TSPHelper_Device.NT]
+Include = Keyboard.INF
+Needs = HID_Keyboard_Inst.NT
+CopyFiles=Drivers_Dir
+
+[TSPHelper_Device.NT.HW]
+Include = Keyboard.INF
+Needs = HID_Keyboard_Inst.NT.HW
+AddReg=TspHelper_Device.HW.AddReg.NT
+
+[TSPHelper_Device.HW.AddReg.NT]
+HKR,,"UpperFilters",0x00010000,"TSPHelper"
+
+[Drivers_Dir]
+TSPHelper.sys
+
+;-------------- Service installation
+[TSPHelper_Device.NT.Services]
+Needs = HID_Keyboard_Inst.Services
+AddService = TSPHelper,, TSPHelper_Service_Inst
+
+; -------------- TSPHelper driver install sections
+[TSPHelper_Service_Inst]
+DisplayName    = %TSPHelper.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\TSPHelper.sys
+
+[TSPHelper_Device.NT.Wdf]
+KmdfService =  TSPHelper, TSPHelper_wdfsect
+[TSPHelper_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Samsung Electronics Co.,Ltd."
+ClassName="HIDClass"
+DiskName = "TSPHelper Installation Disk"
+TSPHelper.DeviceDesc = "Samsung TSP Device"
+TSPHelper.SVCDESC = "TSPHelper Service"

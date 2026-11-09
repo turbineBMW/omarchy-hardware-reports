@@ -1,0 +1,99 @@
+;
+;Copyright (c) Samsung Electronics Co., Ltd.  All rights reserved.
+;
+;Module Name:
+;    kbdHelper.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+ClassGUID={4D36E96B-E325-11CE-BFC1-08002BE10318}
+Class=Keyboard
+Provider=%ManufacturerName%
+PnpLockdown=1
+CatalogFile=kbdHelper.cat
+DriverVer = 05/02/2024,12.14.0.955
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+; ================= Class section =====================
+
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+kbdHelper.sys  = 1,,
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...16299
+
+[Standard.NTARM64.10.0...16299]
+%kbdHelper.DeviceDesc%=kbdHelper_Device, HID\VID_04E8&PID_A055&MI_01
+%kbdHelper.DeviceDesc%=kbdHelper_Device, HID\VEN_SSEC&DEV_0001&Col01
+
+[kbdHelper_Device.NT]
+Include = Keyboard.INF
+;Needs=STANDARD_Inst
+Needs = HID_Keyboard_Inst.NT
+CopyFiles=Drivers_Dir
+
+[kbdHelper_Device.NT.HW]
+Include = Keyboard.INF
+Needs = HID_Keyboard_Inst.NT.HW
+AddReg=kbdHelper_Device.HW.AddReg.NT
+AddReg=kbdHelper_Device_SDDLString
+
+[kbdHelper_Device.HW.AddReg.NT]
+HKR,,"UpperFilters",0x00010000,"kbdHelper"
+
+[kbdHelper_Device_SDDLString]
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GRGW;;;AU)"
+
+[Drivers_Dir]
+kbdHelper.sys
+
+;-------------- Service installation
+[kbdHelper_Device.NT.Services]
+Include = keyboard.inf
+Needs = HID_Keyboard_Inst.NT.Services
+AddService = kbdHelper,, kbdHelper_Service_Inst
+
+; -------------- kbdHelper driver install sections
+[kbdHelper_Service_Inst]
+DisplayName    = %kbdHelper.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\kbdHelper.sys
+LoadOrderGroup = Keyboard Port;Extended Base
+
+; -------------- component install sections
+;[kbdHelper_Device.NT.Components]
+;AddComponent = kbdHelper_SamsungKbdSvcInstall,,kbdHelper_ComponentInstall_UserSvcInstall
+;AddComponent = kbdHelper_FwUpdateSvcInstall,,FwUpdate_ComponentInstall_UserSvcInstall
+
+;[kbdHelper_ComponentInstall_UserSvcInstall]
+;ComponentIds = VEN_SAMS&PID_6883
+
+;[FwUpdate_ComponentInstall_UserSvcInstall]
+;ComponentIds = VEN_SAMS&PID_6884
+
+[kbdHelper_Device.NT.Wdf]
+KmdfService =  kbdHelper, kbdHelper_wdfsect
+[kbdHelper_wdfsect]
+KmdfLibraryVersion =  1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Samsung Electronics Co.,Ltd."
+ClassName="Keyboard"  
+DiskName = "kbdHelper Installation Disk"
+kbdHelper.DeviceDesc = "Samsung KBD Device"
+kbdHelper.SVCDESC = "kbdHelper Service"

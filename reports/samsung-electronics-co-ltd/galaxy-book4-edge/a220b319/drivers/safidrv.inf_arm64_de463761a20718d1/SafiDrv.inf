@@ -1,0 +1,181 @@
+/*++
+;
+;Copyright (c) Samsung Electronics Co., Ltd.  All rights reserved.
+;
+;Module Name:
+;    SafiDrv.inf
+;
+;Abstract:
+;    INF file for installing the Samsung Firmware Interface driver.
+;
+;--*/
+
+[Version]
+Signature = "$WINDOWS NT$"
+Class = System
+ClassGuid = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider = %ManufacturerName%
+CatalogFile = SafiDrv.cat
+PnpLockDown = 1
+DriverVer = 12/27/2025,2.12.27.700
+
+[DestinationDirs]
+DefaultDestDir = 12
+SafiService_Dir = 13
+WMOF_Dir = 10,system32
+SafiDrv_Device_CoInstaller_CopyFiles = 11
+HqmForDrivers_Dir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SafiDrv.sys  = 1
+msvcp140.dll = 1
+vcruntime140.dll = 1
+SafiService.exe = 1
+Samsung.Firmware.dll = 1
+SafiAgent.exe = 1
+SafiIPCLib.dll = 1
+wmof.dll  = 1
+HqmForDrivers.exe = 1
+libcrypto-3-x64.dll = 1
+libssl-3-x64.dll = 1
+scsp-odm-resource-windows.1.0.9.991.dll = 1
+
+[WMOF_Dir]
+wmof.dll
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...16299
+
+[Standard.NTARM64.10.0...16299]
+%SafiDrv.DeviceDesc%=SafiDrv_Device, ACPI\VEN_SAM&DEV_0701&SUBSYS_C1B1144D	; Hermes_8cx_Gen3
+%SafiDrv.DeviceDesc%=SafiDrv_Device, ACPI\VEN_SAM&DEV_0701&SUBSYS_C1B9144D	; NX16
+%SafiDrv.DeviceDesc%=SafiDrv_Device, ACPI\VEN_SAM&DEV_0701&SUBSYS_C1BA144D	; NX14
+%SafiDrv.DeviceDescNX15%=SafiDrv_DeviceNX15, ACPI\VEN_SAM&DEV_0701&SUBSYS_CA09144D	; NX15
+%SafiDrv.DeviceDesc%=SafiDrv_Device, ACPI\VEN_SAM&DEV_0701&SUBSYS_C1BB144D	; WINGS
+%SafiDrv.DeviceDesc%=SafiDrv_Device, ACPI\VEN_SAM&DEV_0701&SUBSYS_C1BC144D	; MARS4
+%SafiDrv.DeviceDesc%=SafiDrv_Device, ACPI\VEN_SAM&DEV_0701&SUBSYS_C1C1144D	; NX2
+
+;
+; Common Device
+;
+[SafiDrv_Device.NT]
+CopyFiles=Drivers_Dir
+CopyFiles=SafiService_Dir
+CopyFiles=HqmForDrivers_Dir
+CopyFiles=WMOF_Dir
+
+[SafiDrv_Device.NT.HW]
+AddReg=SAFI_SDDLString
+
+[SafiDrv_Device.NT.Services]
+AddService = SafiDrv,%SPSVCINST_ASSOCSERVICE%, SafiDrv_Service_Inst, SafiDrv_WMOF_Inst
+AddService = SafiService,0x00000c00, SafiService_ServiceInstall
+AddService = HqmForDrivers,0x00000c00, HqmForDrivers_ServiceInstall
+
+[SafiDrv_Device.NT.Wdf]
+KmdfService =  SafiDrv, SafiDrv_wdfsect
+
+;
+; For NX15 series
+;
+[SafiDrv_DeviceNX15.NT]
+CopyFiles=Drivers_Dir
+CopyFiles=SafiService_Dir
+CopyFiles=HqmForDrivers_Dir
+CopyFiles=WMOF_Dir
+AddReg=AddRegNX15
+
+[SafiDrv_DeviceNX15.NT.HW]
+AddReg=SAFI_SDDLString
+
+[SafiDrv_DeviceNX15.NT.Services]
+AddService = SafiDrv,%SPSVCINST_ASSOCSERVICE%, SafiDrv_Service_Inst, SafiDrv_WMOF_Inst
+AddService = SafiService,0x00000c00, SafiService_ServiceInstall
+AddService = HqmForDrivers,0x00000c00, HqmForDrivers_ServiceInstall
+
+[SafiDrv_DeviceNX15.NT.Wdf]
+KmdfService =  SafiDrv, SafiDrv_wdfsect
+
+;
+; Common
+;
+[Drivers_Dir]
+SafiDrv.sys
+
+[SafiService_Dir]
+msvcp140.dll
+vcruntime140.dll
+SafiService.exe
+Samsung.Firmware.dll
+SafiIPCLib.dll
+SafiAgent.exe
+wmof.dll
+
+[SAFI_SDDLString]
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GA;;;UD)"
+
+[HqmForDrivers_Dir]
+HqmForDrivers.exe
+libcrypto-3-x64.dll
+libssl-3-x64.dll
+scsp-odm-resource-windows.1.0.9.991.dll
+
+; -------------- SafiDrv driver install sections
+[SafiDrv_Service_Inst]
+DisplayName    = %SafiDrv.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 1               ; SERVICE_BOOT_START(0), SERVICE_SYSTEM_START(1)
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\SafiDrv.sys
+LoadOrderGroup = Base
+
+; -------------- SAFI service install sections
+[SafiService_ServiceInstall]
+DisplayName    = %SafiService.SVCDESC%
+Description    = %SafiService.SVCDESC%
+ServiceType    = 0x10            ; SERVICE_WIN32_OWN_PROCESS
+StartType      = 2               ; SERVICE_AUTO_START
+ErrorControl   = 0               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\SafiService.exe
+LoadOrderGroup = Base
+
+; -------------- HQM for drivers install sections
+[HqmForDrivers_ServiceInstall]
+DisplayName    = %HqmForDrivers.SVCDESC%
+Description    = %HqmForDrivers.SVCDESC%
+ServiceType    = 0x10            ; SERVICE_WIN32_OWN_PROCESS
+StartType      = 2               ; SERVICE_AUTO_START
+ErrorControl   = 0               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\HqmForDrivers.exe
+LoadOrderGroup = Base
+
+[SafiDrv_WMOF_Inst]
+AddReg=SafiDrv_WMOF_AddReg
+
+[SafiDrv_WMOF_AddReg]
+HKLM,SYSTEM\CurrentControlSet\Services\WmiAcpi,MofImagePath,0x00020000,"%%SystemRoot%%\System32\wmof.dll"
+HKLM,SYSTEM\CurrentControlSet\Services\SafiService,CheckPlatformExecutionValue,%REG_DWORD%,0x1
+
+[SafiDrv_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[AddRegNX15]
+HKLM,SYSTEM\CurrentControlSet\Services\SafiService,FeatureKbdBacklit,%REG_DWORD%,0x0
+
+[Strings]
+REG_DWORD             = 0x00010001
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Samsung Electronics Co., Ltd."
+DiskName = "SafiDrv Installation Disk"
+SafiDrv.DeviceDesc = "Samsung Firmware Interface Device"
+SafiDrv.DeviceDescNX15 = "Samsung Firmware Interface NP75x"
+SafiDrv.SVCDESC = "SafiDrv Service"
+SafiService.SVCDESC = "Samsung Firmware Interface Service"
+HqmForDrivers.SVCDESC = "Samsung HQM for drivers"

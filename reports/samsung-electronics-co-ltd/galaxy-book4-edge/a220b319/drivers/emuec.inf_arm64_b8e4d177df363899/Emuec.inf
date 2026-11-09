@@ -1,0 +1,92 @@
+/*++
+;
+;Copyright (c) Samsung Electronics Co., Ltd.  All rights reserved.
+;
+;Module Name:
+;    EmuEc.inf
+;
+;Abstract:
+;    INF file for installing the Samsung EmuEc device driver.
+;
+;--*/
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile=EmuEC.cat
+PnpLockDown = 1
+DriverVer = 01/12/2026,7.22.18.735
+
+[DestinationDirs]
+DefaultDestDir = 12
+EmuEC_Device_CoInstaller_CopyFiles = 11
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+EmuEC.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64
+
+[Standard.NTARM64]
+%EmuEC.DeviceDesc%=EmuEC_Device, ACPI\VEN_SAM&DEV_0604&SUBSYS_C1B1144D	; Hermes_8cx_Gen3
+%EmuEC.DeviceDesc%=EmuEC_Device, ACPI\VEN_SAM&DEV_0604&SUBSYS_C1B9144D	; NX16
+%EmuEC.DeviceDesc%=EmuEC_Device, ACPI\VEN_SAM&DEV_0604&SUBSYS_C1BA144D	; NX14
+%EmuEC.DeviceDesc%=EmuEC_Device, ACPI\VEN_SAM&DEV_0604&SUBSYS_CA09144D	; NX15
+%EmuEC.DeviceDesc%=EmuEC_Device, ACPI\VEN_SAM&DEV_0604&SUBSYS_C1BB144D	; WINGS
+%EmuEC.DeviceDesc%=EmuEC_Device, ACPI\VEN_SAM&DEV_0604&SUBSYS_C1BC144D	; MARS4
+
+[EmuEC_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+EmuEC.sys
+
+[EmuEC_Device.NT.HW]
+AddReg=EmuEc_SDDLString
+
+[EmuEc_SDDLString]
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+
+;-------------- Service installation
+[EmuEC_Device.NT.Services]
+AddService = EmuEC,%SPSVCINST_ASSOCSERVICE%, EmuEC_Service_Inst, EmuEC_EventLog_Inst
+
+; -------------- EmuEC driver install sections
+[EmuEC_Service_Inst]
+DisplayName    = %EmuEC.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\EmuEC.sys
+
+[EmuEC_Device.NT.Wdf]
+KmdfService =  EmuEC, EmuEC_wdfsect
+[EmuEC_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[EmuEC_EventLog_Inst]
+AddReg=EmuEC_EventLog_Inst.AddReg, EmuEc_L1_Timeout
+
+[EmuEC_EventLog_Inst.AddReg]
+HKR,, EventMessageFile, 0x00020000, "%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\EmuEC.sys"
+HKR,, TypesSupported,   0x00010003, 7
+HKR,, ProviderGuid,     0x00000000, "{A9FDD68F-C2D2-4E89-86A1-EC8BAEAEB51A}"
+
+[EmuEc_L1_Timeout]
+HKLM,SYSTEM\CurrentControlSet\Control\USB\Usb20HardwareLpm, Usb20HardwareLpmTimeout, %REG_DWORD%, 0x000000ff
+
+[Strings]
+REG_DWORD             = 0x00010001
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Samsung Electronics Co,.Ltd."
+DiskName = "EmuEC Installation Disk"
+EmuEC.DeviceDesc = "Samsung EmuEC Device"
+EmuEC.SVCDESC = "Samsung EmuEC Service"
