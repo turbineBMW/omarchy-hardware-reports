@@ -1,0 +1,74 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; File:               SurfaceTouchpadG7CfuOverHidExtnPackage.inf
+;
+; Description:        Driver installation file for Surface G7 Touchpad Firmware Update Extension Package.
+;
+; Versions.begin   !DO NOT DELETE!
+; FW_MSHW0238 (13): Version 64.32.139 (0x4000208B)
+; Versions.end   !DO NOT DELETE!
+;
+; Copyright (C) Microsoft Corporation.  All Rights Reserved.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Version]
+Signature="$Windows NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%ManufacturerName%
+ExtensionId = {911B333E-944F-4ADF-B3CA-42DB2ED5894F}
+CatalogFile=SurfaceTouchpadG7CfuOverHidExtnPackage.cat
+DriverVer = 07/29/2024,1.403.377.0
+PnpLockdown=1
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...19041
+
+[Standard.NTARM64.10.0...19041]
+%SurfaceTouchpadG7CfuOverHidExtnPackage.ExtensionDesc%=SurfaceTouchpadG7CfuOverHidExtnPackage, HID\VEN_MSHW&DEV_0238&Col03
+
+; =================== UMDF Device ==================================
+
+[SurfaceTouchpadG7CfuOverHidExtnPackage.NT]
+CopyFiles=SurfaceTouchpadG7CfuOverHidExtnPackage.CopyFiles
+
+[SurfaceTouchpadG7CfuOverHidExtnPackage.NT.HW]
+AddReg = SurfaceTouchpadG7CfuOverHidExtnPackage_HWAddReg
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[DestinationDirs]
+SurfaceTouchpadG7CfuOverHidExtnPackage.CopyFiles=13
+
+; =================== FW Information ===========================
+[SurfaceTouchpadG7CfuOverHidExtnPackage_HWAddReg]
+HKR,,FriendlyName,,%FwUpdateFriendlyName%
+HKR,,HidTargetInStack,0x00010001, 1
+HKR,,Protocol,0x00010001, 1
+HKR,,UsageTableIndex, 0x00010001, 0
+
+; SurfaceTouchpadG7_FirmwareAddReg.begin   !DO NOT DELETE!
+HKR,CFU\FW_MSHW0238,Offer, 0x00000000, %13%\SurfaceTouchpadG7_FW_MSHW0238.offer.bin 
+HKR,CFU\FW_MSHW0238,Payload, 0x00000000, %13%\SurfaceTouchpadG7_FW_MSHW0238.payload.bin 
+; SurfaceTouchpadG7_FirmwareAddReg.end   !DO NOT DELETE!
+
+[SourceDisksFiles]
+; SourceDisksFiles.begin   !DO NOT DELETE!
+SurfaceTouchpadG7_FW_MSHW0238.offer.bin=1 
+SurfaceTouchpadG7_FW_MSHW0238.payload.bin=1 
+; SourceDisksFiles.end   !DO NOT DELETE!
+
+[SurfaceTouchpadG7CfuOverHidExtnPackage.CopyFiles]
+; SurfaceTouchpadG7_CopyFiles.begin   !DO NOT DELETE!
+SurfaceTouchpadG7_FW_MSHW0238.offer.bin 
+SurfaceTouchpadG7_FW_MSHW0238.payload.bin 
+; SurfaceTouchpadG7_CopyFiles.end   !DO NOT DELETE!
+
+; =================== Generic ==================================
+
+[Strings]
+ManufacturerName="Surface"
+SurfaceTouchpadG7CfuOverHidExtnPackage.ExtensionDesc="Surface G7 Touchpad Firmware Update"
+DiskName = "Surface G7 Touchpad Firmware Update Installation Disk"
+FwUpdateFriendlyName= "Surface Touchpad G7 Firmware Update"
+

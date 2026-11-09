@@ -1,0 +1,92 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; File:               SurfaceMachineLearningServiceDriver.inf
+;
+; Description:        Installation file for the Surface Service.  This INX
+;                     will install/update SurfaceMachineLearningService, and also install
+;                     a NULL driver on the ACPI node.
+;
+; Copyright (C) Microsoft Corporation.  All Rights Reserved.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Version]
+Signature="$Windows NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%ManufacturerName%
+CatalogFile=SurfaceMachineLearningServiceDriver.cat
+DriverVer = 02/08/2025,6.35.52.0
+PnPLockDown=1
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+SurfaceMLService.exe=1
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...19041
+
+[Standard.NTARM64.10.0...19041]
+%DeviceName%=SurfaceMachineLearningServiceDriver, ACPI\MSHW0888
+%DeviceName%=SurfaceMachineLearningServiceDriver, {624C9537-FDD7-4EFF-8FB6-80962156E911}\SMLS_DEVICE
+
+[SurfaceMachineLearningServiceDriver.NT]
+CopyFiles=ServiceCopy
+
+[SurfaceMachineLearningServiceDriver.NT.hw]
+
+[SurfaceMachineLearningServiceDriver.NT.Events]
+AddEventProvider = {1E8D5623-6573-47F2-B69E-EEA8923CE036},EventProviderInstall
+
+[SurfaceMachineLearningServiceDriver.NT.Services]
+AddService=SurfaceMachineLearningService,0x00000800,SurfaceMachineLearningServiceInstall  ; This installs SurfaceMachineLearningService
+AddService=,%NULL_DRIVER%                                   ; NULL function driver
+
+
+[SurfaceMachineLearningServiceInstall]
+DisplayName   = %ServiceDisplayName%
+Description   = %ServiceDescription%
+ServiceType   = %SERVICE_WIN32_SHARE_PROCESS%
+StartType     = %SERVICE_AUTO_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %13%\SurfaceMLService.exe
+
+[EventProviderInstall]
+ProviderName=Microsoft-Surface-SurfaceMachineLearningService
+ResourceFile=%13%\SurfaceMLService.exe
+MessageFile=%13%\SurfaceMLService.exe
+AddChannel=Microsoft-Surface-SurfaceMachineLearningService/Operational,0x2,Channel_Install
+
+[Channel_Install]
+Isolation = 1
+Enabled   = 1
+
+[DestinationDirs]
+ServiceCopy=13
+
+[ServiceCopy]
+SurfaceMLService.exe
+
+[Strings]
+ManufacturerName="Surface"
+DiskName = "Surface Machine Learning Service Driver Installation Disk"
+DeviceName="Surface Machine Learning Service Device"
+ServiceDisplayName="Surface Machine Learning Service"
+ServiceDescription="Provides support for Surface Machine Learning"
+
+;
+; Non-localizable
+;
+NULL_DRIVER                 = 2
+SPSVCINST_ASSOCSERVICE      = 0x00000002
+SERVICE_KERNEL_DRIVER       = 1
+SERVICE_BOOT_START          = 0
+SERVICE_SYSTEM_START        = 1
+SERVICE_AUTO_START          = 2
+SERVICE_DEMAND_START        = 3
+SERVICE_ERROR_NORMAL        = 1
+SERVICE_ERROR_IGNORE        = 0
+SERVICE_WIN32_SHARE_PROCESS = 0x00000020
+
+;; eof: SurfaceMachineLearningServiceDriver.inx
+;;
