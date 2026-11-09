@@ -1,0 +1,82 @@
+;*****************************************
+;
+;
+;Module Name:
+;    qcusbcucsi8380_ext.inx
+;
+;Abstract:
+;    UCS0 Extension INF file
+;
+;*****************************************
+[Version]
+Signature	= "$Windows NT$"
+Class		= Extension
+ClassGUID	= {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+ExtensionId	= {B31A50D0-CC38-4A95-B3E0-E4CA02E737C1}
+Provider    = %Company%
+DriverVer = 12/04/2024,15.20.6.466
+CatalogFile = qcusbcucsi8380_ext.cat
+PnpLockDown	= 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+QcUsbC_Files = 13
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+UCS0_NX16.bin = 1,,
+UCS0_WINGS.bin = 1,,
+
+;*****************************************
+; UCS0 Extension Install Section
+;*****************************************
+; Hardcoding to NTARM64 to match the platform
+;
+[Manufacturer]
+%Company% = QCOM,NTARM64.10.0...16299
+
+; DisplayName                   Section           DeviceId
+; -----------                   -------           --------
+;
+[QCOM.NTARM64.10.0...16299]
+%DeviceDesc%=QcUsbC_Device, ACPI\QCOM0CA4                            				; USB Type-C driver (NX)
+%DeviceDesc%=QcUsbC_Device_WINGS, ACPI\VEN_QCOM&DEV_0CA4&SUBSYS_C1BB144D		; USB Type-C driver (WINGS)
+
+; NX
+[QcUsbC_Device.NT]
+CopyFiles=QcUsbC_Files
+
+[QcUsbC_Device.NT.HW]
+Addreg=QcUsbC_Resource_ucs0
+
+[QcUsbC_Files]
+UCS0_NX16.bin
+
+[QcUsbC_Resource_ucs0]
+HKR,Resources,"BinaryPath",%REG_SZ%, %13%\UCS0_NX16.bin
+
+; WINGS
+[QcUsbC_Device_WINGS.NT]
+CopyFiles=QcUsbC_Files_WINGS
+
+[QcUsbC_Device_WINGS.NT.HW]
+Addreg=QcUsbC_Resource_ucs0_WINGS
+
+[QcUsbC_Files_WINGS]
+UCS0_WINGS.bin
+
+[QcUsbC_Resource_ucs0_WINGS]
+HKR,Resources,"BinaryPath",%REG_SZ%, %13%\UCS0_WINGS.bin
+
+[Strings]
+Company = "Qualcomm Technologies, Inc." 
+DiskId1 = "Qualcomm USB Type-C Driver Disk"
+DeviceDesc = "Qualcomm(R) USB Type-C Device Extension"
+REG_SZ        = 0x00000000
+REG_MULTI_SZ  = 0x00010000
+REG_EXPAND_SZ = 0x00020000
+REG_DWORD     = 0x00010001
+REG_BINARY    = 0x00000001
+

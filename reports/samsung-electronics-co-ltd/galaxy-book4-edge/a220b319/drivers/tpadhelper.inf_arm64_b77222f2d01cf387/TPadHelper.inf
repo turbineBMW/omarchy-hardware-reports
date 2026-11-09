@@ -1,0 +1,94 @@
+;
+;Copyright (c) Samsung Electronics Co., Ltd.  All rights reserved.
+;
+;
+; TPadHelper.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=HIDClass 
+ClassGuid={745a17a0-74d3-11d0-b6fe-00a0c90f57da} 
+Provider=%ManufacturerName%
+CatalogFile=TPadHelper.cat
+PnpLockdown=1
+DriverVer = 05/09/2024,10.7.46.850
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+TPadHelper.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...16299
+
+[Standard.NTARM64.10.0...16299]
+%TPadHelper.DeviceDesc%=TPadHelper_Device, HID\VEN_IMG&DEV_4100&Col02
+%TPadHelper.DeviceDesc%=TPadHelper_Device, HID\VEN_ZNT&DEV_0001&Col03
+
+[TPadHelper_Device.NT]
+Include = MSMOUSE.INF
+Needs = HID_Mouse_Inst.NT
+CopyFiles=Drivers_Dir
+
+[TPadHelper_Device.NT.AddReg]
+HKR,,"LowerFilters",0x00010000,"vhf"
+
+[TPadHelper_Device.NT.HW]
+Include = MSMOUSE.INF
+Needs = HID_Mouse_Inst.NT.HW
+AddReg=TPadHelper_Device.HW.AddReg.NT
+AddReg = TPadHelper_Device_SDDLString
+AddReg = TPadHelper_Device.NT.AddReg
+
+[TPadHelper_Device.HW.AddReg.NT]
+HKR,,"UpperFilters",0x00010000,"TPadHelper"
+
+[TPadHelper_Device_SDDLString]
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GRGW;;;AU)"
+
+[Drivers_Dir]
+TPadHelper.sys
+
+;-------------- Service installation
+[TPadHelper_Device.NT.Services]
+Needs = HID_Keyboard_Inst.Services
+AddService = TPadHelper,, TPadHelper_Service_Inst
+
+; -------------- TPadHelper driver install sections
+[TPadHelper_Service_Inst]
+DisplayName    = %TPadHelper.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\TPadHelper.sys
+LoadOrderGroup = PNP Filter ;Extended Base
+
+[TPadHelper_Device.NT.Wdf]
+KmdfService =  TPadHelper, TPadHelper_wdfsect
+[TPadHelper_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[TPadHelper_Device.NT.Components]
+AddComponent = TPadHelper_TPadFWUpdateSvcInstall,,TPadHelper_ComponentInstall_UserSvcInstall
+
+[TPadHelper_ComponentInstall_UserSvcInstall]
+ComponentIds = VEN_SAMS&PID_5450
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Samsung Electronics Co.,Ltd."
+ClassName="HIDClass" 
+DiskName = "TPadHelper Installation Disk"
+TPadHelper.DeviceDesc = "Samsung TPD Device"
+TPadHelper.SVCDESC = "TPadHelper Service"

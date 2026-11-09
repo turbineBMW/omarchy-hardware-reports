@@ -1,0 +1,78 @@
+
+[Version]
+Signature = "$Windows NT$"
+Class = SoftwareComponent
+ClassGuid = {5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider = %ManufacturerName%
+CatalogFile = GBExperienceCompDrv.cat
+DriverVer = 01/18/2024,%DriverVersion%
+
+[Manufacturer]
+%ManufacturerName% = GBExperienceCompDrv, NTarm64.10.0...16299, NTamd64.10.0...16299
+
+[GBExperienceCompDrv.NTarm64.10.0...16299]
+%DeviceName% = GBExperienceCompDrv_Install, SWC\SAM0428&S01_GBEP
+
+[GBExperienceCompDrv.NTamd64.10.0...16299]
+%DeviceName% = GBExperienceCompDrv_Install, SWC\SAM0428&S01_GBEP
+
+[SourceDisksFiles.amd64]
+AppChecker2.exe=1
+instctrl.exe=1
+GBExperience.exe=1
+cryptinfo.dat=1
+
+[SourceDisksFiles.arm64]
+AppChecker2.exe=2
+instctrl.exe=2
+GBExperience.exe=2
+cryptinfo.dat=2
+
+
+[SourceDisksNames.amd64]
+1 = "GBEDriver_amd64",GBEDriver_X64.cab
+
+[SourceDisksNames.arm64]
+2 = "GBEDriver_arm64",GBEDriver_ARM64.cab
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[GBExperienceCompDrv_Install.NT]
+CopyFiles = GBExperienceCompDrv_Install.NT.Copy
+
+[GBExperienceCompDrv_Install.NT.Copy]
+GBExperience.exe
+instctrl.exe
+AppChecker2.exe
+cryptinfo.dat
+
+[GBExperienceCompDrv_Install.NT.Services]
+AddService = ,2
+AddService = GalaxyBookExperience, 0x00000800, GBExperienceCompDrv_ServiceInstall
+
+[GBExperienceCompDrv_ServiceInstall]
+DisplayName = %ServiceName%
+ServiceType = 0x00000110
+StartType = 2                    ; SERVICE_AUTO_START
+ErrorControl = 0                 ; SERVICE_ERROR_IGNORE
+ServiceBinary = %13%\GBExperience.exe
+AddReg=GBExperienceCompDrv_ServiceInstall.AddRegistry
+
+[GBExperienceCompDrv_ServiceInstall.AddRegistry]
+HKLM,System\CurrentControlSet\Services\%ServiceName%,Version,,%DriverVersion%
+HKLM,System\CurrentControlSet\Services\%ServiceName%,DelayedAutostart,,1
+
+[GBExperienceCompDrv_Install.NT.Software]
+AddSoftware = GBExperienceApp,1,GBExperienceCompDrv_SoftwareInstall
+
+[GBExperienceCompDrv_SoftwareInstall]
+SoftwareType = 2
+SoftwareID = pfn://SAMSUNGELECTRONICSCO.LTD.SamsungWelcome_3c1yjt4zspk6g
+
+[Strings]
+ManufacturerName = "Samsung Electronics Co., Ltd."
+DeviceName = "GalaxyBookExperience"
+DriverVersion = "1.0.17.19"
+ServiceName = "GalaxyBookExperience"
+

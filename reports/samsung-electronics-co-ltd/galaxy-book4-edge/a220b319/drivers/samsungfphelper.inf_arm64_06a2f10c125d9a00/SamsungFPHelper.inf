@@ -1,0 +1,85 @@
+;
+; SamsungFPHelper.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System ; TODO: specify appropriate Class
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=SamsungFPHelper.cat
+DriverVer = 03/03/2024,10.9.13.71
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+SamsungFPHelper_Device_CoInstaller_CopyFiles = 11
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SamsungFPHelper.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64
+
+[Standard.NTARM64]
+%SamsungFPHelper.DeviceDesc%=SamsungFPHelper_Device, ACPI\VEN_SAMM&DEV_0615&SUBSYS_C1B1144D	; Hermes_8cx_Gen3
+%SamsungFPHelper.DeviceDesc%=SamsungFPHelper_Device, ACPI\VEN_SAMM&DEV_0615&SUBSYS_C1B9144D	; NX16
+%SamsungFPHelper.DeviceDesc%=SamsungFPHelper_Device, ACPI\VEN_SAMM&DEV_0615&SUBSYS_C1BA144D	; NX14
+%SamsungFPHelper.DeviceDesc%=SamsungFPHelper_Device, ACPI\VEN_SAMM&DEV_0615&SUBSYS_C1BB144D	; WINGS
+%SamsungFPHelper.DeviceDesc%=SamsungFPHelper_Device, ACPI\VEN_SAMM&DEV_0615&SUBSYS_C1BC144D	; MARS4
+%SamsungFPHelper.DeviceDesc%=SamsungFPHelper_Device, ACPI\VEN_SAMM&DEV_0615&SUBSYS_CA09144D	; NX15M
+
+[SamsungFPHelper_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+SamsungFPHelper.sys
+
+;-------------- Service installation
+[SamsungFPHelper_Device.NT.Services]
+AddService = SamsungFPHelper,%SPSVCINST_ASSOCSERVICE%, SamsungFPHelper_Service_Inst
+
+; -------------- SamsungFPHelper driver install sections
+[SamsungFPHelper_Service_Inst]
+DisplayName    = %SamsungFPHelper.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\SamsungFPHelper.sys
+
+;
+;--- SamsungFPHelper_Device Coinstaller installation ------
+;
+
+[SamsungFPHelper_Device.NT.CoInstallers]
+AddReg=SamsungFPHelper_Device_CoInstaller_AddReg
+CopyFiles=SamsungFPHelper_Device_CoInstaller_CopyFiles
+
+[SamsungFPHelper_Device_CoInstaller_AddReg]
+;
+
+
+[SamsungFPHelper_Device_CoInstaller_CopyFiles]
+;
+
+
+[SamsungFPHelper_Device.NT.Wdf]
+KmdfService =  SamsungFPHelper, SamsungFPHelper_wdfsect
+[SamsungFPHelper_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "Samsung FPHelper Installation Disk"
+SamsungFPHelper.DeviceDesc = "Samsung FPHelper Device"
+SamsungFPHelper.SVCDESC = "Samsung FPHelper Service"

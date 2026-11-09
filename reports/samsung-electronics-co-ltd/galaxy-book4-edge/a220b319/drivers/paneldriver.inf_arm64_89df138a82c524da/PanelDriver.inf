@@ -1,0 +1,118 @@
+;
+; PanelDriver.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+PnpLockdown=1
+CatalogFile=PanelDriver.cat
+DriverVer = 03/07/2024,10.24.3.7
+
+[DestinationDirs]
+; 12 = drivers
+; 11 = system32
+; 10 = SysWow64
+; 13 = system32\DriverStore\FileRepository
+SDC4156.icm = 13,\icc
+SDC4156A.icm = 13,\icc
+SDC4156P.icm = 13,\icc
+SDC4156S.icm = 13,\icc
+DefaultDestDir = 13
+Service_Dir= 13
+LibDll_Dir= 11
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+PanelDriver.sys  = 1
+PanelManagerSvc.exe = 1
+ConsultingMode.exe = 1
+PTPCtrl.exe = 1
+mfc140u.dll = 1
+vcruntime140.dll = 1
+msvcp140.dll = 1
+qdcmlib.dll = 1
+DisplayProfile.xml = 1
+DisplayProfileRegister.exe = 1
+SetProfile.exe = 1
+SDC4156.icm = 1,\icc
+SDC4156A.icm = 1,\icc
+SDC4156P.icm = 1,\icc
+SDC4156S.icm = 1,\icc
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...16299
+
+[Standard.NTARM64.10.0...16299]
+%PanelDriver.DeviceDesc%=PanelDriver_Device, ACPI\VEN_SAM&DEV_0101
+
+[PanelDriver_Device.NT]
+CopyFiles=Drivers_Dir,Service_Dir,LibDll_Dir,SDC4156.icm,SDC4156A.icm,SDC4156P.icm,SDC4156S.icm,ICC_Dir
+
+[Drivers_Dir]
+PanelDriver.sys
+
+[Service_Dir]
+PanelManagerSvc.exe
+ConsultingMode.exe
+PTPCtrl.exe
+mfc140u.dll
+vcruntime140.dll
+msvcp140.dll
+qdcmlib.dll
+DisplayProfile.xml
+DisplayProfileRegister.exe
+SetProfile.exe
+
+[LibDll_Dir]
+qdcmlib.dll
+
+[ICC_Dir]
+[SDC4156.icm]
+SDC4156.icm
+[SDC4156A.icm]
+SDC4156A.icm
+[SDC4156P.icm]
+SDC4156P.icm
+[SDC4156S.icm]
+SDC4156S.icm
+
+
+;-------------- Service installation
+[PanelDriver_Device.NT.Services]
+AddService = PanelDriver,%SPSVCINST_ASSOCSERVICE%, PanelDriver_Service_Inst
+AddService = PanelManagerSvc,0x000009f8, PanelManagerSvc_ServiceInstall
+
+; -------------- PanelDriver driver install sections
+[PanelDriver_Service_Inst]
+DisplayName    = %PanelDriver.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\PanelDriver.sys
+
+; -------------- Panel Manager service install sections
+[PanelManagerSvc_ServiceInstall]
+DisplayName    = %PanelManagerSvc.SVCDESC%
+ServiceType    = 0x10            ; SERVICE_KERNEL_DRIVER
+StartType      = 2               ; SERVICE_AUTO_START
+ErrorControl   = 0               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\PanelManagerSvc.exe
+LoadOrderGroup = Base
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Samsung Electronics Co., Ltd."
+DiskName = "PanelDriver Installation Disk"
+PanelDriver.DeviceDesc = "Samsung PanelDriver Device"
+PanelDriver.SVCDESC = "Samsung PanelDriver Service"
+PanelManagerSvc.SVCDESC = "Samsung PanelManager Service"

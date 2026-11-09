@@ -1,0 +1,120 @@
+[Version]
+Signature = "$Windows NT$"
+Class = SoftwareComponent
+ClassGuid = {5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider = %ManufacturerName%
+CatalogFile = SFourSWComp15.cat
+DriverVer = 11/17/2025,7.1.7.1
+PnpLockdown=1
+
+[Strings]
+DriverVersion = "7.1.7.1"
+ManufacturerName = "Samsung"
+DeviceName = "Samsung System Support Service"
+ServiceName = "SamsungSystemSupportService"
+
+[Manufacturer]
+%ManufacturerName% = SamsungSystemSupportSWComp, NTamd64.10.0...16299, NTarm64.10.0...16299
+
+[SamsungSystemSupportSWComp.NTamd64.10.0...16299]
+%DeviceName% = SamsungSystemSupportSWComp_Install, SWC\SAM0428&S03_SSYS
+%DeviceName% = SamsungSystemSupportSWComp_Install_NoSoftware, SWC\SAMB430&S03_SSYS
+
+[SamsungSystemSupportSWComp.NTarm64.10.0...16299]
+%DeviceName% = SamsungSystemSupportSWComp_Install, SWC\SAM0428&S03_SSYS
+%DeviceName% = SamsungSystemSupportSWComp_Install_NoSoftware, SWC\SAMB430&S03_SSYS
+
+[SourceDisksNames.amd64]
+1 = "win_amd64",settings_x64.cab
+
+[SourceDisksNames.arm64]
+2 = "win_arm64",settings_arm64.cab
+
+[SourceDisksFiles.amd64]
+SamsungActiveScreen.exe=1
+SamsungSystemSupportEngine.exe=1
+SamsungSystemSupportOSD.exe=1
+SamsungSystemSupportService.exe=1
+SettingsExtensionLauncher.exe=1
+SamsungHideWindow.exe=1
+mfc140u.dll=1
+msvcp140.dll=1
+msvcp140_1.dll=1
+msvcp140_2.dll=1
+msvcp140_atomic_wait.dll=1
+vcruntime140.dll=1
+vcruntime140_1.dll=1
+SECColor.dll=1
+
+[SourceDisksFiles.arm64]
+SamsungActiveScreen.exe=2
+SamsungSystemSupportEngine.exe=2
+SamsungSystemSupportOSD.exe=2
+SamsungSystemSupportService.exe=2
+SettingsExtensionLauncher.exe=2
+SamsungHideWindow.exe=2
+mfc140u.dll=2
+msvcp140.dll=2
+msvcp140_1.dll=2
+msvcp140_2.dll=2
+msvcp140_atomic_wait.dll=2
+vcruntime140.dll=2
+vcruntime140_1.dll=2
+SECColor.dll=2
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SamsungSystemSupportSWComp_Install.NT]
+CopyFiles = SamsungSystemSupportSWComp_Install.NT.Copy
+
+[SamsungSystemSupportSWComp_Install_NoSoftware.NT]
+CopyFiles = SamsungSystemSupportSWComp_Install.NT.Copy
+
+[SamsungSystemSupportSWComp_Install.NT.Copy]
+SamsungActiveScreen.exe
+SamsungSystemSupportEngine.exe
+SamsungSystemSupportOSD.exe
+SamsungSystemSupportService.exe
+SettingsExtensionLauncher.exe
+SamsungHideWindow.exe
+mfc140u.dll
+msvcp140.dll
+msvcp140_1.dll
+msvcp140_2.dll
+msvcp140_atomic_wait.dll
+vcruntime140.dll
+vcruntime140_1.dll
+SECColor.dll
+
+[SamsungSystemSupportSWComp_Install.NT.Services]
+AddService = ,2
+AddService = SamsungSystemSupportService, 0x00000800, SamsungSystemSupportSWComp_ServiceInstall
+
+[SamsungSystemSupportSWComp_Install_NoSoftware.NT.Services]
+AddService = ,2
+AddService = SamsungSystemSupportService, 0x00000800, SamsungSystemSupportSWComp_ServiceInstall
+
+[SamsungSystemSupportSWComp_ServiceInstall]
+DisplayName = "SamsungSystemSupportService"
+ServiceType = 0x00000010
+StartType = 2                    ; SERVICE_AUTO_START
+ErrorControl = 1                 ; SERVICE_ERROR_NORMAL
+ServiceBinary = %13%\SamsungSystemSupportService.exe
+AddReg=SamsungSystemSupportSWComp_ServiceInstall.AddRegistry
+
+[SamsungSystemSupportSWComp_ServiceInstall.AddRegistry]
+HKLM,System\CurrentControlSet\Services\%ServiceName%\Parameters,Version,,%DriverVersion%
+HKLM,System\CurrentControlSet\Services\%ServiceName%\Parameters,Interface,,6
+
+[SamsungSystemSupportSWComp_Install.NT.Software]
+AddSoftware = SamsungSettings1.5UWA,1,SamsungSystemSupportSWComp_SoftwareInstall
+AddSoftware = SamsungSettingsRuntime,1,SamsungSettingsRuntime_SoftwareInstall
+
+[SamsungSystemSupportSWComp_SoftwareInstall]
+SoftwareType = 2
+SoftwareID = pfn://SAMSUNGELECTRONICSCO.LTD.SamsungSettings1.5_3c1yjt4zspk6g
+
+[SamsungSettingsRuntime_SoftwareInstall]
+SoftwareType = 2
+SoftwareID = pfn://SAMSUNGELECTRONICSCO.LTD.SamsungSettingsRuntime_3c1yjt4zspk6g

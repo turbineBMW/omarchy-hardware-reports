@@ -1,0 +1,47 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Provider    = %Provider%
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+DriverVer   = 04/09/2026,2.0.00.68
+CatalogFile = NX16_PAKX.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%MfgName% = Firmware,NTarm64.10.0...17134
+
+[Firmware.NTarm64.10.0...17134]
+%FirmwareDesc% = Firmware_Install,UEFI\RES_{3C7BF9AC-9BC7-44BA-8F01-DB8FDD49E576}
+
+[Firmware_Install.NT]
+CopyFiles = Firmware_CopyFiles
+
+[Firmware_CopyFiles]
+NX16_PAKX.cap
+
+[Firmware_Install.NT.Hw]
+AddReg = Firmware_AddReg
+
+[Firmware_AddReg]
+HKR,,FirmwareId,,{3C7BF9AC-9BC7-44BA-8F01-DB8FDD49E576}
+HKR,,FirmwareVersion,%REG_DWORD%,0x0044
+HKR,,FirmwareFilename,,%13%\NX16_PAKX.cap
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+NX16_PAKX.cap = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[Strings]
+; localizable
+Provider     = "Samsung Electronics Co., Ltd."
+MfgName      = "Samsung Electronics Co., Ltd."
+FirmwareDesc = "SAMSUNG ELECTRONICS System Firmware"
+DiskName     = "Firmware Update"
+
+; non-localizable
+REG_DWORD     = 0x00010001 
