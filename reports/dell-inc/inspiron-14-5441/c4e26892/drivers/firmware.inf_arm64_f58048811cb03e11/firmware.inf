@@ -1,0 +1,68 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Provider    = %Provider%
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+DriverVer   = 09/01/2026,2.17.0.0
+CatalogFile = catalog.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%MfgName% = Firmware,NTarm64,NTarm64.10.0...17134
+
+[Firmware.NTarm64]                       ; Legacy：Windows version < 10.0.17134
+%FirmwareDesc% = Firmware_Install_Legacy,UEFI\RES_{2329bc0c-b1fc-48c2-8c1b-f3fc85dfe47e}
+
+[Firmware.NTarm64.10.0...17134]          ; Modern：Windows version ≥ 10.0.17134
+%FirmwareDesc% = Firmware_Install_Modern,UEFI\RES_{2329bc0c-b1fc-48c2-8c1b-f3fc85dfe47e}
+
+; ------------------- Modern (DIRID 13) -------------------
+[Firmware_Install_Modern.NT]
+CopyFiles = Fw13_Files
+
+[Firmware_Install_Modern.NT.Hw]
+AddReg = FwCommon_AddReg, Fw13_AddReg
+
+[Fw13_Files]
+firmware.bin
+
+[Fw13_AddReg]
+HKR,,FirmwareFilename,,%13%\firmware.bin
+
+; ------------------- Legacy (DIRID 10) -------------------
+[Firmware_Install_Legacy.NT]
+CopyFiles = Fw10_Files
+
+[Firmware_Install_Legacy.NT.Hw]
+AddReg = FwCommon_AddReg, Fw10_AddReg
+
+[Fw10_Files]
+firmware.bin
+
+[Fw10_AddReg]
+HKR,,FirmwareFilename,,{2329bc0c-b1fc-48c2-8c1b-f3fc85dfe47e}\firmware.bin
+; ------------------- Common Settings -------------------
+[FwCommon_AddReg]
+HKR,,FirmwareId,,{2329bc0c-b1fc-48c2-8c1b-f3fc85dfe47e}
+HKR,,FirmwareVersion,%REG_DWORD%,0x2110000
+
+[SourceDisksNames]
+1 = %DiskName%
+
+; To meet the requirement of DIRID 13 rule 1100, sub folder name should match DestinationDirs(13)
+[SourceDisksFiles]
+firmware.bin = 1
+
+[DestinationDirs]
+Fw13_Files = 13
+Fw10_Files = 10,Firmware\{2329bc0c-b1fc-48c2-8c1b-f3fc85dfe47e}
+
+[Strings]
+; localizable
+Provider     = "Dell, Inc."
+MfgName      = "Dell, Inc."
+FirmwareDesc = "System Firmware 2.17.0.0"
+DiskName     = "Firmware Update"
+
+; non-localizable
+REG_DWORD     = 0x00010001
