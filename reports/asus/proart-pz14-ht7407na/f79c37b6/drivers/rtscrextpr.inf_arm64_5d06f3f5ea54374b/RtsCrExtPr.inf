@@ -1,0 +1,51 @@
+; Copyright (c) Realtek Semiconductor Corp. All rights reserved.
+
+[Version]
+Signature = "$Windows NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%RTS%
+ExtensionId = {A58BD39E-56D3-453F-A8B7-1E83725A8B54}
+CatalogFile = RtsCrExtPrarm64.cat
+DriverVer=12/15/2025,10.0.26200.1
+PnpLockdown=1
+
+[Manufacturer]
+%VENDOR%=Vendor, NTarm64
+
+[Vendor.NTarm64]
+%RealtekCRExt%=RealtekCRExt.Inst, PCI\VEN_10EC&DEV_5227&CC_FF00
+%RealtekCRExt%=RealtekCRExt.Inst, PCI\VEN_10EC&DEV_522A&CC_FF00
+%RealtekCRExt%=RealtekCRExt.Inst, PCI\VEN_10EC&DEV_5249&CC_FF00
+%RealtekCRExt%=RealtekCRExt.Inst, PCI\VEN_10EC&DEV_524A&CC_FF00
+%RealtekCRExt%=RealtekCRExt.Inst, PCI\VEN_10EC&DEV_5250
+%RealtekCRExt%=RealtekCRExt.Inst, PCI\VEN_10EC&DEV_525A&CC_FF00
+%RealtekCRExt%=RealtekCRExt.Inst, PCI\VEN_10EC&DEV_5287&CC_FF00
+%RealtekCRExt%=RealtekCRExt.Inst, PCI\VEN_10EC&DEV_5260&CC_FF00
+%RealtekCRExt%=RealtekCRExt.Inst, PCI\VEN_10EC&DEV_5261&CC_FF00
+%RealtekCRExt%=RealtekCRExt.Inst, PCI\VEN_10EC&DEV_5228&CC_FF00
+%RealtekCRExt%=RealtekCRExt.Inst, PCI\VEN_10EC&DEV_5264&CC_FF00
+%RealtekCRExt%=RealtekCRExt.Inst, PCI\VEN_10EC&DEV_526A&CC_FF00
+
+[RealtekCRExt.Inst.NT]
+AddReg = SetNonRemovableAddReg
+
+[SetNonRemovableAddReg]
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\PCI#VEN_10EC&DEV_5227&REV_01\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\PCI#VEN_10EC&DEV_522A&REV_01\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\PCI#VEN_10EC&DEV_5249&REV_01\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\PCI#VEN_10EC&DEV_524A&REV_01\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\PCI#VEN_10EC&DEV_5250&REV_01\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\PCI#VEN_10EC&DEV_525A&REV_01\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\PCI#VEN_10EC&DEV_5287&REV_01\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\PCI#VEN_10EC&DEV_5260&REV_01\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\PCI#VEN_10EC&DEV_5261&REV_01\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\PCI#VEN_10EC&DEV_5228&REV_01\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\PCI#VEN_10EC&DEV_5264&REV_01\LocationPaths\*, Removable, 0x00010001, 0x00
+HKLM, SYSTEM\CurrentControlSet\Control\DeviceOverrides\PCI#VEN_10EC&DEV_526A&REV_01\LocationPaths\*, Removable, 0x00010001, 0x00
+
+[Strings]
+RTS 	= "Realtek Semiconductor Corp."
+VENDOR         = "Realtek Semiconductor Corp."
+RealtekCRExt   = "Realtek PCIE CardReader Extension Component"
+DiskDesc       = "Realtek PCIE Card Reader Source Disk"

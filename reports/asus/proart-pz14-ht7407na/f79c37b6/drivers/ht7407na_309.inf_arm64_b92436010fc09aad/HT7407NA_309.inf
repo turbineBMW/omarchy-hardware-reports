@@ -1,0 +1,52 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+Provider    = %DRIVER_PROVIDER%
+DriverVer   = 08/20/2026,10.1.2.309
+CatalogFile = HT7407NA_309.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%DRIVER_MANUFACTURER% = Firmware,NTarm64.10.0...25846
+
+[Firmware.NTarm64.10.0...25846]
+%DRIVER_DESC% = Firmware_Install,UEFI\RES_{e5040c17-eb1e-5050-a463-d6c9bafd2a8f}
+
+[Firmware_Install.NT]
+CopyFiles = Firmware_CopyFiles
+
+[Firmware_Install.NT.Services]
+AddService=,2
+
+[Firmware_Install.NT.Hw]
+AddReg = Firmware_AddReg.Hw
+
+[Firmware_AddReg.Hw]
+HKR,,FirmwareId,,{e5040c17-eb1e-5050-a463-d6c9bafd2a8f}
+HKR,,FirmwareVersion,%REG_DWORD%,0x00309
+HKR,,FirmwareFilename,,%13%\HT7407NA.309
+
+[Firmware_CopyFiles]
+HT7407NA.309
+
+[DestinationDirs]
+DefaultDestDir = %DIRID_WINDOWS%
+
+[SourceDisksFiles]
+HT7407NA.309 = 1
+
+[SourceDisksNames]
+1 = %DISK_NAME%
+
+[Strings]
+; localizable strings
+DRIVER_PROVIDER      = "ASUSTeK COMPUTER INC."
+DRIVER_MANUFACTURER  = "ASUSTeK COMPUTER INC."
+DRIVER_DESC          = "ASUS UEFI BIOS"
+DISK_NAME            = "Firmware Update"
+
+; non-localizable strings
+REG_DWORD    = 0x00010001
+DIRID_WINDOWS = 13
+
