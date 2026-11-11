@@ -1,0 +1,97 @@
+; File:               SurfaceRadioTelemetryDriver.inf
+;
+; Description:        SurfaceRadioTelemetryDriver
+;
+; Copyright (C) 2023 Microsoft Corporation.  All Rights Reserved.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Version]
+Signature="$Windows NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%ManufacturerName%
+CatalogFile=SurfaceRadioTelemetryDriver.cat
+DriverVer = 06/20/2024,1.10.4.0
+PnPLockDown=1
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+SurfaceRadioTelemetryDriver.dll=1
+
+[Manufacturer]
+%ManufacturerName%=Standard, NTARM64.10.0...22000
+
+[Standard.NTARM64.10.0...22000]
+%DeviceName%=SurfaceRadioTelemetryDriver_WIN11, {80D5A276-8285-4696-9FA4-8A6D824F74FF}\SurfaceRadioTelemetryDriver&0000
+%DeviceName%=SurfaceRadioTelemetryDriver_WIN11, {80D5A276-8285-4696-9FA4-8A6D824F74FF}\SurfaceRadioTelemetryDriver&0001
+
+[SurfaceRadioTelemetryDriver_WIN11.NT]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT
+CopyFiles=UserModeDriverCopy
+
+[SurfaceRadioTelemetryDriver_WIN11.NT.hw]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT.hw
+AddReg=SurfaceRadioTelemetryDriver_AddReg
+
+[SurfaceRadioTelemetryDriver_WIN11.NT.Services]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT.Services
+
+[SurfaceRadioTelemetryDriver_WIN11.NT.Events]
+AddEventProvider = {50831813-a9f1-54e2-634e-31ee5f06dc1d},SurfaceRadioTelemetryDriver_EventProviderInstall
+
+[SurfaceRadioTelemetryDriver_WIN11.NT.Wdf]
+UmdfService=SurfaceRadioTelemetryDriver,SurfaceRadioTelemetryDriver_Install
+UmdfServiceOrder=SurfaceRadioTelemetryDriver
+UmdfKernelModeClientPolicy=AllowKernelModeClients
+UmdfMethodNeitherAction=Copy
+UmdfFileObjectPolicy=AllowNullAndUnknownFileObjects
+UmdfHostProcessSharing=ProcessSharingDisabled
+
+[SurfaceRadioTelemetryDriver_Install]
+UmdfLibraryVersion=2.15.0
+ServiceBinary=%13%\SurfaceRadioTelemetryDriver.dll
+
+[SurfaceRadioTelemetryDriver_EventProviderInstall]
+ProviderName=Microsoft-Surface-SurfaceRadioTelemetryDriver
+ResourceFile=%13%\SurfaceRadioTelemetryDriver.dll
+MessageFile=%13%\SurfaceRadioTelemetryDriver.dll
+AddChannel= Microsoft-Surface-SurfaceRadioTelemetryDriver/Operational,0x2,SurfaceRadioTelemetryDriver_ChannelInstall
+
+[SurfaceRadioTelemetryDriver_ChannelInstall]
+Isolation         = 2
+Enabled           = 1
+
+[SurfaceRadioTelemetryDriver_AddReg]
+; Allow access to system, administrators group, and user-mode drivers
+HKR, , Security, , "D:P(A;;GA;;;SY)(A;;GA;;;BA)(A;;GA;;;UD)"
+
+[DestinationDirs]
+UserModeDriverCopy=13
+
+[UserModeDriverCopy]
+SurfaceRadioTelemetryDriver.dll
+
+[Strings]
+ManufacturerName="Surface"
+DiskName = "SurfaceRadioTelemetryDriver driver Installation Disk"
+WudfRdDisplayName="Windows Driver Foundation - User-mode Driver Framework Reflector"
+DeviceName="Surface Radio Telemetry Driver"
+
+; non-localizable
+SPSVCINST_ASSOCSERVICE= 0x00000002
+SERVICE_KERNEL_DRIVER = 1
+SERVICE_BOOT_START    = 0
+SERVICE_SYSTEM_START  = 1
+SERVICE_AUTO_START    = 2
+SERVICE_DEMAND_START  = 3
+SERVICE_ERROR_NORMAL  = 1
+SERVICE_ERROR_IGNORE  = 0
+SERVICE_WIN32_SHARE_PROCESS = 0x00000020
+
+;; eof: SurfaceRadioTelemetryDriver.inx
+;;
