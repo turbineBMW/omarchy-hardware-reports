@@ -1,0 +1,69 @@
+;/*++
+;
+;Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;Module Name:
+;    SurfaceHidClassSettingsExtensionPackage.inx
+;
+;Abstract:
+;    INF file for installing the SurfaceHidClassSettingsExtensionPackage
+;
+;--*/
+
+[Version]
+Signature="$Windows NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%ManufacturerName%
+ExtensionId = {BE61A708-4C56-4DD5-AFAA-305EE6D164E4}
+CatalogFile=SurfaceHidClassSettingsExtensionPackage.cat
+DriverVer = 07/23/2024,0.0.9.0
+PnpLockDown=1
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64
+
+[Standard.NTARM64]
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, ACPI\MSHW0134
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, ACPI\MSHW0230
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, ACPI\MSHW0231
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, ACPI\MSHW0235
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, ACPI\MSHW0274
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, ACPI\MSHW0280
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, ACPI\MSHW0460
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, ACPI\MSHW0484
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, ACPI\MSHW0485
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, BTHLEDevice\{00001812-0000-1000-8000-00805f9b34fb}_Dev_VID&02045e_PID&0c7a
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, BTHLEDevice\{00001812-0000-1000-8000-00805f9b34fb}_Dev_VID&02045e_PID&0c7b
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, PCI\VEN_8086&DEV_34E4
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, PCI\VEN_8086&DEV_51D0
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, PCI\VEN_8086&DEV_7E49
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, PCI\VEN_8086&DEV_A0D0
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, USB\VID_045E&PID_096D&MI_01
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, USB\VID_045E&PID_09AD
+%SurfaceHidClassSettingsExtensionPackage.DeviceDesc%=SurfaceHidClassSettingsExtensionPackage, USB\VID_045E&PID_09B7&MI_01
+
+[SurfaceHidClassSettingsExtensionPackage.NT]
+
+[SurfaceHidClassSettingsExtensionPackage.NT.HW]
+AddReg = SurfaceHidClassSettingsExtensionPackage.HWAddReg
+
+[SurfaceHidClassSettingsExtensionPackage.HWAddReg]
+HKR,,"ComboHardwareIdV2Enabled",%REG_DWORD%, 1
+
+;*****************************************
+; Strings section
+;*****************************************
+
+[Strings]
+ManufacturerName = "Surface"
+DiskName = "Surface HidClass Settings Extension package Installation Disk"
+SurfaceHidClassSettingsExtensionPackage.DeviceDesc = "Surface HidClass Settings Extension Package"
+SurfaceHidClassSettingsExtensionPackage.SVCDESC = "Surface HidClass Settings Extension Package"
+SurfaceHidClassSettingsExtensionPackage.FriendlyName = "Surface HidClass Settings Extension Package"
+
+;Non-Localizable
+REG_DWORD              = 0x00010001 
