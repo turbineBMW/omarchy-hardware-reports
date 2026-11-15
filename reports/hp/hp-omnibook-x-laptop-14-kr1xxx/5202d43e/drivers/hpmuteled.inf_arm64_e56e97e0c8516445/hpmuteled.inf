@@ -1,0 +1,66 @@
+; Copyright(c) 2017-2024, HP Development Company, L.P.All rights reserved.
+; This software contains confidential and proprietary information of HP.
+; The user of this software agrees not to disclose, disseminate or copy
+; such Confidential Information and shall use the software only in accordance
+; with the terms of the license agreement the user entered into with HP.
+;
+
+[Version]
+Signature = "$WINDOWS NT$"
+Class = System
+ClassGuid = {4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%Company%
+DriverVer = 10/22/2025, 1.0.4.6
+CatalogFile = hpmuteled.cat
+PnPLockdown=1
+
+[Manufacturer]
+%Mfg%=HP, NTARM64.10.0...17763
+
+[HP.NTARM64.10.0...17763]
+%DeviceDesc% = hpmuteledInstall, ACPI\HPIC0005
+
+[hpmuteledInstall.NT]
+CopyFiles = hpmuteledInstall.NT.Copy
+
+[hpmuteledInstall.NT.Copy]
+hpmuteled.sys
+HPMuteLEDSvc.exe
+
+[SourceDisksNames]
+1 = %DiskId%,,,""
+
+[SourceDisksFiles]
+hpmuteled.sys = 1
+HPMuteLEDSvc.exe = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[hpmuteledInstall.NT.Services]
+AddService = hpmuteled, 0x00000002, hpmuteledDrv_Inst
+AddService = HPMuteLEDSvc, 0x00000800, hpmuteledSvc_Inst
+
+[hpmuteledDrv_Inst]
+DisplayName = %DeviceDesc% 
+ServiceType = 1     ; SERVICE_KERNEL_DRIVER
+StartType = 3       ; SERVICE_DEMAND_START
+ErrorControl = 1    ; SERVICE_ERROR_NORMAL
+ServiceBinary = %13%\hpmuteled.sys
+
+[hpmuteledSvc_Inst]
+DisplayName = %ServiceDesc%
+Description = "Provides Mute LED Service"
+ServiceType = 0x00000010        ; SERVICE_WIN32_SHAERE_PROCESS
+StartType = 2                   ; SERVICE_AUTO_START
+ErrorControl = 1                ; SERVICE_ERROR_NORMAL
+LoadOrderGroup = "Extended Base"
+ServiceBinary = %13%\HPMuteLEDSvc.exe
+Dependencies = Winmgmt, rpcss, ProfSvc
+
+[Strings]
+Mfg = "HP"
+DiskId = "Install disk (1)"
+Company = "HP Inc."
+DeviceDesc = "HP Mute LED"
+ServiceDesc = "HP Mute LED Service"
