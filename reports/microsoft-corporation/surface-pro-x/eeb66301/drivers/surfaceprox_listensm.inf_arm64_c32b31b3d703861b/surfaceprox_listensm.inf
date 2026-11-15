@@ -1,0 +1,43 @@
+﻿; 
+; Copyright (C) 2019 Qualcomm Technologies, Inc.
+; All Rights Reserved. QUALCOMM Proprietary and Confidential.
+;
+; Module Name:
+;
+;    QCListenSM.INX
+;
+; Abstract:
+;
+;    Extension INX file for installing Qualcomm Sound Model Library as a software component
+;
+[Version]
+Signature="$WINDOWS NT$"
+Class=Extension
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%Surface%
+ExtensionId = {1C68F9DB-AFDD-41EC-A871-EA712C8CEEB3}
+DriverVer = 05/17/2023,1.0.1980.0000
+CatalogFile=SurfaceProX_listensm.cat
+PnpLockdown=1
+
+[Manufacturer]
+%MfgName%=Surface,NTARM64
+
+[Surface.NTARM64]
+%QCLSM% = QCListenSoundModel, AUDD\QCOM042C 
+
+[QCListenSoundModel.NT]
+; empty
+
+[QCListenSoundModel.NT.Components]
+AddComponent = QCListenSoundModel_SWComponent,,QCListenSoundModel_Component_Inst
+
+[QCListenSoundModel_Component_Inst]
+ComponentIDs = SWC\VEN_QCOM&DEV_QCListenSoundModel&PLAT_8180
+DisplayName = %QCListenSoundModel.DESC%
+
+[Strings]
+Surface = "Surface"
+MfgName="Surface"
+QCListenSoundModel.DESC = "Surface Pro X Aqstic"
+QCLSM = "Surface Pro X Aqstic"

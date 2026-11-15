@@ -1,0 +1,71 @@
+﻿; 
+; Copyright (C) 2019 Qualcomm Technologies, Inc.
+; All Rights Reserved. QUALCOMM Proprietary and Confidential.
+;
+; Module Name:
+;
+;    QCListenSM_swc_ext.INX
+;
+; Abstract:
+;
+;    INX file for Qualcomm Sound Model Library software component extension for sound mode files copy
+;
+[Version]
+Signature="$WINDOWS NT$"
+Class=Extension
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%Surface%
+ExtensionId = {D56963CD-A0C8-49B7-AADD-1981CB1E2D79}
+DriverVer = 05/17/2023,1.0.1980.0000
+CatalogFile=SurfaceProX_listenext.cat
+PnpLockdown=1
+
+[DestinationDirs]
+VoiceActivationModels.Files = 13,
+
+[SourceDisksNames]
+0=%Disk%
+
+[SourceDisksFiles]
+LangIds=0,,
+en-US-config=0,,
+en-US-Cortana.bin=0,,
+en-US-Alexa.bin=0,,
+zh-CN-config=0,,
+zh-CN-Cortana.bin=0,,
+
+[Manufacturer]
+%MfgName%=Extensions,NTARM64
+
+[Extensions.NTARM64]
+%QCLSM% = QCListenSoundModel_Inst, SWC\VEN_QCOM&DEV_QCListenSoundModel&PLAT_8180
+
+[QCListenSoundModel_Inst.HW]
+AddReg = QCListenSoundModel_HW_Reg
+
+[QCListenSoundModel_Inst]
+CopyFiles = VoiceActivationModels.Files 
+
+;Qualcomm internal configurable registries
+[QCListenSoundModel_HW_Reg]
+HKR,AudioListenSoundModelDll\Config, BaseSoundModelRootDirPath, %REG_EXPAND_SZ%, "%13%"
+
+[VoiceActivationModels.Files]
+LangIds
+en-US-config
+en-US-Cortana.bin
+en-US-Alexa.bin
+zh-CN-config
+zh-CN-Cortana.bin
+
+[Strings]
+Surface = "Surface"
+MfgName="Surface"
+QCLSM = "Surface Pro X Aqstic"
+Disk = "Disk"
+
+REG_SZ          = 0x00000000
+REG_MULTI_SZ    = 0x00010000
+REG_EXPAND_SZ   = 0x00020000
+REG_DWORD       = 0x00010001
+REG_BINARY      = 0x00000001

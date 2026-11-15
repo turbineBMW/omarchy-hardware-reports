@@ -1,0 +1,21 @@
+{
+  "type": "devicetree",
+  "name": "Microsoft Corporation Surface Pro X",
+  "compatible": "",
+  "hwids": [
+    "f5d079fd-4e60-5338-b10b-6efd40f0a288",
+    "2c760338-2ea3-5462-81ae-297cd95ad2ba",
+    "e0709fd5-2800-554c-b8f9-18b1400f6052",
+    "21c23c53-98d5-5f92-8e8b-60bbea3509fe",
+    "1dc8ec42-9eeb-51b1-9490-0cb33bd7d23a",
+    "cc2bc434-a08a-59c0-85ac-2576ed611de6",
+    "cfd77e02-45cc-5a46-9102-bf5881241933",
+    "38d5909b-b425-5db8-b533-1133e81465e8",
+    "b07028e2-19c1-577d-a3c9-2eabef35c2a1",
+    "5d018db8-6de6-55f8-8d8b-4b773caf8450",
+    "db7e6e61-56bf-531d-b594-e4b1660d04aa",
+    "f27bf0cf-7937-534b-8573-2b6e6ff352fb",
+    "2d035dcc-0dc4-5cd4-9480-1f61bfc827d9",
+    "c2deca53-d7d4-5d00-876c-98c5c7eb3cc2"
+  ]
+}

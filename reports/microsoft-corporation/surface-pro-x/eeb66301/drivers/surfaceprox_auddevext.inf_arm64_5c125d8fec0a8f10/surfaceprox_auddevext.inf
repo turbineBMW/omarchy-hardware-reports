@@ -1,0 +1,75 @@
+﻿;/*++
+;
+;Copyright (c) 2018 Qualcomm Technologies, Inc.  All Rights Reserved.
+;
+;Module Name:
+;    qcauddev_ext.inf
+;
+;Abstract:
+;    Extension INF file for installing the Audio Device Driver and Multi Button Headset Controller Driver
+;
+;Installation Notes: 
+;   
+;
+;--*/
+;Description for these Registry Entries are added below in the Comments Section
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Extension
+ClassGUID={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%Surface%
+ExtensionId={C534A55C-2793-49F4-A2E9-767846CF13D9}
+DriverVer = 05/17/2023,1.0.1980.0000
+CatalogFile=SurfaceProX_auddevext.cat
+PnpLockdown=1
+
+[SourceDisksNames]
+1 = %DiskId1%
+
+[SourceDisksFiles]
+
+qcwdsp8180.mbn = 1,
+
+
+[DestinationDirs]
+CPEFW = 13       ; refers to Driver Store directory. 
+WDSPFW = 13		 ; refers to Driver Store directory.
+
+[Manufacturer]
+%ExtMfg%=Standard_EXT,NTARM64
+
+[Standard_EXT.NTARM64]
+%AUDIODEVICE_EXT.DeviceDesc% = AUDIODEVICE_Ext,ADCM\QCOM0425
+
+[AUDIODEVICE_Ext.NT]
+CopyFiles = CPEFW, WDSPFW
+
+[AUDIODEVICE_Ext.NT.HW]
+AddReg = WDSPRegPath
+
+[CPEFW]
+
+[WDSPFW]
+
+qcwdsp8180.mbn
+
+
+
+[WDSPRegPath]
+;WDSP Default Image Path
+HKR,AUDD\Parameters,"WdspImagePath",%REG_SZ%,"%13%"
+;WDSP Default Image Name
+HKR,AUDD\Parameters,"WdspImageName",%REG_SZ%,"qcwdsp8180.mbn"
+;Overwrite value in base driver
+HKR,AUDD\CodecInitializationParameters,"IsWDSPAvailable",%REG_DWORD%,0x00000000
+
+[Strings]
+REG_SZ                = 0x00000000
+REG_DWORD			  = 0x00010001
+Surface = "Surface"
+ExtMfg = "(Extension system devices)"
+AUDIODEVICE_EXT.DeviceDesc = "Qualcomm(R) Aqstic(TM)"
+MBHC_EXT.DeviceDesc = "Qualcomm Multi Button Headset Controller"
+DiskId1 = "Qualcomm Audio Device Installation Disk"
+
