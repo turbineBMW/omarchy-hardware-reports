@@ -1,0 +1,347 @@
+{
+  "format": 2,
+  "tool": "1.2.0",
+  "id": "5202d43e",
+  "created": "2026-11-15",
+  "os": "Windows 11 Core 26H1 (build 28000.3501, Arm64)",
+  "identity": {
+    "manufacturer": "HP",
+    "family": "103C_5335M8 HP OmniBook X",
+    "productName": "HP OmniBook X Laptop 14-kr1xxx",
+    "sku": "D33Y9UA#ABA",
+    "version": "ConfigID",
+    "baseboardManufacturer": "HP",
+    "baseboardProduct": "8F46",
+    "biosVendor": "Qualcomm Technologies Inc., Insyde Inc.",
+    "biosVersion": "F.04",
+    "biosDate": "03/19/2026",
+    "biosMajor": 15,
+    "biosMinor": 4,
+    "enclosureType": 10
+  },
+  "processor": "Snapdragon(R) X2 Plus - X2P42100 - Qualcomm Oryon(TM) CPU",
+  "panel": "SDC4213",
+  "chids": [
+    {
+      "type": "0",
+      "fields": "MFPS--BvRr--",
+      "value": "40622e1a-aade-52a8-82c2-6c41dafd9408"
+    },
+    {
+      "type": "1",
+      "fields": "MFP---BvRr--",
+      "value": "c0c25c53-403c-5bfe-bb9d-b33453445272"
+    },
+    {
+      "type": "2",
+      "fields": "M-P---BvRr--",
+      "value": "102c8ebd-6335-5972-a0bb-315c7cd4a565"
+    },
+    {
+      "type": "3",
+      "fields": "MFPSmp------",
+      "value": "c670a299-d233-5486-a9b8-e38247f6698b"
+    },
+    {
+      "type": "4",
+      "fields": "MFPS--------",
+      "value": "d411f91d-8f4e-50e3-8048-899da9b5ed1e"
+    },
+    {
+      "type": "5",
+      "fields": "MFP---------",
+      "value": "32e8ad3c-cf93-59ea-8d91-bf669cacda2d"
+    },
+    {
+      "type": "6",
+      "fields": "M--Smp------",
+      "value": "937bcf47-6a53-56a5-8e7e-fd08337f4c11"
+    },
+    {
+      "type": "7",
+      "fields": "M--S--------",
+      "value": "c93fa3f8-11c7-586c-b067-0c09b31a2e93"
+    },
+    {
+      "type": "8",
+      "fields": "M-P-mp------",
+      "value": "1b0c3ef7-5a70-57fc-a9c0-43881f2b49e7"
+    },
+    {
+      "type": "9",
+      "fields": "M-P---------",
+      "value": "91fdd587-2367-54e2-af3a-f7f699580cec"
+    },
+    {
+      "type": "10",
+      "fields": "MF--mp------",
+      "value": "aa949864-0304-5cec-9104-57c85b68875a"
+    },
+    {
+      "type": "11",
+      "fields": "MF----------",
+      "value": "5d43face-6ba8-5d41-8914-12f3410bbcf9"
+    },
+    {
+      "type": "12",
+      "fields": "M---------e-",
+      "value": "f999e8e2-2bed-5ee7-85be-a69096b9544d"
+    },
+    {
+      "type": "13",
+      "fields": "M---mp------",
+      "value": "9c4d99de-ba59-506d-a7b5-ffb5b3615f8a"
+    },
+    {
+      "type": "14",
+      "fields": "M-----------",
+      "value": "93f84748-c854-5d6b-b78a-13c2361e0758"
+    },
+    {
+      "type": "ext0",
+      "fields": "MFP--------E",
+      "value": "ab4bb574-f8f0-5ea4-95b6-e06e3105151d"
+    },
+    {
+      "type": "ext1",
+      "fields": "MF---------E",
+      "value": "db598a56-34fc-5990-9e86-5320bcb38dad"
+    },
+    {
+      "type": "ext2",
+      "fields": "M--S-------E",
+      "value": "a8d1885b-9aaa-5c65-a65b-f78de72cd99c"
+    }
+  ],
+  "windowsChids": [
+    "40622e1a-aade-52a8-82c2-6c41dafd9408",
+    "c0c25c53-403c-5bfe-bb9d-b33453445272",
+    "102c8ebd-6335-5972-a0bb-315c7cd4a565",
+    "d411f91d-8f4e-50e3-8048-899da9b5ed1e",
+    "32e8ad3c-cf93-59ea-8d91-bf669cacda2d",
+    "c93fa3f8-11c7-586c-b067-0c09b31a2e93",
+    "91fdd587-2367-54e2-af3a-f7f699580cec",
+    "5d43face-6ba8-5d41-8914-12f3410bbcf9",
+    "f999e8e2-2bed-5ee7-85be-a69096b9544d",
+    "93f84748-c854-5d6b-b78a-13c2361e0758"
+  ],
+  "smbiosVersion": "3.8",
+  "acpi": [
+    {
+      "signature": "FACP",
+      "file": "acpi/facp.dat",
+      "size": 276,
+      "revision": 6,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "DSDT",
+      "file": "acpi/dsdt.dat",
+      "size": 460121,
+      "revision": 2,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "SSDT",
+      "file": "acpi/ssdt1.dat",
+      "size": 2282,
+      "revision": 1,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 4096
+    },
+    {
+      "signature": "SSDT",
+      "file": "acpi/ssdt2.dat",
+      "size": 242,
+      "revision": 1,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 4096
+    },
+    {
+      "signature": "SSDT",
+      "file": "acpi/ssdt3.dat",
+      "size": 70112,
+      "revision": 1,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 4096
+    },
+    {
+      "signature": "APIC",
+      "file": "acpi/apic.dat",
+      "size": 1529,
+      "revision": 5,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "BERT",
+      "file": "acpi/bert.dat",
+      "size": 48,
+      "revision": 1,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "BGRT",
+      "file": "acpi/bgrt.dat",
+      "size": 56,
+      "revision": 1,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "CSRT",
+      "file": "acpi/csrt.dat",
+      "size": 50906,
+      "revision": 0,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "DBG2",
+      "file": "acpi/dbg2.dat",
+      "size": 1518,
+      "revision": 1,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "FACS",
+      "file": "acpi/facs.dat",
+      "size": 64,
+      "revision": 0,
+      "oemId": "",
+      "oemTableId": "",
+      "oemRevision": 0
+    },
+    {
+      "signature": "FPDT",
+      "file": "acpi/fpdt.dat",
+      "size": 52,
+      "revision": 1,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "GTDT",
+      "file": "acpi/gtdt.dat",
+      "size": 156,
+      "revision": 3,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "IORT",
+      "file": "acpi/iort.dat",
+      "size": 6074,
+      "revision": 0,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "MCFG",
+      "file": "acpi/mcfg.dat",
+      "size": 172,
+      "revision": 1,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "PPTT",
+      "file": "acpi/pptt.dat",
+      "size": 738,
+      "revision": 1,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "SDEV",
+      "file": "acpi/sdev.dat",
+      "size": 223,
+      "revision": 1,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "SPCR",
+      "file": "acpi/spcr.dat",
+      "size": 80,
+      "revision": 2,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "TPM2",
+      "file": "acpi/tpm2.dat",
+      "size": 84,
+      "revision": 3,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "UEFI",
+      "file": "acpi/uefi.dat",
+      "size": 438,
+      "revision": 1,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    },
+    {
+      "signature": "XSDT",
+      "file": "acpi/xsdt.dat",
+      "size": 188,
+      "revision": 1,
+      "oemId": "HPQOEM",
+      "oemTableId": "8F46",
+      "oemRevision": 1
+    }
+  ],
+  "displays": [
+    {
+      "file": "edid/0-SDC4213-internal.bin",
+      "panel": "SDC4213",
+      "internal": true
+    }
+  ],
+  "redactions": [
+    "System serial number",
+    "System UUID",
+    "Baseboard serial number",
+    "Baseboard asset tag",
+    "Chassis serial number",
+    "Chassis asset tag",
+    "Processor serial number",
+    "Memory serial numbers",
+    "Memory asset tags",
+    "Battery serial number",
+    "SoC serial number in the ACPI tables (SOSN)",
+    "Display serial numbers in EDID",
+    "MSDM ACPI table (holds the Windows product key)",
+    "21 Bluetooth, printer, drive, network and audio-endpoint devices",
+    "USB serial numbers and MAC addresses in device IDs",
+    "Serial numbers and the system UUID, wherever else they appear",
+    "13 registry values and properties named as serial numbers, addresses or identifiers"
+  ],
+  "problems": []
+}
