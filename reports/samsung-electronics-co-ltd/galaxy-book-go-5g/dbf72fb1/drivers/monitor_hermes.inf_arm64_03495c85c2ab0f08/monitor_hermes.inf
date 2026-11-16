@@ -1,0 +1,39 @@
+;
+; Monitor for Hermes Project
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Monitor
+ClassGUID={4d36e96e-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile=Monitor_Hermes.cat
+DriverVer = 01/25/2021,1.0.0.1
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64
+
+[Standard.NTARM64]
+%MonitorDPI125.DeviceDesc%=DPI125_Device.Install, Monitor\BOE07D3
+%MonitorDPI125.DeviceDesc%=DPI125_Device.Install, Monitor\AUO213D
+%MonitorDPI125.DeviceDesc%=DPI125_Device.Install, Monitor\AUO203D
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+;-------------- Service installation
+[DPI125_Device.Install]
+AddReg= DPI125_ScaleFactor
+
+[DPI125_ScaleFactor]
+HKR,,PreferredScaleFactor,%REG_DWORD%,125
+
+[Strings]
+REG_DWORD = 0x00010001
+ManufacturerName = "Samsung Electronics Co., Ltd."
+MonitorDPI125.DeviceDesc = "Samsung Monitor Device"
+W867Monitor.DeviceDesc = "Samsung Monitor Device"
