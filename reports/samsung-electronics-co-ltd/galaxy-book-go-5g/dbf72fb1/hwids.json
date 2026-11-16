@@ -1,0 +1,21 @@
+{
+  "type": "devicetree",
+  "name": "SAMSUNG ELECTRONICS CO., LTD. Galaxy Book Go 5G",
+  "compatible": "",
+  "hwids": [
+    "781d6241-a53c-50a7-9400-05b1a47e400e",
+    "6ede6cf5-dcba-5c14-9d6e-20483a319374",
+    "ad667504-0603-504a-9e86-88e279a692c9",
+    "41e17b79-57dd-53a3-8f2c-8c8a6a116ef7",
+    "dad425f3-1445-5ca3-90a2-2a69c788a49d",
+    "16791a5a-eab5-5733-b4d6-8276d17bb1c5",
+    "58fee4f2-862e-5a88-9842-c67bd3df9d85",
+    "bb04ea9d-135d-57f3-b28d-c6a248d68a84",
+    "4e53e38d-2a87-5c81-8359-85467acd752f",
+    "3bf91e20-c904-5f7f-a85a-81f96d447a80",
+    "e75cfdba-d5be-5247-819a-67ad119e9a9b",
+    "82d13252-829e-5bb6-acdf-dfad0572b8d3",
+    "75b2b451-8127-5458-a93a-488b82fa320c",
+    "497bbccd-c59e-5594-8ab7-b98a584a756e"
+  ]
+}

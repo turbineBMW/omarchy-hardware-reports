@@ -1,0 +1,47 @@
+[Version]                                                       		
+Signature = $WINDOWS NT$                                     		
+Class = Firmware                                                 	    
+ClassGuid = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}    		
+Provider = %DRIVER_PROVIDER%
+DriverVer = 11/11/2025, 1.0.0000.0048    		
+CatalogFile = HERMES_5G_PAKL.cat   		
+PnpLockdown = 1
+
+[Manufacturer]          		
+%DRIVER_MANUFACTURER% = Firmware, NTarm64  
+  				
+[Firmware.NTarm64]   		
+%DRIVER_DESC% = Firmware_Install, UEFI\RES_{78ECB76F-0A77-461F-91FE-734377470462}
+   				
+[Firmware_Install.NT]   		
+CopyFiles = Firmware_CopyFiles
+   				
+[Firmware_Install.NT.Hw]   		
+AddReg = Firmware_AddReg.Hw   
+
+[Firmware_AddReg.Hw]          		
+HKR,,FirmwareId,,{78ECB76F-0A77-461F-91FE-734377470462}  		
+HKR,,FirmwareVersion,%REG_DWORD%,0x00000030  		
+HKR,,FirmwareFilename,,{78ECB76F-0A77-461F-91FE-734377470462}\HERMES_5G_PAKL.cap 
+   				
+[Firmware_CopyFiles]   		
+HERMES_5G_PAKL.cap
+   				
+[DestinationDirs]   		
+DefaultDestDir = %DIRID_WINDOWS%, Firmware\{78ECB76F-0A77-461F-91FE-734377470462}
+   		
+[SourceDisksFiles]   		
+HERMES_5G_PAKL.cap = 1
+    				
+[SourceDisksNames]  		
+1 = %DISK_NAME%   
+
+[Strings]          		
+DRIVER_PROVIDER  = "Samsung Electronics Co., Ltd."  		
+DRIVER_MANUFACTURER  = "Samsung Electronics Co., Ltd."  		
+DRIVER_DESC = "SAMSUNG ELECTRONICS System Firmware"   		
+DISK_NAME     = "Firmware Update"   
+    				
+REG_DWORD = 0x00010001   		
+DIRID_WINDOWS = 10 
+ 
