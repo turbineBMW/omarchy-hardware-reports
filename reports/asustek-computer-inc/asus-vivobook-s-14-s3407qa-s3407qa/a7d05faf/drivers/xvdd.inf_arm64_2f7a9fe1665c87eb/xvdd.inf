@@ -1,0 +1,77 @@
+;
+;  Copyright 2012 Microsoft Corporation, All rights reserved.
+;
+; xvdd.inf - Install XVDD Driver.
+;
+
+
+[Version]
+Signature="$Windows NT$"
+Class=SCSIAdapter
+ClassGUID={4D36E97B-E325-11CE-BFC1-08002BE10318}
+Provider=%MSFT%
+CatalogFile=xvdd.cat
+DriverVer=10/11/2026,10.0.22030.1
+PnpLockDown=1
+
+[SourceDisksNames]
+1=%DiskId1%
+
+[SourceDisksFiles]
+xvdd.sys = 1
+
+[Manufacturer]
+%MSFT%=Microsoft,NTarm64.10.0...18362
+
+[Microsoft.NTarm64.10.0...18362]
+%Xvdd%=xvdd_Install_Control, XvddRootDevice
+%Xvdd_Alt%=xvdd_Install_Control, root\Xvdd
+
+[DestinationDirs]
+XvddPort_DriverCopy=13           ; Driver store
+
+; =================== XVDD ================================
+
+[xvdd_Install_Control]
+CopyFiles=XvddPort_DriverCopy
+AddReg=xvdd_DriverAddReg
+
+[xvdd_Install_Control.Services]
+AddService=Xvdd,2,xvdd_DriverInstallSection,xvdd_EventLogInstallSection
+
+[XvddPort_DriverCopy]
+xvdd.sys,,,0x100
+
+[xvdd_DriverAddReg]
+
+[xvdd_DriverInstallSection]
+DisplayName    = %XvddPortName%
+ServiceType    = 1      ;SERVICE_KERNEL_DRIVER
+StartType      = 3      ;SERVICE_DEMAND_START
+ErrorControl   = 1      ;SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\xvdd.sys
+AddReg         = xvdd_addreg
+LoadOrderGroup = SCSI Miniport
+
+[xvdd_addreg]
+HKR,"Parameters","BusType",%REG_DWORD%,0x00000000
+
+[xvdd_EventLogInstallSection]
+AddReg = xvdd_EventLog_addreg
+
+[xvdd_EventLog_addreg]
+HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\xvdd.sys"
+HKR,,TypesSupported,0x00010001,7
+
+[Strings]
+MSFT="Xbox"
+MediaDescription="Xvdd Disk Mounter"
+Xvdd="Xvdd SCSI Miniport"
+Xvdd_Alt="Xvdd SCSI Miniport (Alternate)"
+XvddPortName="XVDD Port Driver"
+DiskId1= "XVDD Device Installation Disk"
+
+REG_DWORD              = 0x00010001
+REG_DWORD_NO_CLOBBER   = 0x00010003
+REG_ADDREG_APPEND      = 0x00010008
+REG_EXPAND_SZ          = 0x00020000
