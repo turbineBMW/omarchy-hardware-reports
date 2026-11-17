@@ -1,0 +1,15 @@
+{
+  "type": "devicetree",
+  "name": "ASUSTeK COMPUTER INC. ASUS Vivobook S 14 S3407QA_S3407QA",
+  "compatible": "",
+  "hwids": [
+    "083492bc-caa3-5198-b662-ebb6b334bd7c",
+    "537022b5-74c9-5326-b56b-08f119103eee",
+    "21413277-589d-570d-85d3-70a7311794b2",
+    "1deb1b04-b39b-510c-9eea-610da0691489",
+    "c9e04d56-5a9e-596e-bc93-0c2a3a434508",
+    "0b25878a-5ef5-5cfb-a121-365686c0ca6a",
+    "1e8c254e-e554-500b-9552-70ed1d4feb4e",
+    "4300a5b5-6c5a-589e-9668-a7877d4e88ca"
+  ]
+}

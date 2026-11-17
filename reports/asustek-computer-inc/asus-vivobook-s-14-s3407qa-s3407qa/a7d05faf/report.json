@@ -1,0 +1,279 @@
+{
+  "format": 2,
+  "tool": "1.2.0",
+  "id": "a7d05faf",
+  "created": "2026-11-17",
+  "os": "Windows 11 Core 26H2 (build 26300.9974, Arm64)",
+  "identity": {
+    "manufacturer": "ASUSTeK COMPUTER INC.",
+    "family": "ASUS Vivobook S 14",
+    "productName": "ASUS Vivobook S 14 S3407QA_S3407QA",
+    "sku": " ",
+    "version": "1.0",
+    "baseboardManufacturer": "ASUSTeK COMPUTER INC.",
+    "baseboardProduct": "S3407QA",
+    "biosVendor": "Insyde",
+    "biosVersion": "S3407QA.311",
+    "biosDate": "05/22/2026",
+    "biosMajor": 1,
+    "biosMinor": 27,
+    "enclosureType": 10
+  },
+  "processor": "Snapdragon(R) X - X126100 - Qualcomm(R) Oryon(TM) CPU",
+  "panel": "NCP0061",
+  "chids": [
+    {
+      "type": "1",
+      "fields": "MFP---BvRr--",
+      "value": "083492bc-caa3-5198-b662-ebb6b334bd7c"
+    },
+    {
+      "type": "2",
+      "fields": "M-P---BvRr--",
+      "value": "537022b5-74c9-5326-b56b-08f119103eee"
+    },
+    {
+      "type": "5",
+      "fields": "MFP---------",
+      "value": "21413277-589d-570d-85d3-70a7311794b2"
+    },
+    {
+      "type": "8",
+      "fields": "M-P-mp------",
+      "value": "1deb1b04-b39b-510c-9eea-610da0691489"
+    },
+    {
+      "type": "9",
+      "fields": "M-P---------",
+      "value": "c9e04d56-5a9e-596e-bc93-0c2a3a434508"
+    },
+    {
+      "type": "10",
+      "fields": "MF--mp------",
+      "value": "0b25878a-5ef5-5cfb-a121-365686c0ca6a"
+    },
+    {
+      "type": "11",
+      "fields": "MF----------",
+      "value": "1417b199-407e-51ee-b445-84dd736e5b77"
+    },
+    {
+      "type": "12",
+      "fields": "M---------e-",
+      "value": "665276be-80c5-5e5d-929f-fa85d18e2d50"
+    },
+    {
+      "type": "13",
+      "fields": "M---mp------",
+      "value": "91497d3e-0546-59c6-98a5-e65f79e7f06d"
+    },
+    {
+      "type": "14",
+      "fields": "M-----------",
+      "value": "65605ed1-09e2-57aa-bd0f-a26c1d35433f"
+    },
+    {
+      "type": "ext0",
+      "fields": "MFP--------E",
+      "value": "1e8c254e-e554-500b-9552-70ed1d4feb4e"
+    },
+    {
+      "type": "ext1",
+      "fields": "MF---------E",
+      "value": "4300a5b5-6c5a-589e-9668-a7877d4e88ca"
+    }
+  ],
+  "windowsChids": [
+    "083492bc-caa3-5198-b662-ebb6b334bd7c",
+    "537022b5-74c9-5326-b56b-08f119103eee",
+    "21413277-589d-570d-85d3-70a7311794b2",
+    "c9e04d56-5a9e-596e-bc93-0c2a3a434508",
+    "1417b199-407e-51ee-b445-84dd736e5b77",
+    "665276be-80c5-5e5d-929f-fa85d18e2d50",
+    "65605ed1-09e2-57aa-bd0f-a26c1d35433f"
+  ],
+  "smbiosVersion": "3.6",
+  "acpi": [
+    {
+      "signature": "FACP",
+      "file": "acpi/facp.dat",
+      "size": 276,
+      "revision": 5,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 33664
+    },
+    {
+      "signature": "DSDT",
+      "file": "acpi/dsdt.dat",
+      "size": 322862,
+      "revision": 2,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 3
+    },
+    {
+      "signature": "APIC",
+      "file": "acpi/apic.dat",
+      "size": 1049,
+      "revision": 5,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 33664
+    },
+    {
+      "signature": "BGRT",
+      "file": "acpi/bgrt.dat",
+      "size": 56,
+      "revision": 1,
+      "oemId": "INSYDE",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 1
+    },
+    {
+      "signature": "CSRT",
+      "file": "acpi/csrt.dat",
+      "size": 47454,
+      "revision": 0,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 33664
+    },
+    {
+      "signature": "DBG2",
+      "file": "acpi/dbg2.dat",
+      "size": 1518,
+      "revision": 1,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 33664
+    },
+    {
+      "signature": "FACS",
+      "file": "acpi/facs.dat",
+      "size": 64,
+      "revision": 0,
+      "oemId": "",
+      "oemTableId": "",
+      "oemRevision": 0
+    },
+    {
+      "signature": "FPDT",
+      "file": "acpi/fpdt.dat",
+      "size": 52,
+      "revision": 1,
+      "oemId": "INSYDE",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 1
+    },
+    {
+      "signature": "GTDT",
+      "file": "acpi/gtdt.dat",
+      "size": 156,
+      "revision": 2,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 33664
+    },
+    {
+      "signature": "IORT",
+      "file": "acpi/iort.dat",
+      "size": 5366,
+      "revision": 0,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 33664
+    },
+    {
+      "signature": "MCFG",
+      "file": "acpi/mcfg.dat",
+      "size": 172,
+      "revision": 1,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 33664
+    },
+    {
+      "signature": "PPTT",
+      "file": "acpi/pptt.dat",
+      "size": 570,
+      "revision": 1,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 33664
+    },
+    {
+      "signature": "SDEV",
+      "file": "acpi/sdev.dat",
+      "size": 110,
+      "revision": 1,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 33664
+    },
+    {
+      "signature": "SPCR",
+      "file": "acpi/spcr.dat",
+      "size": 80,
+      "revision": 2,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 33664
+    },
+    {
+      "signature": "TPM2",
+      "file": "acpi/tpm2.dat",
+      "size": 84,
+      "revision": 3,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 33664
+    },
+    {
+      "signature": "UEFI",
+      "file": "acpi/uefi.dat",
+      "size": 438,
+      "revision": 1,
+      "oemId": "INSYDE",
+      "oemTableId": "H2O BIOS",
+      "oemRevision": 1
+    },
+    {
+      "signature": "XSDT",
+      "file": "acpi/xsdt.dat",
+      "size": 164,
+      "revision": 1,
+      "oemId": "_ASUS_",
+      "oemTableId": "Notebook",
+      "oemRevision": 33664
+    }
+  ],
+  "displays": [
+    {
+      "file": "edid/0-NCP0061-internal.bin",
+      "panel": "NCP0061",
+      "internal": true
+    }
+  ],
+  "redactions": [
+    "System serial number",
+    "System UUID",
+    "Baseboard serial number",
+    "Baseboard asset tag",
+    "Chassis serial number",
+    "Chassis asset tag",
+    "Processor serial number",
+    "Memory serial numbers",
+    "Memory asset tags",
+    "Battery serial number",
+    "SoC serial number in the ACPI tables (SOSN)",
+    "Display serial numbers in EDID",
+    "MSDM ACPI table (holds the Windows product key)",
+    "40 Bluetooth, printer, drive, network and audio-endpoint devices",
+    "USB serial numbers and MAC addresses in device IDs",
+    "The computer and user names, wherever they appear",
+    "Serial numbers and the system UUID, wherever else they appear",
+    "15 registry values and properties named as serial numbers, addresses or identifiers"
+  ],
+  "problems": []
+}
