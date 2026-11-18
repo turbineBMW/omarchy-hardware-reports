@@ -1,0 +1,21 @@
+{
+  "type": "devicetree",
+  "name": "HP HP OmniBook X Laptop 14-fe0xxx",
+  "compatible": "",
+  "hwids": [
+    "392e7951-bd76-5aa5-9e66-29f262645708",
+    "7510b05f-4665-5387-bb1f-1f48ca62570f",
+    "a6194672-5acd-5787-9e03-6c2086a49003",
+    "9501cf18-9e66-526a-a318-299d6d1e3eef",
+    "18217c6e-cce5-59f8-84f3-d6193e14a58e",
+    "811126e6-4aee-5f9e-827d-d0f12f6a6f00",
+    "3bb77d90-82c6-5cb6-aeec-f00226f74ad9",
+    "f5abafad-f55e-5ddb-8ed4-d1c3f66fb423",
+    "1a192aee-2cfd-5ab5-95f9-8093218a48ef",
+    "eaab52c6-ed22-5e1b-b788-fc5a0531291d",
+    "848aeb1d-302b-5b6b-9109-0f4632535915",
+    "e1514102-4ff2-584c-86c4-8c1679a8f140",
+    "8d089810-c832-56ae-974a-a5dd536a16b2",
+    "ddacb793-60bc-5ddc-bb7e-febaa8997191"
+  ]
+}
