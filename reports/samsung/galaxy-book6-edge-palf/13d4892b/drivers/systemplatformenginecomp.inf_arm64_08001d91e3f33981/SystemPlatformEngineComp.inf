@@ -1,0 +1,65 @@
+
+[Version]
+Signature = "$Windows NT$"
+Class = SoftwareComponent
+ClassGuid = {5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider = %ManufacturerName%
+CatalogFile = SystemPlatformEngineComp.cat
+DriverVer = 12/03/2025,1.0.23.0
+PnpLockdown=1
+
+[Manufacturer]
+%ManufacturerName% = SamsungSystemPlatformEngineComp, NTamd64.10.0...16299, NTARM64.10.0...16299
+
+[SamsungSystemPlatformEngineComp.NTamd64.10.0...16299]
+%DeviceName% = SamsungSystemPlatformEngineComp_Install, SWC\SAM0428&S01_SSPE
+
+[SamsungSystemPlatformEngineComp.NTARM64.10.0...16299]
+%DeviceName% = SamsungSystemPlatformEngineComp_Install, SWC\SAM0428&S01_SSPE
+
+[SourceDisksFiles.amd64]
+SystemPlatformEngine.exe=1
+DirIF.sec=1
+
+[SourceDisksFiles.ARM64]
+SystemPlatformEngine.exe=2
+DirIF.sec=2
+
+[SourceDisksNames.amd64]
+1 = "SamsungSystemPlatformEngine_amd64",SystemPlatformEngine_x64.cab
+
+[SourceDisksNames.ARM64]
+2 = "SamsungSystemPlatformEngine_ARM64",SystemPlatformEngine_ARM64.cab
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SamsungSystemPlatformEngineComp_Install.NT]
+CopyFiles = SamsungSystemPlatformEngineComp_Install.NT.Copy
+
+[SamsungSystemPlatformEngineComp_Install.NT.Copy]
+SystemPlatformEngine.exe
+DirIF.sec
+
+[SamsungSystemPlatformEngineComp_Install.NT.Services]
+AddService = ,2
+AddService = SamsungPlatformEngine, 0x00000800, SamsungSystemPlatformEngineComp_ServiceInstall
+
+[SamsungSystemPlatformEngineComp_ServiceInstall]
+DisplayName = %ServiceName%
+ServiceType = 0x00000110
+StartType = 2                    ; SERVICE_AUTO_START
+ErrorControl = 1                 ; SERVICE_ERROR_NORMAL
+ServiceBinary = %13%\SystemPlatformEngine.exe
+AddReg=SamsungSystemPlatformEngineComp_ServiceInstall.AddRegistry
+
+[SamsungSystemPlatformEngineComp_ServiceInstall.AddRegistry]
+HKR, Parameters, Version, 0x01000, %DriverVersion%
+
+[Strings]
+ManufacturerName = "Samsung Electronics Co., Ltd."
+DeviceName = "Samsung System Platform Engine"
+DriverVersion = "1.0.23.0"
+ServiceName = "SamsungPlatformEngine"
+
+
