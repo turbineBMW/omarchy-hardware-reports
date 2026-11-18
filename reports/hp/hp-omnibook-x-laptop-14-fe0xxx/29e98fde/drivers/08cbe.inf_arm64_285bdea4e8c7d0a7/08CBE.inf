@@ -1,0 +1,55 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Provider    = %Provider%
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+DriverVer   = 06/26/2026,1.0.7988.0
+CatalogFile = delta.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%MfgName% = Firmware,NTarm64,NTamd64
+
+[Firmware.NTarm64]
+%FirmwareDesc% = Firmware_Install,UEFI\RES_{%RES_GUID%}
+
+[Firmware.NTamd64]
+%FirmwareDesc% = Firmware_Install,UEFI\RES_{%RES_GUID%}
+
+[Firmware_Install.NT]
+CopyFiles = Firmware_CopyFiles
+
+[Firmware_CopyFiles]
+08CBE.cap
+
+[Firmware_Install.NT.Services]
+AddService=,2
+
+[Firmware_Install.NT.Hw]
+AddReg = Firmware_AddReg
+
+[Firmware_AddReg]
+HKR,,FirmwareId,,"{"%RES_GUID%"}"
+HKR,,FirmwareVersion,%REG_DWORD%,0x1F340000
+HKR,,FirmwareFilename,,08CBE.cap
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+08CBE.cap = 1
+
+[DestinationDirs]
+DefaultDestDir = %DIRID_WINDOWS%,Firmware ; %SystemRoot%\Firmware
+
+[Strings]
+; localizable
+Provider = "HP Inc. "
+MfgName = "HP Inc. "
+FirmwareDesc = "System Firmware"
+DiskName     = "Firmware Update"
+
+; non-localizable
+DIRID_WINDOWS = 10
+REG_DWORD     = 0x00010001
+RES_GUID      = BED86CE7-22BA-4a45-A67F-199E3F3B6A25
