@@ -1,0 +1,47 @@
+[Version]
+Signature = "$WINDOWS NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider = %ManufacturerName%
+ExtensionId = {D862A736-E0F0-4D01-99A5-9C2B5EE90C6F}
+CatalogFile = SFourSWExt0428v15.cat
+DriverVer = 10/22/2025,7.1.7.0
+
+[Strings]
+ManufacturerName = "Samsung"
+ExtensionDesc = "Samsung System Support Service"
+
+[Manufacturer]
+%ManufacturerName% = SFourSWExt0428, NTamd64.10.0...16299, NTarm64.10.0...16299
+%ManufacturerName% = SFourSWExt0428_B2B, NTamd64.10.0...16299, NTarm64.10.0...16299
+
+[SFourSWExt0428.NTamd64.10.0...16299]
+%ExtensionDesc% = SFourSWExt0428_Install, ACPI\SAM0428
+%ExtensionDesc% = SFourSWExt0428_Install, ACPI\SAM0429
+%ExtensionDesc% = SFourSWExt0428_Install, ACPI\SAM0430
+
+[SFourSWExt0428.NTarm64.10.0...16299]
+%ExtensionDesc% = SFourSWExt0428_Install, ACPI\SAM0430
+
+[SFourSWExt0428_Install.NT]
+
+[SFourSWExt0428_Install.NT.Components]
+AddComponent = SFourSWExt0428,,SFourSWExt0428_ComponentInstall
+
+[SFourSWExt0428_ComponentInstall]
+ComponentIds=SAM0428&S03_SSYS
+
+;====================================B2B ====================================
+[SFourSWExt0428_B2B.NTamd64.10.0...16299]
+%ExtensionDesc% = SFourSWExt0428_B2B_Install, ACPI\SAMB430
+
+[SFourSWExt0428_B2B.NTarm64.10.0...16299]
+%ExtensionDesc% = SFourSWExt0428_B2B_Install, ACPI\SAMB430
+
+[SFourSWExt0428_B2B_Install.NT]
+
+[SFourSWExt0428_B2B_Install.NT.Components]
+AddComponent = SFourSWExt0428_B2B,,SFourSWExt0428_B2B_ComponentInstall
+
+[SFourSWExt0428_B2B_ComponentInstall]
+ComponentIds=SAMB430&S03_SSYS

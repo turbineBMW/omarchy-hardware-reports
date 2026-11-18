@@ -1,0 +1,71 @@
+;
+; SamsungEventController.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile=SamsungEventController.cat
+PnpLockDown=1
+DriverVer = 01/08/2024,1.1.0.3
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+; ================= Class section =====================
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SamsungEventController.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64
+
+[Standard.NTARM64]
+%SamsungEventController.DeviceDesc%=SamsungEventController_Device, ACPI\SAM0426
+%SamsungEventController.DeviceDesc%=SamsungEventController_Device, ACPI\SAM0430
+
+[SamsungEventController_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+SamsungEventController.sys
+
+[SamsungEventController_Device.NT.HW]
+AddReg=SCAI_HW_AddReg
+
+[SCAI_HW_AddReg]
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+
+;-------------- Service installation
+[SamsungEventController_Device.NT.Services]
+AddService = SamsungEventController,%SPSVCINST_ASSOCSERVICE%, SamsungEventController_Service_Inst
+
+; -------------- SamsungEventController driver install sections
+[SamsungEventController_Service_Inst]
+DisplayName    = %SamsungEventController.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\SamsungEventController.sys
+LoadOrderGroup = Extended Base
+
+[SamsungEventController_Device.NT.Wdf]
+KmdfService =  SamsungEventController, SamsungEventController_wdfsect
+[SamsungEventController_wdfsect]
+KmdfLibraryVersion = 1.27
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Samsung"
+ClassName="System"
+DiskName = "SamsungEventController Installation Disk"
+SamsungEventController.DeviceDesc = "Samsung System Event Controller"
+SamsungEventController.SVCDESC = "SamsungEventController"

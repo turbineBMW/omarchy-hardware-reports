@@ -1,0 +1,55 @@
+;
+; SamsungWoT.inf
+;
+
+[Version]
+Signature="$Windows NT$"
+Class=HIDClass
+ClassGUID={745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Provider=%VendorName%
+PnpLockdown=1
+DriverVer = 05/01/2024,1.0.0.2
+CatalogFile=SamsungWoT.cat
+
+; ================= Class section =====================
+[ControlFlags]
+; We don't want our device to be installable via the non-PnP hardware dialogs
+ExcludeFromSelect=*
+
+;----------------------------------------------------------------------------
+; CopyFile Sections
+;----------------------------------------------------------------------------
+
+; Manufacturer Section
+; ---------------------------------------------------------
+[Manufacturer]
+%VendorName%=SamsungMfg,NTARM64
+
+; Devices Section
+; ---------------------------------------------------------
+[SamsungMfg.NTARM64]
+%SamsungWoT.DeviceDesc%=SamsungWoTDevice_Install, ACPI\VEN_GXTP&DEV_7936
+%SamsungWoT.DeviceDesc%=SamsungWoTDevice_Install, ACPI\GXTP7936
+; Install Section
+; ---------------------------------------------------------\
+
+[SamsungWoTDevice_Install.NT] 
+include  = hidi2c.inf
+Needs    = hidi2c_Device.NT
+
+[SamsungWoTDevice_Install.NT.HW]
+include = hidi2c.inf,input.inf
+needs   = hidi2c_Device.NT.HW,WakeScreenOnTouch.HW
+
+[SamsungWoTDevice_Install.NT.Services]
+include  = hidi2c.inf
+Needs    = hidi2c_Device.NT.Services
+
+; Strings Section
+; ---------------------------------------------------------
+[Strings]
+VendorName = "Samsung"
+SPSVCINST_ASSOCSERVICE= 0x00000002
+MediaDescription = "Samsung WoT Installation Media"
+DiskName   = "Samsung WoT Installation Disk"
+SamsungWoT.DeviceDesc = "Samsung WoT Capable Device"
