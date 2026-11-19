@@ -12,6 +12,15 @@ This repository collects that from as many Windows on Arm laptops as people will
 
 An Action checks the zip and opens a pull request that adds it under `reports/<manufacturer>/<product>/<report id>/`. [MODELS.md](MODELS.md) lists every model so far; another Action rewrites it after each report lands.
 
+## Once Omarchy runs on it
+
+A report is for a laptop that still has Windows. Once Omarchy boots on it, `hw-test` takes over. It tests the screen, keyboard, sound, camera, Wi-Fi, sleep and the rest, some of it by itself and some of it with you, and puts the results on the model's page on [Are we ARM yet?](https://arewearmyet.com/help#check). A part that doesn't work can be handed to your AI agent with what was measured.
+
+```sh
+omarchy-mise-install github:birkskyum/arewearmyet hw-test
+hw-test
+```
+
 ## What a report holds
 
 | File | What it is |

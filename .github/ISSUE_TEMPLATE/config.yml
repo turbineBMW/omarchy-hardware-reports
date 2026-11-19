@@ -1,1 +1,5 @@
 blank_issues_enabled: true
+contact_links:
+  - name: Omarchy already runs on my laptop
+    url: https://arewearmyet.com/help#check
+    about: Run hw-test there. It tests what works with you and puts it on the model's page, without a report.

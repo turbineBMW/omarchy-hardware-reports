@@ -34,7 +34,7 @@ body:
     id: notes
     attributes:
       label: Anything else
-      description: What you have tried on Linux already, anything that worked or didn't. Optional.
+      description: What you have tried on Linux already, anything that worked or didn't. Optional. If Omarchy already boots on it, `hw-test` checks what works and reports it for you (https://arewearmyet.com/help#check).
   - type: input
     id: manufacturer
     attributes:
