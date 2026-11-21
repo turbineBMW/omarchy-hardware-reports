@@ -1,0 +1,55 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+Provider    = %DRIVER_PROVIDER%
+DriverVer   = 09/16/2026,1.0.4458.2609
+CatalogFile = RVCN35WW.cat
+PnpLockdown = 1
+
+[TargetComputers]
+{2ae35b79-339e-51d4-b7e5-1c9962f6261c}
+{bab6e2ad-3d7e-565f-97df-1a3f154304f2}
+
+[Manufacturer]
+%DRIVER_MANUFACTURER% = Firmware,NTarm64.10.0...17134
+
+[Firmware.NTarm64.10.0...17134]
+%DRIVER_DESC% = Firmware_Install,UEFI\RES_{5b8f9244-4436-4c3e-af59-b28d87e5aa70}
+
+[Firmware_Install.NT]
+CopyFiles = Firmware_CopyFiles
+
+[Firmware_Install.NT.Services]
+AddService=,2
+
+[Firmware_Install.NT.Hw]
+AddReg = Firmware_AddReg.Hw
+
+[Firmware_AddReg.Hw]
+HKR,,FirmwareId,,{5b8f9244-4436-4c3e-af59-b28d87e5aa70}
+HKR,,FirmwareVersion,%REG_DWORD%,0x116A0A31
+HKR,,FirmwareFilename,,%13%\RVCN35WW.cap
+
+[Firmware_CopyFiles]
+RVCN35WW.cap
+
+[DestinationDirs]
+DefaultDestDir = %DIRID_WINDOWS%
+
+[SourceDisksFiles]
+RVCN35WW.cap = 1
+
+[SourceDisksNames]
+1 = %DISK_NAME%
+
+[Strings]
+; localizable strings
+DRIVER_PROVIDER  = "Lenovo"
+DRIVER_MANUFACTURER  = "Lenovo"                                      
+DRIVER_DESC = "Lenovo system firmware 1.0.4458.2609"
+DISK_NAME     = "Lenovo Firmware Update"
+
+; non-localizable strings
+REG_DWORD = 0x00010001
+DIRID_WINDOWS = 13

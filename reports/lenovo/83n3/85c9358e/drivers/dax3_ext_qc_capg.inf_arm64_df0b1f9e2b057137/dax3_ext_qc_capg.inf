@@ -1,0 +1,53 @@
+;===================================================================
+; Dolby DAX driver package
+; Copyright (c)2023, Dolby Laboratories, INC.
+;===================================================================
+[Version]
+Signature   = "$Windows NT$"
+Class       = Extension
+ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider    = %ManufacturerName%
+ExtensionId = {07D82150-43A1-44D3-A09A-844C6A083392}
+CatalogFile = dax3_ext_qc_capg.cat
+DriverVer   = 04/01/2025,10.402.814.17
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName% = DeviceExtensions,NTARM64.10.0...16299
+
+[DeviceExtensions.NTARM64.10.0...16299]
+; %Device.ExtensionDesc% = DeviceExtension_Install,
+%Device.ExtensionDesc% = DeviceExtension_Install,COMPUTER\{b9576cd5-cf66-509b-9692-89545f92d735}
+%Device.ExtensionDesc% = DeviceExtension_Install,COMPUTER\{0b1ba81f-8f6b-5ba3-aebc-a6e71b280d83}
+
+[DeviceExtension_Install.NT]
+AddReg = DaxExtFolder_AddReg
+CopyFiles = DolbyAPO_CopyFiles
+
+[DeviceExtension_Install.NT.Components]
+AddComponent = DolbyAPO_DAX3APOSVC,, DolbyAPO_ComponentInstall_DAX3APOSVC
+
+[DolbyAPO_ComponentInstall_DAX3APOSVC]
+ComponentIds = VEN_DOLBY&PID_DAX3APOSVC  ; Matches with SWC\VEN_DOLBY&PID_DAX3APOSVC
+
+[DaxExtFolder_AddReg]
+HKR, , DaxExtFolder,         ,%13%
+
+[SourceDisksNames]
+222="APO Installation Disk",,,
+
+[SourceDisksFiles]
+BTHENUM-{0000110b-0000-1000-8000-00805f9b34fb}_VID&000117ef_PID&a07c.xml = 222
+BTHENUM-{0000110b-0000-1000-8000-00805f9b34fb}_VID&000117ef_PID&a086.xml = 222
+
+[DestinationDirs]
+DolbyAPO_CopyFiles = 13
+
+[DolbyAPO_CopyFiles]
+BTHENUM-{0000110b-0000-1000-8000-00805f9b34fb}_VID&000117ef_PID&a07c.xml
+BTHENUM-{0000110b-0000-1000-8000-00805f9b34fb}_VID&000117ef_PID&a086.xml
+
+[Strings]
+ManufacturerName 	= "Dolby"
+Device.ExtensionDesc = "Dolby Device Extension"
+DeviceName = "Dolby"

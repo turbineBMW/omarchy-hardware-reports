@@ -1,0 +1,139 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Extension
+ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider    = %ManufacturerName%
+ExtensionId = {F8AD342D-16E2-42B7-A8E3-EDED26AAD9E9}
+DriverVer = 11/10/2024,1.0.2.64
+CatalogFile = ElevocEffectsPackBTExt_ARM.cat
+PnpLockDown = 1
+
+[Manufacturer]
+%ManufacturerName% = DeviceExtensions,NTARM64.10.0...22621
+
+[DeviceExtensions.NTARM64.10.0...22621]
+;S790 WOA
+%Device.ExtensionDesc% = ThreePointFive_BT,AUCD\VEN_QCOM&DEV_0C29&SUBSYS_IDEA4001
+%Device.ExtensionDesc% = ThreePointFive_BT,AUCD\VEN_QCOM&DEV_0C29&SUBSYS_IDEA4002
+;S3 WOA
+%Device.ExtensionDesc% = ThreePointFive_BT,AUCD\VEN_QCOM&DEV_0C29&SUBSYS_380317AA
+
+[ThreePointFive_BT.NT]
+
+[ThreePointFive_BT.NT.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,  %KSNAME_TopologyBthHfpMic%, Elevoc_Install_BT
+AddInterface=%KSCATEGORY_TOPOLOGY%,  %KSNAME_TopologyBthHfpMic%, Elevoc_Install_BT
+
+[Elevoc_Install_BT]
+AddReg = APOFX_AddReg_BT
+
+[APOFX_AddReg_BT]
+HKR,FX\0,%PKEY_SYSFX_Association%,,%KSNODETYPE_ANY%
+HKR,FX\0,%PKEY_FX_ModeEffectClsid%,%REG_SZ%,%ELEVOC_UAPO_CLSID%
+HKR,FX\0,%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%,%AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS%,%AUDIO_SIGNALPROCESSINGMODE_SPEECH%,%AUDIO_SIGNALPROCESSINGMODE_RAW%
+HKR,FX\0,%PKEY_Effect_Enable%,%REG_DWORD%,1
+
+[ThreePointFive_BT.NT.Components]
+AddComponent = ElevocAPO,,ElevocAPO_Install
+
+[ElevocAPO_Install]
+ComponentIDs = SWC\VEN_ELEVOC&AID_0002
+Description = "Elevoc Audio Effects Component"
+
+[SourceDisksNames]
+222 = %DiskId%
+
+[SourceDisksFiles]
+
+[DestinationDirs]
+DefaultDestDir = 13  ; copy to driverstore
+
+[Strings]
+ManufacturerName 	= "Elevoc Technology Co.,Ltd"
+Device.ExtensionDesc = "Elevoc Device Extension"
+
+KSCATEGORY_AUDIO="{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_RENDER="{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_REALTIME ="{EB115FFC-10C8-4964-831D-6DCB02E6F23F}"
+KSCATEGORY_TOPOLOGY = "{DDA54A40-1E4C-11D1-A050-405705C10000}"
+
+KSNAME_WaveSpeaker="WaveSpeaker"
+KSNAME_TopologySpeaker="TopologySpeaker"
+
+KSNAME_WaveSpeakerHeadset="WaveSpeakerHeadset"
+KSNAME_TopologySpeakerHeadset="TopologySpeakerHeadset"
+
+KSNAME_WaveUsbHsSpeaker="WaveUsbHsSpeaker"
+KSNAME_TopologyUsbHsSpeaker="TopologyUsbHsSpeaker"
+
+KSNAME_WaveMicHeadset="WaveMicHeadset"
+KSNAME_TopologyMicHeadset="TopologyMicHeadset"
+
+KSNAME_WaveUsbHsMic="WaveUsbHsMic"
+KSNAME_TopologyUsbHsMic="TopologyUsbHsMic"
+
+KSNAME_WaveExternalDisplay="WaveExternalDisplay"
+KSNAME_TopologyExternalDisplay= "TopologyExternalDisplay"
+
+KSNAME_WaveMicIn="WaveMicIn"
+KSNAME_TopologyMicIn="TopologyMicIn"
+
+KSNAME_WaveMicArray1="WaveMicArray1"
+KSNAME_TopologyMicArray1="TopologyMicArray1"
+
+KSNAME_Microphone        = "Microphone0"
+KSNAME_MicArray1         = "MicrophoneArray0"
+KSNAME_BLEMicrophone     = "BleMicrophone0"
+
+KSNAME_WaveBthHfpSpeaker="WaveBthHfpSpeaker"
+KSNAME_TopologyBthHfpSpeaker="TopologyBthHfpSpeaker"
+
+KSNAME_WaveBthHfpMic="WaveBthHfpMic"
+KSNAME_TopologyBthHfpMic="TopologyBthHfpMic"
+
+KSNAME_WaveA2dp="WaveA2dp"
+KSNAME_TopologyA2dp="TopologyA2dp"
+
+PKEY_SYSFX_Association          = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},0"
+PKEY_SYSFX_LFXClsid             = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},1"
+PKEY_SYSFX_GFXClsid             = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},2"
+PKEY_SYSFX_UserInterfaceClsid   = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},3"
+PKEY_FX_StreamEffectClsid                = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},5"
+PKEY_FX_ModeEffectClsid                  = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},6"
+PKEY_FX_EndpointEffectClsid              = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},7"
+PKEY_FX_Offload_StreamEffectClsid        = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},11"
+PKEY_FX_Offload_ModeEffectClsid          = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},12"
+PKEY_CompositeFX_StreamEffectClsid       = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},13"
+PKEY_CompositeFX_ModeEffectClsid         = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},14"
+PKEY_CompositeFX_EndpointEffectClsid     = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},15"
+PKEY_SFX_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},5"
+PKEY_MFX_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},6"
+PKEY_EFX_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},7"
+PKEY_SFX_KeywordDetector_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},8"
+PKEY_MFX_KeywordDetector_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},9"
+PKEY_EFX_KeywordDetector_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},10"
+PKEY_SFX_Offload_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},11"
+PKEY_MFX_Offload_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},12"
+PKEY_AudioEndpoint_Default_VolumeInDb = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},9"
+PKEY_Effect_Enable = "{1da5d803-d492-4edd-8c23-e0c0ffee7f0e},5"
+
+AUDIO_SIGNALPROCESSINGMODE_DEFAULT = "{C18E2F7E-933D-4965-B7D1-1EEF228D2AF3}"
+AUDIO_SIGNALPROCESSINGMODE_SPEECH = "{FC1CFC9B-B9D6-4CFA-B5E0-4BB2166878B2}"
+AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS = "{98951333-B9CD-48B1-A0A3-FF40682D73F7}"
+AUDIO_SIGNALPROCESSINGMODE_MEDIA = "{4780004E-7133-41D8-8C74-660DADD2C0EE}"
+AUDIO_SIGNALPROCESSINGMODE_MOVIE = "{B26FEB0D-EC94-477C-9494-D1AB8E753F6E}"
+AUDIO_SIGNALPROCESSINGMODE_NOTIFICATION = "{9CF2A70B-F377-403B-BD6B-360863E0355C}"
+AUDIO_SIGNALPROCESSINGMODE_RAW = "{9E90EA20-B493-4FD1-A1A8-7E1361A956CF}"
+
+KSNODETYPE_ANY = "{00000000-0000-0000-0000-000000000000}"
+
+REG_BINARY = 0x00000001
+REG_DWORD = 0x00010001
+REG_MULTI_SZ = 0x00010000
+REG_SZ = 0x00000000
+
+ELEVOC_UAPO_CLSID= "{0099058B-5D54-4EDF-944D-E8187363997A}"
+ELEVOC_KWS_MFX_CLSID = "{AA53A6AB-0AE9-459C-B182-D390585B0486}"
+
+DiskId                         = "Elevoc APO Ext Installation Disk"
