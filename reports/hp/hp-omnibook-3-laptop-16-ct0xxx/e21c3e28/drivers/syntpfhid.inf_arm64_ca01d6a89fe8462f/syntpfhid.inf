@@ -1,0 +1,267 @@
+;----------------------------------------------------------------------------
+; SynTPFHID.inf
+;
+; Copyright (c) 2017-2025, Synaptics Incorporated
+;----------------------------------------------------------------------------
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = HIDClass
+ClassGuid   = {745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Provider    = %Provider%
+CatalogFile = SynTP.cat
+PnpLockDown=1
+DriverVer=05/12/2026, 19.5.35.129
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+SynTPUWP.sys  = 1
+
+[DestinationDirs]
+DefaultDestDir        = 12 ; Drivers directory
+CopyFiles_Drivers     = 12 ; Drivers directory
+
+[CopyFiles_Drivers]
+SynTP.sys,SynTPUWP.sys,,0x00000001
+
+;----------------------------------------------------------------------------
+; Manufacturer Sections
+;----------------------------------------------------------------------------
+[Manufacturer]
+%SynMfg% = SynMfg, NTx86, NTamd64, NTarm, NTarm64; (Standard types)
+
+[SynMfg.NTx86]
+; No support
+
+[SynMfg.NTamd64]
+; No support
+
+[SynMfg.NTarm]
+; No support
+
+[SynMfg.NTarm64]
+
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3289&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA328B&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA328C&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA328D&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA328E&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA328F&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3290&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3291&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3292&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3293&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3294&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3295&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3296&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3297&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3298&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA329A&Col03 
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA329B&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA329C&Col02
+
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA329D&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA329E&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA329F&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32A0&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32A1&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32A2&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32A3&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32A4&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32A5&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32A6&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32A7&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32A8&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32A9&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32AA&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32AB&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32AC&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32AD&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32AE&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32AF&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32B0&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32B1&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32B2&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32B3&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32B4&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32B5&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32B6&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32B7&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32B8&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32B9&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32BA&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32BB&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32BC&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32BD&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32BE&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32BF&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32C0&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32C1&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32C2&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32C3&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32C4&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32C5&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32C6&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32C7&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32C8&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32C9&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32CA&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32CB&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32CC&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32CD&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32CE&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32CF&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32D0&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32D1&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32D2&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32D3&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32D4&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32D5&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32D6&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32D7&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32D8&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32D9&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32DA&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32DB&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32DC&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32DD&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32DE&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32DF&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32E0&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32E1&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32E2&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32E3&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32E4&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32E5&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32E6&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32E7&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32E8&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32E9&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32EA&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32EB&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32EC&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32ED&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32EE&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32EF&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32F0&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32F1&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32F2&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32F3&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32F4&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32F5&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32F6&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32F7&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32F8&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32F9&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32FA&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32FB&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32FC&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32FD&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32FE&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA32FF&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3501&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3502&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3503&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3504&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3505&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3506&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3507&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3508&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3509&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3510&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3511&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3512&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3513&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3514&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3515&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3516&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3517&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3518&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3519&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA351A&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA351B&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA351C&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA351D&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA351E&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA351F&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3520&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3521&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3522&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3523&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3524&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3525&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3526&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3527&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3528&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3529&Col02
+
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA352A&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA352B&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA352C&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA352D&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA352E&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA352F&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3530&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3531&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3532&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3533&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3534&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3535&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3536&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3537&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3538&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3539&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3540&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3541&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3542&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3543&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3544&Col02
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\SYNA3545&Col02
+
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\VID_03F0&PID_0A96&MI_01&Col04
+%SynTPFilterHID.DeviceDesc% = SynTPFilterHID_Device,HID\{00001812-0000-1000-8000-00805f9b34fb}_Dev_VID&0003f0_PID&0a96&Col04
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+[SynTPFilterHID_Device.HW]
+AddReg = Common_AddReg
+
+[SynTPFilterHID_Device.NT]
+CopyFiles=CopyFiles_Drivers
+AddReg = Common_AddReg
+
+[Common_AddReg]
+HKR,Software\Synaptics\SynTPFilterHID,DriverVersion,0x00000000,"19.5.35.129"
+HKR,System\CurrentControlSet\Services\SynTP\Parameters,RMIBusAddress,0x00010001,0x0000002c
+
+[SynTPFilterHID_Device.NT.Services]
+Include = input.inf
+Needs = HID_Raw_Inst.NT.Services
+AddService = SynTP,,SynTPFilterHID_Service_Inst
+
+[SynTPFilterHID_AddReg.HW]
+HKR,,"UpperFilters",0x00010000,"SynTP"
+HKR,,SynPortType,0x00010001,12
+
+[SynTPFilterHID_Device.NT.HW]
+AddReg = SynTPFilterHID_AddReg.HW
+
+; -------------- SynTPFHID driver install sections
+[SynTPFilterHID_Service_Inst]
+DisplayName    = %SynTPFilterHID.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START 
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\SynTP.sys
+
+[Strings]
+Provider               = "Synaptics"
+SynMfg                 = "Synaptics"
+DiskId1                = "Synaptics TPFHID Installation Disk"
+SynTPFilterHID.DeviceDesc   = "Synaptics TPFHID Device"
+SynTPFilterHID.SVCDESC      = "Synaptics TPFHID Service"
+SynTPEnhService.SVCDESC = "SynTPEnhService"
+TargetDir              = "Synaptics\SynTP"

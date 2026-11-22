@@ -1,0 +1,5798 @@
+[
+  {
+    "folder": "acpi.inf_arm64_9a549fbd811cc64d",
+    "inf": "acpi.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft ACPI-Compliant System"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI_HAL%5CPNP0C08",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "acpi.inf",
+        "size": 4390,
+        "sha256": "596671355759cda2f9782e96665aeb42fc1f4f8cc60ee54655653c92ee99d0fb"
+      },
+      {
+        "name": "acpi.sys",
+        "size": 806776,
+        "sha256": "ca86f561f9d0e83b9e75b276cdd770ee4bebdc6bd21a7a1ac0abcbb2daea35e9"
+      }
+    ],
+    "infs": [
+      "drivers/acpi.inf_arm64_9a549fbd811cc64d/acpi.inf"
+    ]
+  },
+  {
+    "folder": "acpidev.inf_arm64_1e38a5b8ba343fe9",
+    "inf": "acpidev.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "ACPI Devices driver"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_ACPI%26DEV_0013",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "acpidev.inf",
+        "size": 3856,
+        "sha256": "d5f33f8f117581977e83b3a6144d1496070f31b397855da51fce1e75ac9980b6"
+      },
+      {
+        "name": "AcpiDev.sys",
+        "size": 34816,
+        "sha256": "2b1acb0978e4f6d7f7679d4c4ea117704dd7fd5167ed063a0ae619df13986c71"
+      }
+    ],
+    "infs": [
+      "drivers/acpidev.inf_arm64_1e38a5b8ba343fe9/acpidev.inf"
+    ]
+  },
+  {
+    "folder": "acpipagr.inf_arm64_4b9a81d5a41306d2",
+    "inf": "acpipagr.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "ACPI Processor Aggregator"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_ACPI%26DEV_000C",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "acpipagr.inf",
+        "size": 2468,
+        "sha256": "6dd2e55a1569f394076f0e9f587340798808a288429d026d2448476c635aff15"
+      },
+      {
+        "name": "acpipagr.sys",
+        "size": 17408,
+        "sha256": "5987c64a3b4c3a0b3b735f9b74c4b579fc1829c267399a576c5818ea2fa49f3c"
+      }
+    ],
+    "infs": [
+      "drivers/acpipagr.inf_arm64_4b9a81d5a41306d2/acpipagr.inf"
+    ]
+  },
+  {
+    "folder": "acpitime.inf_arm64_616a9f7c1c9bdcaa",
+    "inf": "acpitime.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "ACPI Wake Alarm"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_ACPI%26DEV_000E",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "acpitime.inf",
+        "size": 2596,
+        "sha256": "922139998052f680728f69a4488b1b29f1e52b6b3d42b717111425c858adc990"
+      },
+      {
+        "name": "acpitime.sys",
+        "size": 24576,
+        "sha256": "73b004dbe1e3c5acf59e22ebafa81fd4c54ff66e3384f65e24c8e81df1d162aa"
+      }
+    ],
+    "infs": [
+      "drivers/acpitime.inf_arm64_616a9f7c1c9bdcaa/acpitime.inf"
+    ]
+  },
+  {
+    "folder": "amioemkmd.inf_arm64_ca4a237154b0f3f7",
+    "inf": "oem0.inf",
+    "provider": "AMI",
+    "version": "1.0.0.1",
+    "date": "2026-08-20",
+    "extension": false,
+    "devices": [
+      "AMI OEM Kernel Mode Driver"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_ACPI%26DEV_1234",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "amioemkmd-kmdf.cat",
+        "size": 11312,
+        "sha256": "3bb221bda151d4299368e091bb311bce5c1158b392f9e491ca11538295372304"
+      },
+      {
+        "name": "amioemkmd.inf",
+        "size": 4188,
+        "sha256": "da1360ca21989cc2c14bfc8420e91af445bbf36c9e2c87a13e287405642d1477"
+      },
+      {
+        "name": "amioemkmd.sys",
+        "size": 49816,
+        "sha256": "5279e3107c6a51955dcacf011d7ede8f02efc7a8f3c05b82ff9ee49df63804ff"
+      }
+    ],
+    "infs": [
+      "drivers/amioemkmd.inf_arm64_ca4a237154b0f3f7/amioemkmd.inf"
+    ]
+  },
+  {
+    "folder": "audioendpoint.inf_arm64_0b7900feba5cbbd7",
+    "inf": "audioendpoint.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2024-03-31",
+    "extension": false,
+    "devices": [
+      "Microphone Array (Qualcomm(R) Aqstic(TM) Audio Adapter Device)",
+      "Speakers (Qualcomm(R) Aqstic(TM) Audio Adapter Device)"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=MMDEVAPI%5CAudioEndpoints",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "audioendpoint.inf",
+        "size": 2268,
+        "sha256": "ff04eae7730566b2884dedc6fab08c3b3f93a965aa18ef4c0e76d67b95c279ca"
+      }
+    ],
+    "infs": [
+      "drivers/audioendpoint.inf_arm64_0b7900feba5cbbd7/audioendpoint.inf"
+    ]
+  },
+  {
+    "folder": "basicdisplay.inf_arm64_e3f67eefcc34d1db",
+    "inf": "basicdisplay.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.8521",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Basic Display Driver"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ROOT%5CBasicDisplay",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "basicdisplay.inf",
+        "size": 4552,
+        "sha256": "500b5adb19d1ea08b0311530f799c3e66c8c72b52a34f1086cb115bb8e7fac7d"
+      },
+      {
+        "name": "BasicDisplay.sys",
+        "size": 67072,
+        "sha256": "a2d8973e6d3ce24aeb049b6cfdd606df731b3c37ee4794832c2410690c511e56"
+      }
+    ],
+    "infs": [
+      "drivers/basicdisplay.inf_arm64_e3f67eefcc34d1db/basicdisplay.inf"
+    ]
+  },
+  {
+    "folder": "basicrender.inf_arm64_835e24ff6cfea7c0",
+    "inf": "basicrender.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Basic Render Driver"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ROOT%5CBasicRender",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "basicrender.inf",
+        "size": 3554,
+        "sha256": "62a6e2f7e97995a7c7fa906902bdc27504f2a58381bfd51eaf230097bfd7f28f"
+      },
+      {
+        "name": "BasicRender.sys",
+        "size": 53760,
+        "sha256": "6b7677cc9b651e9822d7c829bbd0168e2c7ae154dae6d8a0419048ecd6f242ca"
+      }
+    ],
+    "infs": [
+      "drivers/basicrender.inf_arm64_835e24ff6cfea7c0/basicrender.inf"
+    ]
+  },
+  {
+    "folder": "bth.inf_arm64_88e315c202a28e0d",
+    "inf": "bth.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Bluetooth Enumerator"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=BTH%5CMS_BTHBRB",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "bth.inf",
+        "size": 100354,
+        "sha256": "db163660f30f188bb174ddeea7824a61849e7c22a23428655ed5213c853e6e3b"
+      },
+      {
+        "name": "bthenum.sys",
+        "size": 128000,
+        "sha256": "eb228e379d78f6be3b939ca6aef1a8e53e00bf3e84f653278525fee4b1d6a004"
+      },
+      {
+        "name": "BthMini.SYS",
+        "size": 66048,
+        "sha256": "2d59ad9cea7bde4795df7603e903d209a9ced1013d02f74f3690743bc9e4cbfc"
+      },
+      {
+        "name": "bthport.sys",
+        "size": 2221056,
+        "sha256": "10548f5d8f73665deaa41b35e7e691bd0685d049d39d785173de7e5909925f7d"
+      },
+      {
+        "name": "BTHUSB.SYS",
+        "size": 111104,
+        "sha256": "c38135a6d7a6810fdaa2dbede8dd39b8d4a8681923765eb3e0f7b011686ae372"
+      }
+    ],
+    "infs": [
+      "drivers/bth.inf_arm64_88e315c202a28e0d/bth.inf"
+    ]
+  },
+  {
+    "folder": "bthleenum.inf_arm64_f37b27879deb4ee5",
+    "inf": "bthleenum.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Bluetooth LE Enumerator"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=BTH%5CMS_BTHLE",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "bthleenum.inf",
+        "size": 8686,
+        "sha256": "b05f917677bf2ea17bc25ce5c94fe280f09f738b22b71a8c48976c95ac371875"
+      },
+      {
+        "name": "Microsoft.Bluetooth.Legacy.LEEnumerator.sys",
+        "size": 128512,
+        "sha256": "05dda819b26e99a56d8ec5784f19aa79f9021211d60f8376774a7cbbc5a04a5b"
+      }
+    ],
+    "infs": [
+      "drivers/bthleenum.inf_arm64_f37b27879deb4ee5/bthleenum.inf"
+    ]
+  },
+  {
+    "folder": "bthpan.inf_arm64_87aaa61c50a03934",
+    "inf": "bthpan.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9974",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Bluetooth Device (Personal Area Network)"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=BTH%5CMS_BTHPAN",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "bthpan.inf",
+        "size": 5698,
+        "sha256": "8a8554297a173709c7aeab8833b635e49a458fc2659bfccb9b65c01dad215ae8"
+      },
+      {
+        "name": "bthpan.sys",
+        "size": 150016,
+        "sha256": "76c825f3682e708f25d0f7103463b2e665317cb764babfd403f6f0d9d1330cf2"
+      }
+    ],
+    "infs": [
+      "drivers/bthpan.inf_arm64_87aaa61c50a03934/bthpan.inf"
+    ]
+  },
+  {
+    "folder": "buttonconverter.inf_arm64_125ce90e68e407da",
+    "inf": "buttonconverter.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.4484",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Converted Portable Device Control device",
+      "Portable Device Control device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=HID%5CHID_DEVICE_SYSTEM_VHF",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "buttonconverter.inf",
+        "size": 3506,
+        "sha256": "1bbb9e04db8972ff59da939cb58d2615d953350ebf20d5bca70df14f56f1ea2d"
+      },
+      {
+        "name": "buttonconverter.sys",
+        "size": 63488,
+        "sha256": "ef16b248ae3a809b7abb316951c9229323a4ba70a120243f42e04c7f400f8671"
+      }
+    ],
+    "infs": [
+      "drivers/buttonconverter.inf_arm64_125ce90e68e407da/buttonconverter.inf"
+    ]
+  },
+  {
+    "folder": "chargearbitration.inf_arm64_62d2bd737065584b",
+    "inf": "ChargeArbitration.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Charge Arbitration Driver"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ROOT%5CCAD",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "CAD.sys",
+        "size": 87392,
+        "sha256": "a2fb3f008cc4d40af3479242f3719422f472db590985f90b3f1552d373e8af9a"
+      },
+      {
+        "name": "ChargeArbitration.inf",
+        "size": 3340,
+        "sha256": "4d442616fb88a7f07cc2e25649f2829f1fdad86f148942928ef5f02e09560c3a"
+      }
+    ],
+    "infs": [
+      "drivers/chargearbitration.inf_arm64_62d2bd737065584b/ChargeArbitration.inf"
+    ]
+  },
+  {
+    "folder": "cmbatt.inf_arm64_1aabfd19ec9e844c",
+    "inf": "cmbatt.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft AC Adapter",
+      "Microsoft ACPI-Compliant Control Method Battery"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_PNP%26DEV_0C0A",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "cmbatt.inf",
+        "size": 4402,
+        "sha256": "7eff7f9f95967d47a363762f77d32280c5f225daf3a1f1cd469e421237c13638"
+      },
+      {
+        "name": "CmBatt.sys",
+        "size": 74752,
+        "sha256": "4372161020e53c0739ceb4b744cbc86d862a68612bddeb74e4604c5742b46d79"
+      }
+    ],
+    "infs": [
+      "drivers/cmbatt.inf_arm64_1aabfd19ec9e844c/cmbatt.inf"
+    ]
+  },
+  {
+    "folder": "compdev.inf_arm64_a2d4babcaa42ee03",
+    "inf": "compdev.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "HP HP OmniBook 3 Laptop 16-ct0xxx"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=COMPUTER%5C%7BC7C70490-4A13-5D35-8832-6B954B84B884%7D",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "compdev.inf",
+        "size": 1238,
+        "sha256": "1c033e580867d9af6feffb4351b087cf06cef6bcbd24a36b8477c7406d23fd57"
+      }
+    ],
+    "infs": [
+      "drivers/compdev.inf_arm64_a2d4babcaa42ee03/compdev.inf"
+    ]
+  },
+  {
+    "folder": "compositebus.inf_arm64_b6e4429758fd362c",
+    "inf": "compositebus.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Composite Bus Enumerator"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ROOT%5CCompositeBus",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "compositebus.inf",
+        "size": 4276,
+        "sha256": "c6daead666e81eaf33e2af3feaf1eceac8e12262ec479ad50a6780c072c8026f"
+      },
+      {
+        "name": "CompositeBus.sys",
+        "size": 48128,
+        "sha256": "f1e1ddb1ad027d72c46a555e0a787dc3c25473047e08c18ab1d4aede0e5a2dfc"
+      }
+    ],
+    "infs": [
+      "drivers/compositebus.inf_arm64_b6e4429758fd362c/compositebus.inf"
+    ]
+  },
+  {
+    "folder": "cpu.inf_arm64_3a511a6081b14793",
+    "inf": "cpu.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2009-04-21",
+    "extension": false,
+    "devices": [
+      "Snapdragon(R) C - C110100 - Qualcomm(R) Kryo(TM) CPU"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_ACPI%26DEV_0007",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "cpu.inf",
+        "size": 3412,
+        "sha256": "8204c51c643383b28498fcf861ddef29ee64728bda37cafe2a4e55b2b90eda18"
+      },
+      {
+        "name": "fxppm.sys",
+        "size": 200704,
+        "sha256": "214c973014cdc6e9aa752fce695eb2b916b0a1dab814d84d59cff4bbe9727b81"
+      }
+    ],
+    "infs": [
+      "drivers/cpu.inf_arm64_3a511a6081b14793/cpu.inf"
+    ]
+  },
+  {
+    "folder": "c_firmware.inf_arm64_7d937f7266136f4c",
+    "inf": "c_firmware.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.4768",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Device Firmware",
+      "System Firmware"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=UEFI%5CRES_%7Bbe1c0a84-93c8-45b4-bb65-86ee222e62fd%7D%26REV_F030000",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "c_firmware.inf",
+        "size": 4172,
+        "sha256": "f35c58d8f0fafb94df9872a67b1ed0127f6994015ec0514028f89468aa80fa5b"
+      }
+    ],
+    "infs": [
+      "drivers/c_firmware.inf_arm64_7d937f7266136f4c/c_firmware.inf"
+    ]
+  },
+  {
+    "folder": "c_swcomponent.inf_arm64_f9ca1537a48d9b84",
+    "inf": "c_swcomponent.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Generic software component"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=SWC%5CVEN_QCOM%26DEV_1334%26SWC_QDCM8270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "c_swcomponent.inf",
+        "size": 2924,
+        "sha256": "5235e2e3c132d2caf533b829b75d73174b5a18537b2ee3678353d23d37a45289"
+      },
+      {
+        "name": "c_swcomponent.PNF",
+        "size": 7340,
+        "sha256": "6b82c99fd6a2aebdd6f92ab19e80a13735e282067744054c0880ff57cd21c38d"
+      }
+    ],
+    "infs": [
+      "drivers/c_swcomponent.inf_arm64_f9ca1537a48d9b84/c_swcomponent.inf"
+    ]
+  },
+  {
+    "folder": "c_swdevice.inf_arm64_48e2537252733bf7",
+    "inf": "c_swdevice.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Bluetooth",
+      "Microsoft Device Association Root Enumerator",
+      "Microsoft GS Wavetable Synth",
+      "Microsoft Radio Device Enumeration Bus",
+      "Wi-Fi"
+    ],
+    "catalogSearch": null,
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "c_swdevice.inf",
+        "size": 2702,
+        "sha256": "8c48c4347eb453f73c04633779130689eb54367ae96304d986106a456aa82d47"
+      },
+      {
+        "name": "c_swdevice.PNF",
+        "size": 6988,
+        "sha256": "ba136b2279806b9bf5afa2457c08eeb8290a27b2ee8d9a469aa392e719979a41"
+      }
+    ],
+    "infs": [
+      "drivers/c_swdevice.inf_arm64_48e2537252733bf7/c_swdevice.inf"
+    ]
+  },
+  {
+    "folder": "disk.inf_arm64_a57ac6294c0fd640",
+    "inf": "disk.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9974",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "SKhynix HN8T05FEHKX073"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=SCSI%5CDisk_SKhynix__HN8T05FEHKX073A003",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "disk.inf",
+        "size": 13122,
+        "sha256": "93c4584ce621803e73538c0a0541633827e0e27b0411bca553229ee188dc10d5"
+      },
+      {
+        "name": "disk.sys",
+        "size": 122736,
+        "sha256": "12f2807211e898f8c70fc2b8ae26c8c5182777630c0abbf5ecd143eff4bf4d86"
+      }
+    ],
+    "infs": [
+      "drivers/disk.inf_arm64_a57ac6294c0fd640/disk.inf"
+    ]
+  },
+  {
+    "folder": "hal.inf_arm64_3c8a9ae803851b6f",
+    "inf": "hal.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "ACPI ARM64-based PC"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPIARM64",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "hal.inf",
+        "size": 1802,
+        "sha256": "97b4329f9a076812cb26e051de4505b8ee65832c48f8fae0a27d6a11d0a86430"
+      }
+    ],
+    "infs": [
+      "drivers/hal.inf_arm64_3c8a9ae803851b6f/hal.inf"
+    ]
+  },
+  {
+    "folder": "hidi2c.inf_arm64_62d9f529adb323dd",
+    "inf": "hidi2c.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "I2C HID Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QTEC%26DEV_0001",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "hidi2c.inf",
+        "size": 5486,
+        "sha256": "0303c75edd88966532c974ba2c90bd7d3a18de5bf1a63b06baca4e2932da4467"
+      },
+      {
+        "name": "hidi2c.sys",
+        "size": 97280,
+        "sha256": "a0ad37a0685bbe992d20b283fb0fde4d3d233fe1958e404a550a111b43fd156e"
+      }
+    ],
+    "infs": [
+      "drivers/hidi2c.inf_arm64_62d9f529adb323dd/hidi2c.inf"
+    ]
+  },
+  {
+    "folder": "hidinterrupt.inf_arm64_eadc8e55ce0c03d5",
+    "inf": "hidinterrupt.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "HID Button over Interrupt Driver"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_ACPI%26DEV_0011%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "hidinterrupt.inf",
+        "size": 4078,
+        "sha256": "c40301e709f43f794a734b4cc7bf54882bc70692a650350d84c56f90a195f44f"
+      },
+      {
+        "name": "hidinterrupt.sys",
+        "size": 63904,
+        "sha256": "3853aa0293832581643592685ed788d5dcf8a8a6ba7b6df975e16d18e42fdd1f"
+      }
+    ],
+    "infs": [
+      "drivers/hidinterrupt.inf_arm64_eadc8e55ce0c03d5/hidinterrupt.inf"
+    ]
+  },
+  {
+    "folder": "hidserv.inf_arm64_eddef6807795f259",
+    "inf": "hidserv.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "HID-compliant consumer control device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=HID%5CVEN_QTEC%26DEV_0001%26Col02",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "hidserv.inf",
+        "size": 9560,
+        "sha256": "f03fa7474c94ebe0ab49fa5908933150cc309cc557265d7664ec8bbe074aa9f8"
+      },
+      {
+        "name": "hidserv.PNF",
+        "size": 19308,
+        "sha256": "7ca2626fd19b7aeca9b0b87cd9159cf6cafbac9724afca6c339b15cd965dc144"
+      }
+    ],
+    "infs": [
+      "drivers/hidserv.inf_arm64_eddef6807795f259/hidserv.inf"
+    ]
+  },
+  {
+    "folder": "hidvhf.inf_arm64_889cec0e35bd5403",
+    "inf": "hidvhf.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Virtual HID Framework (VHF) HID device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=HID_DEVICE_SYSTEM_VHF",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "hidvhf.inf",
+        "size": 4464,
+        "sha256": "6c7752b9589e655d85eddd91636b734c183dfbc51e1b14fa0176929e391646fc"
+      },
+      {
+        "name": "vhf.sys",
+        "size": 66048,
+        "sha256": "ff64ea3bccd26f29ea9fcea4d0fabc5a0cbaa62f21fde50dc460d7316fbfb3d7"
+      }
+    ],
+    "infs": [
+      "drivers/hidvhf.inf_arm64_889cec0e35bd5403/hidvhf.inf"
+    ]
+  },
+  {
+    "folder": "hpcustomcapcomp.inf_arm64_7c8316110d8c2dc6",
+    "inf": "oem91.inf",
+    "provider": "HP Inc.",
+    "version": "1.88.4843.0",
+    "date": "2025-09-17",
+    "extension": false,
+    "devices": [
+      "HP Application Enabling Services"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=SWC%5CHPIC0003",
+    "files": [
+      {
+        "name": "ARM64/AppHelperCap_HPManifest.p7s",
+        "size": 10507,
+        "sha256": "370b471d778e40f5d9e0cf75f3e69be70640dbdb296b099c935065eeed6647db"
+      },
+      {
+        "name": "ARM64/AppHelperCap_HPManifest.xml",
+        "size": 2113,
+        "sha256": "3abaecdef82490573fa29cd23f8ef40fbf0e5324e01fb5e5bdfde9ad9123fef0"
+      },
+      {
+        "name": "ARM64/NetworkCap_HPManifest.p7s",
+        "size": 10507,
+        "sha256": "e065a9d4b6c63695a387101527df60a726f8eb66c430cbb40c9752d7f349e2d8"
+      },
+      {
+        "name": "ARM64/NetworkCap_HPManifest.xml",
+        "size": 2202,
+        "sha256": "26bebcaa834ad3b5f90e86ee567cb06c903e6f197bf990897768381be7633117"
+      },
+      {
+        "name": "ARM64/ServiceCoordinator_HPManifest.p7s",
+        "size": 10507,
+        "sha256": "776ab504fee69b99a825c8d585b0d966dfd3b068a6f5c67254fd40520a03ab0e"
+      },
+      {
+        "name": "ARM64/ServiceCoordinator_HPManifest.xml",
+        "size": 2808,
+        "sha256": "2e1f1f42804638823a6bec71255f09a2ff188d18a5fd599b9c125d07dba73273"
+      },
+      {
+        "name": "ARM64/SysInfoCap_HPManifest.p7s",
+        "size": 10508,
+        "sha256": "e2eed3786e3824dfe02fdafa85593e197190801fb916bdb3658542862c907012"
+      },
+      {
+        "name": "ARM64/SysInfoCap_HPManifest.xml",
+        "size": 2372,
+        "sha256": "e7b3861a9651cb9a6de76361cb525a1625a467eaa4c764ac9100df81e85892b5"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "ARM64/AnalyticsService.dll",
+        "size": 889536,
+        "sha256": "a40c70f7bef14ec384294f0a2fbe1824b3d825bceed65ca2304a486acc73d051"
+      },
+      {
+        "name": "ARM64/AppHelperCap.exe",
+        "size": 1041088,
+        "sha256": "9129d437bbc30d1412de94a07cd3c95cd481a7f250d99c22be7a696a45e92734"
+      },
+      {
+        "name": "ARM64/AppServiceProxy.dll",
+        "size": 65224,
+        "sha256": "dee4fb0d1bd57f383dec37742da5b63e0e0b6fa6678a0c5978c58111b7d79b3a"
+      },
+      {
+        "name": "ARM64/AppServiceProxySDK.dll",
+        "size": 502976,
+        "sha256": "b9236d93103c7e51d1b3dd57a6d69ff75943ebeec85bcfebac4ac1f81523ab8e"
+      },
+      {
+        "name": "ARM64/BridgeCommunication.exe",
+        "size": 961224,
+        "sha256": "84ccec5ec8351ba74c8118e12612d123fc3130aa36f924e4704956b7fd711d42"
+      },
+      {
+        "name": "ARM64/concrt140.dll",
+        "size": 736384,
+        "sha256": "6ab62ad7c563ef342a3d6f5fa0faac9fe42baf0fca7b0af9ce7e40d712fdc9a6"
+      },
+      {
+        "name": "ARM64/CryptographyUtilityService.dll",
+        "size": 161992,
+        "sha256": "10ea476c52421906fbed7adcb5e314e77479909e2b1311b854f73ab0b4ac2d2d"
+      },
+      {
+        "name": "ARM64/DeviceDetectionService.dll",
+        "size": 374464,
+        "sha256": "1cda2febd1ae5772d98a4a7bfdb70a8409d62ad236dbc0035c7fa231a0177902"
+      },
+      {
+        "name": "ARM64/DeviceService.dll",
+        "size": 79552,
+        "sha256": "1bdc0b3328478504ada57d8ad17ddb36cb92361548627436e4e2a2fb4683558b"
+      },
+      {
+        "name": "ARM64/DiagsCap.exe",
+        "size": 1040576,
+        "sha256": "f06348d3e695c3ec3d5ae3739737a2d261cf6f8679e840af23dc1bab3f007d7f"
+      },
+      {
+        "name": "ARM64/EasyCleanService.dll",
+        "size": 72384,
+        "sha256": "c8658b2d14c948edaf98c50167a850755b15bd02911e0e8d5fff9a25a36b443b"
+      },
+      {
+        "name": "ARM64/FileSystemService.dll",
+        "size": 605888,
+        "sha256": "c4d16cf2bb0a82c67bb12fc56e72b9ae4da8055b86db1ca5961df82e3c3fd66b"
+      },
+      {
+        "name": "ARM64/FirewallService.dll",
+        "size": 76992,
+        "sha256": "fadf1a46e57bc8d29f346c597d2b2403d73257045043683b6d526d3c8efb06d4"
+      },
+      {
+        "name": "ARM64/HapticTouchpadService.dll",
+        "size": 70848,
+        "sha256": "529db58cf001330eb158dd8f0f37e3f99f7d19da54dcc862f34e4cd83e152bae"
+      },
+      {
+        "name": "ARM64/HomeInfoService.dll",
+        "size": 119488,
+        "sha256": "bc3c7d71d0a057fbf066391958e3206b189989b2081089317d0f28ffb1c9223d"
+      },
+      {
+        "name": "ARM64/HttpService.dll",
+        "size": 465088,
+        "sha256": "00638fb5e15a6bb9c005540ba423b56e85c00fd47c4a471267c02f79918d6ea8"
+      },
+      {
+        "name": "ARM64/IntelICService.dll",
+        "size": 130752,
+        "sha256": "351fe528557dcc076148e23ac6a0dc38750e4f486f93d470c006db7d21ba7a2a"
+      },
+      {
+        "name": "ARM64/InternetProxy.dll",
+        "size": 1037504,
+        "sha256": "2592ad75b4b9b544bde86dc56c541501f70ddd7b1943f73e579ce99ea51d3131"
+      },
+      {
+        "name": "ARM64/LauncherService.dll",
+        "size": 558272,
+        "sha256": "f4d1b8b64695e822adf33647637b19f4677e94225736abc087dfc91e701f770b"
+      },
+      {
+        "name": "ARM64/Logging.dll",
+        "size": 63680,
+        "sha256": "0255ca67681185a8dfc3c0fb06f2377cbabdf05a9793132a87c30b2e45b23373"
+      },
+      {
+        "name": "ARM64/msvcp140.dll",
+        "size": 1382040,
+        "sha256": "a0d828fc4b75ddcd2c06d37e5e232d9a9f32ba1f42661c9dbad915a74a74128d"
+      },
+      {
+        "name": "ARM64/msvcp140_1.dll",
+        "size": 60584,
+        "sha256": "91befdeaed3e697030a8552e7ff5b6df96dbe201dab1d94d60b68774c0895499"
+      },
+      {
+        "name": "ARM64/msvcp140_2.dll",
+        "size": 530072,
+        "sha256": "66253fe7be4bf2f5f5798135531013c58778498da2fa7d0d9599b03df5135779"
+      },
+      {
+        "name": "ARM64/msvcp140_atomic_wait.dll",
+        "size": 95896,
+        "sha256": "d04a12b31dae95a1aa0219c2ee84715556d0970d215f56334a43040e20ad59b9"
+      },
+      {
+        "name": "ARM64/msvcp140_codecvt_ids.dll",
+        "size": 51368,
+        "sha256": "a4479f91d4f46d900ddf4f7f8e92212ace7398fd5e50e4c5d11151c0c032ad8c"
+      },
+      {
+        "name": "ARM64/NetworkCap.exe",
+        "size": 1030848,
+        "sha256": "8bc8ec474682c23974dd76d9513be27ed341e31f1a4aebce0225f823c51e1055"
+      },
+      {
+        "name": "ARM64/OneCAInstallerService.dll",
+        "size": 733376,
+        "sha256": "30491b8765036c3adfaf8021a0575e27c9e3fd755fc5baef69a7108efdf08ab2"
+      },
+      {
+        "name": "ARM64/RegistrationService.dll",
+        "size": 911048,
+        "sha256": "d92e2828753f84e2dbeb14795aa27ddcdc908d4789681fbba1d20b1f22221868"
+      },
+      {
+        "name": "ARM64/RpcClient.Native.dll",
+        "size": 106184,
+        "sha256": "762e65653f86e75f551d37efe990fc33eb1e6304098a64c4075cebc2d4ca90e1"
+      },
+      {
+        "name": "ARM64/ServiceCoordinator.exe",
+        "size": 41152,
+        "sha256": "66fd6311854b6be6cf9ff9d396cbbaf020a81f2c9c1d91d2f1aecfd7465f5aa5"
+      },
+      {
+        "name": "ARM64/SmartCameraService.dll",
+        "size": 117960,
+        "sha256": "94f917cc4b0462a56150fd158b2a4fee59326452d63af0b59fb805519932b14d"
+      },
+      {
+        "name": "ARM64/SMBiosService.dll",
+        "size": 90304,
+        "sha256": "6e52747b51d70a890c8c6e929e2c84b4110f32d57fd9575763346bf84044d869"
+      },
+      {
+        "name": "ARM64/SysInfoCap.exe",
+        "size": 1144000,
+        "sha256": "da2cc2e02c716288682e4ba0677c4b2a70bf1d9ed806de8622010920efa6c1f7"
+      },
+      {
+        "name": "ARM64/SystemPropertiesService.dll",
+        "size": 908992,
+        "sha256": "34d602b68f03ae63f7fcdb2eea10afa06a3ec9ac76417806aa284b6da4e3ec76"
+      },
+      {
+        "name": "ARM64/TimeOfFlightService.dll",
+        "size": 48320,
+        "sha256": "3de1b0b2189594c44524dbf8d65fb3567635800ab514ba73c4b402972e202cc0"
+      },
+      {
+        "name": "ARM64/vccorlib140.dll",
+        "size": 898200,
+        "sha256": "6b33593a77bc1684d72860769950054ffe404e813ba8b0defa70240d9488ca79"
+      },
+      {
+        "name": "ARM64/vcruntime140.dll",
+        "size": 209024,
+        "sha256": "2b39aa8ec81c56fcdf3d9ea9fe3a60ffbdc1ef0cf6c982fc31b1d650407747e7"
+      },
+      {
+        "name": "ARM64/vcruntime140_1.dll",
+        "size": 63128,
+        "sha256": "9f46f36651274b9a4f93c95402ab0d607e1af76b0c0de04fd8d38fba5f7ca211"
+      },
+      {
+        "name": "ARM64/vcruntime140_threads.dll",
+        "size": 72832,
+        "sha256": "d15e8eaf4056b97d5372fc9a4399b0d0503dcd615190b1dc7ee8fb3d030e71aa"
+      },
+      {
+        "name": "ARM64/WindowsNTService.dll",
+        "size": 79040,
+        "sha256": "c9d2d12afa94084b86b57f6da4190ed9f736384eb9d18ca93b2fa1d41566a751"
+      },
+      {
+        "name": "ARM64/WindowsRegistryService.dll",
+        "size": 127168,
+        "sha256": "a427467b95e0c062cf969b092e424342830e9083d5b26e334e28d6e038c469e3"
+      },
+      {
+        "name": "ARM64/WMIService.dll",
+        "size": 212672,
+        "sha256": "918aa806fd5dd466cb2ae179d7d2a14f37d075e893b52956a6cac0d270433f78"
+      },
+      {
+        "name": "hpcustomcapcomp.inf",
+        "size": 15632,
+        "sha256": "97ef776a5fa4d344aa20be646f6b1ceaf76869d3e3c6fa09dc6069660babd721"
+      },
+      {
+        "name": "hpcustomcapcomparm64.cat",
+        "size": 34167,
+        "sha256": "294bff519b1cc6b097c95a70885359695fcdbcc4b9194da72ad5d763aa632825"
+      }
+    ],
+    "infs": [
+      "drivers/hpcustomcapcomp.inf_arm64_7c8316110d8c2dc6/hpcustomcapcomp.inf"
+    ]
+  },
+  {
+    "folder": "hpcustomcapdriver.inf_arm64_1421dec2010cc057",
+    "inf": "oem85.inf",
+    "provider": "HP Inc.",
+    "version": "1.66.3710.0",
+    "date": "2024-03-28",
+    "extension": false,
+    "devices": [
+      "HP Application Driver"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_HPIC%26DEV_0003",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "ARM64/hpcustomcapdriver.sys",
+        "size": 21416,
+        "sha256": "051e29f05d15cbf4f5fbc38682908ece5a36e236cd60de598b43c6e3426d92da"
+      },
+      {
+        "name": "hpcustomcapdriver.inf",
+        "size": 5161,
+        "sha256": "9b9c08640ae90a50034286792c21e8d64fd3c1134e82810c160af8abfec46a59"
+      },
+      {
+        "name": "hpcustomcapdriverarm64.cat",
+        "size": 11980,
+        "sha256": "9e3d7d1fce30f8d3f2b475239ff6ff7ff8ded432004930437b5e52acc9fcc84d"
+      }
+    ],
+    "infs": [
+      "drivers/hpcustomcapdriver.inf_arm64_1421dec2010cc057/hpcustomcapdriver.inf"
+    ]
+  },
+  {
+    "folder": "hpcustomcapext.inf_arm64_162e2664ea5e1104",
+    "inf": "oem87.inf",
+    "provider": null,
+    "version": "1.66.3710.0",
+    "date": "2024-03-28",
+    "extension": true,
+    "devices": [
+      "HP Application Driver"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CHPIC0003",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "hpcustomcapext.inf",
+        "size": 3630,
+        "sha256": "0bc4399a258c981b8ac76d96e3a14b4c808250d090211d6bb3f2972a674e8991"
+      },
+      {
+        "name": "hpcustomcapextarm64.cat",
+        "size": 10906,
+        "sha256": "77ff32024d0ef961f9531aa50794a9c5c193bea4bd88f41b2589fb8b98fdf88c"
+      }
+    ],
+    "infs": [
+      "drivers/hpcustomcapext.inf_arm64_162e2664ea5e1104/hpcustomcapext.inf"
+    ]
+  },
+  {
+    "folder": "hpmuteled.inf_arm64_e56e97e0c8516445",
+    "inf": "oem80.inf",
+    "provider": "HP Inc.",
+    "version": "1.0.4.6",
+    "date": "2025-10-22",
+    "extension": false,
+    "devices": [
+      "HP Mute LED"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_HPIC%26DEV_0005",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "hpmuteled.cat",
+        "size": 11733,
+        "sha256": "b3ca82254677394b48b11dc5a6087ca19271facabc389653dcd3aefd7aa132fe"
+      },
+      {
+        "name": "hpmuteled.inf",
+        "size": 1874,
+        "sha256": "b617857c261eaf7a8fd75dff36f272943d4a0da18b41021c760f0748fd27d57e"
+      },
+      {
+        "name": "hpmuteled.sys",
+        "size": 34472,
+        "sha256": "9b79be4b3caf830531f0f5da3d227c571075eea03071b24e7533be6d476395c8"
+      },
+      {
+        "name": "HPMuteLEDSvc.exe",
+        "size": 278696,
+        "sha256": "72b7abe4294f46b834e53e34a5e574cc0f22595ecfb408297004392a8151ec2f"
+      }
+    ],
+    "infs": [
+      "drivers/hpmuteled.inf_arm64_e56e97e0c8516445/hpmuteled.inf"
+    ]
+  },
+  {
+    "folder": "hvservice.inf_arm64_1c73eca2b3d1115f",
+    "inf": "hvservice.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Hypervisor Service"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ROOT%5Chvservice",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "hvservice.inf",
+        "size": 3798,
+        "sha256": "460566f1e9981889aa038ac1080b03644d58f0fb9c95bcd3695932b51bb52c06"
+      },
+      {
+        "name": "hvservice.sys",
+        "size": 81224,
+        "sha256": "a05781ad47775f189aa62b291d5b7e6e8e99de9d694f95836dfe8811095a7977"
+      }
+    ],
+    "infs": [
+      "drivers/hvservice.inf_arm64_1c73eca2b3d1115f/hvservice.inf"
+    ]
+  },
+  {
+    "folder": "input.inf_arm64_4fb20d2b2881e7d9",
+    "inf": "input.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "HID-compliant system controller",
+      "HID-compliant vendor-defined device",
+      "USB Input Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=HID%5CVEN_QTEC%26DEV_0001%26Col04",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "hidclass.sys",
+        "size": 271872,
+        "sha256": "118c5e0df29caf93e9e6b6d5d9037f4ecffeefbd848ca5441286f99bb0a4f011"
+      },
+      {
+        "name": "hidparse.sys",
+        "size": 67072,
+        "sha256": "653a6bbf522e2163063f7697480b760713617a10f86737fc7d62852b9d375f35"
+      },
+      {
+        "name": "hidusb.sys",
+        "size": 57344,
+        "sha256": "740c6cead3a258a8d76a325615ac05673fcc44f8240255a39678fff661b1c53a"
+      },
+      {
+        "name": "input.inf",
+        "size": 76470,
+        "sha256": "7c66d091235f8697f8be433999851f6b4ddc3a4f8916060c1d657987cdd1f924"
+      },
+      {
+        "name": "input.PNF",
+        "size": 143420,
+        "sha256": "9b007589879faf7a311842f025a20c30823a0b2893277a0c8b3235f966f47096"
+      }
+    ],
+    "infs": [
+      "drivers/input.inf_arm64_4fb20d2b2881e7d9/input.inf"
+    ]
+  },
+  {
+    "folder": "kdnic.inf_arm64_8ca65c397727ba94",
+    "inf": "kdnic.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.8521",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Kernel Debug Network Adapter"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=root%5Ckdnic",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "kdnic.inf",
+        "size": 6550,
+        "sha256": "2c947a7687ea0db50f9f426cd10daa18a28515e4fadaadb1bcd374ae89775a76"
+      },
+      {
+        "name": "kdnic.sys",
+        "size": 48600,
+        "sha256": "6c69036af5acfebf1ce0796e6cd2a7037af0122ba1efc8f480e6acf7d8a65fff"
+      },
+      {
+        "name": "kdnicctrl.exe",
+        "size": 16384,
+        "sha256": "ba90fc7527e68e8727f7410897154b6b70e13b0ec14d72eafd1df81d7683529e"
+      }
+    ],
+    "infs": [
+      "drivers/kdnic.inf_arm64_8ca65c397727ba94/kdnic.inf"
+    ]
+  },
+  {
+    "folder": "keyboard.inf_arm64_a22223084485ad8b",
+    "inf": "keyboard.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "HID Keyboard Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=HID%5CVEN_QTEC%26DEV_0001%26Col01",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "kbdclass.sys",
+        "size": 87392,
+        "sha256": "336565283ab8c4019c39a50931611e65ce43d16417f6b606bb96ea32fbf04a5d"
+      },
+      {
+        "name": "kbdhid.sys",
+        "size": 55808,
+        "sha256": "faf8656a202dd316670d4451b1ca35c713221030ecde431989bc6c9b409d6b22"
+      },
+      {
+        "name": "keyboard.inf",
+        "size": 54608,
+        "sha256": "a5d6b44774d9e77c51e21cf6a71242c02c7a92157d5a969a8bb36b1f5571e70c"
+      }
+    ],
+    "infs": [
+      "drivers/keyboard.inf_arm64_a22223084485ad8b/keyboard.inf"
+    ]
+  },
+  {
+    "folder": "ksfilter.inf_arm64_7201f4d07b414020",
+    "inf": "ksfilter.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Streaming Service Proxy"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=SW%5C%7B96E080C7-143C-11D1-B40F-00A0C9223196%7D",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "ksfilter.inf",
+        "size": 10076,
+        "sha256": "334133204fc261e105f267ad61af0e0e0a27794243ec6e3f1fecf45cf11f5eaf"
+      }
+    ],
+    "infs": [
+      "drivers/ksfilter.inf_arm64_7201f4d07b414020/ksfilter.inf"
+    ]
+  },
+  {
+    "folder": "machine.inf_arm64_087081db115ade2c",
+    "inf": "machine.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "ACPI Lid",
+      "ACPI Processor Container Device",
+      "ACPI Thermal Zone"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_ACPI%26DEV_0010",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "machine.inf",
+        "size": 120008,
+        "sha256": "2ea3f2ca6fb89fdf51f60468a0446c48e9ad27e3c80b2f2223d779431ddfae8c"
+      }
+    ],
+    "infs": [
+      "drivers/machine.inf_arm64_087081db115ade2c/machine.inf"
+    ]
+  },
+  {
+    "folder": "monitor.inf_arm64_abd2dc0829179fee",
+    "inf": "monitor.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Integrated Monitor"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=MONITOR%5CTMA2109",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "monitor.inf",
+        "size": 790526,
+        "sha256": "b2bb8f1597beef3924a3d0cb935c530f4d801d708e1373a2cbd3747e22cc0e0d"
+      },
+      {
+        "name": "monitor.sys",
+        "size": 96768,
+        "sha256": "519d4eb0648e9b0a229f541ff957ade24a1be4a6e5756d5392139510d9f9d655"
+      }
+    ],
+    "infs": [
+      "drivers/monitor.inf_arm64_abd2dc0829179fee/monitor.inf"
+    ]
+  },
+  {
+    "folder": "msmouse.inf_arm64_75474d32507466b2",
+    "inf": "msmouse.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "HID-compliant mouse"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=HID%5CVID_046D%26PID_C408%26REV_1400",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "mouclass.sys",
+        "size": 83832,
+        "sha256": "b21805f56661cee182236829581aa8ca2a97f144dc00885cbd0d39acc75bba06"
+      },
+      {
+        "name": "mouhid.sys",
+        "size": 50688,
+        "sha256": "7a0d616d76033643b6bef7aae910d4aa809e742d9a918f971014cf2146f6431a"
+      },
+      {
+        "name": "msmouse.inf",
+        "size": 40956,
+        "sha256": "d1557d2e76ac4991f4c07a32f94cb94dab2a82f5e9ea79e7ba79cae445ff202c"
+      },
+      {
+        "name": "msmouse.PNF",
+        "size": 68308,
+        "sha256": "1e7bdd22a37284cdac4eb59194f6a0c4da26af632822bfffc032df5530f07107"
+      }
+    ],
+    "infs": [
+      "drivers/msmouse.inf_arm64_75474d32507466b2/msmouse.inf"
+    ]
+  },
+  {
+    "folder": "mssmbios.inf_arm64_7fb97dbb5821c996",
+    "inf": "mssmbios.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft System Management BIOS Driver"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ROOT%5Cmssmbios",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "mssmbios.inf",
+        "size": 3490,
+        "sha256": "339594317107fa640c9eaca2b4b6d36078b5df9b129e01fdaece2acc0f9db867"
+      },
+      {
+        "name": "mssmbios.sys",
+        "size": 47408,
+        "sha256": "bc2028b2c044b4795ec294332479ebde99bd2a8e5ce44098c7e0518f76e73de8"
+      }
+    ],
+    "infs": [
+      "drivers/mssmbios.inf_arm64_7fb97dbb5821c996/mssmbios.inf"
+    ]
+  },
+  {
+    "folder": "mtconfig.inf_arm64_746a009a794453e3",
+    "inf": "mtconfig.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Input Configuration Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=HID%5CVEN_SYNA%26DEV_352E%26Col03",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "mtconfig.inf",
+        "size": 3758,
+        "sha256": "a021d64c3d56009da3ae05c5d0c270dfa3d58d4f98985be8e04f146d0b3503c4"
+      },
+      {
+        "name": "MTConfig.sys",
+        "size": 26624,
+        "sha256": "6c0a6dd30e4d0cc5dce8b190d493c8fdf7afdedcd89c3c9a0877888fdee3ba5c"
+      }
+    ],
+    "infs": [
+      "drivers/mtconfig.inf_arm64_746a009a794453e3/mtconfig.inf"
+    ]
+  },
+  {
+    "folder": "ndisvirtualbus.inf_arm64_8e7a646573feaf1f",
+    "inf": "ndisvirtualbus.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "NDIS Virtual Network Adapter Enumerator"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ROOT%5CNdisVirtualBus",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "ndisvirtualbus.inf",
+        "size": 2742,
+        "sha256": "e234290f8507b80ae3d0dee42c7c6e2db416a5d3f1b9d893ce6018e3f01faea4"
+      }
+    ],
+    "infs": [
+      "drivers/ndisvirtualbus.inf_arm64_8e7a646573feaf1f/ndisvirtualbus.inf"
+    ]
+  },
+  {
+    "folder": "pci.inf_arm64_1a9ba8d26efd08f4",
+    "inf": "pci.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "PCI Express Root Complex",
+      "PCI Express Root Port"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=PCI%5CVEN_17CB%26DEV_010B%26SUBSYS_00000000%26REV_00",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "pci.inf",
+        "size": 18988,
+        "sha256": "66d7bc0094443b29af3f30e0dcd561b3c3f44b867309d8f1124672b88976818e"
+      },
+      {
+        "name": "pci.sys",
+        "size": 607584,
+        "sha256": "40b7841301a2e3696a9f231c62c6becd4d5bb3f41b8d79ae56ce9358bf91ddc3"
+      }
+    ],
+    "infs": [
+      "drivers/pci.inf_arm64_1a9ba8d26efd08f4/pci.inf"
+    ]
+  },
+  {
+    "folder": "plutonqc.inf_arm64_f4b6fdb8c93f74bd",
+    "inf": "PlutonQc.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Pluton security processor"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=Root%5CPlutonQc",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "PlutonQc.inf",
+        "size": 3354,
+        "sha256": "e48b2e25d971a28a0aa2160c31b08241efcbea2fedf9a73cee5000c01f761b17"
+      },
+      {
+        "name": "PlutonQc.sys",
+        "size": 80248,
+        "sha256": "df352e597f1904a98ae9b7f2f9f3d1c860decbb5aceaf145b113f87d964444c2"
+      }
+    ],
+    "infs": [
+      "drivers/plutonqc.inf_arm64_f4b6fdb8c93f74bd/PlutonQc.inf"
+    ]
+  },
+  {
+    "folder": "printqueue.inf_arm64_a8a25d3e60bf9274",
+    "inf": "printqueue.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Print to PDF",
+      "Root Print Queue"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=PRINTENUM%5CLocalPrintQueue",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "printqueue.inf",
+        "size": 3186,
+        "sha256": "a28df4f831662a00bb999482d002de7ceabf0fe9428685b0b446c10aeb09caea"
+      }
+    ],
+    "infs": [
+      "drivers/printqueue.inf_arm64_a8a25d3e60bf9274/printqueue.inf"
+    ]
+  },
+  {
+    "folder": "qcabd.inf_arm64_eb4bdbe522924c47",
+    "inf": "oem5.inf",
+    "provider": "Qualcomm Technologies Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) ACPI Bridge Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_0427%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcabd.cat",
+        "size": 11263,
+        "sha256": "bfde7160e306d1313d260aa23a64913405808e92b15ac0a77180b25cd680c4ce"
+      },
+      {
+        "name": "qcabd.inf",
+        "size": 3710,
+        "sha256": "04adaf26b36aaf8958fd050ac39e7aa9c0031bef2684f1b46243fe62ba4c736b"
+      },
+      {
+        "name": "qcabd.sys",
+        "size": 49456,
+        "sha256": "b56cbd70575718e3e0e29d6e4cd0b9740512e41fa39f83509f05931e3d82b811"
+      }
+    ],
+    "infs": [
+      "drivers/qcabd.inf_arm64_eb4bdbe522924c47/qcabd.inf"
+    ]
+  },
+  {
+    "folder": "qcacsp_crd8270.inf_arm64_ab7dce915d825b9e",
+    "inf": "oem6.inf",
+    "provider": null,
+    "version": "1.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) Aqstic(TM) Audio DSP and Calibration Manager"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ADSP%5CVEN_QCOM%26DEV_1321%26SUBSYS_CRD08270",
+    "files": [
+      {
+        "name": "acdb_cal.acdb",
+        "size": 406066,
+        "sha256": "6e0b8871eb6c9b411c98687093fd29133ea3df98a5713370782f53733a747432"
+      },
+      {
+        "name": "ADCMResources.bin",
+        "size": 6132,
+        "sha256": "58856affe7e76ba09a9edcc1b2543805d759530a4d96f211ee61c854557c62ed"
+      },
+      {
+        "name": "fai_3.0.0_0.0_eai_1.00.pmd",
+        "size": 24576,
+        "sha256": "d0d2bfe757f8220798d3539752a3301dba322e00374c219a19142adf4360332d"
+      },
+      {
+        "name": "fai__2.7.2_0.0__3.0.0_0.0__eai_1.10.pmd",
+        "size": 5433344,
+        "sha256": "3a735b2326bab42de6fb02640b07d0b0486ed48f0162849f29e5eb6c9d7f34fa"
+      },
+      {
+        "name": "fai__2.9.5_0.0__3.0.0_0.0__eai_1.10_enpuv1.pmd",
+        "size": 10797056,
+        "sha256": "dcfd723721ea7f90ac285a1bd6b1b0e9d18e9e68c781b5d73ed402e167e1c03e"
+      },
+      {
+        "name": "workspaceFile.qwsp",
+        "size": 468160,
+        "sha256": "af056848d85c99f18973616e9fcbf92cc308ec51e4c9362dc7d322d5fd8ed1ad"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcacsp8270.cat",
+        "size": 13841,
+        "sha256": "2d1e66ef4b425eea7bdc82608103c7da691417ac4632dfc46bc5d1e5c987f9a1"
+      },
+      {
+        "name": "qcacsp_crd8270.inf",
+        "size": 6180,
+        "sha256": "9337af52c1c12c53f6c50051dbf5f16608ce98582b43ef3561b338e211bc6688"
+      }
+    ],
+    "infs": [
+      "drivers/qcacsp_crd8270.inf_arm64_ab7dce915d825b9e/qcacsp_crd8270.inf"
+    ]
+  },
+  {
+    "folder": "qcadc8270.inf_arm64_b1896db82c004dc8",
+    "inf": "oem7.inf",
+    "provider": "Qualcomm Technologies, Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Analog-to-Digital Converter Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1311%26SUBSYS_CRD08270",
+    "files": [
+      {
+        "name": "ADC1.bin",
+        "size": 9271,
+        "sha256": "3de26fc8f282010ae315f94daf15b268621c87a0d6cc3b2d8f1307b74c653014"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcadc8270.cat",
+        "size": 11702,
+        "sha256": "5a0227b4c52bfc936499e7a858250785baff15d9deb6a93f4df195c77b55a9b0"
+      },
+      {
+        "name": "qcadc8270.inf",
+        "size": 4878,
+        "sha256": "063a5c67f212e276ce58f717abf95af3670b8c4ce937043117213364ebc85837"
+      },
+      {
+        "name": "qcadc8270.sys",
+        "size": 306480,
+        "sha256": "83f11042ccc34d002654232e3fcd083c82bfafa6d70082b94a52a38149556a62"
+      }
+    ],
+    "infs": [
+      "drivers/qcadc8270.inf_arm64_b1896db82c004dc8/qcadc8270.inf"
+    ]
+  },
+  {
+    "folder": "qcadcm8270.inf_arm64_027b033e40b8c3bb",
+    "inf": "oem8.inf",
+    "provider": "Qualcomm Technologies, Inc.",
+    "version": "1.0.4669.6400",
+    "date": "2026-08-04",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Aqstic(TM) Audio DSP and Calibration Manager"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ADSP%5CVEN_QCOM%26DEV_1321%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcadcm8270.cat",
+        "size": 11317,
+        "sha256": "e686dc1942f224cd801086bc864d76eb80e5d207c8c1588faa261914dfa42492"
+      },
+      {
+        "name": "qcadcm8270.inf",
+        "size": 17816,
+        "sha256": "154a17e6d67517fde92879069539e67935101f669f4919bb79d97839651a83dc"
+      },
+      {
+        "name": "qcadcm8270.sys",
+        "size": 782760,
+        "sha256": "6a9ca9cb6931aff350434617e747434f7fbd1ae4983de64cefaaf002753ac65d"
+      }
+    ],
+    "infs": [
+      "drivers/qcadcm8270.inf_arm64_027b033e40b8c3bb/qcadcm8270.inf"
+    ]
+  },
+  {
+    "folder": "qcadspdaemon8270.inf_arm64_72446875aed02a6b",
+    "inf": "oem9.inf",
+    "provider": "Qualcomm Technologies, Inc.",
+    "version": "1.0.4654.7500",
+    "date": "2026-07-15",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) ADSP GuestOS Daemon Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_143A%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcadspdaemon8270.cat",
+        "size": 11352,
+        "sha256": "2b75d3315e958047c397fa58b0cfa2f47034a2288c568b3f9c0b90f803f15077"
+      },
+      {
+        "name": "qcadspdaemon8270.inf",
+        "size": 4606,
+        "sha256": "072e04d74e355b40c3a1cfe130761d2cb8c3a20a3e2a9b00caa2a06f9f0713a8"
+      },
+      {
+        "name": "qcadspdaemon8270.sys",
+        "size": 107328,
+        "sha256": "d00ea560524393e58bafa7e10506fb49931b42ae5adf7a54ec419152ec26adb5"
+      }
+    ],
+    "infs": [
+      "drivers/qcadspdaemon8270.inf_arm64_72446875aed02a6b/qcadspdaemon8270.inf"
+    ]
+  },
+  {
+    "folder": "qcadsprpc8270.inf_arm64_c4add61a4722a3d9",
+    "inf": "oem10.inf",
+    "provider": "Qualcomm Technologies, Inc.",
+    "version": "1.0.4654.7500",
+    "date": "2026-07-15",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) FastRPC Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_135A%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "libadsprpc.dll",
+        "size": 184640,
+        "sha256": "cd146613fb5c954bd29472728d88949285ac8830bc9d59714ed45aa8fe7e99ef"
+      },
+      {
+        "name": "libadsprpcarm32.dll",
+        "size": 137024,
+        "sha256": "38c61d130b17b3d2469684b713de052bef33aad1e24da216647950f2e4753577"
+      },
+      {
+        "name": "libcdsprpc.dll",
+        "size": 184640,
+        "sha256": "8fd172f6810bfdfbe097fbca880eee48864afbbaf113f3f188e4a10bae9f1cd1"
+      },
+      {
+        "name": "libcdsprpcarm32.dll",
+        "size": 137024,
+        "sha256": "9d9b7692cd81d7a9e62172d880b556008e741cc3c627c864d4c676b489b4e8b5"
+      },
+      {
+        "name": "libsdsprpc.dll",
+        "size": 184640,
+        "sha256": "80938bb1f832743af32cef0cac1a09d7dcf3ec7009ace65887056edb2347e533"
+      },
+      {
+        "name": "libsdsprpcarm32.dll",
+        "size": 137024,
+        "sha256": "eb5cd3de5540e0c4a2fb95eee65f6448b3c61bfb08c92c579a1ca1b0249210e3"
+      },
+      {
+        "name": "qcadsprpc8270.cat",
+        "size": 14028,
+        "sha256": "3a6b7bf39c19984536d4af096a1990bc2af3d0362a62801f6befee7cd9264174"
+      },
+      {
+        "name": "qcadsprpc8270.inf",
+        "size": 38522,
+        "sha256": "fef2dd9f878c747c02a80c3d5fff4631c5f0aae0d56c544bec91b0123273f3e4"
+      },
+      {
+        "name": "qcadsprpc8270.sys",
+        "size": 500544,
+        "sha256": "f4eae0e73d08fa88af073be9df64a53368f43ab33f345dc29b6c19bb777002da"
+      }
+    ],
+    "infs": [
+      "drivers/qcadsprpc8270.inf_arm64_c4add61a4722a3d9/qcadsprpc8270.inf"
+    ]
+  },
+  {
+    "folder": "qcadsprpcd8270.inf_arm64_b0f3827e376e3c51",
+    "inf": "oem11.inf",
+    "provider": "Qualcomm Technologies, Inc.",
+    "version": "1.0.4654.7500",
+    "date": "2026-07-15",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Audio RPC Daemon Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1380%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcadsprpcd8270.cat",
+        "size": 11336,
+        "sha256": "cfa983480df0510a8f6f75ac357bad3229824f909099d0c7e10276910aee9db3"
+      },
+      {
+        "name": "qcadsprpcd8270.inf",
+        "size": 6750,
+        "sha256": "8a7aaea0183db3f5e89a080f4a62f37db7803ea87df4d98aba1de1000ee5170f"
+      },
+      {
+        "name": "qcadsprpcd8270.sys",
+        "size": 109376,
+        "sha256": "9c6ad9062908f5b218534c8fb57b2abc38cb0394a878a36ad8c6a641e9e18bb6"
+      }
+    ],
+    "infs": [
+      "drivers/qcadsprpcd8270.inf_arm64_b0f3827e376e3c51/qcadsprpcd8270.inf"
+    ]
+  },
+  {
+    "folder": "qcaucd8270.inf_arm64_1ee0179c76a978c3",
+    "inf": "oem13.inf",
+    "provider": "Qualcomm",
+    "version": "1.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Aqstic(TM)"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ADCM%5CVEN_QCOM%26DEV_1418%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcaucd8270.cat",
+        "size": 11317,
+        "sha256": "200b9d259a71e989ced305137ad9899b008702f7b83c75f94b2a1d892981a52c"
+      },
+      {
+        "name": "qcaucd8270.inf",
+        "size": 3642,
+        "sha256": "6cab6cb062c559e65ec75c6f4c41dee716786daf2a7e6a52a0972b6585d730b9"
+      },
+      {
+        "name": "qcaucd8270.sys",
+        "size": 377040,
+        "sha256": "4421bab119fa2e9b4538bbebef0b7082d4f5266720ae4f92fe242b145624b1dd"
+      }
+    ],
+    "infs": [
+      "drivers/qcaucd8270.inf_arm64_1ee0179c76a978c3/qcaucd8270.inf"
+    ]
+  },
+  {
+    "folder": "qcaucd_ext_crd8270.inf_arm64_4af2c11b14d21030",
+    "inf": "oem12.inf",
+    "provider": null,
+    "version": "1.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) Aqstic(TM)"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ADCM%5CVEN_QCOM%26DEV_1418%26SUBSYS_CRD08270",
+    "files": [
+      {
+        "name": "ACDResources.bin",
+        "size": 9413,
+        "sha256": "1aa5aa4834800568b4a79138673d3613ab55e0c717a9b7960d5ce282cf44338f"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcaucd_ext_crd8270.inf",
+        "size": 7020,
+        "sha256": "547227cad14a3a3fb80fbadd05578e6e9bb8e7c4da43b719d303f15b274538d3"
+      },
+      {
+        "name": "qcaucd_ext_CRD_8270.cat",
+        "size": 11401,
+        "sha256": "05ee84b9d42ba43841810e79decad5109956e18c0f2fab6847a8ca8531bf709e"
+      }
+    ],
+    "infs": [
+      "drivers/qcaucd_ext_crd8270.inf_arm64_4af2c11b14d21030/qcaucd_ext_crd8270.inf"
+    ]
+  },
+  {
+    "folder": "qcaudminiportcrd_extension8270.inf_arm64_5a0dfbdb73943b21",
+    "inf": "oem16.inf",
+    "provider": null,
+    "version": "1.0.4669.6400",
+    "date": "2026-08-04",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) Aqstic(TM) Audio Adapter Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=AUCD%5CVEN_QCOM%26DEV_1328%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcaudminiportCRD_Extension8270.cat",
+        "size": 11013,
+        "sha256": "21b57cae41f5d8a7e1bb85d2f43386b3e55cf8610ae803755d603de328f4a63b"
+      },
+      {
+        "name": "qcaudminiportCRD_Extension8270.inf",
+        "size": 183608,
+        "sha256": "ea53256354b590e3d60c0bc9f9f3895caeb1fce69fa654f1f75ee94fc355df61"
+      }
+    ],
+    "infs": [
+      "drivers/qcaudminiportcrd_extension8270.inf_arm64_5a0dfbdb73943b21/qcaudminiportCRD_Extension8270.inf"
+    ]
+  },
+  {
+    "folder": "qcaudminiport_apo8270.inf_arm64_25804f92bd0dedac",
+    "inf": "oem14.inf",
+    "provider": "Qualcomm Technologies, Inc.",
+    "version": "1.0.4646.5000",
+    "date": "2026-07-03",
+    "extension": false,
+    "devices": [
+      "Qualcomm Audio Proxy APO"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=SWC%5CVEN_QCOM%26DEV_APO_8270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "ProxyAPO.dll",
+        "size": 236440,
+        "sha256": "eeb6cdca1343ae29c2961ed41aa21b8ded495755694cade5212e23f94cde85ae"
+      },
+      {
+        "name": "qcaudminiport_apo8270.cat",
+        "size": 13567,
+        "sha256": "d8a7dce1cc39cb7660658667eeb315b2ab83012fce0ad50b0545997b1d3b7aca"
+      },
+      {
+        "name": "qcaudminiport_apo8270.inf",
+        "size": 9848,
+        "sha256": "1cafe584ec723cdb35b3be1ea7395179f56b7436206c0a73b6d94827afcbcd9d"
+      }
+    ],
+    "infs": [
+      "drivers/qcaudminiport_apo8270.inf_arm64_25804f92bd0dedac/qcaudminiport_apo8270.inf"
+    ]
+  },
+  {
+    "folder": "qcaudminiport_base8270.inf_arm64_db979ed820801c5f",
+    "inf": "oem15.inf",
+    "provider": "Qualcomm Technologies, Inc.",
+    "version": "1.0.4646.5000",
+    "date": "2026-07-03",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Aqstic(TM) Audio Adapter Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=AUCD%5CVEN_QCOM%26DEV_1328%26SUBSYS_CRD08270",
+    "files": [
+      {
+        "name": "AudioResourceConstraints_8270.xml",
+        "size": 50681,
+        "sha256": "e5702a3620d40dab8cd9b4a34fa0c7a063b12a3b9ff0e2e6ed0ce8c5d5ce120c"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcaudminiport8270.cat",
+        "size": 18495,
+        "sha256": "362d6f8e3bb9e29e152598643538a1fdc049491e74d3b17b22ed32dba0284de4"
+      },
+      {
+        "name": "qcaudminiport8270.sys",
+        "size": 728992,
+        "sha256": "8cab2e24d983c29fd0ad5bffaf228f0bdf2d2ffd1f0628faf595cdfa36653710"
+      },
+      {
+        "name": "qcaudminiport_Base8270.inf",
+        "size": 53478,
+        "sha256": "0e21314c11a3b4a5429639b774d75981a514c431506f10a42623d0655b8d1fe4"
+      }
+    ],
+    "infs": [
+      "drivers/qcaudminiport_base8270.inf_arm64_db979ed820801c5f/qcaudminiport_Base8270.inf"
+    ]
+  },
+  {
+    "folder": "qcbluetooth8270.inf_arm64_37d6d0f6b770d3ed",
+    "inf": "oem17.inf",
+    "provider": "Qualcomm Atheros Communications Inc.",
+    "version": "1.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Bluetooth UART Transport Driver"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1369%26SUBSYS_CRD08270",
+    "files": [
+      {
+        "name": "bsrc_bt.bin",
+        "size": 248,
+        "sha256": "cd966ee6c369f693e916dac156b44dbafa5eb2e1f205fe563f19f9cf9b4e0038"
+      },
+      {
+        "name": "clnbtfw10.tlv",
+        "size": 270691,
+        "sha256": "b0ec1922e4e6ef0688c9b37512a2ab8328c55668842bbb3db2bd20cfaf05342d"
+      },
+      {
+        "name": "clnbtfw10.ver",
+        "size": 34,
+        "sha256": "9cc707215d820df0535237f8da9e7a0e15503dc6499705d66f18100157514707"
+      },
+      {
+        "name": "clnbtnv10.b0603",
+        "size": 11013,
+        "sha256": "db0909a547939be47d0813a420eb8dee195f7c7deaddb526bd5739109b5d8dff"
+      },
+      {
+        "name": "clnbtnv10.b0802",
+        "size": 11013,
+        "sha256": "db0909a547939be47d0813a420eb8dee195f7c7deaddb526bd5739109b5d8dff"
+      },
+      {
+        "name": "clnbtnv10.b0e",
+        "size": 11013,
+        "sha256": "db0909a547939be47d0813a420eb8dee195f7c7deaddb526bd5739109b5d8dff"
+      },
+      {
+        "name": "clnbtnv10.b18",
+        "size": 11013,
+        "sha256": "d64410e35228fb356c95d209332d49288904606e10282349d1908aba2d1bf79a"
+      },
+      {
+        "name": "clnbtnv10.bin",
+        "size": 11013,
+        "sha256": "db0909a547939be47d0813a420eb8dee195f7c7deaddb526bd5739109b5d8dff"
+      },
+      {
+        "name": "msbtfw11.tlv",
+        "size": 165768,
+        "sha256": "957a56ed1947f72358a90356d9e380a8e022426c877a64a20529f8531343196f"
+      },
+      {
+        "name": "msnv11.b01",
+        "size": 5883,
+        "sha256": "39a411db7d2c340ac793c169cd2309f3293558d64d23ad57d6f50f9ac0cffe5e"
+      },
+      {
+        "name": "msnv11.b09",
+        "size": 5867,
+        "sha256": "84126b650a15a85e4e8c7867a6076175aab1ae039599730403da4064d31d405a"
+      },
+      {
+        "name": "msnv11.b0a",
+        "size": 5867,
+        "sha256": "35aaffd67f75d873c54907602d49d34ef2c7095ad11c7296d62745afe010f8fe"
+      },
+      {
+        "name": "msnv11.bin",
+        "size": 5867,
+        "sha256": "af049024743eb9af8e3bf3f66b576629f9b43a8e3d0015b3582ad80bda9384af"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcbluetooth8270.cat",
+        "size": 17375,
+        "sha256": "cd1d3d58fc512a4e792ea66d0bbc8f403ed7d74064eb67e7560519e7acf4b4f6"
+      },
+      {
+        "name": "qcbluetooth8270.inf",
+        "size": 10606,
+        "sha256": "6238269c7da7f377c249c9c4db72bc1bbb7295f873b5e83b0588dc0389f8ea43"
+      },
+      {
+        "name": "qcbluetooth8270.sys",
+        "size": 645440,
+        "sha256": "ff0c54e6cf6782037c093c56c4194884278f46dc3cd623d6dd044d98d0a2cf27"
+      }
+    ],
+    "infs": [
+      "drivers/qcbluetooth8270.inf_arm64_37d6d0f6b770d3ed/qcbluetooth8270.inf"
+    ]
+  },
+  {
+    "folder": "qcbtaddvscregistry8270.inf_arm64_e54ea2a2dc004263",
+    "inf": "oem18.inf",
+    "provider": "Qualcomm Incorporated",
+    "version": "1.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": false,
+    "devices": [
+      "Qualcomm FastConnect C6700 NCM620B Bluetooth Adapter"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=QCA_SHB%5CUART_H4_CLG_620B",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcbtaddvscregistry8270.cat",
+        "size": 11416,
+        "sha256": "b1f0a5a6349a1f4571137bf58a34f924d6adee1e5d3ca3c1dae03106db10b2d7"
+      },
+      {
+        "name": "qcbtaddvscregistry8270.inf",
+        "size": 3976,
+        "sha256": "c0a789985ed2216ccc5524021329297c7438a4a1071f85efaff114bbdacc655a"
+      }
+    ],
+    "infs": [
+      "drivers/qcbtaddvscregistry8270.inf_arm64_e54ea2a2dc004263/qcbtaddvscregistry8270.inf"
+    ]
+  },
+  {
+    "folder": "qccdi8270.inf_arm64_67c579d4ae968a7d",
+    "inf": "oem19.inf",
+    "provider": "Qualcomm Incorporated",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Device Crash Dump Injector Service"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_132E%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qccdi8270.cat",
+        "size": 11293,
+        "sha256": "72c25c9351be15e233b724a66fdcd7925f4b44ba107015ee44f8ae3b339749be"
+      },
+      {
+        "name": "qccdi8270.inf",
+        "size": 11054,
+        "sha256": "b6060c218105436ca14910f5ec27d8a124b7ec300f254d5f8a787ccff20a9bd8"
+      },
+      {
+        "name": "qccdi8270.sys",
+        "size": 393008,
+        "sha256": "562ce7c681a5e4e1b08d8904f3e9ab2d47146445e4cf9ca1d268de26faace68b"
+      }
+    ],
+    "infs": [
+      "drivers/qccdi8270.inf_arm64_67c579d4ae968a7d/qccdi8270.inf"
+    ]
+  },
+  {
+    "folder": "qcdx8270.inf_arm64_6356570cad217328",
+    "inf": "oem81.inf",
+    "provider": "Qualcomm Incorporated",
+    "version": "30.0.4690.4500",
+    "date": "2026-09-02",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Adreno(TM) GPU"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1334%26SUBSYS_CRD08270%26REV_0B12",
+    "files": [
+      {
+        "name": "libqcdx12arm64wslum.so",
+        "size": 49141728,
+        "sha256": "5654dd76e632703a609eda2bae009c9681783aad53dcf6de188b764348cbc448"
+      },
+      {
+        "name": "libqcdxarm64wslcompiler.so",
+        "size": 60461072,
+        "sha256": "079b0af60fc6b8d87a017535fa6d2745b472fee3f9c0767fa557d23c0eb34b6f"
+      },
+      {
+        "name": "qcdxkmbase8270.bin",
+        "size": 84537,
+        "sha256": "6590c4e7b9d4b4d44f6af2731c8a8b04f4eeec6acf9267375ed333ac992745af"
+      },
+      {
+        "name": "qcdxkmbase8270_45.bin",
+        "size": 84077,
+        "sha256": "3176913a00503614ed92987ed94fe25c40e680708c308798c4fcd280671b08e2"
+      },
+      {
+        "name": "qcdxkmbase8270_45_5.bin",
+        "size": 84002,
+        "sha256": "e5769cbd809f1a11ffc8e7d8ea1c78aaf7ea162d27ccfc9324c4cb69417ad044"
+      },
+      {
+        "name": "qcdxkmbase8270_5.bin",
+        "size": 84462,
+        "sha256": "5bcce2afab7e12b4ab14765ec264b20617b693b6eeb5a28ee35d121c07dbc9cb"
+      },
+      {
+        "name": "qcdxkmbase8270_55.bin",
+        "size": 84192,
+        "sha256": "109f245bc69809c037bc907c74c186d3c35af5bb8d42c567a9cbd79105dd85ae"
+      },
+      {
+        "name": "qcdxkmbase8270_55_5.bin",
+        "size": 84117,
+        "sha256": "e51cb5f873d902a7bf055349d98203f6443e70f2d454045a7484ecfa0a5110d3"
+      },
+      {
+        "name": "qcdxkmbase8270_90.bin",
+        "size": 84767,
+        "sha256": "03a70250fb6606c33deb97c818771d8510ba95c2a1bebfb01993a38d954ba4b7"
+      },
+      {
+        "name": "qcdxkmbase8270_90_5.bin",
+        "size": 84692,
+        "sha256": "c78f161cd89f0937e24747a24647f599910d459c8a1d716bce44aedc2a781d22"
+      },
+      {
+        "name": "qcdxkmsuc8270.mbn",
+        "size": 1054680,
+        "sha256": "5a87622c1fe32fd024523953dd6f7028eaf0d2295538701d2dad7107cd4372e4"
+      },
+      {
+        "name": "qcdxwsaum.img",
+        "size": 153538560,
+        "sha256": "927d30ff3ae2f783fd4e7b01c5df98517ac644f97e154c3b408f6ab120cc5f86"
+      },
+      {
+        "name": "qcvk_icd_arm64x.json",
+        "size": 144,
+        "sha256": "d5fb33354bcf7aa7902b3d35e04e4474e4613548029ca0c628cec4bbb9a70060"
+      },
+      {
+        "name": "qcvss8270.mbn",
+        "size": 2037188,
+        "sha256": "f6c80b8f28bc794b75610024d51e90fcb1a6c505a51e32dd01589eb2de6ea8e0"
+      },
+      {
+        "name": "VulkanRT-License.txt",
+        "size": 4008,
+        "sha256": "404deb98dabf3e54bf9070d59676b31d69a3da2f9f6e56bdf09ad315c04c718c"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "adreno_utils.dll",
+        "size": 692136,
+        "sha256": "72dc276dce2a9c123c54ce515cf2ef889711f49a6e631b439b00ab2985daa01e"
+      },
+      {
+        "name": "CB.dll",
+        "size": 30813608,
+        "sha256": "959e65e8e8902ab93d918ef5936c74b27e4cfe40a23bf8a32fe85d143bae9265"
+      },
+      {
+        "name": "kcl.dll",
+        "size": 30955424,
+        "sha256": "4a818b01b43dd13c21b142cbf77c0752c49774a44c9b81154907d007709b480b"
+      },
+      {
+        "name": "kernelmanager.dll",
+        "size": 354720,
+        "sha256": "19dd51dc544764c8b56daaa6dc10e186587b663a094f634715e056a15edd3dc1"
+      },
+      {
+        "name": "libgsluser.dll",
+        "size": 7673256,
+        "sha256": "48a36b487825b684b1d0c5aabe61dc0b182db72c6a6d356911b2af11174c3586"
+      },
+      {
+        "name": "OpenCL.dll",
+        "size": 556968,
+        "sha256": "5d75269eef12dd47cb3f4fce0df469e53295b6b0c76d5ae3e057f51f5e883a7e"
+      },
+      {
+        "name": "OpenCL_adreno.dll",
+        "size": 829352,
+        "sha256": "00295b6a532687d6077200e6f1cff30fc2f28576221cc48e4f5d70e0e74d7d58"
+      },
+      {
+        "name": "q3dtools_adreno.dll",
+        "size": 1409448,
+        "sha256": "3e7a8f91737bb8d9333634f19f18d7075e30e51d0ed8ca5d8b99a19fab0f7ad2"
+      },
+      {
+        "name": "qcclarm64xcompiler.dll",
+        "size": 51531680,
+        "sha256": "77db74f263d58eb8d1d5e54fc650a627001a4e34adb15263159a4eb51ada3629"
+      },
+      {
+        "name": "qcdx11arm64xum8270.dll",
+        "size": 8976992,
+        "sha256": "08d73c365e2718e1701d46660ea72a2f7444dfb044fbda041a80af7861102c66"
+      },
+      {
+        "name": "qcdx11chpeum8270.dll",
+        "size": 5393208,
+        "sha256": "4c791869aee060951f2dcf451119de613bcdfb49f4ace8d894ad00e5df998045"
+      },
+      {
+        "name": "qcdx11x86um8270.dll",
+        "size": 3843240,
+        "sha256": "931dccd07cb7d96b04e9f1693ea1593d24d4cbc4c827a95ac2f50729566a9d7e"
+      },
+      {
+        "name": "qcdx12arm64xum8270.dll",
+        "size": 12583848,
+        "sha256": "1aca8e7907c060f937b1e9658b99e3610a4aaee5f6060ff9053cc4ed5272b3cd"
+      },
+      {
+        "name": "qcdx12chpeum8270.dll",
+        "size": 5982512,
+        "sha256": "bce3029024282e43f8474d4b7e9a953ce26290abe72280fad50e9c783c99e22a"
+      },
+      {
+        "name": "qcdx12x86um8270.dll",
+        "size": 6907232,
+        "sha256": "298cd266ab4a4d88adb6c71b8fbc028363c1d38cf6d06d12642b56948318dd9a"
+      },
+      {
+        "name": "qcdx8270.cat",
+        "size": 999123,
+        "sha256": "1a229a37847b9bc33a44f9fed0bc62c97eedd57f0ae4c4ba5fdd4e53eb4ebcfe"
+      },
+      {
+        "name": "qcdx8270.inf",
+        "size": 79578,
+        "sha256": "c1b1e655525e07b6bd61f2047f40fa061b5fd12d34ddf8d727945d190cf427fa"
+      },
+      {
+        "name": "qcdxarm64xcompiler8270.DLL",
+        "size": 27892840,
+        "sha256": "cb97be82a74906c624c5a90ebd4491e9cd8d16d2bb40ad3e89960e2084cd9114"
+      },
+      {
+        "name": "qcdxchpecompiler8270.dll",
+        "size": 16504760,
+        "sha256": "e27551057f4bb6a4382def6acd742b994a450e027bb5de12a67fea6748f1f66e"
+      },
+      {
+        "name": "qcdxkm8270.sys",
+        "size": 3350440,
+        "sha256": "88a854b521b0e689f64d56390fbfcf08e5e7336449e9755d9d786011dc5751ed"
+      },
+      {
+        "name": "qcdxsdarm64x.dll",
+        "size": 5296624,
+        "sha256": "36fe609190c2b5c8bef7dfbd3b866acca7e743aa787491b980ae73954bc2bcc8"
+      },
+      {
+        "name": "qcdxsdchpe.dll",
+        "size": 3374880,
+        "sha256": "67e3c71588d85ccc301485a102798244733e065e9c02fb92cd7271677a69a066"
+      },
+      {
+        "name": "qcdxsdx86.dll",
+        "size": 1574808,
+        "sha256": "d7ee076b3fb9242526311d119461161aa10181c0461238cc213bcde7ae8db49c"
+      },
+      {
+        "name": "qcdxx86compiler8270.DLL",
+        "size": 12646592,
+        "sha256": "496e0909410af7e5d8cb0169330d6dea4379cccd62c8521e5723097f2114bc7c"
+      },
+      {
+        "name": "qcegparm64x.dll",
+        "size": 6001576,
+        "sha256": "104c0d54366e90f164bd6a9b6b32536b349f984f3376db676c79d7fcb4eca2ec"
+      },
+      {
+        "name": "qcgpuarm64xcompilercore.dll",
+        "size": 51636136,
+        "sha256": "f967d4ccad485fa75e9de075d6b9b972539bdb9f79a02f80a4cbaf202483532f"
+      },
+      {
+        "name": "qchdcpumd8270.dll",
+        "size": 83880,
+        "sha256": "3167ab6bfbd0312dc2f0d34fbd9a230eae0205b20945dd2a300a8736d41bce45"
+      },
+      {
+        "name": "qcvidencarm64xmfth2648270.DLL",
+        "size": 1040808,
+        "sha256": "071a5acaa0d5134341ce4b48f7cdd3ee4ed361d6cce1f549bb1f2cca607d68d1"
+      },
+      {
+        "name": "qcvidencarm64xmfthevc8270.DLL",
+        "size": 1040808,
+        "sha256": "692c678553fdf19228305d766e17b86f89eb75a72138c3c65fa72c78a4cdf731"
+      },
+      {
+        "name": "qcvidencarm64xum8270.DLL",
+        "size": 212392,
+        "sha256": "0c4618623347b7dda0a6d01a6f69c1dc7b7b2c9950faf8757c6b1f769aea9d31"
+      },
+      {
+        "name": "qcvidencmfth2648270.DLL",
+        "size": 415144,
+        "sha256": "6d62d0b978b1835346ae1f7d2211379b0e15e9e6180223f38db2db15d5c11b45"
+      },
+      {
+        "name": "qcvidencmfthevc8270.DLL",
+        "size": 415144,
+        "sha256": "8e3906761d88c73eb479c3b8300cf1be8723ab68302e6d2999b9b8efc36ee808"
+      },
+      {
+        "name": "qcvidencum8270.DLL",
+        "size": 100264,
+        "sha256": "867ec6aa11de60a963cb1ee5d0fdd48b6adf9c1fbfa9d522c0c39307e008980d"
+      },
+      {
+        "name": "qcvidencx86mfth2648270.DLL",
+        "size": 460200,
+        "sha256": "b91b575e6343b8a8ebf85a75b755281aca25ae71cf5d4fde4b3e696a83dbc6be"
+      },
+      {
+        "name": "qcvidencx86mfthevc8270.DLL",
+        "size": 460200,
+        "sha256": "478ae3c534731dc1841490ee5fdf1e11cfe6120fa2293cd7a39228c9393ea75f"
+      },
+      {
+        "name": "qcvidencx86um8270.DLL",
+        "size": 107944,
+        "sha256": "3cb15a27b8a0e7734f69b76fc707804d096b4560a255f2f8faac2b89af419b8f"
+      },
+      {
+        "name": "qcvkarm64xcompiler.dll",
+        "size": 3261864,
+        "sha256": "bf2bfa20e3d2b4fb51a5020c1035b6f0d24df5b04e77d0cd7017c7602b1c78b6"
+      },
+      {
+        "name": "qcvkarm64xum.dll",
+        "size": 17967528,
+        "sha256": "d19f99ab8add8234b5cb7c5873ac5db4413e36dc5709600a9ae673ee3dd1863d"
+      },
+      {
+        "name": "vulkan-1.dll",
+        "size": 2853800,
+        "sha256": "ba74dc9cc28ff69e26b87bc424415b9296a87f4de7f1a1da769b5ebb89346195"
+      },
+      {
+        "name": "vulkaninfo.exe",
+        "size": 5161384,
+        "sha256": "8e850d77a6c1133fd5fb19c56e0a7946d52dfe0ac25adc029feafe24aaa8690d"
+      }
+    ],
+    "infs": [
+      "drivers/qcdx8270.inf_arm64_6356570cad217328/qcdx8270.inf"
+    ]
+  },
+  {
+    "folder": "qcdxext_crd8270.inf_arm64_a1ea8c8e4f482d7e",
+    "inf": "oem82.inf",
+    "provider": null,
+    "version": "30.0.4690.4500",
+    "date": "2026-09-02",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) Adreno(TM) GPU"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1334%26SUBSYS_CRD08270",
+    "files": [
+      {
+        "name": "qcdxkmext8270_CRD.bin",
+        "size": 73573,
+        "sha256": "4cce32f9d70a6bfd7ee5350c6ac6ca3e302112d3a487654a7944a2b37d76dba5"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcdxext_crd8270.cat",
+        "size": 11412,
+        "sha256": "cd4b4931e9bf76ba7240335663a6b58a8fd8509da612d732c7de281ac83ccf56"
+      },
+      {
+        "name": "qcdxext_crd8270.inf",
+        "size": 5386,
+        "sha256": "a7fc160c506895fb769095d25fe259ac43278b1ebffe5322889d7fa56f29b4e2"
+      },
+      {
+        "name": "qcdxext_crd8270.PNF",
+        "size": 9492,
+        "sha256": "b1482c79bba215bafb04e7ab289536c4ea13d19875389cd6586b835dbf4bbe35"
+      }
+    ],
+    "infs": [
+      "drivers/qcdxext_crd8270.inf_arm64_a1ea8c8e4f482d7e/qcdxext_crd8270.inf"
+    ]
+  },
+  {
+    "folder": "qcfgbcl8270.inf_arm64_b3514365a5d6c03a",
+    "inf": "oem22.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Power Management FGBCL Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1375%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcfgbcl8270.cat",
+        "size": 11396,
+        "sha256": "50fb8bb96fd348fa7b94bfd1b58b71d3379d9ca397284d6a25320cf5f4371346"
+      },
+      {
+        "name": "qcfgbcl8270.inf",
+        "size": 5974,
+        "sha256": "0b247bff4010b84416e521838a54cdc0c1a868781f0175cc4d86c2c425cecbd1"
+      },
+      {
+        "name": "qcfgbcl8270.sys",
+        "size": 217392,
+        "sha256": "55cb969077105e8f214778f312fe9c3f92794caca49851d765d56fe50a7d6544"
+      }
+    ],
+    "infs": [
+      "drivers/qcfgbcl8270.inf_arm64_b3514365a5d6c03a/qcfgbcl8270.inf"
+    ]
+  },
+  {
+    "folder": "qcglink8270.inf_arm64_ce745b27ba6da1c4",
+    "inf": "oem24.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Shared Memory Port Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1382%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcglink8270.cat",
+        "size": 11312,
+        "sha256": "a992807c68436123278a8d0137811ea4a90269ec438a5420f6e0a24cfc850dc8"
+      },
+      {
+        "name": "qcglink8270.inf",
+        "size": 13168,
+        "sha256": "78b035fefe34dd00c5ef911899635eaf3d4f3c2dcd8ac65dd150bad0aa7c90cd"
+      },
+      {
+        "name": "qcglink8270.sys",
+        "size": 166192,
+        "sha256": "241c89792ba8a9737e1dab41eb650546d4df1b21b80b3241074a0dd88d9d1189"
+      }
+    ],
+    "infs": [
+      "drivers/qcglink8270.inf_arm64_ce745b27ba6da1c4/qcglink8270.inf"
+    ]
+  },
+  {
+    "folder": "qcgnss8270.inf_arm64_88ef4731c46e2f52",
+    "inf": "oem25.inf",
+    "provider": "Qualcomm",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Location"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_136A%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcgnss.cat",
+        "size": 11288,
+        "sha256": "8829eed25ceec09599767b6e8f12e0a80a0cafd12f4a08af2e6a866bf0e1e0e3"
+      },
+      {
+        "name": "qcgnss.dll",
+        "size": 645424,
+        "sha256": "1b1704dedda5732f0ca2354ec11270a34ac91e0b073a0b0bd329ab23ba90b060"
+      },
+      {
+        "name": "qcgnss8270.inf",
+        "size": 20350,
+        "sha256": "54cfc9970b170ce26e6359eb5026d41ccb81fe48749981c79e6697a1bdafee0d"
+      }
+    ],
+    "infs": [
+      "drivers/qcgnss8270.inf_arm64_88ef4731c46e2f52/qcgnss8270.inf"
+    ]
+  },
+  {
+    "folder": "qcgpi8270.inf_arm64_4e1d48654669ab84",
+    "inf": "oem26.inf",
+    "provider": "Qualcomm Technologies, Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) GPI Bus Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1386%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcgpi8270.cat",
+        "size": 11296,
+        "sha256": "a7ee4c8c9013c3bb027d194dbe5759683a805eb9b51d60d37378b4c903b84b7c"
+      },
+      {
+        "name": "qcgpi8270.inf",
+        "size": 6542,
+        "sha256": "c2eb87aeef2764447c30edcaa308bf6995e360de36181a3d064a02891b6382db"
+      },
+      {
+        "name": "qcgpi8270.sys",
+        "size": 75056,
+        "sha256": "94583271fb3949fcde1f982437142ab5e5c7c382e6b71b41d6bdfd42ab84582c"
+      }
+    ],
+    "infs": [
+      "drivers/qcgpi8270.inf_arm64_4e1d48654669ab84/qcgpi8270.inf"
+    ]
+  },
+  {
+    "folder": "qcgpio8270.inf_arm64_39303c789fce8de1",
+    "inf": "oem27.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) System Manager GPIO Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_130C%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcgpio.cat",
+        "size": 11285,
+        "sha256": "5cc0e226a7ccaad7443d4b085f691e35a888b927c7d7dfbe3f3fa768e0adb9d6"
+      },
+      {
+        "name": "qcgpio.sys",
+        "size": 56624,
+        "sha256": "d33a175a08c5fa43fbf977acee369f7d2600a696ad20d466c112c16df970034f"
+      },
+      {
+        "name": "qcgpio8270.inf",
+        "size": 3942,
+        "sha256": "51d554e3f53b84e1a85a3e3e4cad52c2f947f2717d55dc30c49531b55ee2dc31"
+      }
+    ],
+    "infs": [
+      "drivers/qcgpio8270.inf_arm64_39303c789fce8de1/qcgpio8270.inf"
+    ]
+  },
+  {
+    "folder": "qci2c8270.inf_arm64_1075d9b694555eb1",
+    "inf": "oem28.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4654.5200",
+    "date": "2026-07-15",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) I2C Bus Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1310%26SUBSYS_CRD08270",
+    "files": [
+      {
+        "name": "BSRC_I2CR.bin",
+        "size": 29100,
+        "sha256": "aec7ae9c162edfe763e1675d154878908812778e334c34fe5ab99f57452ba7b5"
+      },
+      {
+        "name": "BSRC_ICRS.bin",
+        "size": 26124,
+        "sha256": "01af598539dc6f4e7d75b96734f671f70c447154ec4bdd40b9c9703bf53f5aae"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qci2c8270.cat",
+        "size": 12149,
+        "sha256": "796703757c9889657f2e08d942dd4497dbb2b4b187f4d85c49cddffb2fac8d68"
+      },
+      {
+        "name": "qci2c8270.inf",
+        "size": 6352,
+        "sha256": "e797a6913f8d4c3e9be7c9fb7eb2b619f19b4ea4b1fa95bbdf7d4f9d9941b5cb"
+      },
+      {
+        "name": "qci2c8270.sys",
+        "size": 93504,
+        "sha256": "dff00ca019dd6a7e8b86851ee1bcc3a0deddd38c51544b2ef13e674a7a0b21e3"
+      }
+    ],
+    "infs": [
+      "drivers/qci2c8270.inf_arm64_1075d9b694555eb1/qci2c8270.inf"
+    ]
+  },
+  {
+    "folder": "qciommu.inf_arm64_2577e2732c18fcd7",
+    "inf": "oem29.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) IOMMU Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_068F%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qciommu.cat",
+        "size": 11280,
+        "sha256": "d461f9e645346edd10f7595d96cd857754c85df2be51c18bb405703abd016627"
+      },
+      {
+        "name": "qciommu.inf",
+        "size": 4482,
+        "sha256": "d183993b9876ea17021742e80e73833b6eb50c9c47ceeb78ba2a81d9ba075d8e"
+      },
+      {
+        "name": "qciommu.sys",
+        "size": 586544,
+        "sha256": "1c770f40d5d6faa7f46347e801d5fb10d3b1f61d42f0cba37a9fbb30e7a09d71"
+      }
+    ],
+    "infs": [
+      "drivers/qciommu.inf_arm64_2577e2732c18fcd7/qciommu.inf"
+    ]
+  },
+  {
+    "folder": "qciommuext8270.inf_arm64_ccd3042d2136c66d",
+    "inf": "oem30.inf",
+    "provider": null,
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) IOMMU Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_068F%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qciommuext8270.cat",
+        "size": 11164,
+        "sha256": "f102968e56d2f8800381f51c96b9f2c009953952f64c921e6ef2760cdfd3e19e"
+      },
+      {
+        "name": "qciommuext8270.inf",
+        "size": 14606,
+        "sha256": "ab147cc70923cad5a839df19d3b149903878060a725046465b68c8659f3c72cd"
+      }
+    ],
+    "infs": [
+      "drivers/qciommuext8270.inf_arm64_ccd3042d2136c66d/qciommuext8270.inf"
+    ]
+  },
+  {
+    "folder": "qcipcc8270.inf_arm64_9b603d630f0f403e",
+    "inf": "oem31.inf",
+    "provider": "Qualcomm Incorporated",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Inter Processor Communication Interrupt Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_06C2%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcipcc8270.cat",
+        "size": 11304,
+        "sha256": "192ce5213c543338d930fe1809dde924085af26149477f4c6a42e398e6f91ce1"
+      },
+      {
+        "name": "qcipcc8270.inf",
+        "size": 6452,
+        "sha256": "df4c57e98c3a37341d8ec9de98360d522fc58296c79b69e762adb3e5017f120e"
+      },
+      {
+        "name": "qcipcc8270.sys",
+        "size": 43824,
+        "sha256": "861f32ed9b2f7dacc7e8494fa48c8bd2ac4d2995c0dc58ade03cb7dfc02d5601"
+      }
+    ],
+    "infs": [
+      "drivers/qcipcc8270.inf_arm64_9b603d630f0f403e/qcipcc8270.inf"
+    ]
+  },
+  {
+    "folder": "qcipcrouter8270.inf_arm64_4ae258258e720367",
+    "inf": "oem32.inf",
+    "provider": "Qualcomm Incorporated",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Data IPC Router Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_130D%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcipcrouter8270.cat",
+        "size": 11796,
+        "sha256": "813dcd241d6a177b726732aa277a4724ccfd50512109cb39b6927672014ddce8"
+      },
+      {
+        "name": "qcipcrouter8270.inf",
+        "size": 18154,
+        "sha256": "d81e9fcee8cdc41b608822b1783019bf6ef8fb91466b0720ede4ce54fdb0fccc"
+      },
+      {
+        "name": "qcipcrouter8270.sys",
+        "size": 91440,
+        "sha256": "a6c1eb89c9131fae2195dacf0e51b28eec87e9f82f57aa0be083130b459dd8f8"
+      },
+      {
+        "name": "qsocketipcrum.dll",
+        "size": 124208,
+        "sha256": "8027046b23cb884cb4a4de18754e2efb65c6b787fb2c82a07b8179503daaad30"
+      }
+    ],
+    "infs": [
+      "drivers/qcipcrouter8270.inf_arm64_4ae258258e720367/qcipcrouter8270.inf"
+    ]
+  },
+  {
+    "folder": "qckmbam8270.inf_arm64_203571a5de1079b2",
+    "inf": "oem33.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Bam Bus Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_130A%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qckmBam8270.cat",
+        "size": 11312,
+        "sha256": "0bedbb7abca3468d187100465cbaebce481fda42a7e17a69a54a58da08b534a4"
+      },
+      {
+        "name": "qckmbam8270.inf",
+        "size": 5148,
+        "sha256": "505603cb0051af83bb97af3b1028d4b1150aa2c577330aebf9a09ed697a09d37"
+      },
+      {
+        "name": "qckmbam8270.sys",
+        "size": 57136,
+        "sha256": "69a698f536b80e46ac1d0105de794a353f053de1b786ed1d15ad3c7a5ee5931b"
+      }
+    ],
+    "infs": [
+      "drivers/qckmbam8270.inf_arm64_203571a5de1079b2/qckmbam8270.inf"
+    ]
+  },
+  {
+    "folder": "qclistensm8270.inf_arm64_d732bd64798598a6",
+    "inf": "oem36.inf",
+    "provider": null,
+    "version": "1.0.4646.5000",
+    "date": "2026-07-03",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) Aqstic(TM) Audio Adapter Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=AUCD%5CVEN_QCOM%26DEV_1328%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "QCListenSM8270.cat",
+        "size": 11857,
+        "sha256": "d86ed8f930ceb0a03b19606b1dc0d40ba17a70644b88e832a4b59fb454103fd0"
+      },
+      {
+        "name": "QCListenSM8270.inf",
+        "size": 3534,
+        "sha256": "c324dc20a963fe7a8c067a87d1f544404bc6a4c4551c0fb78e17b579e880e83a"
+      }
+    ],
+    "infs": [
+      "drivers/qclistensm8270.inf_arm64_d732bd64798598a6/QCListenSM8270.inf"
+    ]
+  },
+  {
+    "folder": "qclistensm_swc8270.inf_arm64_912e7be006cd97b9",
+    "inf": "oem35.inf",
+    "provider": "Qualcomm Technologies, Inc.",
+    "version": "1.0.4646.5000",
+    "date": "2026-07-03",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Aqstic(TM) Sound Model Library Software Component"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=SWC%5CVEN_QCOM%26DEV_QCListenSoundModel%26PLAT_8270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "QCListenSM_swc8270.cat",
+        "size": 11430,
+        "sha256": "4659947e14295aeca5014bd05f771135e866712aa14325a204d4758ec31c2452"
+      },
+      {
+        "name": "QCListenSM_swc8270.inf",
+        "size": 6520,
+        "sha256": "7329cb649e69a6d032ffcab204d2a2adf366c8001982924e5da875d59d51c664"
+      },
+      {
+        "name": "QCListenSoundModel.dll",
+        "size": 1208128,
+        "sha256": "15412bae7416b272176ea7a51c7d23a5829032e5c41607b8c85860f49b88ee8c"
+      }
+    ],
+    "infs": [
+      "drivers/qclistensm_swc8270.inf_arm64_912e7be006cd97b9/QCListenSM_swc8270.inf"
+    ]
+  },
+  {
+    "folder": "qclistensm_swc_ext8270.inf_arm64_f47a67cf37d92f1e",
+    "inf": "oem34.inf",
+    "provider": null,
+    "version": "1.0.4646.5000",
+    "date": "2026-07-03",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) Aqstic(TM) Sound Model Library Software Component"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=SWC%5CVEN_QCOM%26DEV_QCListenSoundModel%26PLAT_8270",
+    "files": [
+      {
+        "name": "en-US-Alexa.bin",
+        "size": 120600,
+        "sha256": "ee6aae0c1f5c3529eb09698e95443185265cf6bf5d50441149e3afda75e5dec2"
+      },
+      {
+        "name": "en-US-config",
+        "size": 773,
+        "sha256": "cc320f4cb87f223aad831a6dbc183167ec5ad656e0e3eb1704035e2e95ba5028"
+      },
+      {
+        "name": "LangIds",
+        "size": 7,
+        "sha256": "ba4e55dc6bb12f8739edcc854ab07374a8e7821bb51f9b5a6dd78cc2a7e13c25"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "QCListenSM_swc_ext8270.cat",
+        "size": 12238,
+        "sha256": "bf536a16fc5065b12b6d3600a40f2a1497f7284d6b5e890b2df7882b0b342fb0"
+      },
+      {
+        "name": "QCListenSM_swc_Ext8270.inf",
+        "size": 3182,
+        "sha256": "7f7e90aa79bb13415d020666e478af14e924546646c0d6d55c3f79b3a9d8d4da"
+      }
+    ],
+    "infs": [
+      "drivers/qclistensm_swc_ext8270.inf_arm64_f47a67cf37d92f1e/QCListenSM_swc_Ext8270.inf"
+    ]
+  },
+  {
+    "folder": "qcpdsr.inf_arm64_1d9cfaf7afdba7e5",
+    "inf": "oem37.inf",
+    "provider": "Qualcomm Incorporated",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Protection Domain Service Registry Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_06DF%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcpdsr.cat",
+        "size": 11271,
+        "sha256": "0797efb144af493b910d5cbe5e062609fae140c54acdb7a651c6a5e99a14bc97"
+      },
+      {
+        "name": "qcpdsr.inf",
+        "size": 4770,
+        "sha256": "79a0d4245484906ebcfec41309b3761b44d7827612402ef5fab5443ac456a8b7"
+      },
+      {
+        "name": "qcpdsr.sys",
+        "size": 304432,
+        "sha256": "66e5bb8051e438d5794de570e798bc42647b35548ac9f6f82c7b5894c7fad585"
+      }
+    ],
+    "infs": [
+      "drivers/qcpdsr.inf_arm64_1d9cfaf7afdba7e5/qcpdsr.inf"
+    ]
+  },
+  {
+    "folder": "qcpep.wd8270.inf_arm64_7baada4706860892",
+    "inf": "oem38.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": false,
+    "devices": [
+      "Qualcomm ADC Temperature Monitor Device",
+      "Qualcomm Battery Current Limit Monitor Device",
+      "Qualcomm PMIC Die Temp Alarm Sensor Device",
+      "Qualcomm Temperature Sensor Device",
+      "Qualcomm(R) System Manager Power Engine Plug-in Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1416",
+    "files": [
+      {
+        "name": "PPMSettings-8270Profiles.wd.ppkg",
+        "size": 6954,
+        "sha256": "57e3a671574f2ee0f94d93538593eb93dbb9d4bbcb48f1bd661736d09303f113"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcpep.wd8270.inf",
+        "size": 237980,
+        "sha256": "e6ebbf3f389c71ac4f7e2f67b77754131d4fb1afd32d2b74eaea1142f3da4396"
+      },
+      {
+        "name": "qcpep8270.cat",
+        "size": 17314,
+        "sha256": "847f1998e57e318d99dc0dfeef9275ff1fb8bc858e6276e61062a63c34d87cf1"
+      },
+      {
+        "name": "qcpep8270.sys",
+        "size": 2953536,
+        "sha256": "c39373c50cd57d51057db2bfb3cced0fc70f3efd87ee7e7e5765ac6d62151c13"
+      }
+    ],
+    "infs": [
+      "drivers/qcpep.wd8270.inf_arm64_7baada4706860892/qcpep.wd8270.inf"
+    ]
+  },
+  {
+    "folder": "qcpil.inf_arm64_c1ddf765d04dedcd",
+    "inf": "oem39.inf",
+    "provider": "Qualcomm Incorporated",
+    "version": "1.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Peripheral Image Loader Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_06E0%26SUBSYS_CRDA8270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcpil.cat",
+        "size": 11261,
+        "sha256": "0e49e6c017c33b6300e22182ae12e2ba90ad7993c215e688020e21824d1cbe08"
+      },
+      {
+        "name": "qcpil.inf",
+        "size": 4832,
+        "sha256": "ddfb2d06e20d1f86cfa564721474da76b8f48cc8bf3d14b0b644fe5905bf8c41"
+      },
+      {
+        "name": "qcpil.sys",
+        "size": 446784,
+        "sha256": "a09452fbb0bf1d870a5bbdf001fc25190abe9a9eda528b7fae7fb440be3c3513"
+      }
+    ],
+    "infs": [
+      "drivers/qcpil.inf_arm64_c1ddf765d04dedcd/qcpil.inf"
+    ]
+  },
+  {
+    "folder": "qcpilext8270.inf_arm64_d3400870e4b41351",
+    "inf": "oem40.inf",
+    "provider": null,
+    "version": "2.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) Peripheral Image Loader Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_06E0%26SUBSYS_CRDA8270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcpilext8270.cat",
+        "size": 11852,
+        "sha256": "45d114ba5e1564bbd6c8d18687bd35b0fc43f99794c5f4067d042f96b82f4ee8"
+      },
+      {
+        "name": "qcpilEXT8270.inf",
+        "size": 6274,
+        "sha256": "62c652e93afd258e04e90d690061d056a0e61eb26fda7e785893e24e00a940f9"
+      }
+    ],
+    "infs": [
+      "drivers/qcpilext8270.inf_arm64_d3400870e4b41351/qcpilEXT8270.inf"
+    ]
+  },
+  {
+    "folder": "qcpilfilterext.inf_arm64_5f82f03301c0c873",
+    "inf": "oem41.inf",
+    "provider": null,
+    "version": "1.0.4669.6400",
+    "date": "2026-08-04",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) Peripheral Image Loader Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CQCOM06E0",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "QCPILFilter.sys",
+        "size": 380224,
+        "sha256": "4071ece6a350bdd554c3d4896968376b66f5cf799008715e8f07dbbd2481b358"
+      },
+      {
+        "name": "qcpilfilterext.cat",
+        "size": 11324,
+        "sha256": "23de4c035e1b4715d4a654b9a8a4ec9f96eeb15f15aca1e19396f9a01ce8fe04"
+      },
+      {
+        "name": "qcpilfilterext.inf",
+        "size": 4090,
+        "sha256": "3d2c40dfddaf90f216df6501c85fc66d8d999b1b21eabfcecefc4b97ee8263ec"
+      }
+    ],
+    "infs": [
+      "drivers/qcpilfilterext.inf_arm64_5f82f03301c0c873/qcpilfilterext.inf"
+    ]
+  },
+  {
+    "folder": "qcpmic8270.inf_arm64_f5022dbc87353a06",
+    "inf": "oem42.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4646.5000",
+    "date": "2026-07-03",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Power Management PMIC Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_132A%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcpmic8270.cat",
+        "size": 11367,
+        "sha256": "95b5d3bc5077f5756440335426553610faa81080116a43b8b96e1e599a54f8f9"
+      },
+      {
+        "name": "qcpmic8270.inf",
+        "size": 5222,
+        "sha256": "03f3dafd9d1fd4dc2d96979aa3bf97184c0fb13b21f0f604f7c328859acb2481"
+      },
+      {
+        "name": "qcpmic8270.sys",
+        "size": 355136,
+        "sha256": "1e0d1f69d750122693e8886744efcdaca0a89cf408ec6522e777e0b8daddac4f"
+      }
+    ],
+    "infs": [
+      "drivers/qcpmic8270.inf_arm64_f5022dbc87353a06/qcpmic8270.inf"
+    ]
+  },
+  {
+    "folder": "qcpmicapps8270.inf_arm64_4be088e7594d9899",
+    "inf": "oem43.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4654.5200",
+    "date": "2026-07-15",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Power Management PMIC Apps Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_132B%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcpmicapps8270.cat",
+        "size": 11417,
+        "sha256": "6f570cbd8eacecd3d9352615d5a990c55cf0dbde114acd2f020f0b2287ae4f41"
+      },
+      {
+        "name": "QcPmicApps8270.inf",
+        "size": 5884,
+        "sha256": "bdefa66ad26638deb01e3ed9041b6266519ffec468ee3665caea5d8cdd0077b4"
+      },
+      {
+        "name": "qcpmicapps8270.sys",
+        "size": 280896,
+        "sha256": "1d2b3ab533a8b16920e68de16cf6f62070c8b8540bef13218b102f43fdf40d41"
+      }
+    ],
+    "infs": [
+      "drivers/qcpmicapps8270.inf_arm64_4be088e7594d9899/QcPmicApps8270.inf"
+    ]
+  },
+  {
+    "folder": "qcpmicgpio8270.inf_arm64_e607977580566146",
+    "inf": "oem45.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) System Manager PMIC GPIO Framework Extension Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_132C%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcpmicgpio8270.cat",
+        "size": 11336,
+        "sha256": "d104c0b6601e0ec9168600f37bfbbfb5928970548e13ea861957d83b735f33e2"
+      },
+      {
+        "name": "qcpmicgpio8270.inf",
+        "size": 4068,
+        "sha256": "85e8aeb8938d0027a34d91e1b582c6461191f80d7926691b52067e222acc39f5"
+      },
+      {
+        "name": "qcpmicgpio8270.sys",
+        "size": 239400,
+        "sha256": "e3a1f570c505a38a322313f802c9eec5c1b4ade9cde26c8a293261afbd0c706a"
+      }
+    ],
+    "infs": [
+      "drivers/qcpmicgpio8270.inf_arm64_e607977580566146/qcpmicgpio8270.inf"
+    ]
+  },
+  {
+    "folder": "qcppx8270.inf_arm64_dbdc5f35eea78540",
+    "inf": "oem46.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4646.5000",
+    "date": "2026-07-03",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) PCIe Platform Extension Plugin"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1394%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcppx8270.cat",
+        "size": 11294,
+        "sha256": "b851c584b4281bbd8480828ec287069b176140877372bc1475599fe1a0e5bc8e"
+      },
+      {
+        "name": "qcppx8270.inf",
+        "size": 8552,
+        "sha256": "9c0a8c01a25c620b6a900e3555582db584e42e120aa803a69c24058064b28a9e"
+      },
+      {
+        "name": "qcppx8270.sys",
+        "size": 81864,
+        "sha256": "71994ece755809d2dc696db6b7199316c6a02da9042aea4478226d23c8598032"
+      }
+    ],
+    "infs": [
+      "drivers/qcppx8270.inf_arm64_dbdc5f35eea78540/qcppx8270.inf"
+    ]
+  },
+  {
+    "folder": "qcrpen.inf_arm64_b0c3fa75d0798dae",
+    "inf": "oem47.inf",
+    "provider": "Qualcomm Incorporated",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Reset Power Error Notifier Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_06E1%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcrpen.cat",
+        "size": 11268,
+        "sha256": "f1507abe6bad16e53c88103404e3aa26603d1740a21f21ef2af741437d14dc89"
+      },
+      {
+        "name": "qcrpen.inf",
+        "size": 4118,
+        "sha256": "644d6a01e1fb24f249e7e252bf6754feecd112312a48ef9746fde90aae438069"
+      },
+      {
+        "name": "qcrpen.sys",
+        "size": 291120,
+        "sha256": "b5394d72ccf23859a99767c30549b1223c8da80ac039a048724a81606d75ee88"
+      }
+    ],
+    "infs": [
+      "drivers/qcrpen.inf_arm64_b0c3fa75d0798dae/qcrpen.inf"
+    ]
+  },
+  {
+    "folder": "qcscm.inf_arm64_ae2751e7dd25244a",
+    "inf": "oem48.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4635.7700",
+    "date": "2026-06-24",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) System Manager SCM Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_04DD%26SUBSYS_CRD08270",
+    "files": [
+      {
+        "name": "SCMF.bin",
+        "size": 269,
+        "sha256": "675444f3dc3eaf7fca95d26ba7247baea0ddec28e41c6e7d31362fa20f6bc121"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcscm.cat",
+        "size": 11665,
+        "sha256": "ab3033d35d4605f077ae16ec7fa34c1b0b469859b3b08b3cd66abf30ec3eed07"
+      },
+      {
+        "name": "qcscm.inf",
+        "size": 6916,
+        "sha256": "50e42f5aed5cecf555896093695ab556d5723653df284ee5f13e0eb76a7e40c6"
+      },
+      {
+        "name": "qcscm.sys",
+        "size": 362816,
+        "sha256": "c14c487f63d9eda93ae65dddfe9d56d86f34464585d72452acd3022adca1bca5"
+      }
+    ],
+    "infs": [
+      "drivers/qcscm.inf_arm64_ae2751e7dd25244a/qcscm.inf"
+    ]
+  },
+  {
+    "folder": "qcsecapp.inf_arm64_39687a18a6460c51",
+    "inf": "oem49.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4654.5200",
+    "date": "2026-07-15",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) System Manager Secapp Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1438%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcsecapp.cat",
+        "size": 11288,
+        "sha256": "2e7c4a800128c48ef516daca7c5907b6422864511ce0c983770709d240ecf1bd"
+      },
+      {
+        "name": "qcsecapp.inf",
+        "size": 11300,
+        "sha256": "7f609e23e086a4e202bf0b4058063165eb01051c7b4bc602a4fe3f0844fcaeeb"
+      },
+      {
+        "name": "qcsecapp.sys",
+        "size": 309568,
+        "sha256": "d5dd9f60736bbf247e5ce85ecdb43359aa4ef1d46cfab56f18edc6817de91a7b"
+      }
+    ],
+    "infs": [
+      "drivers/qcsecapp.inf_arm64_39687a18a6460c51/qcsecapp.inf"
+    ]
+  },
+  {
+    "folder": "qcsensors.inf_arm64_f2cb93efaf83f012",
+    "inf": "oem50.inf",
+    "provider": "Qualcomm",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) All-Ways Aware(TM) Sensor Platform Device - Display",
+      "Qualcomm(R) All-Ways Aware(TM) Sensor Platform Device - Keyboard"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_0694%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcSensors.cat",
+        "size": 11296,
+        "sha256": "e656bebcf27f369286d3a8c4df2b17362671e23e5ca14104fca545527dcbd7b8"
+      },
+      {
+        "name": "qcSensors.dll",
+        "size": 1858864,
+        "sha256": "b9e6b8c1887dc89a64873ca8f2508390bcfe9d60356717a57bdac39d56432e51"
+      },
+      {
+        "name": "qcSensors.inf",
+        "size": 8082,
+        "sha256": "79b591f88b648155b96631d9fd8ad1d7701e301e578b10b9354b985f89f5453a"
+      }
+    ],
+    "infs": [
+      "drivers/qcsensors.inf_arm64_f2cb93efaf83f012/qcSensors.inf"
+    ]
+  },
+  {
+    "folder": "qcsensorsconfigcrd8270.inf_arm64_af89fb8bbc9945bd",
+    "inf": "oem52.inf",
+    "provider": null,
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) All-Ways Aware(TM) Sensor Platform Device - Display",
+      "Qualcomm(R) All-Ways Aware(TM) Sensor Platform Device - Keyboard"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_0694%26SUBSYS_CRD08270",
+    "files": [
+      {
+        "name": "8270_crd_ak991x_display.json",
+        "size": 5306,
+        "sha256": "00907323882530e971743eb8da7f39d13ff9f19d97551160eea2efa6aa3ab4a0"
+      },
+      {
+        "name": "8270_crd_ak991x_keyboard.json",
+        "size": 5308,
+        "sha256": "a86ddfb9fb0170167b997414cb7779fce555fbecaea03da58e4a3c0add7a9e9d"
+      },
+      {
+        "name": "8270_crd_lsm6dst_display.json",
+        "size": 6218,
+        "sha256": "7b02824208685465530f52765513aad6bf2bb9075f3aeca6f988c3df48f6b632"
+      },
+      {
+        "name": "8270_crd_lsm6dst_keyboard.json",
+        "size": 6218,
+        "sha256": "c453df1fb742d7ab97941d529b67892e457f90fb40e5cbe2070f2a482580ba9a"
+      },
+      {
+        "name": "8270_crd_tmd3702.json",
+        "size": 6095,
+        "sha256": "690e574c741fb0bc2118ee78eb42a19e7d6389f9f3f0341969a7df35ff191900"
+      },
+      {
+        "name": "8270_idp_ak991x_0.json",
+        "size": 5319,
+        "sha256": "3a2ce655260f230750d99ec070f8cf261c9d4af58b3161d15bf33e56364aaa61"
+      },
+      {
+        "name": "8270_idp_ak991x_1.json",
+        "size": 5319,
+        "sha256": "e8ddd2f011db441cee72d8c178ad421dd784b5fa68aec4f81d4c4bd32ef26b38"
+      },
+      {
+        "name": "8270_idp_lsm6dst_0.json",
+        "size": 6218,
+        "sha256": "9ba0d7038ea4e2d5cdf15a220ca233509e139e81a6f80c3d52bd77722c9dd4fd"
+      },
+      {
+        "name": "8270_idp_lsm6dst_1.json",
+        "size": 6218,
+        "sha256": "2bcffb756e12251edd242d3cc07d974583901c16e4a2f79690013f6fc1b7720a"
+      },
+      {
+        "name": "8270_idp_tmd3702.json",
+        "size": 6082,
+        "sha256": "802ee80abc17242b43b60e6189c4e39d473020722c6c65f7e3bc5f75e9f5ade5"
+      },
+      {
+        "name": "ak991x_dri_0.json",
+        "size": 892,
+        "sha256": "e4546e9da5f88e87ac3b0b399b7a772680f321d0c66476a4eddea199d1ab1b24"
+      },
+      {
+        "name": "ak991x_dri_1.json",
+        "size": 891,
+        "sha256": "a7162e52de8eac6bcd3202554099ad44ef9ff4723de6a3d2174ae8df5d94637a"
+      },
+      {
+        "name": "default_sensors.json",
+        "size": 5653,
+        "sha256": "c12d43e198722dcd27e3e7a862c889742830029e92a3878d13045e7e7f7cfa1e"
+      },
+      {
+        "name": "hw_platform",
+        "size": 5,
+        "sha256": "7cd7deac296297e640d0a527734b7e3fe19d40c52559ab33861030ffcc0c9b92"
+      },
+      {
+        "name": "lsm6dst_0.json",
+        "size": 1813,
+        "sha256": "10e04188f5d11a98fd3026a09a2457c31dd9b890385b348104d1d616f16d8704"
+      },
+      {
+        "name": "lsm6dst_0_16g.json",
+        "size": 333,
+        "sha256": "161ddb085826cbbfd14e3d90060c7dbc06b24015c89734eaf8a9aa1cc150a0d6"
+      },
+      {
+        "name": "lsm6dst_1.json",
+        "size": 1814,
+        "sha256": "0e2595b56de6a1b1f9d6fa94a7e855263c15b1d54d034285322843cf02d22774"
+      },
+      {
+        "name": "lsm6dst_1_16g.json",
+        "size": 326,
+        "sha256": "6095264a5439fbf4ab5566b08202c1455a9a567eede9eab0e591c1a71102c558"
+      },
+      {
+        "name": "platform_subtype",
+        "size": 9,
+        "sha256": "ad04573d7fea3437f279cc35597362ecb622c944d5618d504ec6289aa8fe32bf"
+      },
+      {
+        "name": "platform_subtype_id",
+        "size": 3,
+        "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+      },
+      {
+        "name": "platform_version",
+        "size": 7,
+        "sha256": "a64fd7d7336b2fed537d717124d71b3eecb3b9b585cae2054e94d2705e634255"
+      },
+      {
+        "name": "revision",
+        "size": 5,
+        "sha256": "4cd2cdd1fe0d56a2959c354e51e451d65b2cf0c2941a37d7ed82d248651d3721"
+      },
+      {
+        "name": "sns_amd.json",
+        "size": 334,
+        "sha256": "cd92b65a9d35bd681be837993564460c2f37c31af8850843794bae050e1f3cd3"
+      },
+      {
+        "name": "sns_amd_sw_disabled.json",
+        "size": 190,
+        "sha256": "997517f4206c6d2f3580ceab4ea8981417ca7a3e233b47719624d6452e663daf"
+      },
+      {
+        "name": "sns_amd_sw_enabled.json",
+        "size": 201,
+        "sha256": "99f4c2c329cc7f07ac4bad1593eb1353d968b9d3a16c17df695b4719e2128283"
+      },
+      {
+        "name": "sns_aont.json",
+        "size": 152,
+        "sha256": "6bda0d2f3bd49eb3685c19bf5e911ad3e34148485e0b4b9aba7209df104a962a"
+      },
+      {
+        "name": "sns_ccd.json",
+        "size": 6370,
+        "sha256": "f1fc422b742478c2cea8924f028f8176e9bd2e3256674f9b2fc04a51d167f1fc"
+      },
+      {
+        "name": "sns_cm.json",
+        "size": 396,
+        "sha256": "e748d2fcae8213e2f44afbb71bb58aa068f846ddee77d998d8cd984aaf0fbead"
+      },
+      {
+        "name": "sns_dae.json",
+        "size": 834,
+        "sha256": "12c95aff761f4e9064268c6cb73d4a274b73886c872eb22fe06c01349fdc318e"
+      },
+      {
+        "name": "sns_device_orient.json",
+        "size": 871,
+        "sha256": "9de8c60dfd4eae4f264428fd58632e41dbf6bafbffa21a91b660b47da2f266e9"
+      },
+      {
+        "name": "sns_diag_filter.json",
+        "size": 5982,
+        "sha256": "f3b2e786de884b436c3296db9fbbc14ebde7ebc8137ddf32ade104a92923db70"
+      },
+      {
+        "name": "sns_fmv.json",
+        "size": 1375,
+        "sha256": "669760f39726a626317a877285f246db45550847b2405e91368024439547eb3d"
+      },
+      {
+        "name": "sns_geomag_rv.json",
+        "size": 837,
+        "sha256": "ae3d802b441f16697e2b35877482c203f358af0e24eff0fef8d4cda464de6b59"
+      },
+      {
+        "name": "sns_gyro_cal.json",
+        "size": 556,
+        "sha256": "e18e902baf925d248894cad237a437b0ecee3adb1af416778000db79b606f835"
+      },
+      {
+        "name": "sns_mag_cal.json",
+        "size": 317,
+        "sha256": "3a47cb229fac884775fba8a4b267fbd839f2939b3b5903fb8703ab69000767c6"
+      },
+      {
+        "name": "sns_reg_config",
+        "size": 407,
+        "sha256": "8023e69133299ced6c66a36932f48a3337f817da1660687ca3a813720b706d48"
+      },
+      {
+        "name": "sns_rmd.json",
+        "size": 503,
+        "sha256": "3cc5eae9a576217d318e3e5dcc889f7b6aa68765f71c22ec10a5c6209236a86b"
+      },
+      {
+        "name": "sns_rotv.json",
+        "size": 457,
+        "sha256": "270fe06612d1c5eb1d6790405fc57e918067791c1929a9e67e50b0669be4cc3e"
+      },
+      {
+        "name": "sns_tilt_sw_disabled.json",
+        "size": 192,
+        "sha256": "c6e6fb31a563b3169d79018985eee5bc16b62127abcb2c4d41f12d4e312b8988"
+      },
+      {
+        "name": "sns_tilt_sw_enabled.json",
+        "size": 201,
+        "sha256": "0faeb5de6f87de00577b2ac083cf47dd1c67549d64cb7f2e4bada41d88098e46"
+      },
+      {
+        "name": "soc_id",
+        "size": 5,
+        "sha256": "59235612dc14a946475bfd0b5ebaba8f50bf11f7f50311ab2848c859f33d9205"
+      },
+      {
+        "name": "stm_lid_angle.json",
+        "size": 892,
+        "sha256": "645839a3639c98677ce25f3cff2e3b99503e78db7262fef1d32a35fb46c5bf0f"
+      },
+      {
+        "name": "tmd3702.json",
+        "size": 1478,
+        "sha256": "357306e734dd67eaec16727fbc7e80194d68b9d1e0e0035096b7e905aee39846"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "libadsprpc.dll",
+        "size": 184624,
+        "sha256": "b215792339f59a7c56ba405079fb07e86bb2a25e1938b63d11fad744e2961a0f"
+      },
+      {
+        "name": "qcSensorsConfigCRD8270.cat",
+        "size": 30771,
+        "sha256": "f3428d217ac94a6af08000029f437e1fab2a574d865415db113bc0c462d99a99"
+      },
+      {
+        "name": "qcSensorsConfigCrd8270.inf",
+        "size": 43946,
+        "sha256": "9237be76b99a6a0030cb210f5e1691f1ae54e2d05b0049579f9d07bf3d2940e3"
+      }
+    ],
+    "infs": [
+      "drivers/qcsensorsconfigcrd8270.inf_arm64_af89fb8bbc9945bd/qcSensorsConfigCrd8270.inf"
+    ]
+  },
+  {
+    "folder": "qcskext8270.inf_arm64_8d0ffb5594427c47",
+    "inf": "oem53.inf",
+    "provider": "Qualcomm Incorporated",
+    "version": "1.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) Secure Kernel Extension"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1403%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "QcSkExt8270.cat",
+        "size": 11312,
+        "sha256": "908039b421c598959834f708c2ed2581c2642da6258d06039dc1bbda587e4cd0"
+      },
+      {
+        "name": "QcSkExt8270.exe",
+        "size": 158544,
+        "sha256": "30af2b31a510b2836ad6c17efce9aec15f78bbeb9d435c75f894af7eda1093e8"
+      },
+      {
+        "name": "QcSkExt8270.inf",
+        "size": 5154,
+        "sha256": "be83adb990cb6d7dbe34fdfe8af28ee6abd1fb70ebc687b47dd8d61ec7f71850"
+      }
+    ],
+    "infs": [
+      "drivers/qcskext8270.inf_arm64_8d0ffb5594427c47/QcSkExt8270.inf"
+    ]
+  },
+  {
+    "folder": "qcsmmu8270.inf_arm64_15903a42184cb1e2",
+    "inf": "oem54.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) System MMU Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1309%26SUBSYS_CRD08270%26REV_0001",
+    "files": [
+      {
+        "name": "SMMC.bin",
+        "size": 618,
+        "sha256": "b5bf1ef5c81d69135842d420b61bc6d52ee38df35d5513ca0b201e34c3f90bbf"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcsmmu8270.cat",
+        "size": 11710,
+        "sha256": "4b906eb5ad8d4eb2bb8bb66c36e957831296f191bea49a8369054ccf172b8faa"
+      },
+      {
+        "name": "qcsmmu8270.inf",
+        "size": 52074,
+        "sha256": "b22b1a910c4f1f98756c146049b6c9499d9f3f4cfa0f0353c158dc53c3bc5ef2"
+      },
+      {
+        "name": "qcsmmu8270.sys",
+        "size": 531248,
+        "sha256": "fe4989d815f304692f5a439280c1b7f47b38437d011a3b2e05122aceaa220064"
+      }
+    ],
+    "infs": [
+      "drivers/qcsmmu8270.inf_arm64_15903a42184cb1e2/qcsmmu8270.inf"
+    ]
+  },
+  {
+    "folder": "qcsocpartition.inf_arm64_1fa88b2de6619431",
+    "inf": "oem55.inf",
+    "provider": "Qualcomm Technologies Inc.",
+    "version": "1.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) SOC Partition Interface Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_06DD%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "QcSOCPartition.cat",
+        "size": 11336,
+        "sha256": "0a2938e17488c31fa9b5c50ce52cefa81f9b649ae4fed166097ef7bda731cee5"
+      },
+      {
+        "name": "QcSocPartition.inf",
+        "size": 4222,
+        "sha256": "bc44975130653a7d7d0f117dec75820d1b776c56c0d8a5a61a9eab8d8c8f204d"
+      },
+      {
+        "name": "QcSOCPartition.sys",
+        "size": 362816,
+        "sha256": "6844a43539d3c787566d3eb324ed4bb903d6088f44cb2d86494ef7b2db4956f3"
+      }
+    ],
+    "infs": [
+      "drivers/qcsocpartition.inf_arm64_1fa88b2de6619431/QcSocPartition.inf"
+    ]
+  },
+  {
+    "folder": "qcspmi8270.inf_arm64_55df185628bd9801",
+    "inf": "oem56.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) SPMI Bus Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_130B%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcspmi8270.cat",
+        "size": 11304,
+        "sha256": "79edebd74d411b3a1ef2c4ae69781ce79cfbabb1cf69a957b59411ed0f7b3439"
+      },
+      {
+        "name": "qcspmi8270.inf",
+        "size": 6426,
+        "sha256": "b680366b06f80d5a20327263bb74a5c65bc14435d9d332cf40dbfbdabcac626b"
+      },
+      {
+        "name": "qcspmi8270.sys",
+        "size": 59696,
+        "sha256": "a786b89e442cf4e8926064617f8f216a5b53af28d67c869dade65455c48a8b20"
+      }
+    ],
+    "infs": [
+      "drivers/qcspmi8270.inf_arm64_55df185628bd9801/qcspmi8270.inf"
+    ]
+  },
+  {
+    "folder": "qcssgservicesumd.inf_arm64_a5ba37f18374c3f2",
+    "inf": "oem57.inf",
+    "provider": "Qualcomm",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) SSG Secure Services Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_06D8%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcSSGServicesUMD.cat",
+        "size": 11352,
+        "sha256": "9db0b36add2c6947a973f3cc332b5a94ec91f751fe3d091f56ca230ce9355d54"
+      },
+      {
+        "name": "qcSSGServicesUMD.dll",
+        "size": 98608,
+        "sha256": "2dfdff1934ac09e2cd913852b850bb343720a304d80e3560a3a4638404047781"
+      },
+      {
+        "name": "qcSSGServicesUMD.inf",
+        "size": 9454,
+        "sha256": "d10777cddbf22071789abaed695f3d55d9bf28fed9f79cf409f1202d3e5066bc"
+      }
+    ],
+    "infs": [
+      "drivers/qcssgservicesumd.inf_arm64_a5ba37f18374c3f2/qcSSGServicesUMD.inf"
+    ]
+  },
+  {
+    "folder": "qcsubsys8270.inf_arm64_3c03c3be284f9132",
+    "inf": "oem60.inf",
+    "provider": "Qualcomm Technologies, Incorporated",
+    "version": "2.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": false,
+    "devices": [
+      "Qualcomm Service Manager Device",
+      "Qualcomm Subsystem Dependency Device",
+      "Qualcomm(R) Audio DSP Subsystem Device",
+      "Qualcomm(R) Compute DSP Subsystem Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_131F%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcsubsys8270.cat",
+        "size": 11782,
+        "sha256": "8c70f371c6de7eeb94a9f78efa0634f7f14d449231370f1b0a4ab96478bca457"
+      },
+      {
+        "name": "qcsubsys8270.inf",
+        "size": 9980,
+        "sha256": "1e106b371512e5e54ecffca3c9e0ea916f65a30ad9bfa64b6ad4ab4dac554b77"
+      },
+      {
+        "name": "qcsubsys8270.sys",
+        "size": 1070912,
+        "sha256": "d22aeda67d4bee1bf6dc008eacd096e313628e94ef04bddfde2922c860cd3099"
+      }
+    ],
+    "infs": [
+      "drivers/qcsubsys8270.inf_arm64_3c03c3be284f9132/qcsubsys8270.inf"
+    ]
+  },
+  {
+    "folder": "qcsubsysthermalmgr.inf_arm64_2d782f2f236c838d",
+    "inf": "oem61.inf",
+    "provider": "Qualcomm Technologies, Incorporated",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) NSP0 CDSP SW Thermal Device",
+      "Qualcomm(R) Subsys Base Thermal Mitigation Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_06E5%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcSubsysThermalMgr.cat",
+        "size": 11434,
+        "sha256": "3642674545875c5afb32b86d1e5217b208cb094fe408fb0bec5c3f676d78d5ee"
+      },
+      {
+        "name": "qcSubsysThermalMgr.inf",
+        "size": 4972,
+        "sha256": "3eb460cd10f9a726ca9b5d69bea063a8039f0b4d883896b191fe3671d4d4e63a"
+      },
+      {
+        "name": "qcSubsysThermalMgr.sys",
+        "size": 312624,
+        "sha256": "6f2eb52fc7e395eb81fa2c539d3ddd6c0e97db2ae90fbe7813cf7a760ff3333d"
+      }
+    ],
+    "infs": [
+      "drivers/qcsubsysthermalmgr.inf_arm64_2d782f2f236c838d/qcSubsysThermalMgr.inf"
+    ]
+  },
+  {
+    "folder": "qcsubsys_ext_adsp8270.inf_arm64_1289e5150af905d7",
+    "inf": "oem58.inf",
+    "provider": null,
+    "version": "2.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) Audio DSP Subsystem Device",
+      "Qualcomm(R) Peripheral Image Loader Device",
+      "Qualcomm(R) Protection Domain Service Registry Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_131A%26SUBSYS_CRD08270",
+    "files": [
+      {
+        "name": "adspr.jsn",
+        "size": 697,
+        "sha256": "e9ba7199626b0c03f2ec02822d744f678ad567fe0625a28fe5f5908b7281e9db"
+      },
+      {
+        "name": "adsps.jsn",
+        "size": 536,
+        "sha256": "19b1396b5e2c0d14fb8a4eb8e47181df7f62989f4af519b439cf0ee45a46f76e"
+      },
+      {
+        "name": "adspua.jsn",
+        "size": 731,
+        "sha256": "d65dc1aedce2c1131da8ffaed7dcffc05cc9c58da491e0c39acb2ac5b3f4bc1d"
+      },
+      {
+        "name": "ADSP/aac_dec_module.so.1",
+        "size": 277080,
+        "sha256": "44d086e0bf8933ac954b18f28399d530a5ae0f3214e26567686b5c4aaee50a1b"
+      },
+      {
+        "name": "ADSP/aac_enc_etsi_module.so.1",
+        "size": 202816,
+        "sha256": "4fcf600175fa5b431713a00a89fd8f9312bea76a5e2b355f2e8f3c0fd0e1b01a"
+      },
+      {
+        "name": "ADSP/alac_dec_module.so.1",
+        "size": 29200,
+        "sha256": "a6c7f015714df8359d462be11d949997454be5cb6fd7c236dfad665d5e27f49a"
+      },
+      {
+        "name": "ADSP/ape_dec_module.so.1",
+        "size": 46552,
+        "sha256": "c277b1330b1f40f9d642b94d33304a1af0546378ad0e447d3083537106c92962"
+      },
+      {
+        "name": "ADSP/aptx_adaptive_enc_module.so.1",
+        "size": 223864,
+        "sha256": "9a4e6750e4358e782293a9388bf965a06755e37b2c6f48fd33ffbb216a1e7368"
+      },
+      {
+        "name": "ADSP/aptx_adaptive_speech_dec_module.so.1",
+        "size": 205688,
+        "sha256": "3b25542e2b265841566ee1f8f2232739ec6023fa97ba0325e0ff809d39bc3f6e"
+      },
+      {
+        "name": "ADSP/aptx_adaptive_speech_enc_module.so.1",
+        "size": 185272,
+        "sha256": "147388db98503936a578d11dd6a5395528fe35af5a3fe983c096d3b571b92b06"
+      },
+      {
+        "name": "ADSP/aptx_classic_enc_module.so.1",
+        "size": 44944,
+        "sha256": "b71b77c95aa5245df89b0a327132adc738ebca3d82faa385375c7a3ee9f44f2e"
+      },
+      {
+        "name": "ADSP/aptx_hd_enc_module.so.1",
+        "size": 44112,
+        "sha256": "304be179ccf5905c2fb09f7d260fb3ab7492adf357abc8b32fbcf9e27f184eb7"
+      },
+      {
+        "name": "ADSP/AudioSphereModule.so.1",
+        "size": 78200,
+        "sha256": "2ecae0e2e7df9f3e1f7be5790a5aa849895678fa9506abc1da4aec6ca203b980"
+      },
+      {
+        "name": "ADSP/celt_enc_module.so.1",
+        "size": 86912,
+        "sha256": "20353294812cb0d6fb9ea4f2b850b8f04d9586206e04315a7364b7c61f752bbc"
+      },
+      {
+        "name": "ADSP/CFCM.so.1",
+        "size": 29552,
+        "sha256": "1a87fa702912c4d1982c1d264d43ee9eb228a23bee19fa9732f4d8955ba4a1d6"
+      },
+      {
+        "name": "ADSP/fastrpc_shell_0",
+        "size": 845632,
+        "sha256": "436a273419058cfb0195a9ba5dc030bea38e9370e796f9ecd5d584fa4857774b"
+      },
+      {
+        "name": "ADSP/ffecns_module_fvx.so.1",
+        "size": 321368,
+        "sha256": "8128610735debf2e8c0200401111b5c54a53369f886ace8955d1e4dbabb2c9c4"
+      },
+      {
+        "name": "ADSP/flac_dec_module.so.1",
+        "size": 39352,
+        "sha256": "dba0f514de554f95f65900bc04c596bea09c6977446bff42f8e071560475db1a"
+      },
+      {
+        "name": "ADSP/fluence_bs_module_fvx.so.1",
+        "size": 334072,
+        "sha256": "b81fb337830e63ab01dc8906fb41e1f462346d7d672240135d9190d45b469805"
+      },
+      {
+        "name": "ADSP/fluence_ef_module_fvx.so.1",
+        "size": 486368,
+        "sha256": "abda3298678dc7228e377befb1ac51e5febb1532a1f399b33113459896bb558c"
+      },
+      {
+        "name": "ADSP/fluence_nn_module_fvx.so.1",
+        "size": 347008,
+        "sha256": "a816227d1a45d135342c7961d8248b49f011c08eab5d1de91b92e67aba95e0bd"
+      },
+      {
+        "name": "ADSP/fluence_pro_vc_module_fvx.so.1",
+        "size": 390592,
+        "sha256": "314264b9649e2740a55200cc04848cc504a94d1ff696c4d513e692a325c3cbe3"
+      },
+      {
+        "name": "ADSP/fluence_pro_vr_module_fvx.so.1",
+        "size": 364504,
+        "sha256": "087998fc283d071cdde9b7675b2997ca05b827aa062e7d431b6a1a493a28dcf2"
+      },
+      {
+        "name": "ADSP/lc3_dec_module.so.1",
+        "size": 165816,
+        "sha256": "81b6d853376265bb5672102052ccc07a2af35b91a5fcc26da0214a185f5f7fbe"
+      },
+      {
+        "name": "ADSP/lc3_enc_module.so.1",
+        "size": 335256,
+        "sha256": "3f2539c709b55300878319d6f9c5243f1635d502dd4589bccd391be7deffc8cd"
+      },
+      {
+        "name": "ADSP/ldac_enc_module.so.1",
+        "size": 79584,
+        "sha256": "59b3a9dc4de98f9e0f340f7c46fc428d91b9c0c2771293eb48f7f74c1bfd4725"
+      },
+      {
+        "name": "ADSP/libaptXAdaptiveEnc.so",
+        "size": 270336,
+        "sha256": "718a83d59b55465e7a391a648827018b7dd866133498b5b0a483f21f00a955bc"
+      },
+      {
+        "name": "ADSP/libaptXAdaptiveEnc3.so",
+        "size": 89216,
+        "sha256": "72334a9de51b96cc2afefac01cf2b1f0521c077810bae9d039034d033dd5dd0b"
+      },
+      {
+        "name": "ADSP/liblc3qDec.so",
+        "size": 158848,
+        "sha256": "91c683496d9d7ffebc31c0122845f7468dd2e40d5be6540a4db8393bccf3b462"
+      },
+      {
+        "name": "ADSP/libstabilitydomain_skel.so",
+        "size": 90992,
+        "sha256": "6e61a7c4da6ba6a67e7ced47a006bbc43f308920fd9a408eea1d0df4773607c2"
+      },
+      {
+        "name": "ADSP/libsysmondomain_skel.so",
+        "size": 265296,
+        "sha256": "cdb4086e6621a07923c5438bf5238f2cf4640c30916dc21e6361c38fbe924ed3"
+      },
+      {
+        "name": "ADSP/libsysmonquery_skel.so",
+        "size": 38664,
+        "sha256": "f77dcdc217098afbcb08d7ccb5426e42277a984fe9423fa8a5a27d2ed04b583b"
+      },
+      {
+        "name": "ADSP/libsysmon_skel.so",
+        "size": 185456,
+        "sha256": "348af8bd51ae2c7350dfd91296ac30459e934dd5db2b4b41f1428447617e2547"
+      },
+      {
+        "name": "ADSP/map_AVS_SHARED_LIBS_kodiak.adsp.prodQ.txt",
+        "size": 2619,
+        "sha256": "6a395ca0dcd91d2aba9ae8ab0e92287e1ef23e21a7c7a67a97f70eaa71d22b1b"
+      },
+      {
+        "name": "ADSP/map_SHARED_LIBS_kodiak.adsp.prodQ.txt",
+        "size": 353,
+        "sha256": "233ea8b226cb6742cd09f8051f9189b12972b7beb55e845e098ed84e000e92ce"
+      },
+      {
+        "name": "ADSP/MIC2AMBModule.so.1",
+        "size": 42960,
+        "sha256": "191dbf6ecfdbc713b405561ea87d7c3d1c039f2fd52fad3a585cb18e5c672141"
+      },
+      {
+        "name": "ADSP/mm_fluence_sb_module_fvx.so.1",
+        "size": 441152,
+        "sha256": "f659bfe30af5cf5cc84b7415850caba013be3177f3a9306b062d62689ccb5293"
+      },
+      {
+        "name": "ADSP/SAPlusCmnModule.so.1",
+        "size": 123352,
+        "sha256": "01c148ac54706a1b36d434499c36adfe2d7c9de6203237944312928a7bbe1834"
+      },
+      {
+        "name": "ADSP/sbc_dec_module.so.1",
+        "size": 44976,
+        "sha256": "d10a8e6928dc02b4cb67b38560cc2a4cb861e26f7645c603662685b62168c1a0"
+      },
+      {
+        "name": "ADSP/sbc_enc_module.so.1",
+        "size": 38176,
+        "sha256": "c0b96925b2fcb7a15b2cd77d0d6c980ef287889dc5da000089fc5348bc064237"
+      },
+      {
+        "name": "ADSP/sdd_module.so.1",
+        "size": 33072,
+        "sha256": "1c6323fe43fa2cbf590dd346668ba107668b8c6cd9ef2ad017a9d084df4a6328"
+      },
+      {
+        "name": "ADSP/smecns_v2_module_fvx.so.1",
+        "size": 263808,
+        "sha256": "9f11facce9e8a4ad760d5c0acea5b09e6c789c6e9954e5beca1d0a42e1fa3204"
+      },
+      {
+        "name": "ADSP/sm_fluence_sb_module_fvx.so.1",
+        "size": 285568,
+        "sha256": "2c419582d4e59b5c453a2f4a4bf4d177f9262238f776b95b4d29c401328bfe22"
+      },
+      {
+        "name": "ADSP/vorbis_dec_module.so.1",
+        "size": 85504,
+        "sha256": "d2f9045732f22bf526a968e902f80555d56eb52af0a2073c3390e6e4fa671a78"
+      },
+      {
+        "name": "ADSP/wmapro_dec_module.so.1",
+        "size": 359552,
+        "sha256": "21420389a6d7f146bf5e42e22ad019990c4f91b337b194cf876d33cf7ca551ae"
+      },
+      {
+        "name": "ADSP/wmastd_dec_module.so.1",
+        "size": 129024,
+        "sha256": "9e31d1713e6f9a76a34f563671e7945ac416b191b7bca8c74415b0285ba9e1b4"
+      },
+      {
+        "name": "qcadsp8270.mbn",
+        "size": 15928240,
+        "sha256": "0c7dd9beb5d970c7d54532eddbf141fc5acd244ff86808f5abf92355a6fc35c9"
+      },
+      {
+        "name": "RADS.bin",
+        "size": 1333,
+        "sha256": "579d4e49eea7c40d54187e95a21fbdb44f23068f6f00e32bb7cb873cec2aa932"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcsubsys_ext_adsp8270.cat",
+        "size": 35096,
+        "sha256": "1d90cd89ca314297b94d9703aedc36100d206348e2b1dbf3616d9c4f850957e5"
+      },
+      {
+        "name": "qcsubsys_ext_adsp8270.inf",
+        "size": 61596,
+        "sha256": "13da6558f55116c3eba3c185a7266b10f250d036493d4365e39f9f6f3ec13897"
+      }
+    ],
+    "infs": [
+      "drivers/qcsubsys_ext_adsp8270.inf_arm64_1289e5150af905d7/qcsubsys_ext_adsp8270.inf"
+    ]
+  },
+  {
+    "folder": "qcsubsys_ext_cdsp8270.inf_arm64_a6d362bc833a72a5",
+    "inf": "oem59.inf",
+    "provider": null,
+    "version": "2.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) Compute DSP Subsystem Device",
+      "Qualcomm(R) NSP0 CDSP SW Thermal Device",
+      "Qualcomm(R) Peripheral Image Loader Device",
+      "Qualcomm(R) Protection Domain Service Registry Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_06E0%26SUBSYS_CRDA8270",
+    "files": [
+      {
+        "name": "cdspr.jsn",
+        "size": 534,
+        "sha256": "7e46c515ab1bb012768be6e961eca69b1c8aad9af1cbac886b3b5ae8d4228f64"
+      },
+      {
+        "name": "CDSP/example_image.so",
+        "size": 51480,
+        "sha256": "e16715e5dee84b8a2dcfee897197658e536eae087fce581ea6efffb136ce52d5"
+      },
+      {
+        "name": "CDSP/fastrpc_shell_3",
+        "size": 960944,
+        "sha256": "c62139dd3a18d3b608af1f4c6588c43a2fb69006b72774228d38e8ac3b983589"
+      },
+      {
+        "name": "CDSP/fastrpc_shell_unsigned_3",
+        "size": 960932,
+        "sha256": "771e18624e1f82436447addc84cdf7dab7024a990f9553f66fc6cb836ed80b37"
+      },
+      {
+        "name": "CDSP/libbenchmark_skel.so",
+        "size": 2409192,
+        "sha256": "ae5df08f5b498a04b21c410f314b103423721ff72b29d81b6e66357fbb9a8f0a"
+      },
+      {
+        "name": "CDSP/libc\u002B\u002B.so.1",
+        "size": 3326224,
+        "sha256": "1198a3e1c190831e392cf498a5708373c24941eb10854e79c705cc3343e9ffb8"
+      },
+      {
+        "name": "CDSP/libc\u002B\u002Babi.so.1",
+        "size": 803096,
+        "sha256": "bcc6d45b05b20a46d46c277ee463b44577b5c22f11bc3ba4fd898dbb84f10476"
+      },
+      {
+        "name": "CDSP/libcvpdsp_2_1.so",
+        "size": 5004368,
+        "sha256": "e8f7a9c4082507c8eb5f0621b2bd0446446ea9b7a19ddeb27c2bec828cffaa2b"
+      },
+      {
+        "name": "CDSP/libcvpdsp_2_1_intermediate.so",
+        "size": 4097536,
+        "sha256": "b61648c17e5d6e65921beaeda0537ad222e4cb2eb8e8d31bfa0e829596a92de8"
+      },
+      {
+        "name": "CDSP/libdsp_streamer_add_constant.so",
+        "size": 22360,
+        "sha256": "ed07db528c2988bffcbd374125a215e59af2c4f45abe06c8c8545753e704ccb5"
+      },
+      {
+        "name": "CDSP/libdsp_streamer_binning.so",
+        "size": 21720,
+        "sha256": "33c551a8cf0e774dfc72389e3d54155b85068b52c8a53fa8acd63f30107a52f3"
+      },
+      {
+        "name": "CDSP/libdsp_streamer_vpt.so",
+        "size": 119584,
+        "sha256": "e2dd1e1b5f7a83baabb3b2d07e7cbc1ae03dd00878d89c75b8d53050ab9016e3"
+      },
+      {
+        "name": "CDSP/libhcp_rpc_skel.so",
+        "size": 262344,
+        "sha256": "4ad1048d2338a0d44aa6b16b39284cc0e689094a8d441e91d3a06d25c40aa9d4"
+      },
+      {
+        "name": "CDSP/libloadalgo_skel.so",
+        "size": 43376,
+        "sha256": "0c9f13fdb11ab825909d571786f33abe3007dc598e21fbf84a1ef5a82ec527d0"
+      },
+      {
+        "name": "CDSP/libnn_preproc.so",
+        "size": 242312,
+        "sha256": "20a438ed8721e1d2e70f870e9c30388fa28a1efb51b6eca7fb6ba21d4c815279"
+      },
+      {
+        "name": "CDSP/libnn_preproc_postproc.so",
+        "size": 489472,
+        "sha256": "58f2a0a2fde96e237b3cd37faa69cb6e31cd71c4c268707195d4677ffa91e8b4"
+      },
+      {
+        "name": "CDSP/libstabilitydomain_skel.so",
+        "size": 90992,
+        "sha256": "ce8d616e3908a36c015b1530acbe71e8cfc4368bc21d89906b6b16db2c95c888"
+      },
+      {
+        "name": "CDSP/libsysmondomain_skel.so",
+        "size": 2572080,
+        "sha256": "b741e140cc543da986df4d62ea2b7c1dff21bd288535431f41bc3914812b097a"
+      },
+      {
+        "name": "CDSP/libsysmonhvxthrottle_skel.so",
+        "size": 31944,
+        "sha256": "b8734d2e80547c75738323dadd3501e4623db5a718952b8ed2851e94b618adc0"
+      },
+      {
+        "name": "CDSP/libsysmonquery_skel.so",
+        "size": 38632,
+        "sha256": "6415ab799c97e83f2074384e0a3b49314dd0fea10d0496f9cb656b4953e84800"
+      },
+      {
+        "name": "CDSP/libsysmon_skel.so",
+        "size": 2492336,
+        "sha256": "a4a4df2b8bb16155ddd0271dbe763ebc78b01a28627f96fa42a014731ad70cdf"
+      },
+      {
+        "name": "CDSP/libvpp_svc_skel.so",
+        "size": 365264,
+        "sha256": "8a34fe329cafef3ad9b210baede9a4c126bebc83be83b07e6d6fa3065e170455"
+      },
+      {
+        "name": "CDSP/map_SHARED_LIBS_kodiak.cdsp.prodQ.txt",
+        "size": 1273,
+        "sha256": "9f7f9bd57318d0e06e4a05f489842fea040e825c3797c6b25b52bfb81a7c6aa5"
+      },
+      {
+        "name": "CDSP/ubwcdma_dynlib.so",
+        "size": 174408,
+        "sha256": "09045d57b7fa388155de4f72b5a87ff62b5a2b3b4a76b7336141868bdafb42e5"
+      },
+      {
+        "name": "qccdsp8270.mbn",
+        "size": 3461120,
+        "sha256": "49a64694086e9979605445506e89adfc9203d18e92c610be754e76ec17432fef"
+      },
+      {
+        "name": "RCDS.bin",
+        "size": 1029,
+        "sha256": "ee03910fc5215fccd5768631c4be4b1f21cb936414c9009f2f301a1403725da0"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcsubsys_ext_cdsp8270.cat",
+        "size": 24586,
+        "sha256": "9c52ebe727e9cc1bc109a280ad41d0dd75ec6309f02ced4dd770591c732d4ce4"
+      },
+      {
+        "name": "qcsubsys_ext_cdsp8270.inf",
+        "size": 36140,
+        "sha256": "5919fc8ddf20b18353f8551b1bfbc8fb8fb48fafb16a2c3230f442095686343c"
+      }
+    ],
+    "infs": [
+      "drivers/qcsubsys_ext_cdsp8270.inf_arm64_a6d362bc833a72a5/qcsubsys_ext_cdsp8270.inf"
+    ]
+  },
+  {
+    "folder": "qcsyscache8270.inf_arm64_71965bd4773d2431",
+    "inf": "oem62.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) System Cache Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1381%26SUBSYS_CRD08270%26REV_0001",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcsyscache8270.cat",
+        "size": 11336,
+        "sha256": "743b0878701b576a2f0ac98efe9f3b91fcdbb8ac2e3739296f91429609e7c89a"
+      },
+      {
+        "name": "qcsyscache8270.inf",
+        "size": 21008,
+        "sha256": "d46a1903b65d5aaaba781d727cd5f9aa87a1837353294f14ddb6f23cb3358c7c"
+      },
+      {
+        "name": "qcsyscache8270.sys",
+        "size": 240432,
+        "sha256": "c8d94b3b0b78168f3c614516918266b50d9eb8935d184c2a940089ef1c6799b9"
+      }
+    ],
+    "infs": [
+      "drivers/qcsyscache8270.inf_arm64_71965bd4773d2431/qcsyscache8270.inf"
+    ]
+  },
+  {
+    "folder": "qctftpkmdf.inf_arm64_2e97a74ba5638cdc",
+    "inf": "oem63.inf",
+    "provider": "Qualcomm Technologies, Incorporated",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) TFTP Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_06DC%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "QcTftpKmdf.cat",
+        "size": 11301,
+        "sha256": "c606e50502f398b93c469b3f9da9ac74b13fb72fafa55392542452c6514680f5"
+      },
+      {
+        "name": "QcTftpKmdf.inf",
+        "size": 4422,
+        "sha256": "ca8c80b492736f17b730a92de678c5741cd2d3256074e32b73327e70fc887db9"
+      },
+      {
+        "name": "QcTftpKmdf.sys",
+        "size": 293680,
+        "sha256": "997222eb58dfd151d5e58c11d31e61eff75c05f0f0e112665b4e8809d2744086"
+      }
+    ],
+    "infs": [
+      "drivers/qctftpkmdf.inf_arm64_2e97a74ba5638cdc/QcTftpKmdf.inf"
+    ]
+  },
+  {
+    "folder": "qctree.inf_arm64_2a6263be09e95468",
+    "inf": "oem64.inf",
+    "provider": "Qualcomm Inc.",
+    "version": "1.0.4646.5000",
+    "date": "2026-07-03",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) System Manager Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_04DE%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "QcTrEE.cat",
+        "size": 11268,
+        "sha256": "5d0d583af44df80dbe850f52a4a911e7760e4b0a6d8f2ac0d6e0b5098a681b94"
+      },
+      {
+        "name": "QcTrEE.inf",
+        "size": 15470,
+        "sha256": "0311901fee9a3aa65f03c44fd7dc8027d3417576f8acca5b770f78ccf3ce6de3"
+      },
+      {
+        "name": "QcTrEE.sys",
+        "size": 499008,
+        "sha256": "10e7846cd758e0b092cf5a480c356cf6fa2bf223389baca52c6f3fd927ae9ac2"
+      }
+    ],
+    "infs": [
+      "drivers/qctree.inf_arm64_2a6263be09e95468/QcTrEE.inf"
+    ]
+  },
+  {
+    "folder": "qctreeextami8270.inf_arm64_89cf7f753414d44d",
+    "inf": "oem65.inf",
+    "provider": null,
+    "version": "1.0.4602.8406",
+    "date": "2026-06-01",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) System Manager Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_04DE%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "QcTreeExtAmi8270.cat",
+        "size": 11188,
+        "sha256": "18708f668c0911b7400231573309564b8c0b5211c8c8cfb9aa2bf63f8e306439"
+      },
+      {
+        "name": "QcTreeExtAmi8270.inf",
+        "size": 7086,
+        "sha256": "eb8718522e54363ffc0e7d0daa2fb5dadb5eb5cfcb66ae2da1b548ab8623d8bc"
+      }
+    ],
+    "infs": [
+      "drivers/qctreeextami8270.inf_arm64_89cf7f753414d44d/QcTreeExtAmi8270.inf"
+    ]
+  },
+  {
+    "folder": "qctreeextoem8270.inf_arm64_b05b851327eddfa0",
+    "inf": "oem66.inf",
+    "provider": null,
+    "version": "1.0.4654.5200",
+    "date": "2026-07-15",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) System Manager Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_04DE%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "QcTreeExtOem8270.cat",
+        "size": 11172,
+        "sha256": "c45dec54649dc8331d5df517b919228b2beaf8afcd9a1b42a8de1d8552c8d4ee"
+      },
+      {
+        "name": "QcTreeExtOem8270.inf",
+        "size": 5836,
+        "sha256": "c49f5deabc70eeff88b61e5566f8dd4ec6a0d37c79052f8fa7b5646e5a481601"
+      }
+    ],
+    "infs": [
+      "drivers/qctreeextoem8270.inf_arm64_b05b851327eddfa0/QcTreeExtOem8270.inf"
+    ]
+  },
+  {
+    "folder": "qctreeextqcom8270.inf_arm64_2281ea0d2a5f438e",
+    "inf": "oem67.inf",
+    "provider": null,
+    "version": "1.0.4654.5200",
+    "date": "2026-07-15",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) System Manager Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_04DE%26SUBSYS_CRD08270",
+    "files": [
+      {
+        "name": "hdcp1.mbn",
+        "size": 44948,
+        "sha256": "ef959398bdc8f41874373c8f357b7d49d4c3bb84ba42530e4cd5786c7b726ed3"
+      },
+      {
+        "name": "hdcp2p2.mbn",
+        "size": 121238,
+        "sha256": "2d8602d147d85d9f885018a4e5e96c6753a09f45208af5af21ff2787fb781818"
+      },
+      {
+        "name": "hdcpsrm.mbn",
+        "size": 36058,
+        "sha256": "6f237dea437cc7da9b2bc280e5253e25efe0c33fd48f682fe16ffe3902d2f54e"
+      },
+      {
+        "name": "pr_3_wp.mbn",
+        "size": 467826,
+        "sha256": "b0e05012c495bf3a8654dd06d78f7e99f09c87e9538f55a49741ec8a4fd2bbc2"
+      },
+      {
+        "name": "qwes.mbn",
+        "size": 469373,
+        "sha256": "75c1bf342c5e8a8a2b1bfc10d933586ee01654c913d144a9f1ebd5265011d565"
+      },
+      {
+        "name": "rtice.mbn",
+        "size": 250543,
+        "sha256": "d62e921e5b1a47b33bbc48cb024432a641ecf3717cdb09c2ea827b5f3d9d79ec"
+      },
+      {
+        "name": "tzsc.mbn",
+        "size": 90576,
+        "sha256": "acb004834ada7f149420443c8e21b272acfcb374aafa7acee5a11f3ab4999725"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "QcTreeExtQcom8270.cat",
+        "size": 14086,
+        "sha256": "6ab705e15d1e97f861cf13b01d75b68ac09b6d812526daa7fdecd1bc5e5a7cac"
+      },
+      {
+        "name": "QcTreeExtQcom8270.inf",
+        "size": 15998,
+        "sha256": "3aca28f24b5c86488a87f18c747262367f0b704bb5cde08afff46927a1d2e20c"
+      }
+    ],
+    "infs": [
+      "drivers/qctreeextqcom8270.inf_arm64_2281ea0d2a5f438e/QcTreeExtQcom8270.inf"
+    ]
+  },
+  {
+    "folder": "qcuart8270.inf_arm64_97e1afe8655316e7",
+    "inf": "oem68.inf",
+    "provider": "Qualcomm Technologies, Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) UART Bus Device (COM1)",
+      "Qualcomm(R) UART Bus Device (COM2)"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1316%26SUBSYS_CRD08270",
+    "files": [
+      {
+        "name": "BSRC_UART_2Wire_1.bin",
+        "size": 49500,
+        "sha256": "929c62bc8ecb27e00b1a75e29dacb93625a4c0e1ce2275db4d4ac6ddef0f5571"
+      },
+      {
+        "name": "BSRC_UART_2Wire_2.bin",
+        "size": 26,
+        "sha256": "6d6ebd98b4472e2b602256e510db8efe0ce58b9b6ee4ef959d0e5c0e1524371e"
+      },
+      {
+        "name": "BSRC_UART_4Wire_1.bin",
+        "size": 55452,
+        "sha256": "96197a2308f0a0b509ca047f54ac0f9cdc69659e579b2a1c7054212329dda72f"
+      },
+      {
+        "name": "BSRC_UART_4Wire_2.bin",
+        "size": 26,
+        "sha256": "6d6ebd98b4472e2b602256e510db8efe0ce58b9b6ee4ef959d0e5c0e1524371e"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcuart8270.cat",
+        "size": 13144,
+        "sha256": "81f9500456b9d8b580433bb869945167ebca29089eab407f51a8b0f135c5459e"
+      },
+      {
+        "name": "qcuart8270.inf",
+        "size": 6236,
+        "sha256": "97a83ed0103506210388da9361b8682918b3e1efe7d946b7125ded3c1735cc55"
+      },
+      {
+        "name": "qcuart8270.PNF",
+        "size": 12468,
+        "sha256": "a5461fedc02db9028764e9f5edc036fe4c8039deea526ad4767d8b070f537562"
+      },
+      {
+        "name": "qcuart8270.sys",
+        "size": 118064,
+        "sha256": "488770592a6326c7a801fc13db8ddf23f05edf6955133a22332bf476812e7981"
+      }
+    ],
+    "infs": [
+      "drivers/qcuart8270.inf_arm64_97e1afe8655316e7/qcuart8270.inf"
+    ]
+  },
+  {
+    "folder": "qcusbcucsi8270.inf_arm64_3868f04ceb4595c0",
+    "inf": "oem69.inf",
+    "provider": "Qualcomm Technologies, Inc.",
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) USB Type-C Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_139B",
+    "files": [
+      {
+        "name": "UCS0.bin",
+        "size": 3550,
+        "sha256": "c088229a14c10987aa7de8186f0b4c5dc46d1511e35fdfdf5a80ad066eda6600"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcusbcucsi8270.cat",
+        "size": 11739,
+        "sha256": "4054dd8538d0d7facbb47f4c84246db6d0008f3b49b1c86707705ed988224baa"
+      },
+      {
+        "name": "QcUsbCUcsi8270.inf",
+        "size": 5122,
+        "sha256": "15052b79b5b2bb884731dbac52446b3772847a0b8fce7739886271bcbcb8ef9b"
+      },
+      {
+        "name": "qcusbcucsi8270.sys",
+        "size": 75568,
+        "sha256": "8f7ba7af19fadcf15d92dc89770eb0278d6eef4079966d708e942a9dd42977cd"
+      }
+    ],
+    "infs": [
+      "drivers/qcusbcucsi8270.inf_arm64_3868f04ceb4595c0/QcUsbCUcsi8270.inf"
+    ]
+  },
+  {
+    "folder": "qcwlancol8270.inf_arm64_109b2e47f5941910",
+    "inf": "oem72.inf",
+    "provider": "Qualcomm Communications Inc.",
+    "version": "1.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": false,
+    "devices": [
+      "Qualcomm FastConnect C6700 NCM620B Wi-Fi 6E Network Adapter"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=PCI%5CVEN_17CB%26DEV_1112%26SUBSYS_8FB1103C%26REV_01",
+    "files": [
+      {
+        "name": "aux_ucode.elf",
+        "size": 53672,
+        "sha256": "18594d473f8d0dd4b6fbf23b90ed1f8013d549ee16ba285472dbb2b516baa29d"
+      },
+      {
+        "name": "bdwlan.e01",
+        "size": 125420,
+        "sha256": "ed8d921ac049d0b6b5c3c5ec06ff9cab37d795f29169d14fd559e865a2c45a8c"
+      },
+      {
+        "name": "bdwlan.e02",
+        "size": 125420,
+        "sha256": "ec3ea2ada6a46d5fc834973adb61cc92c5d44b25c9dcb5aa226ba5e3937fa42a"
+      },
+      {
+        "name": "bdwlan.e03",
+        "size": 125420,
+        "sha256": "c210033c3d308df72c20f0bb7b18e9ab0e6aa80ce25b89381761e895705da2dd"
+      },
+      {
+        "name": "bdwlan.e05",
+        "size": 125420,
+        "sha256": "3acc30bff04535ca67b42fb7a20b057597769a25af11d36899582d428e6988e4"
+      },
+      {
+        "name": "bdwlan.e06",
+        "size": 125420,
+        "sha256": "9a4d4e3a0d76c21c28484b71c9d6afec7c1366d599c230f965d4347eb6a0b486"
+      },
+      {
+        "name": "bdwlan.e07",
+        "size": 125420,
+        "sha256": "a97a854bf98972cca87a82e56497cd4d01ffb04d773ae01cdba2c57c1527c0b1"
+      },
+      {
+        "name": "bdwlan.e08",
+        "size": 125420,
+        "sha256": "25013d74651d94deb4120a2c2bb6dbeb1db42267b3d9eb5ccfef85a064763c2b"
+      },
+      {
+        "name": "bdwlan.e09",
+        "size": 125420,
+        "sha256": "418b3e8e1857302bf935df158b65f493fd3c08b1f2baec2db5550064232e0d30"
+      },
+      {
+        "name": "bdwlan.e0a",
+        "size": 125420,
+        "sha256": "9700a37892d3831e4cc5862bdeabc686cdc215955b2f75adbf8edb83d7e6e15b"
+      },
+      {
+        "name": "bdwlan.e0b",
+        "size": 125420,
+        "sha256": "5313c59febdfa6b2450878c4f7caae0ae2767e932ae266304837a57eca3e2269"
+      },
+      {
+        "name": "bdwlan.e0c",
+        "size": 125420,
+        "sha256": "e8af2246f4d7ff73b2053cffc50c95d7737dfc80e90821e88c6a6125366f3b4e"
+      },
+      {
+        "name": "bdwlan.e0d",
+        "size": 125420,
+        "sha256": "926ec040b9d6f59c4c10180c5dbc7f24251f89840cd78d7808283be53fa99451"
+      },
+      {
+        "name": "bdwlan.e0e",
+        "size": 125420,
+        "sha256": "a569efe39292da69d76f683777ea0784aa95e2b68b2c924d8ad46e3185e333b2"
+      },
+      {
+        "name": "bdwlan.e0f",
+        "size": 125420,
+        "sha256": "cd9bd503d4d955bf987eed019ace28261f64c346b1abc63344280bfb63b781c0"
+      },
+      {
+        "name": "bdwlan.e10",
+        "size": 125420,
+        "sha256": "4eb1e755811b2664bd965d38104e2d9382f71038a8a9c1f5c211ec9732bab7a3"
+      },
+      {
+        "name": "bdwlan.e11",
+        "size": 125420,
+        "sha256": "b899dda7f67109ba4e96a4f0fc1d252f0f97b2ef185a0c7feb3c9ef7af8dfb46"
+      },
+      {
+        "name": "bdwlan.e12",
+        "size": 125420,
+        "sha256": "1cf6606c621ef91a662777651b2867f7f688412712232348cea8907ba08fe800"
+      },
+      {
+        "name": "bdwlan.e13",
+        "size": 125420,
+        "sha256": "25cf21e18b4c5bb25cc27020f58f56849c1ff55187441d5377d064918c6ac8a3"
+      },
+      {
+        "name": "bdwlan.e14",
+        "size": 125420,
+        "sha256": "59ea9ff80990c3a1d2164b89bee910929e89b570f22201ad52f034d0f7ef107e"
+      },
+      {
+        "name": "bdwlan.e15",
+        "size": 125420,
+        "sha256": "d79f8e38d2bb9e34bba1a6c335ea60eda840ac37ff4bc4003b4272bf16d10c5c"
+      },
+      {
+        "name": "bdwlan.e16",
+        "size": 125420,
+        "sha256": "2d7405783b514870819ed466107631f2a87782bc4c2b5e205d19dd622961a007"
+      },
+      {
+        "name": "bdwlan.e17",
+        "size": 125420,
+        "sha256": "acbba0b353a29f3dc5f53c5d440b5513ce8405b20307c3dd2f3c0dc417137699"
+      },
+      {
+        "name": "bdwlan.e18",
+        "size": 125420,
+        "sha256": "c5b23e292da5158d7da666f2248094a12dcdfcf42908571562832b79d38f077c"
+      },
+      {
+        "name": "bdwlan.elf",
+        "size": 125420,
+        "sha256": "02cdf4d32ef7b99eaceff63349168acd2c4efe5aca825bdc19858c0a5eee3e74"
+      },
+      {
+        "name": "bdwlan06.e03",
+        "size": 125424,
+        "sha256": "93d8e3c82da86766d7e20522d97eee325dab254f7500bac14e8931ae61abf03c"
+      },
+      {
+        "name": "bdwlan08.e02",
+        "size": 125424,
+        "sha256": "e000665821db4ea4ec14f7ba9bbf3b50803885b1517a7adc94f24026b1ed09ed"
+      },
+      {
+        "name": "bdwlan_qcc2070_1p0_ncm810_WoS.elf",
+        "size": 125420,
+        "sha256": "3a16fc804de1e6de65d028d3ad97c5e25157fb478ce1708dd1aceb9dc319f9b0"
+      },
+      {
+        "name": "bdwlan_qcc2072_1p0_ncm820A.elf",
+        "size": 125420,
+        "sha256": "3a16fc804de1e6de65d028d3ad97c5e25157fb478ce1708dd1aceb9dc319f9b0"
+      },
+      {
+        "name": "bdwlan_qcc6705_1p0_ncm620_WoS.elf",
+        "size": 125420,
+        "sha256": "3a16fc804de1e6de65d028d3ad97c5e25157fb478ce1708dd1aceb9dc319f9b0"
+      },
+      {
+        "name": "Data.msc",
+        "size": 1897995,
+        "sha256": "0e4e9426554ff58a0ab46ee5244ea920b784d35fc49bfb7607efcc1093f9e574"
+      },
+      {
+        "name": "phy_ucode.elf",
+        "size": 283276,
+        "sha256": "7145fc8f0d41c87072424487415adca4dfb0b3bb24f04f3f3e319878953fa022"
+      },
+      {
+        "name": "qdss_trace_config_v1.cfg",
+        "size": 2757,
+        "sha256": "51d2a8eea0a5ff1adcdc0f32b2c52e2de1e0ead36db20244adb98d423634794c"
+      },
+      {
+        "name": "regdb.bin",
+        "size": 24278,
+        "sha256": "3029c18b47a96b492483558384564536c50696649ac274e9ffe6e021386cfe1e"
+      },
+      {
+        "name": "wlanfw.bin",
+        "size": 6832192,
+        "sha256": "0602dcccc75eef4166603ca4a34df489cbe1d9db01f204f3a1a242970d93cdc0"
+      }
+    ],
+    "otherFiles": [
+      {
+        "name": "qcwlancol8270.cat",
+        "size": 28577,
+        "sha256": "21a844710b6aedeb67d930448cfaa8f226d926c22bf4fa74ef57b85874daab39"
+      },
+      {
+        "name": "qcwlancol8270.inf",
+        "size": 60384,
+        "sha256": "48a199b3b5b4603f33ec9f88a1ee6b9f86ed39c2a635c9974ecb5b60d8f71617"
+      },
+      {
+        "name": "qcwlancol8270.sys",
+        "size": 4100416,
+        "sha256": "a3a05f5882754b972cef9454ac69e3f284eab28f9c513480b77f8251ab781da4"
+      }
+    ],
+    "infs": [
+      "drivers/qcwlancol8270.inf_arm64_109b2e47f5941910/qcwlancol8270.inf"
+    ]
+  },
+  {
+    "folder": "qcwlan_ext_wpss8270.inf_arm64_0f69cb3b551cca88",
+    "inf": "oem70.inf",
+    "provider": null,
+    "version": "1.0.4668.3600",
+    "date": "2026-08-04",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) Peripheral Image Loader Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_06E0%26SUBSYS_CRDA8270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "qcwlan_ext_wpss8270.cat",
+        "size": 11877,
+        "sha256": "425fbc64c6d276f65a8d57c79d147ad380c2ff8a4fd8ef79279453486eb81829"
+      },
+      {
+        "name": "qcwlan_ext_wpss8270.inf",
+        "size": 4692,
+        "sha256": "47dc9f60df63bff0963ca7ba5cdf4e46cb02fc7094effeed6d0274edf9b38f24"
+      }
+    ],
+    "infs": [
+      "drivers/qcwlan_ext_wpss8270.inf_arm64_0f69cb3b551cca88/qcwlan_ext_wpss8270.inf"
+    ]
+  },
+  {
+    "folder": "qcxhcifilter8270.inf_arm64_4da25dc67b87313f",
+    "inf": "oem73.inf",
+    "provider": null,
+    "version": "1.0.4619.9600",
+    "date": "2026-06-08",
+    "extension": true,
+    "devices": [
+      "Qualcomm(R) USB3(TM) eXtensible Host Controller"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CQCOM1323",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "QcXhciFilter8270.cat",
+        "size": 11489,
+        "sha256": "f89bb2b8a0e2ced14bfda075d8e81875eb61956240467dde9217c01b3cabfe24"
+      },
+      {
+        "name": "QcXhciFilter8270.inf",
+        "size": 6336,
+        "sha256": "7a0bfb254d3017db2cb6166a198ffddad419a179da5f819043728bd77fc174f0"
+      },
+      {
+        "name": "QcXhciFilter8270.sys",
+        "size": 410928,
+        "sha256": "f42fc266b0507cca0642a39f3623f0ed36bfabe9259c50bb95f6c0c9123db88d"
+      }
+    ],
+    "infs": [
+      "drivers/qcxhcifilter8270.inf_arm64_4da25dc67b87313f/QcXhciFilter8270.inf"
+    ]
+  },
+  {
+    "folder": "rdpbus.inf_arm64_e9e176720ad81f71",
+    "inf": "rdpbus.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Remote Desktop Device Redirector Bus"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ROOT%5CRDPBUS",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "rdpbus.inf",
+        "size": 3056,
+        "sha256": "b1b105b1bdc501b3a59fff2b9cedd51e6a6f3157ecf6161435aef78fa7182eec"
+      },
+      {
+        "name": "rdpbus.sys",
+        "size": 44544,
+        "sha256": "3eebc64eda3b2660b561997dc94a2aea9b1aebffe93ebbb155a1d40e47009976"
+      }
+    ],
+    "infs": [
+      "drivers/rdpbus.inf_arm64_e9e176720ad81f71/rdpbus.inf"
+    ]
+  },
+  {
+    "folder": "sdbus.inf_arm64_386f7fe9c9aeb07c",
+    "inf": "sdbus.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9974",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Qualcomm SoC Secure Digital host controller"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_2466%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "dumpsd.sys",
+        "size": 220024,
+        "sha256": "5917eedbc8cb9ea0ac9c9fb35dc141fb6ccdf79773027e0bfc693f042881b801"
+      },
+      {
+        "name": "sdbus.inf",
+        "size": 43210,
+        "sha256": "f242496788062876ee92e9250237b1df5c9d7636628b90a449e5f8e0859ae7ae"
+      },
+      {
+        "name": "sdbus.sys",
+        "size": 320368,
+        "sha256": "54f0a1b4ff1fc8e307cb93f529d722850ed340d09e390d2a37234a62d35b3ee5"
+      }
+    ],
+    "infs": [
+      "drivers/sdbus.inf_arm64_386f7fe9c9aeb07c/sdbus.inf"
+    ]
+  },
+  {
+    "folder": "spaceport.inf_arm64_753c8bcb58f74c97",
+    "inf": "spaceport.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9974",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Storage Spaces Controller"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=Root%5CSpaceport",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "spacedump.sys",
+        "size": 296264,
+        "sha256": "2a54aaa68c2b0742471fa5acaea5c363734082967bb737883c28332d60ebcc90"
+      },
+      {
+        "name": "spaceport.inf",
+        "size": 2904,
+        "sha256": "3a985752e8216df18159f30656ba5884c17e79ae985c1d674056f2f4f2b3b043"
+      },
+      {
+        "name": "spaceport.sys",
+        "size": 925512,
+        "sha256": "e5856a809a76117bc00383633b9221120995311af56ab0a07f9b83895da7d852"
+      }
+    ],
+    "infs": [
+      "drivers/spaceport.inf_arm64_753c8bcb58f74c97/spaceport.inf"
+    ]
+  },
+  {
+    "folder": "storufs.inf_arm64_d474f9758043d9a0",
+    "inf": "storufs.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Qualcomm Universal Flash Storage (UFS) Host Controller"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_24A5%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "storufs.inf",
+        "size": 27954,
+        "sha256": "f085198e8adcf3ea93c9cf166163edbe0b2f2625b0eca93537652a0a040403b9"
+      },
+      {
+        "name": "storufs.sys",
+        "size": 135008,
+        "sha256": "917a6e2425a22b247ccadfd78faef7f9ed4d38d669943f9bc0d71ce2c28effce"
+      }
+    ],
+    "infs": [
+      "drivers/storufs.inf_arm64_d474f9758043d9a0/storufs.inf"
+    ]
+  },
+  {
+    "folder": "swenum.inf_arm64_cf62048d32ed5d73",
+    "inf": "swenum.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.4202",
+    "date": "2025-05-23",
+    "extension": false,
+    "devices": [
+      "Plug and Play Software Device Enumerator"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ROOT%5CSWENUM",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "swenum.inf",
+        "size": 3252,
+        "sha256": "7342a62f4455d923063510938d3b58b17f0a7eef36063044b84f069dbbc3130b"
+      },
+      {
+        "name": "swenum.sys",
+        "size": 20400,
+        "sha256": "6258049e5c4788aa0d13c114a8b468387bf8f5da821b064440b1cad6875e21b8"
+      }
+    ],
+    "infs": [
+      "drivers/swenum.inf_arm64_cf62048d32ed5d73/swenum.inf"
+    ]
+  },
+  {
+    "folder": "synpd.inf_arm64_bc044c28183b4b00",
+    "inf": "oem74.inf",
+    "provider": "Synaptics",
+    "version": "19.5.35.129",
+    "date": "2026-05-12",
+    "extension": false,
+    "devices": [
+      "Synaptics PrecisionTouchpad Filter Driver"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=HID%5CVEN_SYNA%26DEV_352E%26Col01",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "SynCOM.dll",
+        "size": 1211336,
+        "sha256": "686126f83f80a4cedb442f1ae4aa0ddbf7e17850f0d8ad6f32297c7d556041d0"
+      },
+      {
+        "name": "SynDeviceBridge_inhouse.dll",
+        "size": 490440,
+        "sha256": "895d892dccb6ef1aaa3b055be60ad10824065106994218a42f4d7ef3b8e79da1"
+      },
+      {
+        "name": "SynPD.inf",
+        "size": 1361991,
+        "sha256": "7c5c76b7162fdf1e7936da1f305343c75df7d403498e57b7a6d3067b421a4357"
+      },
+      {
+        "name": "SynTP.cat",
+        "size": 43098,
+        "sha256": "daf8c065aa57ee2a136e07a3cbb5345ae4c22ec52bac27622495eb825ebad7c8"
+      },
+      {
+        "name": "SynTPAPI.dll",
+        "size": 344008,
+        "sha256": "f93b269465c90f4ff7877ed0861d067bb726681e89965f7cd4e0b5f3330bb575"
+      },
+      {
+        "name": "SynTPEnhService.exe",
+        "size": 443848,
+        "sha256": "868b73c1a0ff96f734a81874d77b536c8886197fad75d3843cc289d9928b64be"
+      },
+      {
+        "name": "SynTPRes.dll",
+        "size": 20242888,
+        "sha256": "a38e14d92193f0d5e6b2e691c6986c0d651de5554be4e3b4522b06ec27216b91"
+      },
+      {
+        "name": "SynTPUWP.sys",
+        "size": 873928,
+        "sha256": "e670183283f1f347b1f7f7bb3ebdcda74412ef77ccb7c131318f5ca03e0953bf"
+      },
+      {
+        "name": "SynUWPEnh.exe",
+        "size": 4497352,
+        "sha256": "56fd01db49047c152e3ccccb0c09840ba3626553409bfeee3440e64f76ed97c3"
+      }
+    ],
+    "infs": [
+      "drivers/synpd.inf_arm64_bc044c28183b4b00/SynPD.inf"
+    ]
+  },
+  {
+    "folder": "synservice.inf_arm64_db845f5c2c269165",
+    "inf": "oem76.inf",
+    "provider": "Synaptics",
+    "version": "19.5.35.129",
+    "date": "2026-05-12",
+    "extension": false,
+    "devices": [
+      "Synaptics Service binaries"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=SWC%5CVID_06CB%26PID_000D",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "synservice.inf",
+        "size": 5034,
+        "sha256": "e5f0bdf4f52b37290253872dbd62de846770f193569c1faee5a8e26898856569"
+      },
+      {
+        "name": "SynTP.cat",
+        "size": 43098,
+        "sha256": "daf8c065aa57ee2a136e07a3cbb5345ae4c22ec52bac27622495eb825ebad7c8"
+      },
+      {
+        "name": "SynTPEnhService.exe",
+        "size": 443848,
+        "sha256": "868b73c1a0ff96f734a81874d77b536c8886197fad75d3843cc289d9928b64be"
+      }
+    ],
+    "infs": [
+      "drivers/synservice.inf_arm64_db845f5c2c269165/synservice.inf"
+    ]
+  },
+  {
+    "folder": "syntpfhid.inf_arm64_ca01d6a89fe8462f",
+    "inf": "oem75.inf",
+    "provider": "Synaptics",
+    "version": "19.5.35.129",
+    "date": "2026-05-12",
+    "extension": false,
+    "devices": [
+      "Synaptics TPFHID Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=HID%5CVEN_SYNA%26DEV_352E%26Col02",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "SynTP.cat",
+        "size": 43098,
+        "sha256": "daf8c065aa57ee2a136e07a3cbb5345ae4c22ec52bac27622495eb825ebad7c8"
+      },
+      {
+        "name": "syntpfhid.inf",
+        "size": 15216,
+        "sha256": "a7c583d659f945edec57ab68a14650d325fa9d5df7719e10c63c3d625c99c2a8"
+      },
+      {
+        "name": "SynTPUWP.sys",
+        "size": 873928,
+        "sha256": "e670183283f1f347b1f7f7bb3ebdcda74412ef77ccb7c131318f5ca03e0953bf"
+      }
+    ],
+    "infs": [
+      "drivers/syntpfhid.inf_arm64_ca01d6a89fe8462f/syntpfhid.inf"
+    ]
+  },
+  {
+    "folder": "tdibth.inf_arm64_988f11f99dd442ba",
+    "inf": "tdibth.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Bluetooth Device (RFCOMM Protocol TDI)"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=BTH%5CMS_RFCOMM",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "rfcomm.sys",
+        "size": 224256,
+        "sha256": "c1be828f44d2774fb724ff7b3bc3a025079a1a755212c62ebd2373349538d9b0"
+      },
+      {
+        "name": "tdibth.inf",
+        "size": 6536,
+        "sha256": "5a9d2248eb5600822a7f0c6686758561a7a017b9bb109b7ca5c929a2921f69e5"
+      }
+    ],
+    "infs": [
+      "drivers/tdibth.inf_arm64_988f11f99dd442ba/tdibth.inf"
+    ]
+  },
+  {
+    "folder": "tpm.inf_arm64_616d7f97750ed1ff",
+    "inf": "tpm.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Trusted Platform Module 2.0"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=%7B36DEAA79-C5DD-447C-95E6-B3859589291A%7D%5CTrEETPM",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "tpm.inf",
+        "size": 11620,
+        "sha256": "9c941097ceb8846a2d084118a78c351c593b943a8114c6166a211427303abf57"
+      },
+      {
+        "name": "tpm.sys",
+        "size": 364896,
+        "sha256": "bdf05f6f4122833cbc024b32388ddf69c45fbb3c7c249facdad1224d6534194d"
+      }
+    ],
+    "infs": [
+      "drivers/tpm.inf_arm64_616d7f97750ed1ff/tpm.inf"
+    ]
+  },
+  {
+    "folder": "ucmucsiacpiclient.inf_arm64_e12bfaf1ed25b2e8",
+    "inf": "ucmucsiacpiclient.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "UCM-UCSI ACPI Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_USB%26DEV_C000%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "ucmucsiacpiclient.inf",
+        "size": 2808,
+        "sha256": "9834fa65549e53b8abf37309f74f2a4d0a821f3ebe9b1b92349a74127166f37a"
+      },
+      {
+        "name": "UcmUcsiAcpiClient.sys",
+        "size": 51200,
+        "sha256": "8c5049afa775c1fa38e0f2052e749855b172696dc6e5cff9198329c93c5e521c"
+      }
+    ],
+    "infs": [
+      "drivers/ucmucsiacpiclient.inf_arm64_e12bfaf1ed25b2e8/ucmucsiacpiclient.inf"
+    ]
+  },
+  {
+    "folder": "uefi.inf_arm64_e18c3213d350d652",
+    "inf": "uefi.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft UEFI-Compliant System"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI_HAL%5CUEFI",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "uefi.inf",
+        "size": 2722,
+        "sha256": "2595f7c2e2eb852d5d93972b123f73b689a601e51bdc836d1a41fed8b2f32919"
+      },
+      {
+        "name": "uefi.sys",
+        "size": 67912,
+        "sha256": "79ba53c34bf2e90b464b76293119441bc45c0ef493d19ec2d791110a267d4da7"
+      }
+    ],
+    "infs": [
+      "drivers/uefi.inf_arm64_e18c3213d350d652/uefi.inf"
+    ]
+  },
+  {
+    "folder": "umbus.inf_arm64_7bdfa8fc482939f2",
+    "inf": "umbus.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "UMBus Root Bus Enumerator"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=root%5Cumbus",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "umbus.inf",
+        "size": 8176,
+        "sha256": "1854bccfffd8f7c2a7001d3b571a0d3f97c282370b2dc46de675f682f0584164"
+      },
+      {
+        "name": "umbus.sys",
+        "size": 57856,
+        "sha256": "223e38b491fe7da63113ba69ca68042e77e0441f751c2716d3d82f2d8e7803c1"
+      }
+    ],
+    "infs": [
+      "drivers/umbus.inf_arm64_7bdfa8fc482939f2/umbus.inf"
+    ]
+  },
+  {
+    "folder": "usb.inf_arm64_7a5556260c7b0f62",
+    "inf": "usb.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "USB Composite Device"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=USB%5CVID_30C9%26PID_011D%26REV_0011",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "usb.inf",
+        "size": 41434,
+        "sha256": "931ad0d243ff7f3db6afae1e7acf0ad90c30145abafa5f3dbd9d359481757530"
+      },
+      {
+        "name": "usbccgp.sys",
+        "size": 187232,
+        "sha256": "a0139486bf749d9779140edb119f8e65aa3bad6ab0f1bed3a93474efa4cb9bb8"
+      }
+    ],
+    "infs": [
+      "drivers/usb.inf_arm64_7a5556260c7b0f62/usb.inf"
+    ]
+  },
+  {
+    "folder": "usbhub3.inf_arm64_b5f4eae19b3c928b",
+    "inf": "usbhub3.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2026-11-10",
+    "extension": false,
+    "devices": [
+      "Generic SuperSpeed USB Hub",
+      "Generic USB Hub",
+      "USB Root Hub (USB 3.0)"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=USB%5CROOT_HUB30%26VIDQCOM%26PID1323%26REV0000",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "usbhub3.inf",
+        "size": 11298,
+        "sha256": "ee5c27e4a769f834babff8742a9af984dc3897c32edfdc441892b9a5db0e6ac0"
+      },
+      {
+        "name": "USBHUB3.SYS",
+        "size": 704320,
+        "sha256": "6a54a6c724b2705a4229412e241b719e3275f8e713ab0a9ae6da2f9edc93d51b"
+      }
+    ],
+    "infs": [
+      "drivers/usbhub3.inf_arm64_b5f4eae19b3c928b/usbhub3.inf"
+    ]
+  },
+  {
+    "folder": "usbvideo.inf_arm64_f8113f82614b66ee",
+    "inf": "usbvideo.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "HP FHD Camera"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=USB%5CVID_30C9%26PID_011D%26REV_0011%26MI_00",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "SecureUSBVideo.dll",
+        "size": 67872,
+        "sha256": "f0d164369175b477d320b4b079f354a0f834f35353336f276cb169e064e47c36"
+      },
+      {
+        "name": "usbvideo.inf",
+        "size": 25452,
+        "sha256": "80de5a47864621338c3679eee53fc7d3cbc039c31eaf6ba0f606e5c2eaa83af7"
+      },
+      {
+        "name": "usbvideo.sys",
+        "size": 394080,
+        "sha256": "d4c36dfa023040c5f98865074a65f9360814770b6ace9ee7c00143035013bed0"
+      }
+    ],
+    "infs": [
+      "drivers/usbvideo.inf_arm64_f8113f82614b66ee/usbvideo.inf"
+    ]
+  },
+  {
+    "folder": "usbxhci.inf_arm64_edfa9de1c4dadc31",
+    "inf": "usbxhci.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2026-11-10",
+    "extension": false,
+    "devices": [
+      "Qualcomm(R) USB3(TM) eXtensible Host Controller"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_QCOM%26DEV_1323%26SUBSYS_CRD08270",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "usbxhci.inf",
+        "size": 8454,
+        "sha256": "aa4b62b6f001b9570d36c15a657e423e5b7384102f2c826d8ec3198d600d16d0"
+      },
+      {
+        "name": "USBXHCI.SYS",
+        "size": 737088,
+        "sha256": "3c991669cb14604f6fa9cb41263be4327027722300b667eb2b8f11578e51e867"
+      },
+      {
+        "name": "UsbXhciCompanion.dll",
+        "size": 166800,
+        "sha256": "445a0923ad828a4cf95f4405eebb472654348909354529d9ec26a4c703a986e2"
+      }
+    ],
+    "infs": [
+      "drivers/usbxhci.inf_arm64_edfa9de1c4dadc31/usbxhci.inf"
+    ]
+  },
+  {
+    "folder": "vdrvroot.inf_arm64_d577507d6a8421a3",
+    "inf": "vdrvroot.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1591",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Virtual Drive Enumerator"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ROOT%5Cvdrvroot",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "vdrvroot.inf",
+        "size": 3756,
+        "sha256": "e99a792f67568846803a13f3191d0cba6133efdc1aa47c7fc85221a61526c18b"
+      },
+      {
+        "name": "vdrvroot.sys",
+        "size": 99632,
+        "sha256": "47e2490623dd0e576921fd7568b659fc949c74e95616fdd89506439bf1d51dd3"
+      }
+    ],
+    "infs": [
+      "drivers/vdrvroot.inf_arm64_d577507d6a8421a3/vdrvroot.inf"
+    ]
+  },
+  {
+    "folder": "vocaeffectpack-extension.inf_arm64_d90c31bf98fa7b35",
+    "inf": "VocaEffectPack-Extension.inf",
+    "provider": null,
+    "version": "10.0.26100.8524",
+    "date": "2006-06-21",
+    "extension": true,
+    "devices": [
+      "HP HP OmniBook 3 Laptop 16-ct0xxx"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=COMPUTER%5CGeneric",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "VocaEffectPack-Extension.inf",
+        "size": 1442,
+        "sha256": "cb33dcce4799a4331c510903dd52635fd6f429215fedd1d8d93c06217c389fa4"
+      }
+    ],
+    "infs": [
+      "drivers/vocaeffectpack-extension.inf_arm64_d90c31bf98fa7b35/VocaEffectPack-Extension.inf"
+    ]
+  },
+  {
+    "folder": "voiceclarityep_audio_component.inf_arm64_0b85da3861b1fb64",
+    "inf": "oem90.inf",
+    "provider": "Microsoft Corporation",
+    "version": "1.0.4.55794",
+    "date": "2026-10-16",
+    "extension": false,
+    "devices": [
+      "Voice Clarity"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=SWC%5CVEN_MSFT%26AUDIO_EFFECTPACK_VOICECLARITY",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "voiceclaritycpuapo.dll",
+        "size": 13085352,
+        "sha256": "1ae3ab2ff4d02a8109e3f4274977035ae3298527bc260c908548e2de4336585a"
+      },
+      {
+        "name": "voiceclarityep_audio_component.cat",
+        "size": 126023,
+        "sha256": "0767e452d8e9f37ea4022a27ed30615c3b7e5c1435ae1472a6b267c3bf0de56a"
+      },
+      {
+        "name": "voiceclarityep_audio_component.inf",
+        "size": 11469,
+        "sha256": "20f45642a787f3c5b0ae60d473da1f7a9fdaedae997f7698d099aaa3a40c1feb"
+      }
+    ],
+    "infs": [
+      "drivers/voiceclarityep_audio_component.inf_arm64_0b85da3861b1fb64/voiceclarityep_audio_component.inf"
+    ]
+  },
+  {
+    "folder": "volmgr.inf_arm64_44eccd04a03e5e5a",
+    "inf": "volmgr.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Volume Manager"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ROOT%5CVOLMGR",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "volmgr.inf",
+        "size": 4068,
+        "sha256": "31efc314d3343f061ae0e9220b13f333a70974525fd4c96438d76098f7b7f1c5"
+      },
+      {
+        "name": "volmgr.sys",
+        "size": 117112,
+        "sha256": "0ff0bf10d8625da1ba1210fb1223e8f3a2db533ae5c8691b103b6ee665920b5f"
+      }
+    ],
+    "infs": [
+      "drivers/volmgr.inf_arm64_44eccd04a03e5e5a/volmgr.inf"
+    ]
+  },
+  {
+    "folder": "volume.inf_arm64_aea3209d62636d68",
+    "inf": "volume.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.5074",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Volume"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=STORAGE%5CVolume",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "volume.inf",
+        "size": 2408,
+        "sha256": "38a13ba30b7ce5fa87d6d54735c671201ba0682ce3c9e0bd0c1c095cbfbae145"
+      },
+      {
+        "name": "volume.sys",
+        "size": 17824,
+        "sha256": "c33c84d9028ee28ccce8dee2c33b713be8247bf034fa212da79e157c946d8de1"
+      }
+    ],
+    "infs": [
+      "drivers/volume.inf_arm64_aea3209d62636d68/volume.inf"
+    ]
+  },
+  {
+    "folder": "windowstrustedrtproxy.inf_arm64_d666cc9961fdddc3",
+    "inf": "windowstrustedrtproxy.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.4484",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Windows Trusted Runtime Secure Service"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=%7B4E815EE1-20F8-41EF-8CFF-3C283F02D722%7D%5C%7B16a1ab50-7413-4875-893d-2e5aa0b79888%7D",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "windowstrustedrtproxy.inf",
+        "size": 4266,
+        "sha256": "d2c09d58815a9e0a1150d50bb9b3439296c026e718930fa29d40d0ee2f589367"
+      },
+      {
+        "name": "WindowsTrustedRTProxy.sys",
+        "size": 25464,
+        "sha256": "d0f892d1d3f627d72136064e7de9fd04110690f3c569dbdb4ef789fc63014be3"
+      }
+    ],
+    "infs": [
+      "drivers/windowstrustedrtproxy.inf_arm64_d666cc9961fdddc3/windowstrustedrtproxy.inf"
+    ]
+  },
+  {
+    "folder": "winusb.inf_arm64_fa0a17b9ff782927",
+    "inf": "winusb.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "APP Mode"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=USB%5CVID_30C9%26PID_011D%26REV_0011%26MI_02",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "winusb.inf",
+        "size": 9580,
+        "sha256": "e6ff05bf6c2de8e700c66ff9114d965da666eae7eb894488b067bb6587b925b8"
+      },
+      {
+        "name": "winusb.sys",
+        "size": 117760,
+        "sha256": "389d5837d464c0b701279b0b49bb0b7401cbe5fe2bfea0683bdb38e121ac7b73"
+      }
+    ],
+    "infs": [
+      "drivers/winusb.inf_arm64_fa0a17b9ff782927/winusb.inf"
+    ]
+  },
+  {
+    "folder": "wmiacpi.inf_arm64_0c3beb111d529687",
+    "inf": "wmiacpi.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.1",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Windows Management Interface for ACPI"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ACPI%5CVEN_PNP%26DEV_0C14",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "wmiacpi.inf",
+        "size": 3182,
+        "sha256": "579af2d8d337a2ed023e507bb21452f9b8d7b97e633e1917771018d66fb4b064"
+      },
+      {
+        "name": "wmiacpi.sys",
+        "size": 27648,
+        "sha256": "1b5be2ee06b8eb82a14e640f59ccd454e8b09a2900227bb78ffb41bdef6ac993"
+      }
+    ],
+    "infs": [
+      "drivers/wmiacpi.inf_arm64_0c3beb111d529687/wmiacpi.inf"
+    ]
+  },
+  {
+    "folder": "wstorvsp.inf_arm64_929af0c4929156aa",
+    "inf": "wstorvsp.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Hyper-V Virtual Disk Server"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=root%5Cstorvsp",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "storvsp.sys",
+        "size": 280416,
+        "sha256": "2b054a20e4cc68c452bfc67aa282391f208bd4bd9c084b1ffea2c225d6a5aa14"
+      },
+      {
+        "name": "wstorvsp.inf",
+        "size": 3764,
+        "sha256": "5b97af60f7e6500910052f09ec523e1b43868db166d834af9d68e54411c902dc"
+      }
+    ],
+    "infs": [
+      "drivers/wstorvsp.inf_arm64_929af0c4929156aa/wstorvsp.inf"
+    ]
+  },
+  {
+    "folder": "wvid.inf_arm64_ba4d47d547a773d7",
+    "inf": "wvid.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Hyper-V Virtualization Infrastructure Driver"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=ROOT%5CVID",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "Vid.sys",
+        "size": 784248,
+        "sha256": "cd633c9ef6f26f343f4dd8011919aaf8817c9a849f1608a85fd06ce7e0e16c5d"
+      },
+      {
+        "name": "wvid.inf",
+        "size": 6494,
+        "sha256": "e11bbe67c6e7da230e8a6fd3dff27593fd043ce4f1db6e56d7424c238313f82f"
+      }
+    ],
+    "infs": [
+      "drivers/wvid.inf_arm64_ba4d47d547a773d7/wvid.inf"
+    ]
+  },
+  {
+    "folder": "wvmbusr.inf_arm64_4c9da96d73033e98",
+    "inf": "wvmbusr.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.10068",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Hyper-V Virtual Machine Bus Provider"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=root%5CVMBus",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "vmbuspiper.dll",
+        "size": 69440,
+        "sha256": "f9134b504937591ac83cf344d1eaa874532197bb12bc340986cc4f59aca09154"
+      },
+      {
+        "name": "vmbusr.sys",
+        "size": 297816,
+        "sha256": "f3e3f3f509eb3bc50041115962f7a1dd4f9693cae7942375f61c230aa3a272d4"
+      },
+      {
+        "name": "wvmbusr.inf",
+        "size": 4998,
+        "sha256": "2f4a77e9e79e131fc777f0b636bdfb94ddfd7eb9abf9f9512ab812fde560ecfe"
+      }
+    ],
+    "infs": [
+      "drivers/wvmbusr.inf_arm64_4c9da96d73033e98/wvmbusr.inf"
+    ]
+  },
+  {
+    "folder": "wvpcivsp.inf_arm64_42fb22c09d21739a",
+    "inf": "wvpcivsp.inf",
+    "provider": "Microsoft",
+    "version": "10.0.26100.9818",
+    "date": "2006-06-21",
+    "extension": false,
+    "devices": [
+      "Microsoft Hyper-V PCI Server"
+    ],
+    "catalogSearch": "https://www.catalog.update.microsoft.com/Search.aspx?q=root%5CVpcivsp",
+    "files": [],
+    "otherFiles": [
+      {
+        "name": "vpcivsp.sys",
+        "size": 226656,
+        "sha256": "ba9c14a716c19c2090f8eb04ace7c506d55883dc0e76fc352cfb0de4347c5e54"
+      },
+      {
+        "name": "wvpcivsp.inf",
+        "size": 5114,
+        "sha256": "43add13675e31afbaa576b979d2d4534f1c2564ee6673e32fbf72e5e86e869c2"
+      }
+    ],
+    "infs": [
+      "drivers/wvpcivsp.inf_arm64_42fb22c09d21739a/wvpcivsp.inf"
+    ]
+  }
+]
