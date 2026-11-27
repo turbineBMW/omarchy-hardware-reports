@@ -1,0 +1,74 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; File:               SurfaceTouchG6FwUpdateExtnPackage.inf
+;
+; Description:        Driver installation file for Surface G6 Touch Firmware Update Extension Package.
+;
+; Versions.begin   !DO NOT DELETE!
+; FW_MSHW0484 (11): Version 63.20.137 (0x3F001489)
+; Versions.end   !DO NOT DELETE!
+;
+; Copyright (C) Microsoft Corporation.  All Rights Reserved.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Version]
+Signature="$Windows NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%ManufacturerName%
+ExtensionId = {3E168111-593B-4115-AC55-99D93F3C9DD0}
+CatalogFile=SurfaceTouchG6FwUpdateExtnPackage.cat
+DriverVer = 03/04/2024,1.21.353.0
+PnpLockdown=1
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...19041
+
+[Standard.NTARM64.10.0...19041]
+%SurfaceTouchG6FwUpdateExtnPackage.ExtensionDesc%=SurfaceTouchG6FwUpdateExtnPackage, HID\VEN_MSHW&DEV_0484&Col06
+
+; =================== UMDF Device ==================================
+
+[SurfaceTouchG6FwUpdateExtnPackage.NT]
+CopyFiles=SurfaceTouchG6FwUpdateExtnPackage.CopyFiles
+
+[SurfaceTouchG6FwUpdateExtnPackage.NT.HW]
+AddReg = SurfaceTouchG6FwUpdateExtnPackage_HWAddReg
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[DestinationDirs]
+SurfaceTouchG6FwUpdateExtnPackage.CopyFiles=13
+
+; =================== FW Information ===========================
+[SurfaceTouchG6FwUpdateExtnPackage_HWAddReg]
+HKR,,FriendlyName,,%FwUpdateFriendlyName%
+HKR,,HidTargetInStack,0x00010001, 1
+HKR,,Protocol,0x00010001, 1
+HKR,,UsageTableIndex, 0x00010001, 0
+
+; SurfaceTouchG6_FirmwareAddReg.begin   !DO NOT DELETE!
+HKR,CFU\FW_MSHW0484,Offer, 0x00000000, %13%\SurfaceTouchG6_FW_MSHW0484.offer.bin 
+HKR,CFU\FW_MSHW0484,Payload, 0x00000000, %13%\SurfaceTouchG6_FW_MSHW0484.payload.bin 
+; SurfaceTouchG6_FirmwareAddReg.end   !DO NOT DELETE!
+
+[SourceDisksFiles]
+; SourceDisksFiles.begin   !DO NOT DELETE!
+SurfaceTouchG6_FW_MSHW0484.offer.bin=1 
+SurfaceTouchG6_FW_MSHW0484.payload.bin=1 
+; SourceDisksFiles.end   !DO NOT DELETE!
+
+[SurfaceTouchG6FwUpdateExtnPackage.CopyFiles]
+; SurfaceTouchG6_CopyFiles.begin   !DO NOT DELETE!
+SurfaceTouchG6_FW_MSHW0484.offer.bin 
+SurfaceTouchG6_FW_MSHW0484.payload.bin 
+; SurfaceTouchG6_CopyFiles.end   !DO NOT DELETE!
+
+; =================== Generic ==================================
+
+[Strings]
+ManufacturerName="Surface"
+SurfaceTouchG6FwUpdateExtnPackage.ExtensionDesc="Surface G6 Touch Firmware Update"
+DiskName = "Surface G6 Touch Firmware Update Installation Disk"
+FwUpdateFriendlyName= "Surface Touch G6 Firmware Update"
+

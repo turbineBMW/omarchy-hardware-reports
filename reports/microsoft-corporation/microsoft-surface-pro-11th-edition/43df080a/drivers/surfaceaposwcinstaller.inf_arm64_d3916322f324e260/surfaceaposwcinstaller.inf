@@ -1,0 +1,234 @@
+;===================================================================
+; Surface Render APO Driver Extension
+; Copyright (c)2020, Microsoft Corporation
+;===================================================================
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = AudioProcessingObject
+ClassGuid   = {5989fce8-9cd0-467d-8a6a-5419e31529d4}
+Provider    = %SURFACE_APO_ProviderName%
+DriverVer = 06/28/2024,1.216.42.0
+CatalogFile = SurfaceAPOSwcInstaller.cat
+PnpLockDown = 1
+
+[SourceDisksNames]
+1 = Disk
+
+[SourceDisksFiles]
+SurfaceAPO.dll  = 1
+NOTICE.txt            = 1
+
+[DestinationDirs]
+Apo_CopyFiles = 13 ; Driver Package's DriverStore Directory
+
+[Manufacturer]
+%SURFACE_APO_MfgName% = DeviceExtensions,NTARM64.10.0...19041,NTARM64.10.0...22000
+
+[DeviceExtensions.NTARM64.10.0...19041]
+%Device.ExtensionDesc% = SurfaceAPO_SWC_Install_Win10,SWC\VEN_MSFT&PID_SURFACEAPO
+
+[DeviceExtensions.NTARM64.10.0...22000]
+%Device.ExtensionDesc% = SurfaceAPO_SWC_Install_Win11,SWC\VEN_MSFT&PID_SURFACEAPO
+
+[SurfaceAPO_SWC_Install_Win10.NT]
+CopyFiles = Apo_CopyFiles
+AddReg = Apo_AddReg_Win10
+
+[SurfaceAPO_SWC_Install_Win11.NT]
+CopyFiles = Apo_CopyFiles
+AddReg = Apo_AddReg_Win11
+
+[SurfaceAPO_SWC_Install_Win10.NT.Services]
+AddService = ,0x00000002 ; NULL service for APO
+
+[SurfaceAPO_SWC_Install_Win11.NT.Services]
+AddService = ,0x00000002 ; NULL service for APO
+
+[Apo_CopyFiles]
+SurfaceAPO.dll
+NOTICE.txt
+
+[Apo_AddReg_Win10]
+; MFX CLSID registration
+HKCR,CLSID\%SURFACE_RENDER_MFX_CLSID%,,,%SURFACE_RENDER_MFX_FriendlyName%
+HKCR,CLSID\%SURFACE_RENDER_MFX_CLSID%\InProcServer32,,%REG_SZ%,%13%\SurfaceAPO.dll
+HKCR,CLSID\%SURFACE_RENDER_MFX_CLSID%\InProcServer32,ThreadingModel,,"Both"
+
+; EFX CLSID registration
+HKCR,CLSID\%SURFACE_RENDER_EFX_CLSID%,,,%SURFACE_RENDER_EFX_FriendlyName%
+HKCR,CLSID\%SURFACE_RENDER_EFX_CLSID%\InProcServer32,,%REG_SZ%,%13%\SurfaceAPO.dll
+HKCR,CLSID\%SURFACE_RENDER_EFX_CLSID%\InProcServer32,ThreadingModel,,"Both"
+
+; SFX CLSID registration
+HKCR,CLSID\%SURFACE_CAPTURE_SFX_CLSID%,,,%SURFACE_CAPTURE_SFX_FriendlyName%
+HKCR,CLSID\%SURFACE_CAPTURE_SFX_CLSID%\InProcServer32,,%REG_SZ%,%13%\SurfaceAPO.dll
+HKCR,CLSID\%SURFACE_CAPTURE_SFX_CLSID%\InProcServer32,ThreadingModel,,"Both"
+
+; APO properties registration
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"FriendlyName",,%SURFACE_RENDER_MFX_FriendlyName%
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"Copyright",,%SURFACE_APO_Copyright%
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MajorVersion",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MinorVersion",%REG_DWORD%,0
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"Flags",%REG_DWORD%,%APO_FLAG_DEFAULT%
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MinInputConnections",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MaxInputConnections",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MinOutputConnections",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MaxOutputConnections",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MaxInstances",%REG_DWORD%,0xffffffff
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"NumAPOInterfaces",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"APOInterface0",,"{45b4298f-03ab-4660-a5d1-c74b3f56ddf5}"
+
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"FriendlyName",,%SURFACE_RENDER_EFX_FriendlyName%
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"Copyright",,%SURFACE_APO_Copyright%
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MajorVersion",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MinorVersion",%REG_DWORD%,0
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"Flags",%REG_DWORD%,%APO_FLAG_DEFAULT%
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MinInputConnections",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MaxInputConnections",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MinOutputConnections",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MaxOutputConnections",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MaxInstances",%REG_DWORD%,0xffffffff
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"NumAPOInterfaces",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"APOInterface0",,"{2a08369f-ed7a-4ced-8aa5-f6d25a858e82}"
+
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"FriendlyName",,%SURFACE_CAPTURE_SFX_FriendlyName%
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"Copyright",,%SURFACE_APO_Copyright%
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MajorVersion",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MinorVersion",%REG_DWORD%,0
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"Flags",%REG_DWORD%,%APO_FLAG_DEFAULT%
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MinInputConnections",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MaxInputConnections",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MinOutputConnections",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MaxOutputConnections",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MaxInstances",%REG_DWORD%,0xffffffff
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"NumAPOInterfaces",%REG_DWORD%,1
+HKCR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"APOInterface0",,"{310BFBE7-1FC2-43F1-8ADA-D5736359729E}"
+
+[Apo_AddReg_Win11]
+; MFX CLSID registration
+HKR,Classes\CLSID\%SURFACE_RENDER_MFX_CLSID%,,,%SURFACE_RENDER_MFX_FriendlyName%
+HKR,Classes\CLSID\%SURFACE_RENDER_MFX_CLSID%\InProcServer32,,%REG_SZ%,%13%\SurfaceAPO.dll
+HKR,Classes\CLSID\%SURFACE_RENDER_MFX_CLSID%\InProcServer32,ThreadingModel,,"Both"
+
+; EFX CLSID registration
+HKR,Classes\CLSID\%SURFACE_RENDER_EFX_CLSID%,,,%SURFACE_RENDER_EFX_FriendlyName%
+HKR,Classes\CLSID\%SURFACE_RENDER_EFX_CLSID%\InProcServer32,,%REG_SZ%,%13%\SurfaceAPO.dll
+HKR,Classes\CLSID\%SURFACE_RENDER_EFX_CLSID%\InProcServer32,ThreadingModel,,"Both"
+
+; SFX CLSID registration
+HKR,Classes\CLSID\%SURFACE_CAPTURE_SFX_CLSID%,,,%SURFACE_CAPTURE_SFX_FriendlyName%
+HKR,Classes\CLSID\%SURFACE_CAPTURE_SFX_CLSID%\InProcServer32,,%REG_SZ%,%13%\SurfaceAPO.dll
+HKR,Classes\CLSID\%SURFACE_CAPTURE_SFX_CLSID%\InProcServer32,ThreadingModel,,"Both"
+
+; APO properties registration
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"FriendlyName",,%SURFACE_RENDER_MFX_FriendlyName%
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"Copyright",,%SURFACE_APO_Copyright%
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MajorVersion",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MinorVersion",%REG_DWORD%,0
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"Flags",%REG_DWORD%,%APO_FLAG_DEFAULT%
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MinInputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MaxInputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MinOutputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MaxOutputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"MaxInstances",%REG_DWORD%,0xffffffff
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"NumAPOInterfaces",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_MFX_CLSID%,"APOInterface0",,"{45b4298f-03ab-4660-a5d1-c74b3f56ddf5}"
+
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"FriendlyName",,%SURFACE_RENDER_EFX_FriendlyName%
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"Copyright",,%SURFACE_APO_Copyright%
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MajorVersion",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MinorVersion",%REG_DWORD%,0
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"Flags",%REG_DWORD%,%APO_FLAG_DEFAULT%
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MinInputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MaxInputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MinOutputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MaxOutputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"MaxInstances",%REG_DWORD%,0xffffffff
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"NumAPOInterfaces",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_RENDER_EFX_CLSID%,"APOInterface0",,"{2a08369f-ed7a-4ced-8aa5-f6d25a858e82}"
+
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"FriendlyName",,%SURFACE_CAPTURE_SFX_FriendlyName%
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"Copyright",,%SURFACE_APO_Copyright%
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MajorVersion",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MinorVersion",%REG_DWORD%,0
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"Flags",%REG_DWORD%,%APO_FLAG_DEFAULT%
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MinInputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MaxInputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MinOutputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MaxOutputConnections",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"MaxInstances",%REG_DWORD%,0xffffffff
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"NumAPOInterfaces",%REG_DWORD%,1
+HKR,AudioEngine\AudioProcessingObjects\%SURFACE_CAPTURE_SFX_CLSID%,"APOInterface0",,"{310BFBE7-1FC2-43F1-8ADA-D5736359729E}"
+
+[Strings]
+; Surface APO strings
+Device.ExtensionDesc                                                = "Microsoft Surface APO"
+SURFACE_APO_FriendlyName                                            = "Microsoft Surface APO"
+SURFACE_APO_VirtualDeviceDesc                                       = "Surface APO Virtual Device"
+SURFACE_APO_MfgName                                                 = "Surface"
+SURFACE_APO_ProviderName                                            = "Surface"
+SURFACE_APO_Copyright                                               = "Copyright (c) 2021 Microsoft"
+SURFACE_RENDER_MFX_FriendlyName                                     = "Microsoft Surface Render APO - MFX"
+SURFACE_RENDER_MFX_CLSID                                            = "{34d30cd8-370e-4229-85be-3346c594c805}"
+SURFACE_RENDER_EFX_FriendlyName                                     = "Microsoft Surface Render APO - EFX"
+SURFACE_RENDER_EFX_CLSID                                            = "{501c3309-d524-4613-83a1-445cc9217e11}"
+SURFACE_RENDER_EFX_PROXY_UUID                                       = "{f8b10b85-0562-4f93-940f-a0d27cb5d9c9}"
+SURFACE_CAPTURE_SFX_FriendlyName                                    = "Microsoft Surface Capture APO - SFX"
+SURFACE_CAPTURE_SFX_CLSID                                           = "{0400C31F-FF92-42E4-B0E5-79E3FB248749}"
+PKEY_SurfaceApoConfigFilename                                       = "{c1f75c4c-3243-11ea-850d-2e728ce88125},0"
+PKEY_SurfaceApoEfxProxyNames                                        = "{c1f75c4c-3243-11ea-850d-2e728ce88125},1"
+PKEY_SurfaceApoEnableMteMode                                        = "{c1f75c4c-3243-11ea-850d-2e728ce88125},7"
+
+; System defined CLSIDs
+PKEY_ItemNameDisplay                                                = "{B725F130-47EF-101A-A5F1-02608C9EEBAC},10"
+PKEY_FX_Association                                                 = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},0"
+PKEY_AudioEndpoint_Association                                      = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
+PKEY_AudioEndpoint_Supports_EventDriven_Mode                        = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},7"
+PKEY_SYSFX_UiClsid                                                  = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},3"
+PKEY_CompositeFX_EndpointEffectClsid                                = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},15"
+PKEY_CompositeFX_ModeEffectClsid                                    = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},14"
+PKEY_CompositeFX_StreamEffectClsid                                  = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},13"
+PKEY_CompositeFX_Offload_ModeEffectClsid                            = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},20"
+PKEY_CompositeFX_Offload_StreamEffectClsid                          = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},19"
+PKEY_FX_EndpointEffectClsid                                         = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},7"
+PKEY_FX_ModeEffectClsid                                             = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},6"
+PKEY_FX_StreamEffectClsid                                           = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},5"
+PKEY_FX_Offload_ModeEffectClsid                                     = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},12"
+PKEY_FX_Offload_StreamEffectClsid                                   = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},11"
+PKEY_CompositeFX_KeywordDetector_EndpointEffectClsid                = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},18"
+PKEY_CompositeFX_KeywordDetector_ModeEffectClsid                    = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},17"
+PKEY_CompositeFX_KeywordDetector_StreamEffectClsid                  = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},16"
+PKEY_FX_KeywordDetector_EndpointEffectClsid                         = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},10"
+PKEY_FX_KeywordDetector_ModeEffectClsid                             = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},9"
+PKEY_FX_KeywordDetector_StreamEffectClsid                           = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},8"
+PKEY_EFX_ProcessingModes_Supported_For_Streaming                    = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},7"
+PKEY_MFX_ProcessingModes_Supported_For_Streaming                    = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},6"
+PKEY_SFX_ProcessingModes_Supported_For_Streaming                    = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},5"
+PKEY_MFX_Offload_ProcessingModes_Supported_For_Streaming            = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},12"
+PKEY_SFX_Offload_ProcessingModes_Supported_For_Streaming            = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},11"
+PKEY_EFX_KeywordDetector_ProcessingModes_Supported_For_Streaming    = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},10"
+PKEY_MFX_KeywordDetector_ProcessingModes_Supported_For_Streaming    = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},9"
+PKEY_SFX_KeywordDetector_ProcessingModes_Supported_For_Streaming    = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},8"
+AUDIO_SIGNALPROCESSINGMODE_DEFAULT                                  = "{C18E2F7E-933D-4965-B7D1-1EEF228D2AF3}"
+AUDIO_SIGNALPROCESSINGMODE_RAW                                      = "{9E90EA20-B493-4FD1-A1A8-7E1361A956CF}"
+AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS                           = "{98951333-B9CD-48B1-A0A3-FF40682D73F7}"
+AUDIO_SIGNALPROCESSINGMODE_SPEECH                                   = "{FC1CFC9B-B9D6-4CFA-B5E0-4BB2166878B2}"
+AUDIO_SIGNALPROCESSINGMODE_MEDIA                                    = "{4780004E-7133-41D8-8C74-660DADD2C0EE}"
+AUDIO_SIGNALPROCESSINGMODE_MOVIE                                    = "{B26FEB0D-EC94-477C-9494-D1AB8E753F6E}"
+AUDIO_SIGNALPROCESSINGMODE_NOTIFICATION                             = "{9CF2A70B-F377-403B-BD6B-360863E0355C}"
+KSCATEGORY_AUDIO                                                    = "{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_RENDER                                                   = "{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_CAPTURE                                                  = "{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_REALTIME                                                 = "{EB115FFC-10C8-4964-831D-6DCB02E6F23F}"
+KSCATEGORY_TOPOLOGY                                                 = "{DDA54A40-1E4C-11D1-A050-405705C10000}"
+KSNODETYPE_ANY                                                      = "{00000000-0000-0000-0000-000000000000}" 
+KSNODETYPE_SPEAKER                                                  = "{DFF21CE1-F70F-11D0-B917-00A0C9223196}"
+REG_SZ                                                              = 0x00000000
+REG_MULTI_SZ                                                        = 0x00010000
+REG_EXPAND_SZ                                                       = 0x00020000
+REG_BINARY                                                          = 0x00000001
+REG_DWORD                                                           = 0x00010001
+REG_NONE                                                            = 0x00020001
+FLG_ADDREG_DELVAL                                                   = 0x00000004
+APO_FLAG_DEFAULT                                                    = 0x0000000e
+REG_MULTI_SZ_APPEND                                                 = 0x00010008

@@ -1,0 +1,69 @@
+; 
+; Copyright (c) 2022-2023 Qualcomm Technologies, Inc.
+; All Rights Reserved.
+; Confidential and Proprietary - Qualcomm Technologies, Inc.
+;
+; Module Name:
+;
+;    surface_spiext_den.inf
+;
+; Abstract:
+;
+;    Extension Inf file for Qualcomm spi driver
+;
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = Extension
+ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider    = %Surface%
+ExtensionId = {7d1ffebb-ed92-4b08-b8b9-ec5802f759f4}
+DriverVer   = 10/12/2023,1.0.3849.5700
+CatalogFile = surfacespiext8380.cat
+PnpLockDown = 1
+
+[SourceDisksNames]
+1 = %Disk_Description%
+
+[SourceDisksFiles]
+BSRC_QSPI_DEN.bin = 1
+
+[DestinationDirs]
+DefaultDestDir = 13 ; Driver Store
+Resources_Dir = 13
+
+;*****************************************
+; qcspi ext client driver Install Section
+;*****************************************
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[Manufacturer]
+%Surface%=Surface, NTARM64.10.0...16299
+
+[Surface.NTARM64.10.0...16299]
+%Device_Description% = SPI_Install, ACPI\VEN_QCOM&DEV_0C0E&SUBSYS_MSHW0489
+
+[SPI_Install]
+CopyFiles   = @BSRC_QSPI_DEN.bin
+AddProperty = WDTFSOCDeviceCategory
+
+[WDTFSOCDeviceCategory]
+{5D078032-6378-437B-8DA5-9B32B7CA3FDD},2,7,,2
+
+[SPI_Install.HW]
+AddReg=Resource_Registry
+
+[Resource_Registry]
+HKR,Resources,"QSPIBinaryPath",%REG_SZ%, %13%\BSRC_QSPI_DEN.bin
+
+[SPI_wdfsect]
+KmdfLibraryVersion = 1.23
+
+[Strings]
+Surface   = "Surface"
+Disk_Description    = "Qualcomm SPI Device Installation Disk"
+Device_Description  = "Qualcomm(R) SPI Bus Device"
+Service_Name        = "Qualcomm(R) SPI Bus Device"
+REG_SZ              = 0x00000000

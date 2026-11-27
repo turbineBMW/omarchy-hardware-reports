@@ -1,0 +1,21 @@
+{
+  "type": "devicetree",
+  "name": "Microsoft Corporation Microsoft Surface Pro, 11th Edition",
+  "compatible": "",
+  "hwids": [
+    "fdc6d8ba-ec50-546e-a3c0-62a5f58116c7",
+    "c5c1df9c-209b-59e6-bfac-bb5409d2daa5",
+    "4403a531-07b3-512b-8976-f4aa73287449",
+    "aca467c0-5fc2-59ad-8ed5-1b7a0988d11c",
+    "95971fb3-d478-591f-9ea3-eb0af0d1dfb5",
+    "c9c14db9-2b61-597a-a4ba-84397fe75f63",
+    "7cef06f5-e7e6-56d7-b123-a6d640a5d302",
+    "48b86a5e-1955-5799-9577-150f9e1a69e4",
+    "06128fee-87dc-50f6-8a3f-97cd9a6d8bf6",
+    "84b2e1d1-e695-5f41-8c41-cf1f059c616a",
+    "16a47337-1f8b-5bd3-b3bd-8e50b31cb1c9",
+    "2a0f2d6c-3aa0-5386-9d6e-0ddbfa0eeb94",
+    "5003998f-4753-59a4-85d4-e62b9c30a421",
+    "2245edda-fd9b-5703-a77a-39a91bf64878"
+  ]
+}
