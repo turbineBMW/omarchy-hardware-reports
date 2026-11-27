@@ -1,0 +1,119 @@
+;
+; SurfaceNullCapsule.inf
+; 1.0.0.0
+; Copyright (c) Microsoft Corporation. All Rights Reserved.
+;
+[Version]
+Signature   = "$WINDOWS NT$"
+Provider    = %Provider%
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+DriverVer   = 04/04/1975,1.0.0.0
+CatalogFile = SurfaceNullCapsule.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%MfgName% = Firmware,NTARM64.10.0...19041
+
+[Firmware.NTARM64.10.0...19041]
+%FirmwareDesc_SMF15%            = Firmware_Install,UEFI\RES_{2334AF6C-6B63-4D65-9F06-49AA2885B3ED}
+%FirmwareDesc_SMF13%            = Firmware_Install,UEFI\RES_{02A4EFB5-AEE7-4C69-9802-53A772F1822D}
+%FirmwareDesc_UEFI%             = Firmware_Install,UEFI\RES_{341AB8FC-DE64-4C1B-9975-30BD7B15A24E}
+%FirmwareDesc_RETIMER0%         = Firmware_Install,UEFI\RES_{5F576268-6253-41E3-8884-81A6C472BE44}
+%FirmwareDesc_RETIMER1%         = Firmware_Install,UEFI\RES_{9AC455B3-08E9-42D0-99A9-1ECFA3EA6C4E}
+%FirmwareDesc_DPP15%            = Firmware_Install,UEFI\RES_{92299294-2169-4BB9-AE73-739A50212F6E}
+%FirmwareDesc_DPP13%            = Firmware_Install,UEFI\RES_{F05BB65C-967F-4346-B364-7A0CD713E838}
+%FirmwareDesc_SAM%              = Firmware_Install,UEFI\RES_{0B5BB90C-9702-4272-A028-CFB181501D2E}
+%FirmwareDesc_TPM%              = Firmware_Install,UEFI\RES_{1EE8380A-156C-4CE4-9466-56904C638A34}
+%FirmwareDesc_TCON13OUT%        = Firmware_Install,UEFI\RES_{ED13933A-2982-4A02-8F5C-1C9AE9D1FBE9}
+%FirmwareDesc_TCON13IN32K%      = Firmware_Install,UEFI\RES_{2654B624-DEEE-452E-8F85-3FC6E4C6DA7C}
+%FirmwareDesc_TCON13IN64K%      = Firmware_Install,UEFI\RES_{254D3CE5-D362-4949-BB43-6EF210D3262C}
+%FirmwareDesc_TCON15%           = Firmware_Install,UEFI\RES_{818BF541-58F1-4898-A2A3-576894EC9CCB}
+%FirmwareDesc_TOUCH%            = Firmware_Install,UEFI\RES_{8893FFD3-E70E-41AE-B908-4F98166BFD4D}
+%FirmwareDesc_TOUCHIN%          = Firmware_Install,UEFI\RES_{2B6EBCE8-098F-499B-BE01-CF4BCAC6F2DC}
+%FirmwareDesc_APDP%             = Firmware_Install,UEFI\RES_{8603CF9E-D259-41E0-A675-17E1B9EB354E}
+
+
+[Firmware_Install.NT]
+CopyFiles = Firmware_CopyFiles
+
+[Firmware_CopyFiles]
+
+[Firmware_Install.NT.Hw]
+AddReg = Firmware_AddReg
+
+[Firmware_AddReg]
+HKR,,FirmwareId,,{2334AF6C-6B63-4D65-9F06-49AA2885B3ED}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{02A4EFB5-AEE7-4C69-9802-53A772F1822D}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{341AB8FC-DE64-4C1B-9975-30BD7B15A24E}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{5F576268-6253-41E3-8884-81A6C472BE44}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{9AC455B3-08E9-42D0-99A9-1ECFA3EA6C4E}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{92299294-2169-4BB9-AE73-739A50212F6E}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{F05BB65C-967F-4346-B364-7A0CD713E838}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{0B5BB90C-9702-4272-A028-CFB181501D2E}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{1EE8380A-156C-4CE4-9466-56904C638A34}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{ED13933A-2982-4A02-8F5C-1C9AE9D1FBE9}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{2654B624-DEEE-452E-8F85-3FC6E4C6DA7C}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{818BF541-58F1-4898-A2A3-576894EC9CCB}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{8893FFD3-E70E-41AE-B908-4F98166BFD4D}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{2B6EBCE8-098F-499B-BE01-CF4BCAC6F2DC}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+HKR,,FirmwareId,,{8603CF9E-D259-41E0-A675-17E1B9EB354E}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+
+[Firmware_Install.NT.Services]
+AddService =  ,2
+
+
+[Strings]
+; localizable
+Provider     = "Surface" 
+MfgName      = "Microsoft Corporation" 
+FirmwareDesc_SMF15 = "Surface SMF"
+FirmwareDesc_SMF13 = "Surface SMF"
+FirmwareDesc_UEFI = "Surface UEFI"
+FirmwareDesc_RETIMER0 = "Surface USB4 Retimer (Port 0)"
+FirmwareDesc_RETIMER1 = "Surface USB4 Retimer (Port 1)"
+FirmwareDesc_DPP15 = "Surface DPP"
+FirmwareDesc_DPP13 = "Surface DPP"
+FirmwareDesc_SAM = "Surface System Aggregator"
+FirmwareDesc_TPM = "Surface TPM"
+FirmwareDesc_TCON13OUT = "Surface TCON"
+FirmwareDesc_TCON13IN32K = "Surface TCON"
+FirmwareDesc_TCON13IN64K = "Surface TCON"
+FirmwareDesc_TCON15 = "Surface TCON"
+FirmwareDesc_TOUCH = "Surface TOUCH"
+FirmwareDesc_TOUCHIN = "Surface TOUCH Support"
+FirmwareDesc_APDP = "Surface APDP"
+
+; non-localizable
+DIRID_WINDOWS = 10
+REG_DWORD     = 0x00010001

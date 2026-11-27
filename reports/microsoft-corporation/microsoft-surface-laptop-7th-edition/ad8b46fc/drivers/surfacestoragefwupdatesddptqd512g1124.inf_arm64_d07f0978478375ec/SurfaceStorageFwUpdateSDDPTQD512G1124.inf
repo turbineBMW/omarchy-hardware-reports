@@ -1,0 +1,69 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; File:               SurfaceStorageFwUpdateSDDPTQD512G1124.inx
+;
+; Description:        Driver installation file for firmware update.
+;
+; Copyright (C) Microsoft Corporation.  All Rights Reserved.
+; Licensed under the MIT license.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Version]
+Signature="$Windows NT$"
+Class=Firmware
+ClassGuid={f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+Provider=%ManufacturerName%
+CatalogFile=SurfaceStorageFwUpdateSDDPTQD512G1124Package.cat
+DriverVer = 07/10/2024,1.7.8.0
+PnPLockDown=1
+
+[SourceDisksNames]
+1= %DiskName%
+
+[DestinationDirs]
+StorFwUpdateSurface.CopyFiles=13
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...19041
+
+[Standard.NTARM64.10.0...19041]
+%StorFwUpdateSurface.DeviceDesc%=StorFwUpdateSurface, SWC\StorageFwUpdate_SDDPTQD512G_112_
+
+[StorFwUpdateSurface.NT]
+Include            = StorFwUpdate.inf
+Needs              = StorFwUpdate.NT
+CopyFiles          = StorFwUpdateSurface.CopyFiles
+
+[StorFwUpdateSurface.NT.Wdf]
+Include            = StorFwUpdate.inf
+Needs              = StorFwUpdate.NT.Wdf
+
+[StorFwUpdateSurface.NT.HW]
+AddReg = StorFwUpdateSurface_HWAddReg
+
+[StorFwUpdateSurface_HWAddReg]
+HKR,,FriendlyName,,%FwUpdateFriendlyName%
+
+; Specify the location of the firmware offer and payload file in the registry.
+; The files are kept in driver store. When deployed, %13% would be expanded to the actual path
+; in driver store.
+;
+HKR,0D9EB3D6-6F14-4E8A-811B-F3B19F7ED98A\0,FirmwareImageVersion, 0x00000000, "73107024"
+HKR,0D9EB3D6-6F14-4E8A-811B-F3B19F7ED98A\0,FirmwareFileName, 0x00000000, %13%\73107024.fluf
+
+[SourceDisksFiles]
+73107024.fluf=1
+
+[StorFwUpdateSurface.CopyFiles]
+73107024.fluf
+
+[StorFwUpdateSurface.NT.Services]
+Include            = StorFwUpdate.inf
+Needs              = StorFwUpdate.NT.Services
+
+; =================== Generic ==================================
+
+[Strings]
+ManufacturerName="Surface"
+StorFwUpdateSurface.DeviceDesc = "Storage Firmware Update WDC SDDPTQD-512G-1124"
+DiskName = "Storage Firmware Update Installation Disk"
+FwUpdateFriendlyName= "WDC NVME SDDPTQD-512G-1124 SN740 Storage Firmware Update"
