@@ -1,0 +1,21 @@
+{
+  "type": "devicetree",
+  "name": "Dell Inc. Inspiron 14 5441",
+  "compatible": "",
+  "hwids": [
+    "43b00bf1-051a-55cf-8aa6-4e0d424e1a52",
+    "38c0b930-f178-5f14-9a14-00d3e13e431b",
+    "8f809737-324b-5bb4-9d24-cc32eef86849",
+    "9cf40b57-a3da-5f9c-8811-efe1b5d32e93",
+    "2d64da22-4984-5a97-8d25-f27e4794e196",
+    "90eab468-ac3a-5857-bac2-606a088a539b",
+    "5e6923e9-1305-5d37-b507-953cf63f106c",
+    "8dd6ba4a-10ab-594e-95c5-aa78f81c0621",
+    "3ab0bff8-9444-58e8-9130-eb9469bb0078",
+    "924908db-a80b-5fff-8917-7e9b79e933eb",
+    "7f89e5f5-d13c-5489-a568-af56ff6fdbed",
+    "d4a5a661-003a-5777-9dd2-bbf81fe92027",
+    "3776b0d2-1eba-5ba7-acc0-fdfc4ac16fb1",
+    "70cb5ae4-a979-54b7-82e8-4307cccadc4b"
+  ]
+}
