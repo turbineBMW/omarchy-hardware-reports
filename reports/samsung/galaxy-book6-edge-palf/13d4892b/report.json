@@ -1,0 +1,299 @@
+{
+  "format": 2,
+  "tool": "1.3.0",
+  "id": "13d4892b",
+  "created": "2026-11-18",
+  "os": "Windows 11 Core 26H1 (build 28000.3501, Arm64)",
+  "identity": {
+    "manufacturer": "Samsung",
+    "family": "Galaxy Book6 Edge",
+    "productName": "Galaxy Book6 Edge - PALF",
+    "sku": "PALF-960XRD-GLYM-0",
+    "version": "1.0",
+    "baseboardManufacturer": "Samsung",
+    "baseboardProduct": "NP960XRD-KB1DE",
+    "biosVendor": "American Megatrends International, LLC.",
+    "biosVersion": "PALF.0.0.29.0",
+    "biosDate": "03/ 5/2026",
+    "biosMajor": 5,
+    "biosMinor": 39,
+    "enclosureType": 10
+  },
+  "processor": "Snapdragon(R) X2 Elite - X2E88100 - Qualcomm Oryon(TM) CPU",
+  "panel": "SDC4188",
+  "chids": [
+    {
+      "type": "0",
+      "fields": "MFPS--BvRr--",
+      "value": "1bf2dd84-0a37-5b89-be76-a6e5ee90b4f9"
+    },
+    {
+      "type": "1",
+      "fields": "MFP---BvRr--",
+      "value": "d3973f0a-7058-5b80-8c10-eefd34f7a126"
+    },
+    {
+      "type": "2",
+      "fields": "M-P---BvRr--",
+      "value": "5f5016ab-b29c-52c6-b3d3-e44d26732edb"
+    },
+    {
+      "type": "3",
+      "fields": "MFPSmp------",
+      "value": "82e1a922-a0e1-5e6f-8ea6-d40e7d035c7f"
+    },
+    {
+      "type": "4",
+      "fields": "MFPS--------",
+      "value": "09be0b55-e2e6-57b0-8908-5b10bea5a34e"
+    },
+    {
+      "type": "5",
+      "fields": "MFP---------",
+      "value": "5b955977-b320-51a7-b71f-cd988db9e1d0"
+    },
+    {
+      "type": "6",
+      "fields": "M--Smp------",
+      "value": "4814ecd1-ea5b-5982-ba17-16148466197c"
+    },
+    {
+      "type": "7",
+      "fields": "M--S--------",
+      "value": "ed115ea6-ab6d-510a-a6e6-3880a310b340"
+    },
+    {
+      "type": "8",
+      "fields": "M-P-mp------",
+      "value": "057b0661-0ea9-57a3-bd6f-5025d8080a66"
+    },
+    {
+      "type": "9",
+      "fields": "M-P---------",
+      "value": "558d9176-3f3d-574b-895f-869bd50c335c"
+    },
+    {
+      "type": "10",
+      "fields": "MF--mp------",
+      "value": "deea9f7b-0abd-5991-a51e-b868be811cdd"
+    },
+    {
+      "type": "11",
+      "fields": "MF----------",
+      "value": "72bd00d9-0e12-574c-8536-cce54dbdb813"
+    },
+    {
+      "type": "12",
+      "fields": "M---------e-",
+      "value": "3e4c6f31-fc0f-5e0f-b21f-8e3b52c17ff7"
+    },
+    {
+      "type": "13",
+      "fields": "M---mp------",
+      "value": "5b460c19-87b8-5127-9984-857fb00957ff"
+    },
+    {
+      "type": "14",
+      "fields": "M-----------",
+      "value": "8fdd277a-a351-5a91-9cd4-80f321765274"
+    },
+    {
+      "type": "ext0",
+      "fields": "MFP--------E",
+      "value": "760af4de-8fd7-577d-ae3c-e3848d5f46c7"
+    },
+    {
+      "type": "ext1",
+      "fields": "MF---------E",
+      "value": "ac25ca72-707c-5bdf-8b8b-96561f3b37ad"
+    },
+    {
+      "type": "ext2",
+      "fields": "M--S-------E",
+      "value": "e72f599e-cdd7-546c-aafe-df2312faa337"
+    }
+  ],
+  "windowsChids": [
+    "1bf2dd84-0a37-5b89-be76-a6e5ee90b4f9",
+    "d3973f0a-7058-5b80-8c10-eefd34f7a126",
+    "5f5016ab-b29c-52c6-b3d3-e44d26732edb",
+    "09be0b55-e2e6-57b0-8908-5b10bea5a34e",
+    "5b955977-b320-51a7-b71f-cd988db9e1d0",
+    "ed115ea6-ab6d-510a-a6e6-3880a310b340",
+    "558d9176-3f3d-574b-895f-869bd50c335c",
+    "72bd00d9-0e12-574c-8536-cce54dbdb813",
+    "3e4c6f31-fc0f-5e0f-b21f-8e3b52c17ff7",
+    "8fdd277a-a351-5a91-9cd4-80f321765274"
+  ],
+  "smbiosVersion": "3.3",
+  "acpi": [
+    {
+      "signature": "FACP",
+      "file": "acpi/facp.dat",
+      "size": 276,
+      "revision": 6,
+      "oemId": "QCOM",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 33920
+    },
+    {
+      "signature": "DSDT",
+      "file": "acpi/dsdt.dat",
+      "size": 466052,
+      "revision": 2,
+      "oemId": "QCOMM",
+      "oemTableId": "SDM8480",
+      "oemRevision": 3
+    },
+    {
+      "signature": "APIC",
+      "file": "acpi/apic.dat",
+      "size": 1529,
+      "revision": 5,
+      "oemId": "QCOM",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 33920
+    },
+    {
+      "signature": "BERT",
+      "file": "acpi/bert.dat",
+      "size": 48,
+      "revision": 1,
+      "oemId": "QCOM",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 33920
+    },
+    {
+      "signature": "BGRT",
+      "file": "acpi/bgrt.dat",
+      "size": 56,
+      "revision": 1,
+      "oemId": "ALASKA",
+      "oemTableId": "A M I",
+      "oemRevision": 17244169
+    },
+    {
+      "signature": "CSRT",
+      "file": "acpi/csrt.dat",
+      "size": 50906,
+      "revision": 0,
+      "oemId": "QCOM",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 33920
+    },
+    {
+      "signature": "DBG2",
+      "file": "acpi/dbg2.dat",
+      "size": 1518,
+      "revision": 1,
+      "oemId": "QCOM",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 33920
+    },
+    {
+      "signature": "FACS",
+      "file": "acpi/facs.dat",
+      "size": 64,
+      "revision": 129,
+      "oemId": "\u001F?",
+      "oemTableId": "",
+      "oemRevision": 0
+    },
+    {
+      "signature": "FPDT",
+      "file": "acpi/fpdt.dat",
+      "size": 52,
+      "revision": 1,
+      "oemId": "ALASKA",
+      "oemTableId": "A M I",
+      "oemRevision": 17244169
+    },
+    {
+      "signature": "GTDT",
+      "file": "acpi/gtdt.dat",
+      "size": 156,
+      "revision": 3,
+      "oemId": "QCOM",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 33920
+    },
+    {
+      "signature": "IORT",
+      "file": "acpi/iort.dat",
+      "size": 6074,
+      "revision": 0,
+      "oemId": "QCOM",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 33920
+    },
+    {
+      "signature": "MCFG",
+      "file": "acpi/mcfg.dat",
+      "size": 172,
+      "revision": 1,
+      "oemId": "QCOM",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 33920
+    },
+    {
+      "signature": "PPTT",
+      "file": "acpi/pptt.dat",
+      "size": 738,
+      "revision": 1,
+      "oemId": "QCOM",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 33920
+    },
+    {
+      "signature": "SPCR",
+      "file": "acpi/spcr.dat",
+      "size": 80,
+      "revision": 2,
+      "oemId": "QCOM",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 33920
+    },
+    {
+      "signature": "TPM2",
+      "file": "acpi/tpm2.dat",
+      "size": 84,
+      "revision": 3,
+      "oemId": "QCOM",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 33920
+    },
+    {
+      "signature": "XSDT",
+      "file": "acpi/xsdt.dat",
+      "size": 156,
+      "revision": 1,
+      "oemId": "QCOM",
+      "oemTableId": "QCOMEDK2",
+      "oemRevision": 33920
+    }
+  ],
+  "displays": [
+    {
+      "file": "edid/0-SDC4188-internal.bin",
+      "panel": "SDC4188",
+      "internal": true
+    }
+  ],
+  "redactions": [
+    "System serial number",
+    "System UUID",
+    "Chassis serial number",
+    "Chassis asset tag",
+    "Processor serial number",
+    "Baseboard serial number",
+    "Baseboard asset tag",
+    "SoC serial number in the ACPI tables (SOSN)",
+    "Display serial numbers in EDID",
+    "MSDM ACPI table (holds the Windows product key)",
+    "14 Bluetooth, printer, drive, network and audio-endpoint devices",
+    "USB serial numbers and MAC addresses in device IDs",
+    "Serial numbers and the system UUID, wherever else they appear",
+    "12 registry values and properties named as serial numbers, addresses or identifiers"
+  ],
+  "problems": []
+}

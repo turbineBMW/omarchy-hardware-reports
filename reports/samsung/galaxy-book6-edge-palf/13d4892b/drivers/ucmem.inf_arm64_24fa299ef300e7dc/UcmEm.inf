@@ -1,0 +1,93 @@
+/*++
+;
+;Copyright (c) Samsung Electronics Co., Ltd.  All rights reserved.
+;
+;Module Name:
+;    UcmEm.inf
+;
+;Abstract:
+;    INF file for installing the Samsung UcmEm driver.
+;
+;--*/
+[Version]
+Signature="$WINDOWS NT$"
+Class=USB
+ClassGuid={36FC9E60-C465-11CF-8056-444553540000}
+Provider=%ManufacturerName%
+CatalogFile=UcmEm.cat
+DriverVer = 02/04/2026,9.14.59.175
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+UcmEm_Device_CoInstaller_CopyFiles = 11
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+UcmEm.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64
+
+[Standard.NTARM64]
+%UcmEm.DeviceDesc%=UcmEm_Device, ACPI\VEN_SAM&DEV_0605
+%UcmEm.DeviceDesc%=UcmEm_Device, ACPI\VEN_SAM&DEV_0605&SUBSYS_C153144D
+%UcmEm.DeviceDesc%=UcmEm_Device, ACPI\VEN_SAM&DEV_0605&SUBSYS_C17C144D
+%UcmEm.DeviceDesc%=UcmEm_Device, ACPI\VEN_SAM&DEV_0605&SUBSYS_C199144D
+%UcmEm.DeviceDesc%=UcmEm_Device, ACPI\VEN_SAM&DEV_0605&SUBSYS_C1A1144D
+%UcmEm.DeviceDesc%=UcmEm_Device, ACPI\VEN_SAM&DEV_0605&SUBSYS_C1B1144D	; Hermes_8cx_Gen3
+%UcmEm.DeviceDesc%=UcmEm_Device, ACPI\VEN_SAM&DEV_0605&SUBSYS_C1B9144D	; NX16
+%UcmEm.DeviceDesc%=UcmEm_Device, ACPI\VEN_SAM&DEV_0605&SUBSYS_C1BA144D	; NX14
+%UcmEm.DeviceDesc%=UcmEm_Device, ACPI\VEN_SAM&DEV_0605&SUBSYS_CA09144D	; NX15
+%UcmEm.DeviceDesc%=UcmEm_Device, ACPI\VEN_SAM&DEV_0605&SUBSYS_C1BB144D	; WINGS
+%UcmEm.DeviceDesc%=UcmEm_Device, ACPI\VEN_SAM&DEV_0605&SUBSYS_C1BC144D	; MARS4
+
+[UcmEm_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+UcmEm.sys
+
+[UcmEm_Device.NT.HW]
+AddReg=UcmEm_SDDLString
+
+[UcmEm_SDDLString]
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+
+;-------------- Service installation
+[UcmEm_Device.NT.Services]
+AddService = UcmEm,%SPSVCINST_ASSOCSERVICE%, UcmEm_Service_Inst, UcmEm_EventLog_Inst
+
+; -------------- UcmEm driver install sections
+[UcmEm_Service_Inst]
+DisplayName    = %UcmEm.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\UcmEm.sys
+
+[UcmEm_Device.NT.Wdf]
+KmdfService =  UcmEm, UcmEm_wdfsect
+[UcmEm_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[UcmEm_EventLog_Inst]
+AddReg=UcmEm_EventLog_Inst.AddReg
+
+[UcmEm_EventLog_Inst.AddReg]
+HKR,, EventMessageFile, 0x00020000, "%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\UcmEm.sys"
+HKR,, TypesSupported,   0x00010003, 7
+HKR,, ProviderGuid,     0x00000000, "{A9FDD68F-C2D2-4E89-86A1-EC8BAEAEB51A}"
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Samsung Electronics Co., Ltd.";
+DiskName = "Samsung UcmEm Installation Disk"
+UcmEm.DeviceDesc = "Samsung UcmEm Device"
+UcmEm.SVCDESC = "Samsung UcmEm Service"

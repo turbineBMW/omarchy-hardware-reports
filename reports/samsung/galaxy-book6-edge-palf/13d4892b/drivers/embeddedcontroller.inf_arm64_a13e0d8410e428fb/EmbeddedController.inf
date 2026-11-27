@@ -1,0 +1,88 @@
+;
+; EmbeddedController.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %ManufacturerName%
+CatalogFile = EmbeddedController.cat
+DriverVer = 02/24/2026,13.52.48.464
+PnpLockdown = 1
+
+[DestinationDirs]
+; 10 = SysWow64
+; 11 = system32
+; 12 = drivers
+; 13 = system32\DriverStore\FileRepository
+DefaultDestDir = 13
+Service_Dir = 13
+ResourceDll_Dir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+EmbeddedController.sys  = 1,,
+EmbeddedControllerRes.dll = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NTARM64.10.0...16299
+
+[Standard.NTARM64.10.0...16299]
+%EmbeddedController.DeviceDesc% = EmbeddedController_Device, ACPI\SSEC0002
+%EmbeddedController.DeviceDesc% = EmbeddedController_Device, ACPI\SAM060B
+%EmbeddedController.DeviceDesc% = EmbeddedController_Device, ACPI\VEN_SAM&DEV_060B&SUBSYS_C1C1144D
+
+[EmbeddedController_Device.NT]
+CopyFiles=Service_Dir,ResourceDll_Dir
+
+[EmbeddedController_Device.NT.HW]
+AddReg = EmbeddedController_Device_SDDLString
+
+[EmbeddedController_Device_SDDLString]
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GRGW;;;AU)"
+
+[Service_Dir]
+EmbeddedController.sys
+
+[ResourceDll_Dir]
+EmbeddedControllerRes.dll
+
+;-------------- Service installation
+[EmbeddedController_Device.NT.Services]
+AddService = EmbeddedController,%SPSVCINST_ASSOCSERVICE%, EmbeddedController_Service_Inst, EmbeddedController_EventLog
+
+; -------------- EmbeddedController driver install sections
+[EmbeddedController_Service_Inst]
+DisplayName    = %EmbeddedController.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\EmbeddedController.sys
+
+[EmbeddedController_Device.NT.Wdf]
+KmdfService = EmbeddedController, EmbeddedController_wdfsect
+
+[EmbeddedController_wdfsect]
+KmdfLibraryVersion = 1.15
+
+; -------------- Event log installation
+[EmbeddedController_EventLog]
+AddReg = EmbeddedController_EventLog_AddReg
+
+[EmbeddedController_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,%13%\EmbeddedControllerRes.dll
+HKR,,TypesSupported,0x00010001,7
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ManufacturerName="Samsung Electronics Co.,Ltd."
+DiskName = "EmbeddedController Installation Disk"
+EmbeddedController.DeviceDesc = "Samsung EmbeddedController Device"
+EmbeddedController.SVCDESC = "Samsung EmbeddedController Service"

@@ -1,0 +1,37 @@
+[Version]
+Signature = "$WINDOWS NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider = %ManufacturerName%
+ExtensionId = {E77EE379-539B-4DF9-B491-552CDB45EE4B}
+CatalogFile = SystemPlatformEngineExt.cat
+DriverVer = 11/03/2025,1.0.6.6
+
+[Manufacturer]
+%ManufacturerName% = SysPlatformExtension, NTamd64.10.0...16299, NTARM64.10.0...16299
+
+[SysPlatformExtension.NTamd64.10.0...16299]
+%ExtensionDesc% = SysPlatformEntension_Install, ACPI\SAM0428
+%ExtensionDesc% = SysPlatformEntension_Install, ACPI\SAM0429
+%ExtensionDesc% = SysPlatformEntension_Install, ACPI\SAM0430
+%ExtensionDesc% = SysPlatformEntension_Install, ACPI\SAMB430
+
+[SysPlatformExtension.NTARM64.10.0...16299]
+%ExtensionDesc% = SysPlatformEntension_Install, ACPI\SAM0428
+%ExtensionDesc% = SysPlatformEntension_Install, ACPI\SAM0429
+%ExtensionDesc% = SysPlatformEntension_Install, ACPI\SAM0430
+%ExtensionDesc% = SysPlatformEntension_Install, ACPI\SAMB430
+
+
+[SysPlatformEntension_Install.NT]
+
+[SysPlatformEntension_Install.NT.Components]
+AddComponent = SysPlatformExtension,,SysPlatformExtension_ComponentInstall
+
+[SysPlatformExtension_ComponentInstall]
+ComponentIds=SAM0428&S01_SSPE
+
+[Strings]
+ManufacturerName = "Samsung Electronics Co., Ltd."
+ExtensionDesc = "System Platform Engine Extension"
+

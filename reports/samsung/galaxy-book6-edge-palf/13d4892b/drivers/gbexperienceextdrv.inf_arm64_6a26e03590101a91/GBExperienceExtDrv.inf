@@ -1,0 +1,33 @@
+[Version]
+Signature = "$WINDOWS NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider = %ManufacturerName%
+ExtensionId = {DEB4E2F9-FBC5-4923-9E7B-0F8A77E53756}
+CatalogFile = GBExperienceExtDrv.cat
+DriverVer = 01/18/2024,1.0.6.6
+
+[Manufacturer]
+%ManufacturerName% = GBExperienceExtDrv, NTarm64, NTamd64
+
+[GBExperienceExtDrv.NTamd64]
+%ExtensionDesc% = GBExperienceExtDrv_Install, ACPI\SAM0428
+%ExtensionDesc% = GBExperienceExtDrv_Install, ACPI\SAM0429
+%ExtensionDesc% = GBExperienceExtDrv_Install, ACPI\SAM0430
+
+[GBExperienceExtDrv.NTarm64]
+%ExtensionDesc% = GBExperienceExtDrv_Install, ACPI\SAM0426
+%ExtensionDesc% = GBExperienceExtDrv_Install, ACPI\SAM0430
+
+[GBExperienceExtDrv_Install.NT]
+
+[GBExperienceExtDrv_Install.NT.Components]
+AddComponent = GBExperienceExtDrvExtension,,GBExperienceExtDrvExtension_ComponentInstall
+
+[GBExperienceExtDrvExtension_ComponentInstall]
+ComponentIds=SAM0428&S01_GBEP
+
+[Strings]
+ManufacturerName = "Samsung Electronics Co., Ltd."
+ExtensionDesc = "Galaxy Book Experience Driver Extension"
+
