@@ -1,0 +1,55 @@
+;======================================================================
+;
+; Copyright (c) ASUSTek Computer Inc. (2026)
+;
+; Module Name:
+;     asusoledcare.inf
+;
+; Abstract:
+;     INF file for installing ASUS OLED Care Screen Saver (Clean)
+;
+; Installation Notes:
+;     	
+;======================================================================
+[Version]
+Signature			= "$Windows NT$"
+Class                   	= Extension
+ClassGUID               	= {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+ExtensionId               	= {28984B45-5808-4646-AE14-378FB3CE0FDE}
+Provider			= "ASUSTeK COMPUTER INC."
+DriverVer			= 01/05/2026,2.2.20.0
+PnpLockDown 			= 1
+CatalogFile.ntarm64		= asusoledcare.cat
+
+
+[Manufacturer]
+%MfgName% = ASUP, ntarm64.10.0...16299
+
+[ASUP.ntarm64.10.0...16299]
+%DeviceDesc1% = NO_DRV64, ACPI\ASUS2018
+%DeviceDesc1% = NO_DRV64, ACPI\ASUS2025
+
+[NO_DRV64]
+Include = machine.inf
+Needs = NO_DRV
+CopyFiles = PackageCopyScreenSaver		
+AddReg = PackageRegAdd
+
+[DestinationDirs]
+DefaultDestDir 			= 13
+PackageCopyScreenSaver 		= 10,ASUS\ScreenSaver
+
+[PackageCopyScreenSaver]
+OLED Care Screensaver.scr
+
+[SourceDisksFiles]
+OLED Care Screensaver.scr = 1
+
+[SourceDisksNames]
+1 = %MfgName%,,,
+
+[PackageRegAdd]
+
+[Strings]
+MfgName			= "ASUS"
+DeviceDesc1    		= "ASUS OLED Care ScreenSaver Interface"
