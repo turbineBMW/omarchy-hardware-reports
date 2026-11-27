@@ -1,0 +1,65 @@
+;
+; Monitor for Hermes Project
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Monitor
+ClassGUID={4d36e96e-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile=MonitorDriver_SS.cat
+DriverVer = 05/08/2024,1.0.5.3
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...16225, ,
+
+[Standard.NTARM64.10.0...16225]
+%Monitor_DeviceDesc%=DPI125_Device, Monitor\BOE07D3
+%Monitor_DeviceDesc%=DPI125_Device, Monitor\BOE2092
+%Monitor_DeviceDesc%=DPI125_Device, Monitor\BOE0868
+%Monitor_DeviceDesc%=DPI125_Device, Monitor\AUO213D
+%Monitor_DeviceDesc%=DPI125_Device, Monitor\AUO203D
+%Monitor_DeviceDesc%=DPI125_Device, Monitor\AUO403D
+%Monitor_DeviceDesc%=DPI125_Device, Monitor\SDC4156
+%Monitor_DeviceDesc%=DPI200_DRR, Monitor\SDC4188
+%Monitor_DeviceDesc%=DPI200_DRR, Monitor\SDC4189
+%Monitor_DeviceDesc%=DPI150_DRR, Monitor\SDC4F41
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+;-------------- Service installation
+[DPI125_Device]
+AddReg= DPI125_ScaleFactor
+
+[DPI150_DRR]
+AddReg= DPI150_ScaleFactor, DRR_Defult_On, ModernNightLight
+
+[DPI200_DRR]
+AddReg= DPI200_ScaleFactor, DRR_Defult_On, ModernNightLight
+
+;-------------- Registry
+[DPI125_ScaleFactor]
+HKR,,PreferredScaleFactor,%REG_DWORD%,125
+
+[DPI150_ScaleFactor]
+HKR,,PreferredScaleFactor,%REG_DWORD%,150
+
+[DPI200_ScaleFactor]
+HKR,,PreferredScaleFactor,%REG_DWORD%,200
+
+[DRR_Defult_On]
+HKR,,EnableBoostRefreshRateByDefault,%REG_DWORD%,1
+
+[ModernNightLight]
+HKLM, Software\Microsoft\Windows NT\CurrentVersion\AdaptiveDisplayBrightness\{23B44AF2-78CE-4943-81DF-89817E8D23FD}, EnableModernNightLight, %REG_DWORD%, 1
+
+
+[Strings]
+REG_DWORD = 0x00010001
+ManufacturerName = "Samsung Electronics Co., Ltd."
+Monitor_DeviceDesc = "Samsung Monitor Device"

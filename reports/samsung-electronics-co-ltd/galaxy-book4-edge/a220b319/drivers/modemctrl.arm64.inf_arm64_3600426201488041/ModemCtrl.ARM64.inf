@@ -1,0 +1,171 @@
+/*++
+;
+;Copyright (c) Samsung Electronics Co., Ltd.  All rights reserved.
+;
+;Module Name:
+;    ModemCtrl.INF
+;
+;Abstract:
+;    INF file for installing the Modem Control driver
+;
+;--*/
+
+;**********************************************************************************
+; Standard Section
+;**********************************************************************************
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile=ModemCtrl.cat
+DriverVer = 03/16/2025,18.33.3.496
+PnpLockdown=1
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+ModemCtrl.sys=1
+SAR.dll=1
+RCDService.exe=1
+ToastGenerator.exe=1
+customizations.bin=1
+customizations5g.bin=1
+customizationsvzw.bin=1
+ToastResource_cpp_20210427.zip=1
+prov.db=1
+
+[DestinationDirs]
+System32_Dir = 11
+DefaultDestDir = 13
+TG_Dir=10,ToastGenerator
+
+[RCDService_Dir]
+RCDService.exe
+
+[SarDriver_Dir]
+SAR.dll
+
+[System32_Dir] ;; need to check with HR
+customizations.bin
+customizations5g.bin
+customizationsvzw.bin
+prov.db
+
+[TG_Dir]
+ToastGenerator.exe
+ToastResource_cpp_20210427.zip
+
+
+[Strings]
+ManufacturerName ="Samsung Electronics Co., Ltd."
+DiskName = "ModemCtrl Installation Disk"
+ModemCtrlDeviceDesc = "Samsung MCT Device"
+ModemCtrlSvcDesc = "ModemCtrl Service"
+MdmLdrSvcSvcDesc = "Samsung Modem Loader Service"
+SARDeviceDesc= "SAR Device"
+WudfRdDisplayName = "Windows Driver Foundation - User-mode Driver Framework Reflector"
+SPSVCINST_ASSOCSERVICE= 0x00000002
+RCDServiceSvcDesc= "Samsung Radio Control Delegation Service"
+
+[Manufacturer]
+;TargetOSVersion should be as Directive Syntax
+%ManufacturerName%=StandardDeviceList,NTARM64.10.0...17134
+
+[StandardDeviceList.NTARM64.10.0...17134]
+%ModemCtrlDeviceDesc%=ModemCtrl_Device, ACPI\VEN_SAM&DEV_0602
+
+%SARDeviceDesc%=SAR_Device, MDMCTRL\SAR02
+
+;**********************************************************************************
+; Install Section - ModemCtrl Driver
+;**********************************************************************************
+
+[ModemCtrl_Device.NT]
+CopyFiles=ModemCtrlDriverCopyFiles,System32_Dir,TG_Dir
+
+[ModemCtrlDriverCopyFiles]
+ModemCtrl.sys,,,2
+
+[ModemCtrl_AddReg]
+;HKR, Parameters, FeatureFlags, 0x11001, 0x8    ; 0x8(Bug-check handler)
+HKR, Parameters, SRil, 0x11001, 0x0             ; To Disable SRil node
+HKR, Parameters, Sar, 0x11001, 0x0              ; To Disable Sar node
+
+[ModemCtrl_Device.NT.Services]
+AddService=ModemCtrl,%SPSVCINST_ASSOCSERVICE%, ModemCtrl_ServiceInstall
+
+[ModemCtrl_ServiceInstall]
+DisplayName    = %ModemCtrlSvcDesc%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\ModemCtrl.sys
+LoadOrderGroup = Extended Base
+AddReg=ModemCtrl_AddReg
+
+;**********************************************************************************
+; Provide Section - Software Component for Esim Firmware by Thales
+;**********************************************************************************
+
+[ModemCtrl_Device.NT.Components]
+AddComponent = GemEsimNode,, GemEsimNode_ComponentInstall
+
+[GemEsimNode_ComponentInstall]
+ComponentIds = VEN_GEM&DEV_ESIM&C1B1144D                  ; Mars2 QC 5G (== Mars2 WIFI)
+
+;**********************************************************************************
+; Install Section - SAR Driver
+;**********************************************************************************
+
+[SAR_Device.NT]
+CopyFiles=SarDriver_Dir,RCDService_Dir
+; Staring in Windows11, the way to add the reflector has been changed.
+Include=WUDFRD.inf
+Needs=WUDFRD.NT
+
+[SAR_Device.NT.hw]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT.HW
+
+[SAR_Device.NT.Services]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT.Services
+AddService = RCD,0x00000020, RCD_ServiceInstall
+
+[SAR_Device.NT.CoInstallers]
+CopyFiles=SarDriver_Dir
+AddReg=SAR_CoInstallers_AddReg
+
+[SAR_Device.NT.Wdf]
+UmdfService=SAR,SAR_Install
+UmdfServiceOrder=SAR
+UmdfHostProcessSharing = ProcessSharingDisabled    ; Disabled because of GPS UMDF driver crash
+
+[SAR_Install]
+UmdfLibraryVersion=2.33.0
+ServiceBinary=%13%\SAR.dll
+
+[SAR_CoInstallers_AddReg]
+HKR,,CoInstallers32,0x00010000,"WUDFCoinstaller.dll"
+
+[RCD_AddReg]
+HKR, , Version, 0x01000, 7.0.0.26
+HKR, , CosaPkgVersion, 0x01000, 1.88
+HKR, , Cosa5gPkgVersion, 0x01000, 1.882
+HKR, , UpdateEsimFirmwareKey, 0x11001, 0x1
+HKR, , RemoveRamdumpRegistry, 0x11001, 0x1
+HKR, , UpdateProfileBySIM, 0x01000, 1
+HKR, , WorkingStatus, 0x11001, 0xff
+
+[RCD_ServiceInstall]
+DisplayName    = %RCDServiceSvcDesc%
+Description    = %RCDServiceSvcDesc%
+ServiceType    = 0x10               ; SERVICE_KERNEL_DRIVER
+StartType      = 2               ; SERVICE_AUTO_START
+ErrorControl   = 0               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\RCDService.exe
+LoadOrderGroup = Base
+AddReg=RCD_AddReg

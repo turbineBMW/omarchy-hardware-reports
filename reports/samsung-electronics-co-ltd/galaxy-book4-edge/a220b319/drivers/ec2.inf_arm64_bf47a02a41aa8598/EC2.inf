@@ -1,0 +1,80 @@
+;
+;Copyright (c) Samsung Electronics Co., Ltd.  All rights reserved.
+;
+;
+; EC2.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile=EC2.cat
+DriverVer = 05/24/2024,15.27.1.994
+PnpLockDown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+;EC2_Device_CoInstaller_CopyFiles = 11
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+EC2.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64
+
+[Standard.NTARM64]
+%EC2.DeviceDesc%=EC2_Device, ACPI\SSEC0002
+%EC2.DeviceDesc%=EC2_Device, ACPI\SAM060B
+%EC2.DeviceDesc%=EC2_Device, ACPI\VEN_SAM&DEV_060B&SUBSYS_C199144D
+%EC2.DeviceDesc%=EC2_Device, ACPI\VEN_SAM&DEV_060B&SUBSYS_C1A1144D
+
+[EC2_Device.NT]
+CopyFiles=Drivers_Dir
+
+[EC2_Device.NT.HW]
+AddReg = EC2_Device.NT.AddReg
+AddReg = EC2_Device_SDDLString
+
+[EC2_Device.NT.AddReg]
+HKR,,"LowerFilters",0x00010000,"vhf"
+
+[EC2_Device_SDDLString]
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GRGW;;;AU)"
+
+[Drivers_Dir]
+EC2.sys
+
+;-------------- Service installation
+[EC2_Device.NT.Services]
+AddService = EC2,%SPSVCINST_ASSOCSERVICE%, EC2_Service_Inst
+
+; -------------- EC2 driver install sections
+[EC2_Service_Inst]
+DisplayName    = %EC2.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\EC2.sys
+
+[EC2_Device.NT.Wdf]
+KmdfService =  EC2, EC2_wdfsect
+[EC2_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Samsung Electronics Co.,Ltd."
+ClassName="System" ; TODO: edit ClassName
+DiskName = "EC2 Installation Disk"
+EC2.DeviceDesc = "Samsung EC2 Device"
+EC2.SVCDESC = "EC2 Service"
+;OSDPath = Software\SAMSUNG\OSD

@@ -1,0 +1,79 @@
+;
+; SamsungSensorService.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=SoftwareComponent
+ClassGuid={5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider=%ManufacturerName%
+CatalogFile=SamsungSensorService.cat
+DriverVer = 05/02/2024,1.0.1.3
+PnpLockDown = 1
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...16299
+
+[Standard.NTARM64.10.0...16299]
+%SamsungSensorService.DeviceDesc%=SamsungSensorService_Device, ACPI\VEN_SAMM&DEV_0215	; HERMES2 & MARS2-13QC & SC8380XP
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SamsungSensorService.exe = 1
+
+[DestinationDirs]
+DefaultDestDir = 13  ; copy to driverstore
+
+[SamsungSensorService_Device.NT]
+CopyFiles=Drivers_Dir
+AddReg = SarUnknownConditionReg
+
+[SamsungSensorService_Device.NT.HW]
+AddReg = SamsungAutobrightnessBucketMappingReg
+
+[Drivers_Dir]
+SamsungSensorService.exe
+
+;-------------- Service installation
+[SamsungSensorService_Device.NT.Services]
+AddService = , 0x00000002
+AddService = SamsungSensorService,0x00000800, SamsungSensorService_Inst
+
+[SarUnknownConditionReg]
+;HKLM, "SOFTWARE\Samsung\SamsungSensorService", SkipSarUnknownMode, %REG_DWORD%, 0x0		; For WINGS, MARS4 16QC 5G, MARS2 13QC, HERMES
+;HKLM, "SOFTWARE\Samsung\SamsungSensorService", SkipSarUnknownMode, %REG_DWORD%, 0x1		; For NX models(16/14/15M)
+;HKLM, "SOFTWARE\Samsung\SamsungSensorService", ZDiffLimit, %REG_DWORD%, 0x14
+;HKLM, "SOFTWARE\Samsung\SamsungSensorService", PrepareExitCount, %REG_DWORD%, 0x2
+;HKLM, "SOFTWARE\Samsung\SamsungSensorService", StableTimeSeconds, %REG_DWORD%, 0x14
+;HKR,, SkipSarUnknownMode, %REG_DWORD%, 0x1		; For NX models(16/14/15M)
+;HKR,, ZDiffLimit, %REG_DWORD%, 0x14
+;HKR,, PrepareExitCount, %REG_DWORD%, 0x2
+;HKR,, StableTimeSeconds, %REG_DWORD%, 0x14
+;HKR,, AutobrightnessBucketMapping, %REG_SZ%, "0:100:40, 30:300:55, 150:400:70, 250:650:85, 350:20000:100, 15000:30000:130"
+
+[SamsungAutobrightnessBucketMappingReg]
+HKLM, "SOFTWARE\Microsoft\Windows NT\CurrentVersion\AdaptiveDisplayBrightness\{23B44AF2-78CE-4943-81DF-89817E8D23FD}", AutobrightnessBucketMapping, %REG_SZ%, "0:100:40, 30:300:55, 150:400:70, 250:650:85, 350:20000:100, 15000:30000:130"
+
+[SamsungSensorService_Inst]
+DisplayName = %SamsungSensorServiceDisplayName%
+ServiceType = 0x00000010
+StartType = 2
+;ServiceType = 0x00000020
+;StartType = 3
+ErrorControl = 1
+ServiceBinary = %13%\SamsungSensorService.exe
+
+[Strings]
+ManufacturerName="Samsung Electronics Co.,Ltd."
+ClassName="SoftwareComponent" 
+DiskName = "SamsungSensorService Installation Disk"
+SamsungSensorService.DeviceDesc = "SamsungSensorService Device"
+SamsungSensorServiceDisplayName="Samsung Sensor Service"
+REG_DWORD              = 0x00010001
+REG_SZ                 = 0x00000000
