@@ -1,0 +1,88 @@
+;==========================================================================
+; USB Ext Class Device INF (for Windows 11 22621 or higher)
+; Copyright(c) 2010 Sonix Technology Co., Ltd.
+; File version: 10.13.26100.1004
+; Last modified: 2026-07-20
+;==========================================================================
+
+[Version]
+Signature="$Windows NT$"
+Class=Extension
+ClassGUID={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+ExtensionId={D8DE5BC0-7117-4126-84A7-664DE210D5E4}
+Provider=%ProviderName%
+Catalogfile=snExt_MEP.cat
+DriverVer=07/20/2026,10.13.26100.1004
+PnpLockdown=1
+
+[Manufacturer]
+%ManufacturerName%=SN, NTamd64, NTarm64
+
+[SN.NTamd64]
+%DeviceDesc_RGB_IC% = UVC_MEP,USB\VID_13D3&PID_54B1&MI_00
+%DeviceDesc_RGB_IC% = UVC_MEP,USB\VID_13D3&PID_54B6&MI_00
+%DeviceDesc_RGB_IC% = UVC_MEP,USB\VID_13D3&PID_54BF&MI_00
+
+[SN.NTarm64]
+%DeviceDesc_RGB_IC% = UVC_MEP,USB\VID_13D3&PID_54B1&MI_00
+%DeviceDesc_RGB_IC% = UVC_MEP,USB\VID_13D3&PID_54B6&MI_00
+%DeviceDesc_RGB_IC% = UVC_MEP,USB\VID_13D3&PID_54BF&MI_00
+
+
+[UVC_MEP]
+PreferDeviceInfo=1
+
+;==========================================================================
+; HW
+;==========================================================================
+
+[UVC_MEP.HW]
+
+;==========================================================================
+; Interfaces
+;==========================================================================
+
+[UVC_MEP.Interfaces]
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_MEP_IC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_MEP_IC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_MEP_IC
+
+[AddIntf_MEP_IC]
+AddReg=AddIntf_MEP_IC.AddReg
+
+[AddIntf_MEP_IC.AddReg]
+HKR,,FSMEnableMsEffects,%REG_DWORD%,0x00000001
+
+
+
+;==========================================================================
+; String Section
+;==========================================================================
+
+[Strings]
+; Localizable
+ProviderName="Sonix"
+ManufacturerName="Sonix"
+; Device description display on device manager
+DeviceDesc_RGB_IC="Integrated Camera"
+
+; CLSID
+ProxyVCap.CLSID="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+; PlatformDeviceMFT CLSID
+PlatformDeviceMFT.CLSID="{3D096DDE-8971-4AD5-98F9-C74F56492630}"
+; DeviceMFT CLSID
+DeviceMFT.CLSID="{5A50829A-86DD-4D18-8685-891EEE643C24}"
+
+; Interfaces
+KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_RENDER="{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_VIDEO="{6994AD05-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_RENDER_EXT="{CC7BFB41-F175-11D1-A392-00E0291F3959}"
+KSCATEGORY_SENSOR_CAMERA = "{24E552D7-6523-47F7-A647-D3465BF1F5CA}"
+KSCATEGORY_VIDEO_CAMERA="{E5323777-F976-4f5b-9B55-B94699C46E44}"
+
+; Registry key type
+REG_DWORD=0x00010001
+REG_SZ=0x00000000
+REG_MULTI_SZ=0x00010000
+REG_EXPAND_SZ=0x00020000

@@ -1,0 +1,2694 @@
+;==========================================================================
+; USB Video Class Device INF (for Windows 11 24H2 or higher)
+; Copyright(c) 2010 Sonix Technology Co., Ltd.
+; File version: 10.13.26100.16
+; Last modified: 2026-07-22
+;==========================================================================
+
+[Version]
+Signature="$Windows NT$"
+Class=Camera
+ClassGUID={ca3e7ab9-b4c3-4ae6-8251-579ef933890f}
+Provider=%ProviderName%
+Catalogfile=snDMFT.cat
+DriverVer=07/22/2026,10.13.26100.16
+PnpLockdown=1
+
+[SignatureAttributes]
+SonixDeviceMFT.dll=SignatureAttributes.WindowsHello
+
+[SignatureAttributes.WindowsHello]
+WindowsHello=true
+
+[SourceDisksNames]
+1=%SrcDiskId%,,,
+
+; files for arm64 OS
+[SourceDisksFiles.arm64]
+SonixDeviceMFT.dll=1
+onnxruntime.dll=1
+DirectML.dll=1
+msvcp140.dll=1
+vcruntime140.dll=1
+vcruntime140_1.dll=1
+
+[DestinationDirs]
+DefaultDestDir=11,SONiX,%DeviceMFT.CLSID%,
+Install_DeviceMFT.CopyFiles=11,SONiX\%DeviceMFT.CLSID%,
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+[Manufacturer]
+%ManufacturerName%=SN, NTarm64.10.0...26080, NTarm64
+
+[SN.NTarm64.10.0...26080]
+; HD
+%DeviceDesc_RGB_IC% = UVC_HDv1_26080,USB\VID_0C45&PID_6371&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv1_26080,USB\VID_174F&PID_241F&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv1_26080,USB\VID_174F&PID_242B&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv1_26080,USB\VID_174F&PID_242D&MI_00
+; No 3DNR
+%DeviceDesc_RGB_IC% = UVC_HDv2_26080,USB\VID_174F&PID_241C&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv2_26080,USB\VID_174F&PID_241D&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv2_26080,USB\VID_174F&PID_241E&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv2_26080,USB\VID_174F&PID_2436&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv2_26080,USB\VID_174F&PID_2437&MI_00
+; No Face AE & RGB
+%DeviceDesc_RGB_EC% = UVC_HDv3_26080,USB\VID_174F&PID_2407&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3_26080,USB\VID_174F&PID_2408&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3_26080,USB\VID_174F&PID_2409&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3_26080,USB\VID_174F&PID_2410&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3_26080,USB\VID_174F&PID_2414&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3_26080,USB\VID_174F&PID_2415&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3_26080,USB\VID_174F&PID_2416&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3_26080,USB\VID_174F&PID_2419&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3_26080,USB\VID_174F&PID_241A&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3_26080,USB\VID_174F&PID_241B&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3_26080,USB\VID_174F&PID_2421&MI_00
+; No Face AE & 3DNR & RGB
+%DeviceDesc_RGB_EC% = UVC_HDv4_26080,USB\VID_0C45&PID_63F5&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv4_26080,USB\VID_0C45&PID_6456&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv4_26080,USB\VID_0C45&PID_6513&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv4_26080,USB\VID_0C45&PID_6514&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv4_26080,USB\VID_174F&PID_2406&MI_00
+; No Face AE & 3DNR
+%DeviceDesc_RGB_IC% = UVC_HDv5_26080,USB\VID_174F&PID_2435&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv5_26080,USB\VID_174F&PID_243A&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv5_26080,USB\VID_04F2&PID_B67D&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv5_26080,USB\VID_13D3&PID_56B8&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv5_26080,USB\VID_13D3&PID_56BB&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv5_26080,USB\VID_13D3&PID_56D9&MI_00
+; CS20, Face AE_M1 and HW_Antiflicker
+%DeviceDesc_RGB_IC% = UVC_HDv6_26080,USB\VID_13D3&PID_56F7&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_26080,USB\VID_13D3&PID_56FC&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_26080,USB\VID_174F&PID_2438&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_26080,USB\VID_174F&PID_243B&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_26080,USB\VID_174F&PID_243C&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_26080,USB\VID_174F&PID_243D&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_26080,USB\VID_174F&PID_244A&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_26080,USB\VID_5986&PID_9105&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_26080,USB\VID_13D3&PID_5415&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_CP_26080,USB\VID_13D3&PID_54B1&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_CP2_26080,USB\VID_13D3&PID_540A&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_CP3_26080,USB\VID_13D3&PID_54B6&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_CP4_26080,USB\VID_13D3&PID_54BF&MI_00
+; CS20, Full 3DNR, Face AE_M1 and HW_Antiflicker
+%DeviceDesc_RGB_IC% = UVC_HDvWA_26080,USB\VID_13D3&PID_56FF&MI_00
+; CS21, Full 3DNR, Face AE_M1 and HW_Antiflicker
+%DeviceDesc_RGB_IC% = UVC_HDv6_26080,USB\VID_13D3&PID_5439&MI_00
+; CS22, Full 3DNR, Face AE_M1 and HW_Antiflicker
+%DeviceDesc_RGB_IC% = UVC_HDv7_CP_26080,USB\VID_13D3&PID_54AA&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv7_CP2_26080,USB\VID_1161&PID_2501&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv9_26080,USB\VID_174F&PID_1817&MI_00
+; CS21
+%DeviceDesc_RGB_IC% = UVC_HDv7_26080,USB\VID_174F&PID_2455&MI_00
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+%DeviceDesc_RGB_IC% = UVC_HDv9_26080,USB\VID_5986&PID_9106&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_5986&PID_9106&MI_02
+%DeviceDesc_RGB_IC% = UVC_HDv9_26080,USB\VID_5986&PID_9108&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_5986&PID_9108&MI_02
+%DeviceDesc_RGB_IC% = UVC_HDv9_26080,USB\VID_5986&PID_910C&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_5986&PID_910C&MI_02
+; CS21
+%DeviceDesc_RGB_IC% = UVC_HDv9_26080,USB\VID_174F&PID_2454&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_174F&PID_2454&MI_02
+%DeviceDesc_RGB_IC% = UVC_HDv9_26080,USB\VID_5986&PID_910B&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_5986&PID_910B&MI_02
+; CS22
+%DeviceDesc_RGB_IC% = UVC_HDv9_26080,USB\VID_04F2&PID_B752&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_04F2&PID_B752&MI_02
+%DeviceDesc_RGB_IC% = UVC_HDv9_26080,USB\VID_174F&PID_2462&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_174F&PID_2462&MI_02
+; Lenovo Japan VGA
+%DeviceDesc_RGB_IC% = UVC_VGA_26080,USB\VID_174F&PID_1177&MI_00
+%DeviceDesc_RGB_IC% = UVC_VGA_26080,USB\VID_174F&PID_1178&MI_00
+%DeviceDesc_RGB_IC% = UVC_VGA_26080,USB\VID_174F&PID_1179&MI_00
+%DeviceDesc_RGB_IC% = UVC_VGA_26080,USB\VID_13D3&PID_5A21&MI_00
+%DeviceDesc_RGB_IC% = UVC_VGA_26080,USB\VID_5986&PID_9104&MI_00
+%DeviceDesc_RGB_IC% = UVC_VGA_26080,USB\VID_5986&PID_9107&MI_00
+; Lenovo Japn VGA, Full 3DNR
+%DeviceDesc_RGB_IC% = UVC_VGA_JAP2_26080,USB\VID_174F&PID_1176&MI_00
+; Lenovo china VGA
+%DeviceDesc_RGB_EC% = UVC_VGA_China_26080,USB\VID_0C45&PID_6455&MI_00
+%DeviceDesc_RGB_EC% = UVC_VGA_China_26080,USB\VID_0C45&PID_64C8&MI_00
+%DeviceDesc_RGB_EC% = UVC_VGA_China_26080,USB\VID_0C45&PID_64DF&MI_00
+; Lenovo china2 VGA
+%DeviceDesc_RGB_IC% = UVC_VGA_China2_26080,USB\VID_0C45&PID_6459&MI_00
+; For test
+%DeviceDesc_RGB_EC% = UVC_Test_26080,USB\VID_30C9&PID_0001&MI_00
+
+[SN.NTarm64]
+; HD
+%DeviceDesc_RGB_IC% = UVC_HDv1,USB\VID_0C45&PID_6371&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv1,USB\VID_174F&PID_241F&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv1,USB\VID_174F&PID_242B&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv1,USB\VID_174F&PID_242D&MI_00
+; No 3DNR
+%DeviceDesc_RGB_IC% = UVC_HDv2,USB\VID_174F&PID_241C&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv2,USB\VID_174F&PID_241D&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv2,USB\VID_174F&PID_241E&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv2,USB\VID_174F&PID_2436&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv2,USB\VID_174F&PID_2437&MI_00
+; No Face AE & RGB
+%DeviceDesc_RGB_EC% = UVC_HDv3,USB\VID_174F&PID_2407&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3,USB\VID_174F&PID_2408&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3,USB\VID_174F&PID_2409&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3,USB\VID_174F&PID_2410&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3,USB\VID_174F&PID_2414&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3,USB\VID_174F&PID_2415&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3,USB\VID_174F&PID_2416&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3,USB\VID_174F&PID_2419&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3,USB\VID_174F&PID_241A&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3,USB\VID_174F&PID_241B&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv3,USB\VID_174F&PID_2421&MI_00
+; No Face AE & 3DNR & RGB
+%DeviceDesc_RGB_EC% = UVC_HDv4,USB\VID_0C45&PID_63F5&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv4,USB\VID_0C45&PID_6456&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv4,USB\VID_0C45&PID_6513&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv4,USB\VID_0C45&PID_6514&MI_00
+%DeviceDesc_RGB_EC% = UVC_HDv4,USB\VID_174F&PID_2406&MI_00
+; No Face AE & 3DNR
+%DeviceDesc_RGB_IC% = UVC_HDv5,USB\VID_174F&PID_2435&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv5,USB\VID_174F&PID_243A&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv5,USB\VID_04F2&PID_B67D&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv5,USB\VID_13D3&PID_56B8&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv5,USB\VID_13D3&PID_56BB&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv5,USB\VID_13D3&PID_56D9&MI_00
+; CS20, Face AE_M1 and HW_Antiflicker
+%DeviceDesc_RGB_IC% = UVC_HDv6,USB\VID_13D3&PID_56F7&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6,USB\VID_13D3&PID_56FC&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6,USB\VID_174F&PID_2438&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6,USB\VID_174F&PID_243B&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6,USB\VID_174F&PID_243C&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6,USB\VID_174F&PID_243D&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6,USB\VID_174F&PID_244A&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6,USB\VID_5986&PID_9105&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6,USB\VID_13D3&PID_5415&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_CP,USB\VID_13D3&PID_54B1&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_CP2,USB\VID_13D3&PID_540A&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_CP3,USB\VID_13D3&PID_54B6&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv6_CP4,USB\VID_13D3&PID_54BF&MI_00
+; CS20, Full 3DNR, Face AE_M1 and HW_Antiflicker
+%DeviceDesc_RGB_IC% = UVC_HDvWA,USB\VID_13D3&PID_56FF&MI_00
+; CS21, Full 3DNR, Face AE_M1 and HW_Antiflicker
+%DeviceDesc_RGB_IC% = UVC_HDv6,USB\VID_13D3&PID_5439&MI_00
+; CS22, Full 3DNR, Face AE_M1 and HW_Antiflicker
+%DeviceDesc_RGB_IC% = UVC_HDv7_CP,USB\VID_13D3&PID_54AA&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv7_CP2,USB\VID_1161&PID_2501&MI_00
+%DeviceDesc_RGB_IC% = UVC_HDv9,USB\VID_174F&PID_1817&MI_00
+; CS21
+%DeviceDesc_RGB_IC% = UVC_HDv7,USB\VID_174F&PID_2455&MI_00
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+%DeviceDesc_RGB_IC% = UVC_HDv9,USB\VID_5986&PID_9106&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_5986&PID_9106&MI_02
+%DeviceDesc_RGB_IC% = UVC_HDv9,USB\VID_5986&PID_9108&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_5986&PID_9108&MI_02
+%DeviceDesc_RGB_IC% = UVC_HDv9,USB\VID_5986&PID_910C&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_5986&PID_910C&MI_02
+; CS21
+%DeviceDesc_RGB_IC% = UVC_HDv9,USB\VID_174F&PID_2454&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_174F&PID_2454&MI_02
+%DeviceDesc_RGB_IC% = UVC_HDv9,USB\VID_5986&PID_910B&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_5986&PID_910B&MI_02
+; CS22
+%DeviceDesc_RGB_IC% = UVC_HDv9,USB\VID_04F2&PID_B752&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_04F2&PID_B752&MI_02
+%DeviceDesc_RGB_IC% = UVC_HDv9,USB\VID_174F&PID_2462&MI_00
+%DeviceDesc_IR% = UVC_IR,USB\VID_174F&PID_2462&MI_02
+; Lenovo Japan VGA
+%DeviceDesc_RGB_IC% = UVC_VGA,USB\VID_174F&PID_1177&MI_00
+%DeviceDesc_RGB_IC% = UVC_VGA,USB\VID_174F&PID_1178&MI_00
+%DeviceDesc_RGB_IC% = UVC_VGA,USB\VID_174F&PID_1179&MI_00
+%DeviceDesc_RGB_IC% = UVC_VGA,USB\VID_13D3&PID_5A21&MI_00
+%DeviceDesc_RGB_IC% = UVC_VGA,USB\VID_5986&PID_9104&MI_00
+%DeviceDesc_RGB_IC% = UVC_VGA,USB\VID_5986&PID_9107&MI_00
+; Lenovo Japn VGA, Full 3DNR
+%DeviceDesc_RGB_IC% = UVC_VGA_JAP2,USB\VID_174F&PID_1176&MI_00
+; Lenovo china VGA
+%DeviceDesc_RGB_EC% = UVC_VGA_China,USB\VID_0C45&PID_6455&MI_00
+%DeviceDesc_RGB_EC% = UVC_VGA_China,USB\VID_0C45&PID_64C8&MI_00
+%DeviceDesc_RGB_EC% = UVC_VGA_China,USB\VID_0C45&PID_64DF&MI_00
+; Lenovo china2 VGA
+%DeviceDesc_RGB_IC% = UVC_VGA_China2,USB\VID_0C45&PID_6459&MI_00
+; For test
+%DeviceDesc_RGB_EC% = UVC_Test,USB\VID_30C9&PID_0001&MI_00
+
+;==========================================================================
+; *** Note ***
+; File size limits: On Win9x/Me, INF cannot be larger than 64K bytes.
+; Section name max length: 255 characters on NT-based OS. On Win9x/Me, it
+;                          should no longer than 28 characters.
+; Field max length: 512 characters (including a terminating NULL character)
+;==========================================================================
+
+;==========================================================================
+; DDInstall Section
+;==========================================================================
+[UVC_HDv1]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+; No 3DNR
+[UVC_HDv2]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+; No Face AE & RGB
+[UVC_HDv3]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+; No Face AE & 3DNR & RGB
+[UVC_HDv4]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+; No Face AE & 3DNR
+[UVC_HDv5]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+; CS20, Face AE_M1 and HW_Antiflicker
+[UVC_HDv6]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+[UVC_HDv6_CP]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+[UVC_HDv6_CP2]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+[UVC_HDv6_CP3]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+[UVC_HDv6_CP4]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+[UVC_HDvWA]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+[UVC_HDv7]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+[UVC_HDv7_CP]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+[UVC_HDv7_CP2]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+[UVC_HDv9]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+[UVC_IR]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+; For Japan VGA device
+[UVC_VGA]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+; For Japan VGA device, Full 3DNR
+[UVC_VGA_JAP2]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+; For China VGA device
+[UVC_VGA_China]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+; For China2 VGA device
+[UVC_VGA_China2]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+; For test
+[UVC_Test]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+
+; 26080 ======================================================
+[UVC_HDv1_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+; No 3DNR
+[UVC_HDv2_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+; No Face AE & RGB
+[UVC_HDv3_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+; No Face AE & 3DNR & RGB
+[UVC_HDv4_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+; No Face AE & 3DNR
+[UVC_HDv5_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+; CS20, Face AE_M1 and HW_Antiflicker
+[UVC_HDv6_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+[UVC_HDv6_CP_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+[UVC_HDv6_CP2_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+[UVC_HDv6_CP3_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+[UVC_HDv6_CP4_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+[UVC_HDvWA_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+[UVC_HDv7_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+[UVC_HDv7_CP_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+[UVC_HDv7_CP2_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+[UVC_HDv9_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+; For Japan VGA device
+[UVC_VGA_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+; For Japan VGA device, Full 3DNR
+[UVC_VGA_JAP2_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+; For China VGA device
+[UVC_VGA_China_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+; For China2 VGA device
+[UVC_VGA_China2_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+; For test
+[UVC_Test_26080]
+Include		=usbvideo.inf
+Needs		=USBVideo.NT
+CopyFiles	=Install_DeviceMFT.CopyFiles
+AddReg		=Install_DeviceMFT.AddReg
+PreferDeviceInfo=1
+;==========================================================================
+; HW
+;==========================================================================
+[UVC_HDv1.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_HDv1.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+; No 3DNR
+[UVC_HDv2.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_HDv2.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+; No Face AE & RGB
+[UVC_HDv3.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_EC.AddReg, ISPCtrl_HDv3.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+; No Face AE & 3DNR & RGB
+[UVC_HDv4.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_EC.AddReg, ISPCtrl_HDv4.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+; No Face AE & 3DNR
+[UVC_HDv5.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_HDv5.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+; CS20, Face AE_M1 and HW_Antiflicker
+[UVC_HDv6.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_HDv6.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+[UVC_HDv6_CP.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_HDv6_CP.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+[UVC_HDv6_CP2.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_HDv6_CP2.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+[UVC_HDv6_CP3.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_HDv6_CP3.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+[UVC_HDv6_CP4.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_HDv6_CP4.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+[UVC_HDvWA.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_WA.AddReg, ISPCtrl_HDvWA.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+[UVC_HDv7.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_HDv7.Addreg, PropertySettings.AddReg, ISPSettings.Addreg, NewECP.AddReg
+
+[UVC_HDv7_CP.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_HDv7_CP.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+[UVC_HDv7_CP2.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_HDv7_CP2.Addreg, PropertySettings.AddReg, ISPSettings.Addreg, NewECP.AddReg
+; CS21
+[UVC_HDv9.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_HDv9.Addreg, PropertySettings.AddReg, ISPSettings.Addreg, NewECP.AddReg
+
+[UVC_IR.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IR.AddReg, ISPCtrl_IR.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+; For Japan VGA device
+[UVC_VGA.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_VGA.Addreg, PropertySettings_VGA.AddReg, ISPSettings.Addreg
+
+; For Japan VGA device, Full 3DNR
+[UVC_VGA_JAP2.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_VGA_JAP2.Addreg, PropertySettings_VGA.AddReg, ISPSettings.Addreg
+
+; For China VGA device
+[UVC_VGA_China.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_EC.AddReg, ISPCtrl_VGA_China.Addreg, PropertySettings_VGA.AddReg, ISPSettings.Addreg
+
+; For China2 VGA device
+[UVC_VGA_China2.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC.AddReg, ISPCtrl_VGA_China.Addreg, PropertySettings_VGA.AddReg, ISPSettings.Addreg
+
+; For test
+[UVC_Test.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_EC.AddReg, ISPCtrl_Test.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+
+; 26080 ======================================================
+[UVC_HDv1_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_HDv1.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+; No 3DNR
+[UVC_HDv2_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_HDv2.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+; No Face AE & RGB
+[UVC_HDv3_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_EC_26080.AddReg, ISPCtrl_HDv3.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+; No Face AE & 3DNR & RGB
+[UVC_HDv4_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_EC_26080.AddReg, ISPCtrl_HDv4.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+; No Face AE & 3DNR
+[UVC_HDv5_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_HDv5.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+; CS20, Face AE_M1 and HW_Antiflicker
+[UVC_HDv6_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_HDv6.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+[UVC_HDv6_CP_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_HDv6_CP.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+[UVC_HDv6_CP2_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_HDv6_CP2.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+[UVC_HDv6_CP3_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_HDv6_CP3.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+[UVC_HDv6_CP4_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_HDv6_CP4.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+[UVC_HDvWA_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_WA_26080.AddReg, ISPCtrl_HDvWA.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+[UVC_HDv7_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_HDv7.Addreg, PropertySettings.AddReg, ISPSettings.Addreg, NewECP.AddReg
+[UVC_HDv7_CP_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_HDv7_CP.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+[UVC_HDv7_CP2_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_HDv7_CP2.Addreg, PropertySettings.AddReg, ISPSettings.Addreg, NewECP.AddReg
+; CS21
+[UVC_HDv9_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_HDv9.Addreg, PropertySettings.AddReg, ISPSettings.Addreg, NewECP.AddReg
+; For Japan VGA device
+[UVC_VGA_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_VGA.Addreg, PropertySettings_VGA.AddReg, ISPSettings.Addreg
+; For Japan VGA device, Full 3DNR
+[UVC_VGA_JAP2_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_VGA_JAP2.Addreg, PropertySettings_VGA.AddReg, ISPSettings.Addreg
+; For China VGA device
+[UVC_VGA_China_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_EC_26080.AddReg, ISPCtrl_VGA_China.Addreg, PropertySettings_VGA.AddReg, ISPSettings.Addreg
+; For China2 VGA device
+[UVC_VGA_China2_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_IC_26080.AddReg, ISPCtrl_VGA_China.Addreg, PropertySettings_VGA.AddReg, ISPSettings.Addreg
+; For test
+[UVC_Test_26080.HW]
+Include=usbvideo.inf
+Needs=usbvideo.NT.HW
+AddReg=HW_EC_26080.AddReg, ISPCtrl_Test.Addreg, PropertySettings.AddReg, ISPSettings.Addreg
+;==========================================================================
+; Interfaces
+;==========================================================================
+[UVC_HDv1.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC
+
+; No 3DNR
+[UVC_HDv2.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC
+
+; No Face AE & RGB
+[UVC_HDv3.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC
+
+; No Face AE & 3DNR & RGB
+[UVC_HDv4.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC
+
+; No Face AE & 3DNR
+[UVC_HDv5.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC
+
+; CS20, Face AE_M1 and HW_Antiflicker
+[UVC_HDv6.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC
+
+[UVC_HDv6_CP.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC
+
+[UVC_HDv6_CP2.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC
+
+[UVC_HDv6_CP3.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_HDv6_CP3
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_HDv6_CP3
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_HDv6_CP3
+
+[UVC_HDv6_CP4.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_HDv6_CP4
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_HDv6_CP4
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_HDv6_CP4
+
+[UVC_HDvWA.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC
+
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+[UVC_HDv7.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC
+
+[UVC_HDv7_CP.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC
+
+[UVC_HDv7_CP2.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC
+
+[UVC_HDv9.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_SG
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_SG
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_SG
+
+[UVC_IR.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IR_SG
+AddInterface=%KSCATEGORY_SENSOR_CAMERA%,GLOBAL,AddIntf_IR_SG
+
+; For Japan VGA device
+[UVC_VGA.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC
+
+; For Japan VGA device, Full 3DNR
+[UVC_VGA_JAP2.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC
+
+; For China VGA device
+[UVC_VGA_China.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC
+
+; For China2 VGA device
+[UVC_VGA_China2.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC
+
+; For test
+[UVC_Test.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC
+
+[AddIntf_EC]
+AddReg=AddIntf_EC.AddReg
+
+[AddIntf_IC]
+AddReg=AddIntf_IC.AddReg
+
+; 54B6
+[AddIntf_IC_HDv6_CP3]
+AddReg=AddIntf_IC.AddReg, AddIntf_FSColorInfo.AddReg
+
+; 54BF
+[AddIntf_IC_HDv6_CP4]
+AddReg=AddIntf_IC.AddReg, AddIntf_FSColorInfo.AddReg
+
+[AddIntf_IC_SG]
+AddReg=AddIntf_IC.AddReg, AddIntf_SG.AddReg
+
+[AddIntf_IR_SG]
+AddReg=AddIntf_IR.AddReg, AddIntf_SG.AddReg
+
+; 26080 ======================================================
+[UVC_HDv1_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC_26080
+; No 3DNR
+[UVC_HDv2_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_26080
+; No Face AE & RGB
+[UVC_HDv3_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC_26080
+; No Face AE & 3DNR & RGB
+[UVC_HDv4_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC_26080
+; No Face AE & 3DNR
+[UVC_HDv5_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_26080
+; CS20, Face AE_M1 and HW_Antiflicker
+[UVC_HDv6_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_26080
+[UVC_HDv6_CP_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_26080
+[UVC_HDv6_CP2_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_26080
+[UVC_HDv6_CP3_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_HDv6_CP3_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_HDv6_CP3_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_HDv6_CP3_26080
+[UVC_HDv6_CP4_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_HDv6_CP4_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_HDv6_CP4_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_HDv6_CP4_26080
+[UVC_HDvWA_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_26080
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+[UVC_HDv7_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_26080
+[UVC_HDv7_CP_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_26080
+[UVC_HDv7_CP2_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_26080
+[UVC_HDv9_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_IC_SG_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_IC_SG_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_IC_SG_26080
+; For Japan VGA device
+[UVC_VGA_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC_26080
+; For Japan VGA device, Full 3DNR
+[UVC_VGA_JAP2_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC_26080
+; For China VGA device
+[UVC_VGA_China_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC_26080
+; For China2 VGA device
+[UVC_VGA_China2_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC_26080
+; For test
+[UVC_Test_26080.Interfaces]
+Include = usbvideo.inf
+Needs = usbvideo.NT.Interfaces
+AddInterface=%KSCATEGORY_CAPTURE%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO%,GLOBAL,AddIntf_EC_26080
+AddInterface=%KSCATEGORY_VIDEO_CAMERA%,GLOBAL,AddIntf_EC_26080
+[AddIntf_EC_26080]
+AddReg=AddIntf_EC_26080.AddReg, AddIntf_AutoDecode.AddReg, AddIntf_FSColorInfo.AddReg
+[AddIntf_IC_26080]
+AddReg=AddIntf_IC_26080.AddReg, AddIntf_AutoDecode.AddReg, AddIntf_FSColorInfo.AddReg
+; 54B6
+[AddIntf_IC_HDv6_CP3_26080]
+AddReg=AddIntf_IC_26080.AddReg, AddIntf_AutoDecode.AddReg, AddIntf_FSColorInfo.AddReg
+; 54BF
+[AddIntf_IC_HDv6_CP4_26080]
+AddReg=AddIntf_IC_26080.AddReg, AddIntf_AutoDecode.AddReg, AddIntf_FSColorInfo.AddReg
+[AddIntf_IC_SG_26080]
+AddReg=AddIntf_IC_26080.AddReg, AddIntf_AutoDecode.AddReg, AddIntf_FSColorInfo.AddReg, AddIntf_SG.AddReg
+
+;==========================================================================
+; Services
+;==========================================================================
+[UVC_HDv1.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+; No 3DNR
+[UVC_HDv2.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+; No Face AE & RGB
+[UVC_HDv3.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+; No Face AE & 3DNR & RGB
+[UVC_HDv4.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+; No Face AE & 3DNR
+[UVC_HDv5.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+; CS20, Face AE_M1 and HW_Antiflicker
+[UVC_HDv6.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[UVC_HDv6_CP.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[UVC_HDv6_CP2.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[UVC_HDv6_CP3.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[UVC_HDv6_CP4.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[UVC_HDvWA.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+[UVC_HDv7.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[UVC_HDv7_CP.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[UVC_HDv7_CP2.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[UVC_HDv9.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+[UVC_IR.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+; For Japan VGA device
+[UVC_VGA.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+; For Japan VGA device, Full 3DNR
+[UVC_VGA_JAP2.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+; For China VGA device
+[UVC_VGA_China.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+; For China2 VGA device
+[UVC_VGA_China2.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+; For test
+[UVC_Test.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+; 26080 ======================================================
+[UVC_HDv1_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+; No 3DNR
+[UVC_HDv2_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+; No Face AE & RGB
+[UVC_HDv3_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+; No Face AE & 3DNR & RGB
+[UVC_HDv4_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+; No Face AE & 3DNR
+[UVC_HDv5_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+; CS20, Face AE_M1 and HW_Antiflicker
+[UVC_HDv6_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+[UVC_HDv6_CP_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+[UVC_HDv6_CP2_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+[UVC_HDv6_CP3_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+[UVC_HDv6_CP4_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+[UVC_HDvWA_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+[UVC_HDv7_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+[UVC_HDv7_CP_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+[UVC_HDv7_CP2_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+[UVC_HDv9_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+; For Japan VGA device
+[UVC_VGA_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+; For Japan VGA device, Full 3DNR
+[UVC_VGA_JAP2_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+; For China VGA device
+[UVC_VGA_China_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+; For China2 VGA device
+[UVC_VGA_China2_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+; For test
+[UVC_Test_26080.Services]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Services
+
+;==========================================================================
+; Wdf
+;==========================================================================
+[UVC_HDv1.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; No 3DNR
+[UVC_HDv2.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; No Face AE & RGB
+[UVC_HDv3.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; No Face AE & 3DNR & RGB
+[UVC_HDv4.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; No Face AE & 3DNR
+[UVC_HDv5.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; CS20, Face AE_M1 and HW_Antiflicker
+[UVC_HDv6.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv6_CP.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv6_CP2.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv6_CP3.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv6_CP4.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDvWA.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+[UVC_HDv7.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv7_CP.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv7_CP2.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv9.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_IR.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; For Japan VGA device
+[UVC_VGA.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; For Japan VGA device, Full 3DNR
+[UVC_VGA_JAP2.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; For China VGA device
+[UVC_VGA_China.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; For China2 VGA device
+[UVC_VGA_China2.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; For test
+[UVC_Test.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; 26080 ======================================================
+[UVC_HDv1_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; No 3DNR
+[UVC_HDv2_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; No Face AE & RGB
+[UVC_HDv3_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; No Face AE & 3DNR & RGB
+[UVC_HDv4_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; No Face AE & 3DNR
+[UVC_HDv5_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; CS20, Face AE_M1 and HW_Antiflicker
+[UVC_HDv6_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv6_CP_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv6_CP2_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv6_CP3_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv6_CP4_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDvWA_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+[UVC_HDv7_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv7_CP_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv7_CP2_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+[UVC_HDv9_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; For Japan VGA device
+[UVC_VGA_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; For Japan VGA device, Full 3DNR
+[UVC_VGA_JAP2_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; For China VGA device
+[UVC_VGA_China_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; For China2 VGA device
+[UVC_VGA_China2_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+; For test
+[UVC_Test_26080.Wdf]
+Include = usbvideo.inf
+Needs = USBVideo.NT.Wdf
+KmdfService=WdmCompanionFilter, WdmCompanionFilter_KmdfSvcSect
+UmdfService = SecureUSBVideo, SecureUSBVideo_UmdfSvcSect
+CompanionConfiguration = WdmCompanionFilter, WdmCompanionFilter_CompanionSect
+
+
+
+[WdmCompanionFilter_CompanionSect]
+CompanionServices = SecureUSBVideo
+
+[WdmCompanionFilter_KmdfSvcSect]
+KmdfLibraryVersion = %KMDF_VERSION%
+
+[SecureUSBVideo_UmdfSvcSect]
+UmdfLibraryVersion = %UMDF_VERSION%
+ServiceBinary = %12%\UMDF\SecureUSBVideo.dll
+ServiceType = SecureCompanion ; allowed options are: Driver (default), SecureCompanion, NonSecureCompanion
+TrustletIdentity = 4096          ; required if it is SecureCompanion
+
+
+;==========================================================================
+; CopyFiles
+;==========================================================================
+[Install_DeviceMFT.CopyFiles]
+SonixDeviceMFT.dll
+onnxruntime.dll
+DirectML.dll
+msvcp140.dll
+vcruntime140.dll
+vcruntime140_1.dll
+
+;==========================================================================
+; AddReg - DDInstall Section
+;==========================================================================
+[Install_DeviceMFT.AddReg]
+HKLM,%StaticPath%,,,"Sonix DeviceMFT Class"
+HKLM,%StaticPath%\InprocServer32,,%REG_EXPAND_SZ%,"%%SystemRoot%%\system32\SONiX\%DeviceMFT.CLSID%\SonixDeviceMFT.dll"
+HKLM,%StaticPath%\InprocServer32,ThreadingModel,,"Both"
+; RGB State
+HKLM,%StaticPath%\InprocServer32,RGBStreaming,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,IRStreaming,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,IsHelloMode,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,IRMode,%REG_DWORD%,0
+; For control ISP which related to DNN
+HKLM,%StaticPath%\InprocServer32,GPU,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,HDR,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,FTC,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,ECCC,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,AFC,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,AFE,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,BBC,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,BBM,%REG_DWORD%,1
+HKLM,%StaticPath%\InprocServer32,S2_Weight,%REG_DWORD%,160
+HKLM,%StaticPath%\InprocServer32,S2_Strength,%REG_DWORD%,7
+HKLM,%StaticPath%\InprocServer32,S2_EdgeDark,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,Pinterval,%REG_DWORD%,3
+HKLM,%StaticPath%\InprocServer32,S2_Dedug,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,S2_RandW,%REG_DWORD%,7
+HKLM,%StaticPath%\InprocServer32,EnSpecialeffect,%REG_DWORD%,1
+HKLM,%StaticPath%\InprocServer32,Show_IRDiff,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,ShowROI,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,Debug_map,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,smallThr,%REG_DWORD%,50
+; For workaround(Fix brightness error issue, workaround)
+HKLM,%StaticPath%\InprocServer32,YTarget,%REG_DWORD%,120
+; For background blur debug
+;HKLM,%StaticPath%\InprocServer32,Pix_interval,%REG_DWORD%,16
+;HKLM,%StaticPath%\InprocServer32,S1_Weight,%REG_DWORD%,16
+; For 
+HKLM,%StaticPath%\InprocServer32,SharpenMode,%REG_DWORD%,4
+HKLM,%StaticPath%\InprocServer32,BlurSize,%REG_DWORD%,11
+HKLM,%StaticPath%\InprocServer32,ShowMask,%REG_DWORD%,0
+
+HKLM,%StaticPath%\InprocServer32,onlyNearest,%REG_DWORD%,1
+HKLM,%StaticPath%\InprocServer32,ratioThrsh,%REG_SZ%,"0.9"
+
+HKLM,%StaticPath%\InprocServer32,StreamRun,%REG_DWORD%,0
+HKLM,%StaticPath%\InprocServer32,DriverRun,%REG_DWORD%,1
+
+[Install_DeviceMFT.AddReg.Security]
+"D:AR(A;;GA;;;BU)"
+
+;==========================================================================
+; AddReg - HW Section
+;==========================================================================
+[HW_EC.AddReg]
+; Change device name in device manger
+HKR,,FriendlyName,,%DeviceDesc_RGB_EC%
+; Enable/Disable Dshow Bridgde(bit 0) & MJPG Decoder(bit 1)
+; 0x00000000 : Disable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000001 : Enable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000002 : Disable Dshow Bridgde, Enable MJPG Decoder
+; 0x00000003 : Enable Dshow Bridgde, Enable MJPG Decoder
+HKR,,EnableDshowRedirection,%REG_DWORD%,0x00000001
+
+[HW_IC.AddReg]
+; Change device name in device manger
+HKR,,FriendlyName,,%DeviceDesc_RGB_IC%
+; Enable/Disable Dshow Bridgde(bit 0) & MJPG Decoder(bit 1)
+; 0x00000000 : Disable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000001 : Enable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000002 : Disable Dshow Bridgde, Enable MJPG Decoder
+; 0x00000003 : Enable Dshow Bridgde, Enable MJPG Decoder
+HKR,,EnableDshowRedirection,%REG_DWORD%,0x00000001
+
+[HW_IC_WA.AddReg]
+; Change device name in device manger
+HKR,,FriendlyName,,%DeviceDesc_RGB_IC%
+; Enable/Disable Dshow Bridgde(bit 0) & MJPG Decoder(bit 1)
+; 0x00000000 : Disable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000001 : Enable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000002 : Disable Dshow Bridgde, Enable MJPG Decoder
+; 0x00000003 : Enable Dshow Bridgde, Enable MJPG Decoder
+HKR,,EnableDshowRedirection,%REG_DWORD%,0x00000001
+
+[HW_IR.AddReg]
+; Change device name in device manger
+HKR,,FriendlyName,,%DeviceDesc_IR%
+HKR,,SensorCameraMode,%REG_DWORD%,0x00000001
+HKR,,SkipCameraEnumeration,%REG_DWORD%,0x00000001
+; Enable/Disable Dshow Bridgde(bit 0) & MJPG Decoder(bit 1)
+; 0x00000000 : Disable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000001 : Enable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000002 : Disable Dshow Bridgde, Enable MJPG Decoder
+; 0x00000003 : Enable Dshow Bridgde, Enable MJPG Decoder
+HKR,,EnableDshowRedirection,%REG_DWORD%,0x00000001
+
+; 26080 ======================================================
+[HW_EC_26080.AddReg]
+; Change device name in device manger
+HKR,,FriendlyName,,%DeviceDesc_RGB_EC%
+; Enable/Disable Dshow Bridgde(bit 0) & MJPG Decoder(bit 1)
+; 0x00000000 : Disable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000001 : Enable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000002 : Disable Dshow Bridgde, Enable MJPG Decoder
+; 0x00000003 : Enable Dshow Bridgde, Enable MJPG Decoder
+HKR,,EnableDshowRedirection,%REG_DWORD%,0x00000001
+HKR,,UVC-FSColorInfoOverride,%REG_DWORD%,0x01050102
+
+[HW_IC_26080.AddReg]
+; Change device name in device manger
+HKR,,FriendlyName,,%DeviceDesc_RGB_IC%
+; Enable/Disable Dshow Bridgde(bit 0) & MJPG Decoder(bit 1)
+; 0x00000000 : Disable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000001 : Enable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000002 : Disable Dshow Bridgde, Enable MJPG Decoder
+; 0x00000003 : Enable Dshow Bridgde, Enable MJPG Decoder
+HKR,,EnableDshowRedirection,%REG_DWORD%,0x00000001
+HKR,,UVC-FSColorInfoOverride,%REG_DWORD%,0x01050102
+
+[HW_IC_WA_26080.AddReg]
+; Change device name in device manger
+HKR,,FriendlyName,,%DeviceDesc_RGB_IC%
+; Enable/Disable Dshow Bridgde(bit 0) & MJPG Decoder(bit 1)
+; 0x00000000 : Disable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000001 : Enable Dshow Bridgde, Disable MJPG Decoder
+; 0x00000002 : Disable Dshow Bridgde, Enable MJPG Decoder
+; 0x00000003 : Enable Dshow Bridgde, Enable MJPG Decoder
+HKR,,EnableDshowRedirection,%REG_DWORD%,0x00000001
+HKR,,UVC-FSColorInfoOverride,%REG_DWORD%,0x01050102
+
+; ISP control & parameters
+[ISPCtrl_HDv1.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv1.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+; No 3DNR
+[ISPCtrl_HDv2.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv2.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+; No Face AE & RGB
+[ISPCtrl_HDv3.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv3.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+; No Face AE & 3DNR & RGB
+[ISPCtrl_HDv4.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv4.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+; No Face AE &3DNR
+[ISPCtrl_HDv5.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv5.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+; CS20, Face AE_M1 and HW_Antiflicker
+[ISPCtrl_HDv6.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,2
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv6.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[ISPCtrl_HDv6_CP.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,2
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,DropFrameCount,%REG_DWORD%,2
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv6_CP.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[ISPCtrl_HDv6_CP2.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,2
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv6_CP2.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[ISPCtrl_HDv6_CP3.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,2
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv6_CP3.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[ISPCtrl_HDv6_CP4.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,2
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv6_CP4.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[ISPCtrl_HDvWA.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,2
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDvWA.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+; CS20(288), No 3DNR, Face AE_M1 and HW_Antiflicker
+[ISPCtrl_HDv7.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,2
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv7.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[ISPCtrl_HDv7_CP.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,2
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv7_CP.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[ISPCtrl_HDv7_CP2.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,2
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv7_CP2.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[ISPCtrl_HDv9.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,2
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_HDv9.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[ISPCtrl_IR.Addreg]
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+
+[ISPCtrl_IR.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+; For Japan VGA device
+[ISPCtrl_VGA.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_VGA.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+; For Japan VGA device, Full 3DNR
+[ISPCtrl_VGA_JAP2.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_VGA_JAP2.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+; For China VGA device
+[ISPCtrl_VGA_China.Addreg]
+HKR,%ISPCtrlPath%,EnableMJPGHWDecode,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceDetection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceLandmark,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePortraitMatting,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAppearanceFilter,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableEyeContactCorrection,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceTracking,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableBackgroundBlur,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableTouchROI,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,WaitTimeout,%REG_DWORD%,100
+
+[ISPCtrl_VGA_China.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+; For test
+[ISPCtrl_Test.Addreg]
+HKR,%ISPCtrlPath%,EnableAutoAntiFlicker,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableFaceAE_M1,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePrivacy,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableHDR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,Enable3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFull3DNR,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,3DNRVersion,%REG_DWORD%,1
+HKR,%ISPCtrlPath%,EnableDTDenoise,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnablePTZ,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableFaceAE,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableRGB,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableLoadDefProp,%REG_DWORD%,0
+HKR,%ISPCtrlPath%,EnableAutoDecode,%REG_DWORD%,3
+HKR,%ISPCtrlPath%,FirstLoadFW,%REG_DWORD%,1
+
+[ISPCtrl_Test.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[ISPSettings.Addreg]
+;ANTF
+HKR,%AFPath%,ANTF_THRESHOLD,%REG_DWORD%,13
+
+; Privacy & ECP/TSP parameters
+HKR,%PrivacyPath%,PrivacyAuto,%REG_DWORD%,1
+HKR,%PrivacyPath%,PrivacyMode,%REG_DWORD%,2
+HKR,%PrivacyPath%,PrivacyStatus,%REG_DWORD%,0
+HKR,%PrivacyPath%,PrivacyRetryCount,%REG_DWORD%,10
+HKR,%PrivacyPath%,ECPCoveredTime,%REG_SZ%,""
+HKR,%PrivacyPath%,ECPUnCoveredTime,%REG_SZ%,""
+
+; 3DNR parameters - Effect
+HKR,%3DNRPath%,TNRStep,%REG_DWORD%,15
+HKR,%3DNRPath%,StartThd,%REG_DWORD%,0
+HKR,%3DNRPath%,StartW1,%REG_DWORD%,32
+HKR,%3DNRPath%,StartW2,%REG_DWORD%,32
+HKR,%3DNRPath%,EndThd,%REG_DWORD%,8
+HKR,%3DNRPath%,EndW1,%REG_DWORD%,24
+HKR,%3DNRPath%,EndW2,%REG_DWORD%,30
+HKR,%3DNRPath%,DCThd,%REG_DWORD%,8
+HKR,%3DNRPath%,DCW1,%REG_DWORD%,24
+HKR,%3DNRPath%,DCW2,%REG_DWORD%,30
+
+; 3DNR V2 parameters - Effect
+HKR,%3DNRv2Path%,TNRStep,%REG_DWORD%,15
+HKR,%3DNRv2Path%,StartThd,%REG_DWORD%,0
+HKR,%3DNRv2Path%,Still_W1,%REG_DWORD%,6
+HKR,%3DNRv2Path%,Still_W2,%REG_DWORD%,9
+HKR,%3DNRv2Path%,Still_W3,%REG_DWORD%,13
+HKR,%3DNRv2Path%,Still_W4,%REG_DWORD%,14
+HKR,%3DNRv2Path%,Still_W5,%REG_DWORD%,16
+HKR,%3DNRv2Path%,Still_W6,%REG_DWORD%,20
+HKR,%3DNRv2Path%,Still_W7,%REG_DWORD%,20
+HKR,%3DNRv2Path%,Still_W8,%REG_DWORD%,20
+HKR,%3DNRv2Path%,Still_W9,%REG_DWORD%,20
+HKR,%3DNRv2Path%,Still_W10,%REG_DWORD%,20
+HKR,%3DNRv2Path%,EndThd,%REG_DWORD%,2
+HKR,%3DNRv2Path%,EndW1,%REG_DWORD%,2
+HKR,%3DNRv2Path%,EndW2,%REG_DWORD%,10
+HKR,%3DNRv2Path%,EndW3,%REG_DWORD%,16
+HKR,%3DNRv2Path%,EndW4,%REG_DWORD%,20
+HKR,%3DNRv2Path%,EndW5,%REG_DWORD%,23
+HKR,%3DNRv2Path%,EndW6,%REG_DWORD%,27
+HKR,%3DNRv2Path%,EndW7,%REG_DWORD%,29
+HKR,%3DNRv2Path%,EndW8,%REG_DWORD%,30
+HKR,%3DNRv2Path%,EndW9,%REG_DWORD%,31
+HKR,%3DNRv2Path%,EndW10,%REG_DWORD%,32
+HKR,%3DNRv2Path%,DCThd,%REG_DWORD%,8
+HKR,%3DNRv2Path%,DebugMode,%REG_DWORD%,0
+HKR,%3DNRv2Path%,DebugType,%REG_DWORD%,0
+HKR,%3DNRv2Path%,DebugLevel,%REG_DWORD%,0
+HKR,%3DNRv2Path%,BlockMode,%REG_DWORD%,0
+HKR,%3DNRv2Path%,ForceMotionLevel_UV,%REG_DWORD%,15
+HKR,%3DNRv2Path%,ForceMotionLevel_Y,%REG_DWORD%,19
+HKR,%3DNRv2Path%,MotionLevel_UV,%REG_DWORD%,10
+HKR,%3DNRv2Path%,MotionLevel_Y,%REG_DWORD%,12
+HKR,%3DNRv2Path%,TriggerPoint,%REG_DWORD%,40
+HKR,%3DNRv2Path%,Y_HB,%REG_DWORD%,18
+HKR,%3DNRv2Path%,Y_LB,%REG_DWORD%,3
+
+; 3DNR V3 parameters - Effect
+HKR,%3DNRv3Path%,TNRStep,%REG_DWORD%,15
+HKR,%3DNRv3Path%,StartThd,%REG_DWORD%,0
+HKR,%3DNRv3Path%,Still_W1,%REG_DWORD%,6
+HKR,%3DNRv3Path%,Still_W2,%REG_DWORD%,9
+HKR,%3DNRv3Path%,Still_W3,%REG_DWORD%,13
+HKR,%3DNRv3Path%,Still_W4,%REG_DWORD%,14
+HKR,%3DNRv3Path%,Still_W5,%REG_DWORD%,16
+HKR,%3DNRv3Path%,Still_W6,%REG_DWORD%,20
+HKR,%3DNRv3Path%,Still_W7,%REG_DWORD%,20
+HKR,%3DNRv3Path%,Still_W8,%REG_DWORD%,20
+HKR,%3DNRv3Path%,Still_W9,%REG_DWORD%,20
+HKR,%3DNRv3Path%,Still_W10,%REG_DWORD%,20
+HKR,%3DNRv3Path%,EndThd,%REG_DWORD%,2
+HKR,%3DNRv3Path%,EndW1,%REG_DWORD%,7
+HKR,%3DNRv3Path%,EndW1_ExpL8,%REG_DWORD%,7
+HKR,%3DNRv3Path%,EndW1_ExpL12,%REG_DWORD%,10
+HKR,%3DNRv3Path%,EndW2,%REG_DWORD%,10
+HKR,%3DNRv3Path%,EndW3,%REG_DWORD%,16
+HKR,%3DNRv3Path%,EndW4,%REG_DWORD%,20
+HKR,%3DNRv3Path%,EndW5,%REG_DWORD%,23
+HKR,%3DNRv3Path%,EndW6,%REG_DWORD%,27
+HKR,%3DNRv3Path%,EndW7,%REG_DWORD%,29
+HKR,%3DNRv3Path%,EndW8,%REG_DWORD%,30
+HKR,%3DNRv3Path%,EndW9,%REG_DWORD%,31
+HKR,%3DNRv3Path%,EndW10,%REG_DWORD%,32
+HKR,%3DNRv3Path%,DCThd,%REG_DWORD%,8
+HKR,%3DNRv3Path%,DebugMode,%REG_DWORD%,0
+HKR,%3DNRv3Path%,DebugType,%REG_DWORD%,0
+HKR,%3DNRv3Path%,DebugLevel,%REG_DWORD%,0
+HKR,%3DNRv3Path%,BlockMode,%REG_DWORD%,0
+HKR,%3DNRv3Path%,ForceMotionLevel_UV,%REG_DWORD%,15
+HKR,%3DNRv3Path%,ForceMotionLevel_Y,%REG_DWORD%,19
+HKR,%3DNRv3Path%,MotionLevel_UV,%REG_DWORD%,10
+HKR,%3DNRv3Path%,MotionLevel_Y,%REG_DWORD%,12
+HKR,%3DNRv3Path%,TriggerPoint,%REG_DWORD%,40
+HKR,%3DNRv3Path%,Y_HB,%REG_DWORD%,18
+HKR,%3DNRv3Path%,Y_LB,%REG_DWORD%,3
+
+; 3DNR V4 parameters - Effect
+HKR,%3DNRv4Path%,TNRStep,%REG_DWORD%,15
+HKR,%3DNRv4Path%,StartThd,%REG_DWORD%,0
+HKR,%3DNRv4Path%,Still_W1,%REG_DWORD%,6
+HKR,%3DNRv4Path%,Still_W2,%REG_DWORD%,9
+HKR,%3DNRv4Path%,Still_W3,%REG_DWORD%,13
+HKR,%3DNRv4Path%,Still_W4,%REG_DWORD%,14
+HKR,%3DNRv4Path%,Still_W5,%REG_DWORD%,16
+HKR,%3DNRv4Path%,Still_W6,%REG_DWORD%,20
+HKR,%3DNRv4Path%,Still_W7,%REG_DWORD%,20
+HKR,%3DNRv4Path%,Still_W8,%REG_DWORD%,20
+HKR,%3DNRv4Path%,Still_W9,%REG_DWORD%,20
+HKR,%3DNRv4Path%,Still_W10,%REG_DWORD%,20
+HKR,%3DNRv4Path%,EndThd,%REG_DWORD%,2
+HKR,%3DNRv4Path%,EndW1,%REG_DWORD%,7
+HKR,%3DNRv4Path%,EndW1_ExpL8,%REG_DWORD%,7
+HKR,%3DNRv4Path%,EndW1_ExpL12,%REG_DWORD%,10
+HKR,%3DNRv4Path%,EndW2,%REG_DWORD%,10
+HKR,%3DNRv4Path%,EndW3,%REG_DWORD%,16
+HKR,%3DNRv4Path%,EndW4,%REG_DWORD%,20
+HKR,%3DNRv4Path%,EndW5,%REG_DWORD%,23
+HKR,%3DNRv4Path%,EndW6,%REG_DWORD%,27
+HKR,%3DNRv4Path%,EndW7,%REG_DWORD%,29
+HKR,%3DNRv4Path%,EndW8,%REG_DWORD%,30
+HKR,%3DNRv4Path%,EndW9,%REG_DWORD%,31
+HKR,%3DNRv4Path%,EndW10,%REG_DWORD%,32
+HKR,%3DNRv4Path%,DCThd,%REG_DWORD%,8
+HKR,%3DNRv4Path%,DebugMode,%REG_DWORD%,0
+HKR,%3DNRv4Path%,DebugType,%REG_DWORD%,0
+HKR,%3DNRv4Path%,DebugLevel,%REG_DWORD%,0
+HKR,%3DNRv4Path%,BlockMode,%REG_DWORD%,0
+HKR,%3DNRv4Path%,ForceMotionLevel_UV,%REG_DWORD%,15
+HKR,%3DNRv4Path%,ForceMotionLevel_Y,%REG_DWORD%,19
+HKR,%3DNRv4Path%,MotionLevel_UV,%REG_DWORD%,10
+HKR,%3DNRv4Path%,MotionLevel_Y,%REG_DWORD%,12
+HKR,%3DNRv4Path%,TriggerPoint,%REG_DWORD%,40
+HKR,%3DNRv4Path%,Y_HB,%REG_DWORD%,18
+HKR,%3DNRv4Path%,Y_LB,%REG_DWORD%,3
+
+; DTDenoise parameters
+HKR,%DTDenoisePath%,DTDN_EN,%REG_DWORD%,1
+HKR,%DTDenoisePath%,DTDN_Y_OFFSET,%REG_DWORD%,3
+HKR,%DTDenoisePath%,DTDN_U_OFFSET,%REG_DWORD%,5
+HKR,%DTDenoisePath%,DTDN_V_OFFSET,%REG_DWORD%,5
+HKR,%DTDenoisePath%,DTDN_Y_CTHD,%REG_DWORD%,100
+HKR,%DTDenoisePath%,DTDN_U_CTHD,%REG_DWORD%,100
+HKR,%DTDenoisePath%,DTDN_V_CTHD,%REG_DWORD%,100
+HKR,%DTDenoisePath%,DTDN_YUV_THD,%REG_DWORD%,30
+HKR,%DTDenoisePath%,DTDN_YUV_HTHD,%REG_DWORD%,100
+HKR,%DTDenoisePath%,DTDN_EDGE_GAIN,%REG_DWORD%,5
+HKR,%DTDenoisePath%,DTDN_STHD1,%REG_DWORD%,60
+HKR,%DTDenoisePath%,DTDN_STHD2,%REG_DWORD%,10
+HKR,%DTDenoisePath%,DTDN_Y_HBOUND,%REG_DWORD%,245
+; DTDenoise parameters - Reserved
+HKR,%DTDenoisePath%,DTDN_CMODE,%REG_DWORD%,1
+
+; Face AE parameters - Default
+HKR,%FaceAEPath%,WindowScaleRatio,%REG_DWORD%,100
+; Face AE parameters - Scale
+HKR,%FaceAEPath%,1280x720,%REG_SZ%,"1024,0,0"
+HKR,%FaceAEPath%,960x540,%REG_SZ%,"1352,4,0"
+HKR,%FaceAEPath%,848x480,%REG_SZ%,"1536,2,0"
+HKR,%FaceAEPath%,800x600,%REG_SZ%,"1224,134,1"
+HKR,%FaceAEPath%,640x480,%REG_SZ%,"1536,106,0"
+HKR,%FaceAEPath%,640x400,%REG_SZ%,"1840,36,0"
+HKR,%FaceAEPath%,640x360,%REG_SZ%,"2048,0,0"
+HKR,%FaceAEPath%,480x270,%REG_SZ%,"2704,2,0"
+HKR,%FaceAEPath%,424x240,%REG_SZ%,"3032,0,0"
+HKR,%FaceAEPath%,360x180,%REG_SZ%,"3560,0,11"
+HKR,%FaceAEPath%,352x288,%REG_SZ%,"2560,80,0"
+HKR,%FaceAEPath%,320x240,%REG_SZ%,"3072,52,0"
+HKR,%FaceAEPath%,320x180,%REG_SZ%,"4000,2,0"
+HKR,%FaceAEPath%,176x144,%REG_SZ%,"5120,40,0"
+HKR,%FaceAEPath%,160x120,%REG_SZ%,"6144,26,0"
+HKR,%FaceAEPath%,160x90,%REG_SZ%,"7680,4,0"
+; Face AE parameters - Judgment
+HKR,%FaceAEPath%,FS2AE_DisaprCnt,%REG_DWORD%,10
+HKR,%FaceAEPath%,FS2BL_DisaprCnt,%REG_DWORD%,30
+HKR,%FaceAEPath%,AE2FS_AprCnt,%REG_DWORD%,15
+HKR,%FaceAEPath%,BL2FS_AprCnt,%REG_DWORD%,10
+HKR,%FaceAEPath%,DefFaceSize,%REG_DWORD%,10000
+HKR,%FaceAEPath%,DefSizeX,%REG_DWORD%,80
+HKR,%FaceAEPath%,DefSizeY,%REG_DWORD%,80
+HKR,%FaceAEPath%,DefSizeX_B,%REG_DWORD%,256
+HKR,%FaceAEPath%,DefSizeY_B,%REG_DWORD%,144
+HKR,%FaceAEPath%,DefSkipX,%REG_DWORD%,3
+HKR,%FaceAEPath%,DefSkipY,%REG_DWORD%,3
+HKR,%FaceAEPath%,DefStartX,%REG_DWORD%,280
+HKR,%FaceAEPath%,DefStartY,%REG_DWORD%,0
+HKR,%FaceAEPath%,DefStartX_B,%REG_DWORD%,0
+HKR,%FaceAEPath%,DefStartY_B,%REG_DWORD%,0
+
+HKR,%WDRPath%,13D3_54AA,%REG_SZ%,"12,20,0"
+HKR,%WDRPath%,174F_2455,%REG_SZ%,"12,20,0"
+HKR,%WDRPath%,13D3_540A,%REG_SZ%,"12,20,0"
+HKR,%WDRPath%,13D3_54B1,%REG_SZ%,"12,20,0"
+HKR,%WDRPath%,13D3_54B6,%REG_SZ%,"12,20,0"
+HKR,%WDRPath%,13D3_54BF,%REG_SZ%,"12,20,0"
+HKR,%WDRPath%,1161_2501,%REG_SZ%,"12,20,20"
+
+HKR,%WDRPath%,ReportValue,%REG_DWORD%,20
+
+HKR,%WDRPath%,PLCLowAbsYLB,%REG_DWORD%,40
+HKR,%WDRPath%,PLCLowAbsYHB,%REG_DWORD%,48
+HKR,%WDRPath%,PLCHighAbsYLB,%REG_DWORD%,1000
+HKR,%WDRPath%,PLCHighAbsYHB,%REG_DWORD%,2000
+HKR,%WDRPath%,PLCHighDarkYLB,%REG_DWORD%,80
+HKR,%WDRPath%,PLCHighDarkYHB,%REG_DWORD%,96
+HKR,%WDRPath%,PLCHighBrightYLB,%REG_DWORD%,200
+HKR,%WDRPath%,PLCHighBrightYHB,%REG_DWORD%,216
+HKR,%WDRPath%,PLCWDRGenWS,%REG_DWORD%,20
+HKR,%WDRPath%,PLCWDRGenSS,%REG_DWORD%,32
+HKR,%WDRPath%,PLCWDRGenSS2,%REG_DWORD%,11
+
+HKR,%ISPCtrlPath%,UpdateDoFrameIdxCnt,%REG_DWORD%,30
+HKR,%ISPCtrlPath%,DoFrameIdx,%REG_DWORD%,20
+HKR,%ISPCtrlPath%,DoFrameIdxBlurMode,%REG_DWORD%,10
+HKR,%ISPCtrlPath%,DoXuIdx,%REG_DWORD%,2
+HKR,%ISPCtrlPath%,LoadCount,%REG_DWORD%,0
+
+[ISPSettings.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[NewECP.AddReg]
+; Privacy & ECP parameters
+HKR,%PrivacyPath%,NewECPCmd,%REG_DWORD%,1
+
+[NewECP.Addreg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[PropertySettings.AddReg]
+; The property page current settings
+HKR,%PropertySettingsPath_Current%,Brightness,%REG_DWORD%,50
+HKR,%PropertySettingsPath_Current%,Contrast,%REG_DWORD%,50
+HKR,%PropertySettingsPath_Current%,Hue,%REG_DWORD%,50
+HKR,%PropertySettingsPath_Current%,Saturation,%REG_DWORD%,50
+HKR,%PropertySettingsPath_Current%,Sharpness,%REG_DWORD%,50
+HKR,%PropertySettingsPath_Current%,Gamma,%REG_DWORD%,50
+HKR,%PropertySettingsPath_Current%,WhiteBlance,%REG_DWORD%,4600
+HKR,%PropertySettingsPath_Current%,WhiteBlanceFlag,%REG_DWORD%,1
+HKR,%PropertySettingsPath_Current%,Exposure,%REG_DWORD%,-6
+HKR,%PropertySettingsPath_Current%,ExposureFlag,%REG_DWORD%,1
+HKR,%PropertySettingsPath_Current%,Backlight,%REG_DWORD%,0
+HKR,%PropertySettingsPath_Current%,AutoExposurePriority,%REG_DWORD%,1
+HKR,%PropertySettingsPath_Current%,PowerLineFrequency,%REG_DWORD%,3
+HKR,%PropertySettingsPath_Current%,ColorEnable,%REG_DWORD%,1
+HKR,%PropertySettingsPath_Current%,PrivacyState,%REG_DWORD%,0
+HKR,%PropertySettingsPath_Current%,Pan,%REG_DWORD%,0
+HKR,%PropertySettingsPath_Current%,Tilt,%REG_DWORD%,0
+HKR,%PropertySettingsPath_Current%,Zoom,%REG_DWORD%,100
+HKR,%PropertySettingsPath_Current%,ZoomDefault,%REG_DWORD%,100
+HKR,%PropertySettingsPath_Current%,Roll,%REG_DWORD%,0
+
+[PropertySettings.AddReg.Security]
+"D:AR(A;;GA;;;BU)"
+
+[PropertySettings_VGA.AddReg]
+; The property page current settings
+HKR,%PropertySettingsPath_Current%,Brightness,%REG_DWORD%,50
+HKR,%PropertySettingsPath_Current%,Contrast,%REG_DWORD%,50
+HKR,%PropertySettingsPath_Current%,Hue,%REG_DWORD%,50
+HKR,%PropertySettingsPath_Current%,Saturation,%REG_DWORD%,50
+HKR,%PropertySettingsPath_Current%,Sharpness,%REG_DWORD%,50
+HKR,%PropertySettingsPath_Current%,Gamma,%REG_DWORD%,50
+HKR,%PropertySettingsPath_Current%,WhiteBlance,%REG_DWORD%,4600
+HKR,%PropertySettingsPath_Current%,WhiteBlanceFlag,%REG_DWORD%,1
+HKR,%PropertySettingsPath_Current%,Exposure,%REG_DWORD%,0
+HKR,%PropertySettingsPath_Current%,ExposureFlag,%REG_DWORD%,1
+HKR,%PropertySettingsPath_Current%,Backlight,%REG_DWORD%,0
+HKR,%PropertySettingsPath_Current%,AutoExposurePriority,%REG_DWORD%,1
+HKR,%PropertySettingsPath_Current%,PowerLineFrequency,%REG_DWORD%,1
+HKR,%PropertySettingsPath_Current%,ColorEnable,%REG_DWORD%,1
+HKR,%PropertySettingsPath_Current%,PrivacyState,%REG_DWORD%,0
+HKR,%PropertySettingsPath_Current%,Pan,%REG_DWORD%,0
+HKR,%PropertySettingsPath_Current%,Tilt,%REG_DWORD%,0
+HKR,%PropertySettingsPath_Current%,Zoom,%REG_DWORD%,100
+HKR,%PropertySettingsPath_Current%,ZoomDefault,%REG_DWORD%,100
+HKR,%PropertySettingsPath_Current%,Roll,%REG_DWORD%,0
+
+[PropertySettings_VGA.AddReg.Security]
+"D:AR(A;;GA;;;BU)"
+
+;==========================================================================
+; AddReg - Interfaces Section
+;==========================================================================
+[AddIntf_EC.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+HKR,,FriendlyName,,%DeviceDesc_RGB_EC%
+HKR,,RTCFlags,%REG_DWORD%,0x00000010
+HKR,,EnablePlatformDmft,%REG_DWORD%,0x00000001
+;HKR,,CameraDeviceMftCLSID,%REG_SZ%,%DeviceMFT.CLSID%
+HKR,,CameraDeviceMftCLSIDChain,%REG_MULTI_SZ%,%DeviceMFT.CLSID%
+
+[AddIntf_IC.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+HKR,,FriendlyName,,%DeviceDesc_RGB_IC%
+HKR,,RTCFlags,%REG_DWORD%,0x00000010
+HKR,,EnablePlatformDmft,%REG_DWORD%,0x00000001
+;HKR,,CameraDeviceMftCLSID,%REG_SZ%,%DeviceMFT.CLSID%
+HKR,,CameraDeviceMftCLSIDChain,%REG_MULTI_SZ%,%DeviceMFT.CLSID%
+
+[AddIntf_EC_26080.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+HKR,,FriendlyName,,%DeviceDesc_RGB_EC%
+HKR,,RTCFlags,%REG_DWORD%,0x00000010
+HKR,,EnablePlatformDmft,%REG_DWORD%,0x00000001
+;HKR,,CameraDeviceMftCLSID,%REG_SZ%,%DeviceMFT.CLSID%
+HKR,,CameraDeviceMftCLSIDChain,%REG_MULTI_SZ%,%PlatformDeviceMFT.CLSID%,%DeviceMFT.CLSID%,%PlatformDeviceMFT.CLSID%
+[AddIntf_IC_26080.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+HKR,,FriendlyName,,%DeviceDesc_RGB_IC%
+HKR,,RTCFlags,%REG_DWORD%,0x00000010
+HKR,,EnablePlatformDmft,%REG_DWORD%,0x00000001
+;HKR,,CameraDeviceMftCLSID,%REG_SZ%,%DeviceMFT.CLSID%
+HKR,,CameraDeviceMftCLSIDChain,%REG_MULTI_SZ%,%PlatformDeviceMFT.CLSID%,%DeviceMFT.CLSID%,%PlatformDeviceMFT.CLSID%
+
+[AddIntf_FSColorInfo.AddReg]
+HKR,,FSColorInfoOverride,%REG_DWORD%,0x01050102
+
+[AddIntf_AutoDecode.AddReg]
+;HKR,,CameraDeviceMftCLSIDChain,%REG_MULTI_SZ%,%PlatformDeviceMFT.CLSID%,%DeviceMFT.CLSID%,%PlatformDeviceMFT.CLSID%
+HKR,,MJPGTranslationSubType,,"NV12"
+
+[AddIntf_IR.AddReg]
+HKR,,CLSID,,%ProxyVCap.CLSID%
+HKR,,FriendlyName,,%DeviceDesc_IR%
+HKR,,RTCFlags,%REG_DWORD%,0x00000010
+;HKR,,CameraDeviceMftCLSID,%REG_SZ%,%DeviceMFT.CLSID%
+HKR,,CameraDeviceMftCLSIDChain,%REG_MULTI_SZ%,%DeviceMFT.CLSID%
+
+; SensorGroup
+[AddIntf_SG.AddReg]
+HKR,,FSSensorGroupID,%REG_SZ%,%FSSensorGroupID%
+HKR,,FSSensorGroupName,%REG_SZ%,%FSSensorGroupName%
+
+;==========================================================================
+; String Section
+;==========================================================================
+[Strings]
+; Localizable
+ProviderName="Sonix"
+ManufacturerName="Sonix"
+SrcDiskId="Integrated Camera"
+; Device description display on device manager
+DeviceDesc_RGB_EC="EasyCamera"
+DeviceDesc_RGB_IC="Integrated Camera"
+DeviceDesc_IR="Integrated IR Camera"
+
+; CLSID
+ProxyVCap.CLSID="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+; PlatformDeviceMFT CLSID
+PlatformDeviceMFT.CLSID="{3D096DDE-8971-4AD5-98F9-C74F56492630}"
+; DeviceMFT CLSID
+DeviceMFT.CLSID="{5A50829A-86DD-4D18-8685-891EEE643C24}"
+
+; Interfaces
+KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_RENDER="{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_VIDEO="{6994AD05-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_RENDER_EXT="{CC7BFB41-F175-11D1-A392-00E0291F3959}"
+KSCATEGORY_SENSOR_CAMERA = "{24E552D7-6523-47F7-A647-D3465BF1F5CA}"
+KSCATEGORY_VIDEO_CAMERA="{E5323777-F976-4f5b-9B55-B94699C46E44}"
+
+;sensor group
+FSSensorGroupID = "{20C94C5C-F402-4F1F-B324-0C1CF0257870}"
+FSSensorGroupName = "YourCameraGroup"
+
+;Static registry path
+StaticPath="SOFTWARE\Classes\CLSID\{5A50829A-86DD-4D18-8685-891EEE643C24}"
+
+; Function enable/disable registry path
+ISPCtrlPath="SONIX\PCCAM\SNP2UVC"
+; antiFlicker registry path
+AFPath="SONIX\PCCAM\SNP2UVC\ImageProcess\ANTF"
+; Privacy parameters registry path
+PrivacyPath="SONIX\PCCAM\SNP2UVC\ImageProcess\Privacy"
+; 3DNR parameters registry path
+3DNRPath="SONIX\PCCAM\SNP2UVC\ImageProcess\3DNR"
+; 3DNR V2 parameters registry path
+3DNRv2Path="SONIX\PCCAM\SNP2UVC\ImageProcess\3DNRv2"
+; 3DNR V3 parameters registry path
+3DNRv3Path="SONIX\PCCAM\SNP2UVC\ImageProcess\3DNRv3"
+; 3DNR V4 parameters registry path
+3DNRv4Path="SONIX\PCCAM\SNP2UVC\ImageProcess\3DNRv4"
+; DTDenoise parameters registry path
+DTDenoisePath="SONIX\PCCAM\SNP2UVC\ImageProcess\DTDenoise"
+; Face AE parameters registry path
+FaceAEPath="SONIX\PCCAM\SNP2UVC\ImageProcess\FaceAE"
+; WDR parameters registry path
+WDRPath="SONIX\PCCAM\SNP2UVC\ImageProcess\WDR"
+; Property Page settings registry path
+PropertySettingsPath_Current="SONIX\PCCAM\SNP2UVC\PropertySettings\Current"
+
+; Registry key type
+REG_DWORD=0x00010001
+REG_SZ=0x00000000
+REG_MULTI_SZ=0x00010000
+REG_EXPAND_SZ=0x00020000
+
+KMDF_VERSION=1.23.0
+UMDF_VERSION=2.23.0
+
+SERVICE_KERNEL_DRIVER=1
+SERVICE_DEMAND_START=3
+SERVICE_ERROR_NORMAL=1
+
+; Non-used
+AutoRunOncePath="SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce"
+AutoRunPath="SOFTWARE\Microsoft\Windows\CurrentVersion\Run"
+DeviceSettingPage.CLSID="{E45B7EE6-5408-496F-A221-23875ECAB407}"

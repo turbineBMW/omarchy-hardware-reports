@@ -1,0 +1,60 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = SoftwareComponent
+ClassGuid   = {5c4c3332-344d-483c-8739-259e934c9cc8}
+Provider    = %Elevoc%
+CatalogFile = ElevocHSARM64.cat
+DriverVer   = 11/03/2025, 1.0.2.34
+PnpLockdown = 1
+
+[SourceDisksNames]
+222 = %DiskId1%
+
+[SourceDisksFiles]
+
+[DestinationDirs]
+DefaultDestDir = 13  ; copy to driverstore
+
+[Manufacturer]
+%Elevoc% = HsaComponents,NTARM64.10.0...22621
+
+[HsaComponents.NTARM64.10.0...22621]
+%Hsa.ComponentDesc% = HsaComponent_Install,SWC\VEN_ELEVOC&HID_0001
+%Hsa.ComponentDesc% = HsaComponent2_Install,SWC\VEN_ELEVOC&HID_0002
+
+[HsaComponent_Install]
+Include   = wdmaudio.inf
+
+[HsaComponent_Install.Services]
+AddService = ,2    ; no function driver
+
+[HsaComponent_Install.Software]
+AddSoftware=ElevocAudioControl,,Elevoc_Audio_Control2_Install
+
+[Elevoc_Audio_Control_Install]
+SoftwareType=2
+SoftwareID=pfn://ElevocTechnologyCo.Ltd.SmartMicrophoneSettings_ttaqwwhyt5s6t
+SoftwareVersion = 1.1.30.0
+
+[HsaComponent2_Install]
+Include   = wdmaudio.inf
+
+[HsaComponent2_Install.Services]
+AddService = ,2    ; no function driver
+
+[HsaComponent2_Install.Software]
+AddSoftware=ElevocAudioControl,,Elevoc_Audio_Control2_Install
+
+[Elevoc_Audio_Control2_Install]
+SoftwareType=2
+SoftwareID=pfn://ElevocTechnologyCo.Ltd.ElevocSmartNoiseCancellatio_ttaqwwhyt5s6t
+SoftwareVersion = 1.1.60.0
+
+[Strings]
+Elevoc           = "Elevoc Technology Co.,Ltd"
+Hsa.ComponentDesc = "Elevoc Hardware Support Application"
+DiskId1           = "Elevoc HSA Installation Disk"
+
+REG_BINARY = 0x00000001
+REG_DWORD = 0x00010001
+REG_MULTI_SZ = 0x00010000
