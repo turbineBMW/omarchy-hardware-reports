@@ -1,0 +1,15 @@
+{
+  "type": "devicetree",
+  "name": "ASUSTeK COMPUTER INC. ASUS Vivobook 14 X1407QA_X1407QA",
+  "compatible": "",
+  "hwids": [
+    "105faa04-183f-5b23-937e-adb02cd53073",
+    "16e5acf2-4955-596c-b41e-ce4362648b9f",
+    "af52a449-f48c-58f4-a37d-ebe4d5492302",
+    "03001eb0-1ca9-5471-979a-3216030eb89c",
+    "87fde16f-5709-5135-8986-8079469adff8",
+    "c62de106-3b06-5f8d-b33c-843d24b00818",
+    "db152867-7643-5677-809e-627f89a6c647",
+    "09436005-6cfd-502f-a908-e14522eb9068"
+  ]
+}

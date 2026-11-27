@@ -1,0 +1,175 @@
+[Version]
+Signature			= "$Windows NT$"
+Class                   	= Extension
+ClassGUID               	= {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+ExtensionId               	= {54057be9-f362-4b6d-82d4-37ebfc5fa078}
+Provider = "ASUSTeK COMPUTER INC."
+DriverVer = 02/19/2025,3.0.0.683
+CatalogFile.NTARM64 = MyASUS_Splendid.cat
+
+[SourceDisksNames]
+1 = %DISK%,,,""
+
+[SourceDisksFiles]
+X1407QA_QCOM_70380061.icm=1
+X1407QA_QCOM_770E143F.icm=1
+X1407QA_QCOM_AE0D1441.icm=1
+X1407QA_QCOM_E5090A6A.icm=1
+X1607QA_QCOM_770E164D.icm=1
+X1607QA_QCOM_770E1665.icm=1
+X1607QA_QCOM_AE0D1618.icm=1
+X1607QA_QCOM_E5090C14.icm=1
+X1607QA_QCOM_E5090CCC.icm=1
+X1607QA_QCOM_E5090D25.icm=1
+ForceUpdate.txt=1
+
+
+[DestinationDirs]
+DefaultDestDir  = 11
+PackageCopy_Profiles = 23,AsusICM
+
+[Manufacturer]
+%MfgName% = DeviceExtensions,NTARM64
+
+[DeviceExtensions.NTARM64]
+AsusDisplay0 = AsusDisplay0.Inst, MONITOR\BOE084E
+AsusDisplay1 = AsusDisplay1.Inst, MONITOR\NCP0061
+AsusDisplay2 = AsusDisplay2.Inst, MONITOR\CSW143F
+AsusDisplay3 = AsusDisplay3.Inst, MONITOR\CMN1441
+AsusDisplay4 = AsusDisplay4.Inst, MONITOR\BOE0A6A
+AsusDisplay5 = AsusDisplay5.Inst, MONITOR\CSW164D
+AsusDisplay6 = AsusDisplay6.Inst, MONITOR\CSW1665
+AsusDisplay7 = AsusDisplay7.Inst, MONITOR\CMN1618
+AsusDisplay8 = AsusDisplay8.Inst, MONITOR\BOE0C14
+AsusDisplay9 = AsusDisplay9.Inst, MONITOR\BOE0CCC
+AsusDisplay10 = AsusDisplay10.Inst, MONITOR\BOE0D25
+
+[AsusDisplay0.Inst]
+CopyFiles=PackageCopy_Profiles
+AddReg = AsusDisplay0.Inst.AddReg
+
+[AsusDisplay0.Inst.AddReg]
+HKR,,DisplayHdrLevel, %REG_MULTI_SZ_APPEND%, 4DDABBE3-5BC1-4F5C-9AA8-D611BC96F6ED,E55026B6-496B-4ACC-B371-A1211D829ABD
+
+[AsusDisplay0.Inst.HW]
+AddReg = AsusDisplay0.Inst.HW.AddReg;
+
+[AsusDisplay0.Inst.HW.AddReg]
+HKR,,FriendlyName,,%DeviceDescription%
+
+[AsusDisplay1.Inst]
+CopyFiles = PackageCopy_Profiles
+
+[AsusDisplay1.Inst.HW]
+AddReg = AsusDisplay1.Inst.HW.AddReg;
+
+[AsusDisplay1.Inst.HW.AddReg]
+HKR,,FriendlyName,,%DeviceDescription%
+
+[AsusDisplay2.Inst]
+CopyFiles = PackageCopy_Profiles
+
+[AsusDisplay2.Inst.HW]
+AddReg = AsusDisplay2.Inst.HW.AddReg;
+
+[AsusDisplay2.Inst.HW.AddReg]
+HKR,,FriendlyName,,%DeviceDescription%
+
+[AsusDisplay3.Inst]
+CopyFiles = PackageCopy_Profiles
+
+[AsusDisplay3.Inst.HW]
+AddReg = AsusDisplay3.Inst.HW.AddReg;
+
+[AsusDisplay3.Inst.HW.AddReg]
+HKR,,FriendlyName,,%DeviceDescription%
+
+[AsusDisplay4.Inst]
+CopyFiles = PackageCopy_Profiles
+
+[AsusDisplay4.Inst.HW]
+AddReg = AsusDisplay4.Inst.HW.AddReg;
+
+[AsusDisplay4.Inst.HW.AddReg]
+HKR,,FriendlyName,,%DeviceDescription%
+
+[AsusDisplay5.Inst]
+CopyFiles = PackageCopy_Profiles
+
+[AsusDisplay5.Inst.HW]
+AddReg = AsusDisplay5.Inst.HW.AddReg;
+
+[AsusDisplay5.Inst.HW.AddReg]
+HKR,,FriendlyName,,%DeviceDescription%
+
+[AsusDisplay6.Inst]
+CopyFiles = PackageCopy_Profiles
+
+[AsusDisplay6.Inst.HW]
+AddReg = AsusDisplay6.Inst.HW.AddReg;
+
+[AsusDisplay6.Inst.HW.AddReg]
+HKR,,FriendlyName,,%DeviceDescription%
+
+[AsusDisplay7.Inst]
+CopyFiles = PackageCopy_Profiles
+
+[AsusDisplay7.Inst.HW]
+AddReg = AsusDisplay7.Inst.HW.AddReg;
+
+[AsusDisplay7.Inst.HW.AddReg]
+HKR,,FriendlyName,,%DeviceDescription%
+
+[AsusDisplay8.Inst]
+CopyFiles = PackageCopy_Profiles
+
+[AsusDisplay8.Inst.HW]
+AddReg = AsusDisplay8.Inst.HW.AddReg;
+
+[AsusDisplay8.Inst.HW.AddReg]
+HKR,,FriendlyName,,%DeviceDescription%
+
+[AsusDisplay9.Inst]
+CopyFiles = PackageCopy_Profiles
+
+[AsusDisplay9.Inst.HW]
+AddReg = AsusDisplay9.Inst.HW.AddReg;
+
+[AsusDisplay9.Inst.HW.AddReg]
+HKR,,FriendlyName,,%DeviceDescription%
+
+[AsusDisplay10.Inst]
+CopyFiles = PackageCopy_Profiles
+
+[AsusDisplay10.Inst.HW]
+AddReg = AsusDisplay10.Inst.HW.AddReg;
+
+[AsusDisplay10.Inst.HW.AddReg]
+HKR,,FriendlyName,,%DeviceDescription%
+
+
+[PackageCopy_Profiles]
+X1407QA_QCOM_70380061.icm
+X1407QA_QCOM_770E143F.icm
+X1407QA_QCOM_AE0D1441.icm
+X1407QA_QCOM_E5090A6A.icm
+X1607QA_QCOM_770E164D.icm
+X1607QA_QCOM_770E1665.icm
+X1607QA_QCOM_AE0D1618.icm
+X1607QA_QCOM_E5090C14.icm
+X1607QA_QCOM_E5090CCC.icm
+X1607QA_QCOM_E5090D25.icm
+ForceUpdate.txt
+
+
+[NO_DRV64]
+Include = machine.inf
+Needs = NO_DRV
+CopyFiles=PackageCopy_Profiles
+
+[Strings]
+MfgName = "ASUSTeK COMPUTER INC."
+DISK   = "MyASUS Splendid INF"
+REG_MULTI_SZ = 0x00010000
+DeviceDescription = "MyASUS_Splendid"
+REG_MULTI_SZ_APPEND = 0x00010008
