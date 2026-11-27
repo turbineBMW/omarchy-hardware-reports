@@ -1,0 +1,69 @@
+;; @qckmd.inf
+;
+;******************************************************************************
+;* Copyright (c) 2023, Insyde Software Corp. All Rights Reserved.
+;*
+;* You may not reproduce, distribute, publish, display, perform, modify, adapt,
+;* transmit, broadcast, present, recite, release, license or otherwise exploit
+;* any part of this publication in any form, by any means, without the prior
+;* written permission of Insyde Software Corporation.
+;*
+;******************************************************************************
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %ManufacturerName%
+CatalogFile = qckmd.cat
+DriverVer   = 06/27/2024, 1.0.0.0
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+qckmd.sys = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NTARM64.10.0...16299 ; %13% support introduced in build 16299
+
+[Standard.NTARM64.10.0...16299]
+%qckmd.DeviceDesc% = qckmd_Device, ACPI\IWMID001
+
+[qckmd_Device.NT]
+CopyFiles = File_Copy
+
+[File_Copy]
+qckmd.sys
+
+;-------------- Service installation
+[qckmd_Device.NT.Services]
+AddService = qckmd,%SPSVCINST_ASSOCSERVICE%, qckmd_Service_Inst
+
+; -------------- qckmd driver install sections
+[qckmd_Service_Inst]
+DisplayName    = %qckmd.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\qckmd.sys
+
+[qckmd_Device.NT.Wdf]
+KmdfService = qckmd, qckmd_wdfsect
+
+[qckmd_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ManufacturerName = "Insyde Software Corp."
+DiskName = "qckmd Installation Disk"
+qckmd.DeviceDesc = "qckmd Device"
+qckmd.SVCDESC = "qckmd Service"
