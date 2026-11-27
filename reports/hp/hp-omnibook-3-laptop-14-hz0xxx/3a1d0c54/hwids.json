@@ -1,0 +1,21 @@
+{
+  "type": "devicetree",
+  "name": "HP HP OmniBook 3 Laptop 14-hz0xxx",
+  "compatible": "",
+  "hwids": [
+    "97c44f7b-e43b-5ae0-a648-099cccdd884f",
+    "ece6be7e-0dfd-5217-8205-3df2f0936f48",
+    "c85880d7-daba-5556-ae84-0e306d44da53",
+    "e0660fe0-2675-581e-994a-f48a96ae6453",
+    "871c13ef-da13-5b04-8bdb-f0153f4adb22",
+    "686b3feb-0e15-51c5-bf0b-4bc7a64b5c12",
+    "55966ad4-e29d-55a6-9106-5e925dc305e2",
+    "b158dbe5-293d-5d6c-9075-12b4fa7b1074",
+    "a863f05d-bdf8-5b5d-ac2b-5c6311b5b50a",
+    "3dc651a6-959e-53dd-baa6-f9ab149add34",
+    "e309dfb0-9a40-5a2c-ac21-10cbb8388872",
+    "fcc69051-b644-594d-a5ff-3f6b4887dc80",
+    "99802180-53ba-5dce-ba59-f30df3387d4e",
+    "8e0a9f04-2f78-5a74-873e-0084d8a532c7"
+  ]
+}
