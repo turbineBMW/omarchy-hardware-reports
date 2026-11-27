@@ -1,0 +1,331 @@
+;/*++
+;
+;Copyright (c) 2023 by Qualcomm Technologies, Incorporated.  All Rights Reserved.
+;
+;Module Name:
+;    qcsubsys_ext_cdsp.inx
+;
+;Abstract:
+;    INF file for installing CDSP
+;
+;--*/
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Extension
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+ExtensionId={bc933941-a12c-4a6d-9ce6-c0565be2e759}
+Provider=%QUALCOMM%
+DriverVer = 09/02/2024,2.0.4111.7400
+CatalogFile=qcsubsys_ext_cdsp8380.cat
+PnpLockDown=1
+
+[DestinationDirs]
+SOFILES_CDSP = 13,\CDSP
+Files_CDSP = 13
+JSON_Files = 13
+
+[SourceDisksNames]
+1 = %DiskId1%
+
+[SourceDisksFiles]
+cdsp_dtbs.elf = 1
+version.so = 1,\CDSP
+libsysmon_skel.so = 1,\CDSP
+libsysmonquery_skel.so = 1,\CDSP
+libsysmonhvxthrottle_skel.so = 1,\CDSP
+libsysmondomain_skel.so = 1,\CDSP
+libstabilitydomain_skel.so = 1,\CDSP
+libQ6MSFR_manager_skel_intermedi.1 = 1,\CDSP
+libQ6MSFR_manager_skel.so = 1,\CDSP
+libloadalgo_skel.so = 1,\CDSP
+libcrm_test_skel.so = 1,\CDSP
+libc++abi.so.1 = 1,\CDSP
+libc++.so.1 = 1,\CDSP
+libbenchmark_skel.so = 1,\CDSP
+fastrpc_shell_unsigned_3 = 1,\CDSP
+fastrpc_shell_3 = 1,\CDSP
+example_image.so = 1,\CDSP
+cdspr.jsn = 1
+qccdsp8380.mbn = 1
+RCDS.bin = 1
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+;*****************************************
+; Subsystem Driver Install Section
+;*****************************************
+
+[Manufacturer]
+%QUALCOMM%=Extension,NTARM64.10.0...17763
+
+[Extension.NTARM64.10.0...17763]
+; This device will get disabled through _STA field of ACPI (for CDSP disabled case) so it doesn't need REV based content skipping here.
+%CDSP.DeviceDesc%=SUBSYS_Device_CDSP_ext, ACPI\VEN_QCOM&DEV_0CB0&SUBSYS_CRD08380
+%CDSP.DeviceDesc%=SUBSYS_Device_CDSP_ext, ACPI\VEN_QCOM&DEV_0CB0&SUBSYS_IDPS8380
+%CDSP.DeviceDesc%=SUBSYS_Device_CDSP_ext, ACPI\VEN_QCOM&DEV_0CB0&SUBSYS_IDP08380
+%PIL.DeviceDesc%=PIL_Device_Ext, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_CRD08380
+%PIL.DeviceDesc%=PIL_Device_Ext, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDPS8380
+%PIL.DeviceDesc%=PIL_Device_Ext, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDP08380
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_CRD08380&REV_0004
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDPS8380&REV_0004
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDP08380&REV_0004
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_CRD08380&REV_0005
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDPS8380&REV_0005
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDP08380&REV_0005
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_CRD08380&REV_0006
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDPS8380&REV_0006
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDP08380&REV_0006
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_CRD08380&REV_0007
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDPS8380&REV_0007
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDP08380&REV_0007
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_CRD08380&REV_000C
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDPS8380&REV_000C
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDP08380&REV_000C
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_CRD08380&REV_000D
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDPS8380&REV_000D
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDP08380&REV_000D
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_CRD08380&REV_000E
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDPS8380&REV_000E
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDP08380&REV_000E
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_CRD08380&REV_000F
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDPS8380&REV_000F
+%PIL.DeviceDesc%=PIL_Device_Ext_NoContent, ACPI\VEN_QCOM&DEV_06E0&SUBSYS_IDP08380&REV_000F
+%PDSR.DeviceDesc%=PDSR_Device_JSN_EXT, ACPI\VEN_QCOM&DEV_06DF&SUBSYS_CRD08380
+%PDSR.DeviceDesc%=PDSR_Device_JSN_EXT, ACPI\VEN_QCOM&DEV_06DF&SUBSYS_IDPS8380
+%PDSR.DeviceDesc%=PDSR_Device_JSN_EXT, ACPI\VEN_QCOM&DEV_06DF&SUBSYS_IDP08380
+%PDSR.DeviceDesc%=PDSR_Device_JSN_EXT_NoContent, ACPI\VEN_QCOM&DEV_06DF&SUBSYS_CRD08380&REV_0004
+%PDSR.DeviceDesc%=PDSR_Device_JSN_EXT_NoContent, ACPI\VEN_QCOM&DEV_06DF&SUBSYS_IDPS8380&REV_0004
+%PDSR.DeviceDesc%=PDSR_Device_JSN_EXT_NoContent, ACPI\VEN_QCOM&DEV_06DF&SUBSYS_IDP08380&REV_0004
+%PDSR.DeviceDesc%=PDSR_Device_JSN_EXT_NoContent, ACPI\VEN_QCOM&DEV_06DF&SUBSYS_CRD08380&REV_000C
+%PDSR.DeviceDesc%=PDSR_Device_JSN_EXT_NoContent, ACPI\VEN_QCOM&DEV_06DF&SUBSYS_IDPS8380&REV_000C
+%PDSR.DeviceDesc%=PDSR_Device_JSN_EXT_NoContent, ACPI\VEN_QCOM&DEV_06DF&SUBSYS_IDP08380&REV_000C
+; This device will get disabled through _STA field of ACPI (for CDSP disabled case) so it doesn't need REV based content skipping here.
+%THERMAL_Device_CDSP_CSW.DeviceDesc%=THERMAL_Device_CDSP_CSW, ACPI\VEN_QCOM&DEV_0CC3&SUBSYS_CRD08380
+%THERMAL_Device_CDSP_CSW.DeviceDesc%=THERMAL_Device_CDSP_CSW, ACPI\VEN_QCOM&DEV_0CC3&SUBSYS_IDPS8380
+%THERMAL_Device_CDSP_CSW.DeviceDesc%=THERMAL_Device_CDSP_CSW, ACPI\VEN_QCOM&DEV_0CC3&SUBSYS_IDP08380
+
+[SUBSYS_Device_CDSP_ext.NT]
+CopyFiles=SOFiles_CDSP,Files_CDSP
+AddReg=SUBSYSReg
+
+[SUBSYS_Device_CDSP_ext.NT.HW]
+AddReg=SUBSYSReg_common,HashMapping_CDSP,SUBSYSReg_CDSP_HW
+
+[Files_CDSP]
+qccdsp8380.mbn
+cdsp_dtbs.elf
+RCDS.bin
+
+[SUBSYSReg]
+;Image path for CDSP image
+HKR,CDSP,"ImagePath",%REG_SZ%,"%13%\qccdsp8380.mbn"
+HKR,CDSP,"RPE_RestartingClientList",%REG_MULTI_SZ%,%GUID_CDSP_DEVINTERFACE_GLINK%
+;Interfaces needed by CDSP
+HKR,CDSP,"Interfaces",%REG_MULTI_SZ%,%GUID_DEVINTERFACE_PIL_TZ%,%GUID_DEVINTERFACE_FASTRPC%,%GUID_DEVINTERFACE_GLINK%
+; WDOG bite workaround handling configuration
+HKR,CDSP,"IgnoreWdogEnabled",%REG_DWORD%,0x1
+;Reg key to decide if we want to skip checking  for a UEFI loaded subsystem
+; 1 - Skip the check
+; 0 - Check for uefi loaded subsystem
+HKR,CDSP,"UefiLoadedSubsysDetectionConfig",%REG_DWORD%,0x1
+;Reg key to control how subsystem state-machine react to system shutdown
+; 0 - Skip tearing down subsystem and end state-machine
+; 1 - Teardown (gracefully/forcibly as per SubsystemTeardownType registry config) subsystem before ending state-machine
+HKR,CDSP,"SubsystemShutdownType",%REG_DWORD%,0x1
+;Reg key to indicate if DTB is supported by Subsystem
+; 0 - DTB image is not supported
+; 1 - DTB image is supported
+HKR,CDSP,"IsDTBImageSupported",%REG_DWORD%,0x1
+; DTB image path for Subsystem
+HKR,CDSP,"DTBImagePath",%REG_SZ%,"%13%\cdsp_dtbs.elf"
+;Reg key to control the method used to teardown the subsystem
+; 0 - Subsystem teardown needs to be done in a forceful way.
+; 1 - Subsystem teardown needs to be done in a graceful way.
+HKR,CDSP,"SubsystemTeardownType",%REG_DWORD%,0x1
+;Reg key to indicate if SSCTL based graceful shutdown request is supported by Subsystem
+; 1 - Supported
+; 0 - Unsupported
+HKR,CDSP,"SHUT",%REG_DWORD%,0x1
+
+[SUBSYSReg_common]
+HKR,,"WaitForVolStartupAppComplete",%REG_DWORD%,1
+;PathMappingKeyName defines the subkey name under protocol key,
+;where subsys will look for local-remote path mappings. The default value is "Default".
+;If overwritten by OEMs, they must ensure to generate path mappings under this subkey.
+;If defined, subsys looks under HKR,Mappings\<Protocol>\<PathMappingKeyName> instead of HKR,Mappings\<Protocol>
+;This value can have maximum length of 128 excluding NULL character.
+HKR,Mappings,"PathMappingKeyName",%REG_SZ%,"Default"
+
+HKR,,FriendlyName,,%CDSP_FriendlyName%
+
+[SUBSYSReg_CDSP_HW]
+;Image path for resource bin
+HKR,Resources,"BinaryPath",%REG_SZ%, %13%\RCDS.bin
+
+[THERMAL_Device_CDSP_CSW.NT]
+AddReg=THERMAL_Device_CDSP_CSW_Reg
+
+[THERMAL_Device_CDSP_CSW.NT.HW]
+AddReg=THERMAL_Device_CDSP_CSW_HW_Reg
+
+[THERMAL_Device_CDSP_CSW_Reg]
+HKR,,"QMIDeviceName",%REG_SZ%,"cdsp_sw"
+HKR,,"QMIInstanceID",%REG_DWORD%,0x43
+
+[THERMAL_Device_CDSP_CSW_HW_Reg]
+HKR,,FriendlyName,, %THERMAL_Device_CDSP_CSW_FriendlyName%
+
+[PIL_Device_Ext.NT]
+
+[PIL_Device_Ext.NT.HW]
+Addreg=PIL_Reg_common,PIL_Reg_MSM
+
+[PIL_Device_Ext_NoContent.NT]
+
+[PIL_Device_Ext_NoContent.NT.HW]
+;This is just for representation purpose to indicate deliberate exclusion of the given SKU
+;where PIL will not reserve the memory for NSP
+
+[PIL_Reg_common]
+HKR ,SubsystemLoad\CDSP,MemoryAlignment,%REG_DWORD%,0x00100000
+; Gets auto populated with the actual image size during NH patching process
+HKR ,SubsystemLoad\CDSP_DTB,MemoryAlignment,%REG_DWORD%,0x10000
+
+[PIL_Reg_MSM]
+; Gets auto populated with the actual image size during NH patching process
+HKR ,SubsystemLoad\CDSP,MemoryReservation,%REG_DWORD%,0x2000000
+HKR ,SubsystemLoad\CDSP_DTB,MemoryReservation,%REG_DWORD%,0x9000
+
+[PDSR_Device_JSN_EXT.NT]
+AddReg=JSON_PathMapping
+CopyFiles=JSON_Files
+
+[PDSR_Device_JSN_EXT.NT.HW]
+
+[PDSR_Device_JSN_EXT_NoContent.NT]
+;This is just for representation purpose to indicate deliberate skipping of PDSR
+;setting based on the REV where CDSP is disabled
+
+[PDSR_Device_JSN_EXT_NoContent.NT.HW]
+
+;**********************************************************************************************
+;    DONOT DELETE THE EMPTY PLACEHOLDERS BELOW. THEY WILL BE AUTOPOPULATED DURING BUILD TIME
+;**********************************************************************************************
+
+[SOFiles_CDSP]
+version.so
+libsysmon_skel.so
+libsysmonquery_skel.so
+libsysmonhvxthrottle_skel.so
+libsysmondomain_skel.so
+libstabilitydomain_skel.so
+libQ6MSFR_manager_skel_intermedi.1
+libQ6MSFR_manager_skel.so
+libloadalgo_skel.so
+libcrm_test_skel.so
+libc++abi.so.1
+libc++.so.1
+libbenchmark_skel.so
+fastrpc_shell_unsigned_3
+fastrpc_shell_3
+example_image.so
+
+[HashMapping_CDSP]
+
+; Updating registry of version.so to remote path \cdsp\version.so
+HKR,Mappings\FASTRPC\Default\cec094c6fdde90f323146d17505743495e7076fd1a1cb7a28011ca1b7ddbbbf9,"Local",%REG_SZ%, %13%\cdsp\version.so
+HKR,Mappings\FASTRPC\Default\cec094c6fdde90f323146d17505743495e7076fd1a1cb7a28011ca1b7ddbbbf9,"Remote",%REG_SZ%,\cdsp\version.so
+
+; Updating registry of libsysmon_skel.so to remote path \cdsp\libsysmon_skel.so
+HKR,Mappings\FASTRPC\Default\b47f745f0db57f4e87a6bfb2dd6fc850ed7a9aae04f3791ce443a0deb7f4e4a7,"Local",%REG_SZ%, %13%\cdsp\libsysmon_skel.so
+HKR,Mappings\FASTRPC\Default\b47f745f0db57f4e87a6bfb2dd6fc850ed7a9aae04f3791ce443a0deb7f4e4a7,"Remote",%REG_SZ%,\cdsp\libsysmon_skel.so
+
+; Updating registry of libsysmonquery_skel.so to remote path \cdsp\libsysmonquery_skel.so
+HKR,Mappings\FASTRPC\Default\b6668938c8ee9c6046be8e4dccc0912eff69c9339c61ec421f3b0cbb22f08aee,"Local",%REG_SZ%, %13%\cdsp\libsysmonquery_skel.so
+HKR,Mappings\FASTRPC\Default\b6668938c8ee9c6046be8e4dccc0912eff69c9339c61ec421f3b0cbb22f08aee,"Remote",%REG_SZ%,\cdsp\libsysmonquery_skel.so
+
+; Updating registry of libsysmonhvxthrottle_skel.so to remote path \cdsp\libsysmonhvxthrottle_skel.so
+HKR,Mappings\FASTRPC\Default\17146b6ed9582718b8ada570877c68d0e2c353c94b0a2c1da48430465694f018,"Local",%REG_SZ%, %13%\cdsp\libsysmonhvxthrottle_skel.so
+HKR,Mappings\FASTRPC\Default\17146b6ed9582718b8ada570877c68d0e2c353c94b0a2c1da48430465694f018,"Remote",%REG_SZ%,\cdsp\libsysmonhvxthrottle_skel.so
+
+; Updating registry of libsysmondomain_skel.so to remote path \cdsp\libsysmondomain_skel.so
+HKR,Mappings\FASTRPC\Default\df26aa6c264361b1f9a87cd34cbe71a52ad5b2f25e67f7431ffc40995ef88b0b,"Local",%REG_SZ%, %13%\cdsp\libsysmondomain_skel.so
+HKR,Mappings\FASTRPC\Default\df26aa6c264361b1f9a87cd34cbe71a52ad5b2f25e67f7431ffc40995ef88b0b,"Remote",%REG_SZ%,\cdsp\libsysmondomain_skel.so
+
+; Updating registry of libstabilitydomain_skel.so to remote path \cdsp\libstabilitydomain_skel.so
+HKR,Mappings\FASTRPC\Default\d1ab05c10c77f4ad6b50f61223b7180fd9584d4044fecdccd42f6558a79acba0,"Local",%REG_SZ%, %13%\cdsp\libstabilitydomain_skel.so
+HKR,Mappings\FASTRPC\Default\d1ab05c10c77f4ad6b50f61223b7180fd9584d4044fecdccd42f6558a79acba0,"Remote",%REG_SZ%,\cdsp\libstabilitydomain_skel.so
+
+; Updating registry of libQ6MSFR_manager_skel_intermedi.1 to remote path \cdsp\libq6msfr_manager_skel_intermediate.so
+HKR,Mappings\FASTRPC\Default\353f76b7c4f0976e2dbea6ec58e586a7e2db5e954571087799ef7afc257a2d99,"Local",%REG_SZ%, %13%\cdsp\libq6msfr_manager_skel_intermedi.1
+HKR,Mappings\FASTRPC\Default\353f76b7c4f0976e2dbea6ec58e586a7e2db5e954571087799ef7afc257a2d99,"Remote",%REG_SZ%,\cdsp\libq6msfr_manager_skel_intermediate.so
+
+; Updating registry of libQ6MSFR_manager_skel.so to remote path \cdsp\libq6msfr_manager_skel.so
+HKR,Mappings\FASTRPC\Default\8a2bf6778d3ab333b49767564cb82bb4c951b791895a5ef2603ca3f51c5a8b49,"Local",%REG_SZ%, %13%\cdsp\libq6msfr_manager_skel.so
+HKR,Mappings\FASTRPC\Default\8a2bf6778d3ab333b49767564cb82bb4c951b791895a5ef2603ca3f51c5a8b49,"Remote",%REG_SZ%,\cdsp\libq6msfr_manager_skel.so
+
+; Updating registry of libloadalgo_skel.so to remote path \cdsp\libloadalgo_skel.so
+HKR,Mappings\FASTRPC\Default\a9176e3593d1a58ce53514e4eaec28f1622b505556abb898360e17039bd1ac72,"Local",%REG_SZ%, %13%\cdsp\libloadalgo_skel.so
+HKR,Mappings\FASTRPC\Default\a9176e3593d1a58ce53514e4eaec28f1622b505556abb898360e17039bd1ac72,"Remote",%REG_SZ%,\cdsp\libloadalgo_skel.so
+
+; Updating registry of libcrm_test_skel.so to remote path \cdsp\libcrm_test_skel.so
+HKR,Mappings\FASTRPC\Default\70c781fb5a520c30f60d02600c86c43673ac92f1fed9fa3f433bf368505cfdc7,"Local",%REG_SZ%, %13%\cdsp\libcrm_test_skel.so
+HKR,Mappings\FASTRPC\Default\70c781fb5a520c30f60d02600c86c43673ac92f1fed9fa3f433bf368505cfdc7,"Remote",%REG_SZ%,\cdsp\libcrm_test_skel.so
+
+; Updating registry of libc++abi.so.1 to remote path \cdsp\libc++abi.so.1
+HKR,Mappings\FASTRPC\Default\d30928d84077c9b3b043c0d6fd59df12d160c0828cd126cf0188f12c9aec58b2,"Local",%REG_SZ%, %13%\cdsp\libc++abi.so.1
+HKR,Mappings\FASTRPC\Default\d30928d84077c9b3b043c0d6fd59df12d160c0828cd126cf0188f12c9aec58b2,"Remote",%REG_SZ%,\cdsp\libc++abi.so.1
+
+; Updating registry of libc++.so.1 to remote path \cdsp\libc++.so.1
+HKR,Mappings\FASTRPC\Default\eca220614c5747820b496e95e07a853e73614e3ca3e90f8dcd1ae115723d6af8,"Local",%REG_SZ%, %13%\cdsp\libc++.so.1
+HKR,Mappings\FASTRPC\Default\eca220614c5747820b496e95e07a853e73614e3ca3e90f8dcd1ae115723d6af8,"Remote",%REG_SZ%,\cdsp\libc++.so.1
+
+; Updating registry of libbenchmark_skel.so to remote path \cdsp\libbenchmark_skel.so
+HKR,Mappings\FASTRPC\Default\3535ded43202eede0d204355dd3e0d160517d5c7747e94107d4e9736935e0c70,"Local",%REG_SZ%, %13%\cdsp\libbenchmark_skel.so
+HKR,Mappings\FASTRPC\Default\3535ded43202eede0d204355dd3e0d160517d5c7747e94107d4e9736935e0c70,"Remote",%REG_SZ%,\cdsp\libbenchmark_skel.so
+
+; Updating registry of fastrpc_shell_unsigned_3 to remote path \cdsp\fastrpc_shell_unsigned_3
+HKR,Mappings\FASTRPC\Default\3126e0baa9e78ad14ece165c0e2c7c324facf6d3693a7fc46cc94d938bd16576,"Local",%REG_SZ%, %13%\cdsp\fastrpc_shell_unsigned_3
+HKR,Mappings\FASTRPC\Default\3126e0baa9e78ad14ece165c0e2c7c324facf6d3693a7fc46cc94d938bd16576,"Remote",%REG_SZ%,\cdsp\fastrpc_shell_unsigned_3
+
+; Updating registry of fastrpc_shell_3 to remote path \cdsp\fastrpc_shell_3
+HKR,Mappings\FASTRPC\Default\ca3ebfcf44dc5579552c88a8dc81d7af0fdfa6a795b9c74a0e828f34ea55904e,"Local",%REG_SZ%, %13%\cdsp\fastrpc_shell_3
+HKR,Mappings\FASTRPC\Default\ca3ebfcf44dc5579552c88a8dc81d7af0fdfa6a795b9c74a0e828f34ea55904e,"Remote",%REG_SZ%,\cdsp\fastrpc_shell_3
+
+; Updating registry of example_image.so to remote path \cdsp\example_image.so
+HKR,Mappings\FASTRPC\Default\4ddf5be91f3b3e8032678fe885f520b688e53400abd437dd489e027a0ff209e5,"Local",%REG_SZ%, %13%\cdsp\example_image.so
+HKR,Mappings\FASTRPC\Default\4ddf5be91f3b3e8032678fe885f520b688e53400abd437dd489e027a0ff209e5,"Remote",%REG_SZ%,\cdsp\example_image.so
+
+[JSON_Files]
+cdspr.jsn
+
+[JSON_PathMapping]
+
+hkr,json\cdspr,"path",%reg_sz%, %13%\cdspr.jsn
+
+[Strings]
+;Localizable Strings
+QUALCOMM = "Qualcomm Technologies, Incorporated"
+DiskId1 = "Qualcomm Combined Subsystem Driver Installation Disk"
+CDSP.DeviceDesc = "Qualcomm Compute DSP Subsystem Device"
+PIL.DeviceDesc = "Qualcomm(R) Peripheral Image Loader Device"
+PDSR.DeviceDesc = "Qualcomm(R) Protection Domain Service Registry Device"
+THERMAL_Device_CDSP_CSW.DeviceDesc = "Qualcomm(R) NSP0 CDSP SW Thermal Device"
+THERMAL_Device_CDSP_CSW_FriendlyName = "Qualcomm(R) NSP0 CDSP SW Thermal Device"
+CDSP_FriendlyName = "Qualcomm(R) Compute DSP Subsystem Device"
+FASTRPC = 1
+
+;Non-localizable Strings
+REG_SZ                 = 0x00000000
+REG_DWORD              = 0x00010001
+REG_MULTI_SZ           = 0x00010000
+SPSVCINST_ASSOCSERVICE = 0x00000002
+
+;Below are Device Interfaces GUIDs needed by different SUBSYS device
+;The GUIDs are as defined in QCDK header files- pilapi.h, fastrpc_api.h, and glink_wdf.h in order listed
+GUID_DEVINTERFACE_PIL_TZ = "{E2EB84C1-4068-4994-A48F-F3AC0D38DC29}"
+GUID_DEVINTERFACE_FASTRPC = "{E022FF1A-C06C-42D8-94FE-90D876FC0B75}"
+GUID_DEVINTERFACE_GLINK = "{F9D15453-8335-434c-AA72-FCD925F135F3}"
+GUID_CDSP_DEVINTERFACE_GLINK = "{DDAE0B76-6595-4469-A254-AD116DC4012A}"
