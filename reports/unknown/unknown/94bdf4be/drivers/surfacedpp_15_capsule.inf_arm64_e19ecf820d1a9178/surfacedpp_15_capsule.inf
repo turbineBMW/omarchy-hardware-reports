@@ -1,0 +1,47 @@
+;
+; SurfaceDPPCapsule.inf
+; 1.0.0.0
+; Copyright (c) Microsoft Corporation. All Rights Reserved.
+;
+[Version]
+Signature   = "$WINDOWS NT$"
+Provider    = %Provider%
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+DriverVer   = 04/04/1975,1.0.7.0
+CatalogFile = SurfaceDPPCapsule.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%MfgName% = Firmware,NTARM64.10.0...19041
+
+[Firmware.NTARM64.10.0...19041]
+%FirmwareDesc_DPP_15IN%             = Firmware_Install,UEFI\RES_{8042C870-FC5A-4A6F-BF20-2F44D05D4BA6}
+
+[Firmware_Install.NT]
+CopyFiles = Firmware_CopyFiles
+
+[Firmware_CopyFiles]
+
+[Firmware_Install.NT.Hw]
+AddReg = Firmware_AddReg
+
+[Firmware_AddReg]
+
+HKR,,FirmwareId,,{8042C870-FC5A-4A6F-BF20-2F44D05D4BA6}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+
+[Firmware_Install.NT.Services]
+AddService =  ,2
+
+
+[Strings]
+; localizable
+Provider     = "Surface" 
+MfgName      = "Microsoft Corporation" 
+FirmwareDesc_DPP_15IN = "Surface DPP"
+
+; non-localizable
+DIRID_WINDOWS = 10
+REG_DWORD     = 0x00010001

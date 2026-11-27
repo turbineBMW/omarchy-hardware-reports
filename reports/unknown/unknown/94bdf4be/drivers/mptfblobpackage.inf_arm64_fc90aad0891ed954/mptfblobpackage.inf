@@ -1,0 +1,95 @@
+[Version]
+Signature="$WINDOWS NT$"
+Class=Thermal
+ClassGuid={ca301ce1-74fc-45ea-a557-461ef48b9e37}
+Provider=%ManufacturerName%
+CatalogFile=MPTFBlobPackage.cat
+DriverVer = 06/03/2026,137.0.14.0
+PnpLockdown=1
+
+[Manufacturer]
+%ManufacturerName%=MPTFBlobPackage,NTARM64.10.0...19041
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+883ROT13Inch.bin = 1
+883ROT15Inch.bin = 1
+
+[DestinationDirs]
+Drivers_Dir = 13
+ServiceCopy = 13
+ConfigurationsCopy883ROT13Inch=13
+ConfigurationsCopy883ROT15Inch=13
+
+[MPTFBlobPackage.NTARM64.10.0...19041]
+%DeviceName%=MPTFBlobPackage883ROT13Inch, {2c90d7c7-53f7-4279-b73b-8ce648f85f04}\MptfBlobPackage
+%DeviceName%=MPTFBlobPackage883ROT15Inch, {ed37a8e7-79d2-411a-a142-5f5fe3437104}\MptfBlobPackage
+
+
+; ================= Installation for 883 ROT 13 Inch ==================
+
+[MPTFBlobPackage883ROT13Inch.NT]
+Include=MPTFCore.inf
+Needs=MptfCore.Inst.NT
+CopyFiles=ConfigurationsCopy883ROT13Inch
+AddReg=MPTFBlobPackage883ROT13Inch_Install_NT_AddReg
+
+[MPTFBlobPackage883ROT13Inch.NT.HW]
+Include=MPTFCore.inf
+Needs=MptfCore.Inst.NT.HW
+
+[MPTFBlobPackage883ROT13Inch.NT.Services]
+Include=MPTFCore.inf
+Needs=MptfCore.Inst.NT.Services
+
+[MPTFBlobPackage883ROT13Inch.NT.Events]
+Include=MPTFCore.inf
+Needs=MptfCore.Inst.NT.Events
+
+[ConfigurationsCopy883ROT13Inch]
+883ROT13Inch.bin
+
+[MPTFBlobPackage883ROT13Inch_Install_NT_AddReg]
+HKR,,MptfConfigBlobFilePath, REG_EXPAND_SZ, "%13%\883ROT13Inch.bin"
+HKR,,SmfConfigBlobFilePath, REG_EXPAND_SZ, "%13%\883ROT13Inch.bin"
+
+; ================= Installation for 883 ROT 15 Inch ==================
+
+[MPTFBlobPackage883ROT15Inch.NT]
+Include=MPTFCore.inf
+Needs=MptfCore.Inst.NT
+CopyFiles=ConfigurationsCopy883ROT15Inch
+AddReg=MPTFBlobPackage883ROT15Inch_Install_NT_AddReg
+
+[MPTFBlobPackage883ROT15Inch.NT.HW]
+Include=MPTFCore.inf
+Needs=MptfCore.Inst.NT.HW
+
+[MPTFBlobPackage883ROT15Inch.NT.Services]
+Include=MPTFCore.inf
+Needs=MptfCore.Inst.NT.Services
+
+[MPTFBlobPackage883ROT15Inch.NT.Events]
+Include=MPTFCore.inf
+Needs=MptfCore.Inst.NT.Events
+
+[ConfigurationsCopy883ROT15Inch]
+883ROT15Inch.bin
+
+[MPTFBlobPackage883ROT15Inch_Install_NT_AddReg]
+HKR,,MptfConfigBlobFilePath, REG_EXPAND_SZ, "%13%\883ROT15Inch.bin"
+HKR,,SmfConfigBlobFilePath, REG_EXPAND_SZ, "%13%\883ROT15Inch.bin"
+
+; =================== Generic ==================================
+
+[Strings]
+ManufacturerName="Surface"
+DeviceName="MPTF Core" ; Do not change this name.
+DiskName="MPTF Configuration Blob Installation Disk"
+REG_EXPAND_SZ          = 0x00020000
+REG_DWORD              = 0x00010001
+REG_MULTI_SZ           = 0x00010000
+REG_BINARY             = 0x00000001
+REG_SZ                 = 0x00000000

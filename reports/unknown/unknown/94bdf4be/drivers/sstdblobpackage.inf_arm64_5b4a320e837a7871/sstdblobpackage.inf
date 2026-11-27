@@ -1,0 +1,45 @@
+[Version]
+Signature="$WINDOWS NT$"
+Class=Extension
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%ManufacturerName%
+CatalogFile=SSTDBlobPackage.cat
+DriverVer = 05/13/2026,0.0.9.0
+PnpLockdown=1
+ExtensionId={A3B7C912-8E4D-4F1A-9C2E-5D6F8A1B3E7C}
+
+[Manufacturer]
+%ManufacturerName%=SSTDBlobPackage,NTARM64.10.0...19041
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+MPTFTelemetryConfig.bin = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+ConfigurationsCopy=13
+
+[SSTDBlobPackage.NTARM64.10.0...19041]
+%DeviceName%=SSTDBlobPackage, {0F06E22B-D143-4476-A4A6-24AAAACACAF9}\SurfaceMptfTelemetryDriver
+
+; ================= Installation ==================
+
+[SSTDBlobPackage.NT]
+CopyFiles=ConfigurationsCopy
+AddReg=SSTDBlobPackage_Install_NT_AddReg
+
+[ConfigurationsCopy]
+MPTFTelemetryConfig.bin
+
+[SSTDBlobPackage_Install_NT_AddReg]
+HKR,,MptfTelemetryBlobFilePath, REG_EXPAND_SZ, "%13%\MPTFTelemetryConfig.bin"
+
+; =================== Generic ==================================
+
+[Strings]
+ManufacturerName="Surface"
+DeviceName="MPTF Telem Blob Extension"
+DiskName="MPTF Configuration Blob Installation Disk"
+REG_EXPAND_SZ          = 0x00020000

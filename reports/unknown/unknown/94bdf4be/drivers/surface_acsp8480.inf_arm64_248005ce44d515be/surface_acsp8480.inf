@@ -1,0 +1,190 @@
+;/*++
+;
+;Copyright (c) 2022-2023  Qualcomm Technologies, Inc.
+;
+;Module Name:
+;    surface_acsp8480.inf
+;
+;Abstract:
+;    Extenstion INF file for installing the Audio Calibration Settings CRD Package for ACDM.
+;
+;Installation Notes: 
+;    
+;
+;--*/
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Extension
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%Surface%
+ExtensionId = {6D123102-C7F7-4FE2-B172-038E18C6FBEA}
+DriverVer = 06/01/2026,5100.2026.5.29
+CatalogFile=surface_acsp8480.cat
+PnpLockDown=1
+
+[DestinationDirs]
+Files = 13
+;TuningFiles
+REV_0A_TuningFiles = 13,\REV_0A
+REV_0B_TuningFiles = 13,\REV_0B
+REV_0C_TuningFiles = 13,\REV_0C
+REV_0E_TuningFiles = 13,\REV_0E
+REV_0F_TuningFiles = 13,\REV_0F
+
+[SourceDisksNames]
+1=%DiskId1%
+
+[SourceDisksFiles]
+acdb_cal_0A.acdb = 1,\REV_0A
+workspaceFile_0A.qwsp = 1,\REV_0A
+acdb_cal_0B.acdb = 1,\REV_0B
+workspaceFile_0B.qwsp = 1,\REV_0B
+acdb_cal_0C.acdb = 1,\REV_0C
+workspaceFile_0C.qwsp = 1,\REV_0C
+acdb_cal_0E.acdb = 1,\REV_0E
+workspaceFile_0E.qwsp = 1,\REV_0E
+acdb_cal_0F.acdb = 1,\REV_0F
+workspaceFile_0F.qwsp = 1,\REV_0F
+ADCMResources.bin = 1
+fai__4.8.14_1.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__11.6.1.0_1.0__eai_4.11.0.pmd = 1
+fai__4.8.14_2.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__11.6.1.0_2.0__eai_4.11.0.pmd = 1
+fai__4.8.21_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__11.6.0_0.0__eai_4.11.0_enpuv5.pmd = 1
+fai__4.8.21_1.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__11.6.0_1.0__eai_4.11.0_enpuv5.pmd = 1
+fai__4.8.21_2.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__11.6.0_2.0__eai_4.11.0_enpuv5.pmd = 1
+fai__9.1.0_0.0__eai_4.11.0_enpuv5.pmd = 1
+ffv__14.0.2.1_0.0__eai_4.12.pmd = 1
+fai__20.21.1_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_4.11.0_enpuv5.pmd = 1
+fai__20.21.1_1.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_4.11.0_enpuv5.pmd = 1
+fai__20.21.3_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_4.11.0_enpuv5.pmd = 1
+fai__20.21.3_1.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_4.11.0_enpuv5.pmd = 1
+ffv__14.0.2.1_0.0__eai_4.6_enpu_v5.pmd = 1
+
+;*****************************************
+; ACSP  Install Section
+;*****************************************
+[Manufacturer]
+%Surface%=Extensions,NTARM64.10.0...16299
+
+; Decorated model section take precedence over undecorated 
+; ones on XP and later.
+[Extensions.NTARM64.10.0...16299]
+%ACSP.DeviceDesc%= Extension_Device_0A, ADSP\VEN_QCOM&DEV_0F22&SUBSYS_MSHW0777&REV_0A  ; This is the parent INF that we get installed with
+%ACSP.DeviceDesc%= Extension_Device_0B, ADSP\VEN_QCOM&DEV_0F22&SUBSYS_MSHW0777&REV_0B  ; This is the parent INF that we get installed with
+%ACSP.DeviceDesc%= Extension_Device_0C, ADSP\VEN_QCOM&DEV_0F22&SUBSYS_MSHW0787&REV_0C  ; This is the parent INF that we get installed with
+%ACSP.DeviceDesc%= Extension_Device_0E, ADSP\VEN_QCOM&DEV_0F22&SUBSYS_MSHW0817&REV_0E  ; This is the parent INF that we get installed with
+%ACSP.DeviceDesc%= Extension_Device_0F, ADSP\VEN_QCOM&DEV_0F22&SUBSYS_MSHW0827&REV_0F  ; This is the parent INF that we get installed with
+
+[Extension_Device_0A.HW]
+Addreg=ACSPReg_0A,ACSPReg_Common
+
+[Extension_Device_0B.HW]
+Addreg=ACSPReg_0B,ACSPReg_Common
+
+[Extension_Device_0C.HW]
+Addreg=ACSPReg_0C,ACSPReg_Common
+
+[Extension_Device_0E.HW]
+Addreg=ACSPReg_0E,ACSPReg_Common
+
+[Extension_Device_0F.HW]
+Addreg=ACSPReg_0F,ACSPReg_Common
+
+[Extension_Device_0A]
+CopyFiles=Files,REV_0A_TuningFiles
+
+[Extension_Device_0B]
+CopyFiles=Files,REV_0B_TuningFiles
+
+[Extension_Device_0C]
+CopyFiles=Files,REV_0C_TuningFiles
+
+[Extension_Device_0E]
+CopyFiles=Files,REV_0E_TuningFiles
+
+[Extension_Device_0F]
+CopyFiles=Files,REV_0F_TuningFiles
+
+[Files]
+;ASLBinFile
+ADCMResources.bin
+;PMDBinFiles
+fai__4.8.14_1.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__11.6.1.0_1.0__eai_4.11.0.pmd
+fai__4.8.14_2.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__11.6.1.0_2.0__eai_4.11.0.pmd
+fai__4.8.21_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__11.6.0_0.0__eai_4.11.0_enpuv5.pmd
+fai__4.8.21_1.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__11.6.0_1.0__eai_4.11.0_enpuv5.pmd
+fai__4.8.21_2.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__11.6.0_2.0__eai_4.11.0_enpuv5.pmd
+fai__9.1.0_0.0__eai_4.11.0_enpuv5.pmd
+ffv__14.0.2.1_0.0__eai_4.12.pmd
+fai__20.21.1_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_4.11.0_enpuv5.pmd
+fai__20.21.1_1.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_4.11.0_enpuv5.pmd
+fai__20.21.3_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_4.11.0_enpuv5.pmd
+fai__20.21.3_1.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_4.11.0_enpuv5.pmd
+ffv__14.0.2.1_0.0__eai_4.6_enpu_v5.pmd
+
+[REV_0A_TuningFiles]
+acdb_cal_0A.acdb
+workspaceFile_0A.qwsp
+
+[REV_0B_TuningFiles]
+acdb_cal_0B.acdb
+workspaceFile_0B.qwsp
+
+[REV_0C_TuningFiles]
+acdb_cal_0C.acdb
+workspaceFile_0C.qwsp
+
+[REV_0E_TuningFiles]
+acdb_cal_0E.acdb
+workspaceFile_0E.qwsp
+
+[REV_0F_TuningFiles]
+acdb_cal_0F.acdb
+workspaceFile_0F.qwsp
+
+[ACSPReg_0A]
+HKR,AudioCalibSettings, AcbdFilePath1, %REG_SZ%, "%13%\REV_0A\acdb_cal_0A.acdb"
+HKR,AudioCalibSettings, AcbdFilePath2, %REG_SZ%, "%13%\REV_0A\workspaceFile_0A.qwsp"
+
+[ACSPReg_0B]
+HKR,AudioCalibSettings, AcbdFilePath1, %REG_SZ%, "%13%\REV_0B\acdb_cal_0B.acdb"
+HKR,AudioCalibSettings, AcbdFilePath2, %REG_SZ%, "%13%\REV_0B\workspaceFile_0B.qwsp"
+
+[ACSPReg_0C]
+HKR,AudioCalibSettings, AcbdFilePath1, %REG_SZ%, "%13%\REV_0C\acdb_cal_0C.acdb"
+HKR,AudioCalibSettings, AcbdFilePath2, %REG_SZ%, "%13%\REV_0C\workspaceFile_0C.qwsp"
+
+[ACSPReg_0E]
+HKR,AudioCalibSettings, AcbdFilePath1, %REG_SZ%, "%13%\REV_0E\acdb_cal_0E.acdb"
+HKR,AudioCalibSettings, AcbdFilePath2, %REG_SZ%, "%13%\REV_0E\workspaceFile_0E.qwsp"
+
+[ACSPReg_0F]
+HKR,AudioCalibSettings, AcbdFilePath1, %REG_SZ%, "%13%\REV_0F\acdb_cal_0F.acdb"
+HKR,AudioCalibSettings, AcbdFilePath2, %REG_SZ%, "%13%\REV_0F\workspaceFile_0F.qwsp"
+
+[ACSPReg_Common]
+HKR,AudioCalibSettings, AcbdFilePath3, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath4, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath5, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath6, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath7, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath8, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath9, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath10, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath11, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath12, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath13, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath14, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath15, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath16, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath17, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath18, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath19, %REG_SZ%, ""
+HKR,AudioCalibSettings, AcbdFilePath20, %REG_SZ%, ""
+HKR,ADCMPowerResource, BinaryFilePath,%REG_SZ%,%13%\ADCMResources.bin
+
+[Strings]
+REG_SZ=0x00000000
+Surface = "Surface"
+DiskId1 = "Surface ACSP Installation Disk #1"
+ACSP.DeviceDesc = "Surface Audio Calibration Settings Pkg for CRD ADCM"

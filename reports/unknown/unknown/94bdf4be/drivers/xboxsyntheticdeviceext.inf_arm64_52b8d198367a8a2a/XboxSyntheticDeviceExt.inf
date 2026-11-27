@@ -1,0 +1,319 @@
+;
+; Copyright (c) Microsoft Corporation. All rights reserved.
+;
+; XboxSyntheticDeviceExt.inf
+; Extension INF to rename the Xbox Synthetic Device and add reenumeration keys to known controllers
+;
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = Extension
+ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider    = %ManufacturerName%
+ExtensionId = {CA3C3D7D-4746-4354-91BA-B961456ABB4E}
+CatalogFile = XboxSyntheticDeviceExt.cat
+DriverVer = 10/08/2026,18.21.56.544
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName% = DeviceExtension,NTARM64.10.0...22000
+
+[DeviceExtension.NTARM64.10.0...22000]
+%DeviceExtensionName% = DeviceExtension_Install, VHF\VID_045E&PID_0B09&IG_00
+
+%HidDeviceName% = AddHwKey, BTHLEDevice\{00001812-0000-1000-8000-00805f9b34fb}_Dev_VID&02045e_PID&0b13 ; XBOX Controller
+%HidDeviceName% = AddHwKey, BTHLEDevice\{00001812-0000-1000-8000-00805f9b34fb}_Dev_VID&02045e_PID&0b22 ; XBOX Elite V2 Controller
+%HidDeviceName% = AddHwKey, BTHLEDevice\{00001812-0000-1000-8000-00805f9b34fb}_Dev_VID&02045e_PID&0b3c ; XBOX Controller
+
+%HidDeviceName% = AddHwKey, BTHENUM\{00001124-0000-1000-8000-00805f9b34fb}_VID&0002054c_PID&0ce6 ; Sony DualSense
+
+%HidDeviceName% = AddHwKey, USB\VID_045E&PID_0B39&IG_00 ; XBOX Controller
+%HidDeviceName% = AddHwKey, USB\VID_0B05&PID_1B4C ; RoG Xbox Ally
+
+; Auto-generated HID mappings
+%HidDeviceName% = AddHwKey, USB\VID_1949&PID_0419 ; Amazon Luna Controller
+%HidDeviceName% = AddHwKey, USB\VID_18D1&PID_9400 ; Google Stadia Controller
+%HidDeviceName% = AddHwKey, USB\VID_054C&PID_0CE6&MI_03 ; PS5 Controller
+%HidDeviceName% = AddHwKey, USB\VID_28DE&PID_11FF ; Steam Virtual Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_3810 ; 8BitDo FC30 Pro
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_9015 ; 8BitDo N30 Pro 2
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_2865 ; 8BitDo N30 Pro 2
+%HidDeviceName% = AddHwKey, USB\VID_2002&PID_9000 ; 8BitDo NES30 Pro
+%HidDeviceName% = AddHwKey, USB\VID_3820&PID_0009 ; 8BitDo NES30 Pro
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_3820 ; 8BitDo NES30 Pro
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_6006 ; 8BitDo Pro 2
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_6000 ; 8BitDo SF30 Pro
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_6100 ; 8BitDo SF30 Pro
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_6002 ; 8BitDo SN30 Pro+
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_6102 ; 8BitDo SN30 Pro+
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_6001 ; 8BitDo SN30 Pro
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_6101 ; 8BitDo SN30 Pro
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_301B ; 8BitDo Ultimate 2C Wireless
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_3011 ; 8BitDo Ultimate Wired Controller
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_3013 ; 8BitDo Ultimate Wireless Controller
+%HidDeviceName% = AddHwKey, USB\VID_0B05&PID_7905 ; ASUS ROG Kunai 3 Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_0B05&PID_7906 ; ASUS ROG Kunai 3 Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_0E8F&PID_0012 ; Acme GA-02
+%HidDeviceName% = AddHwKey, USB\VID_19FA&PID_FFF0 ; Acteck AGJ-3200
+%HidDeviceName% = AddHwKey, USB\VID_1A34&PID_0836 ; Afterglow PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0E6F&PID_6302 ; Afterglow PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0E6F&PID_0111 ; Afterglow PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0E6F&PID_0114 ; Afterglow PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0E6F&PID_0214 ; Afterglow PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0E6F&PID_0119 ; Afterglow PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0E6F&PID_011A ; Afterglow PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_20D6&PID_571D ; Airflo PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_20D6&PID_792A ; BDA PS4 Fightpad
+%HidDeviceName% = AddHwKey, USB\VID_1DD8&PID_000B ; BUFFALO BSGP1601 Series
+%HidDeviceName% = AddHwKey, USB\VID_20D6&PID_57E5 ; Batarang
+%HidDeviceName% = AddHwKey, USB\VID_0E6F&PID_0132 ; Battlefield 4 PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_20BC&PID_1260 ; Betop 2126F
+%HidDeviceName% = AddHwKey, USB\VID_20BC&PID_5500 ; Betop BFM Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_20BC&PID_1263 ; Betop Controller
+%HidDeviceName% = AddHwKey, USB\VID_20BC&PID_1264 ; Betop Controller
+%HidDeviceName% = AddHwKey, USB\VID_11C0&PID_5505 ; Betop Controller
+%HidDeviceName% = AddHwKey, USB\VID_11C0&PID_5506 ; Betop Controller
+%HidDeviceName% = AddHwKey, USB\VID_0079&PID_0007 ; Betop Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_8380&PID_0003 ; Betop Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_146B&PID_5500 ; Bigben PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_146B&PID_0301 ; Bigben PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_F766&PID_0005 ; BrutalLegendTest
+%HidDeviceName% = AddHwKey, USB\VID_20E8&PID_5860 ; Cideko AK08b
+%HidDeviceName% = AddHwKey, USB\VID_06A3&PID_F622 ; Cyborg V.3 Rumble Pad
+%HidDeviceName% = AddHwKey, USB\VID_1345&PID_3008 ; Defender Game Racer X7
+%HidDeviceName% = AddHwKey, USB\VID_12BD&PID_E002 ; Dual USB Vibration Joystick
+%HidDeviceName% = AddHwKey, USB\VID_0E6F&PID_0130 ; EA SPORTS PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0E8F&PID_310F ; EXEQ
+%HidDeviceName% = AddHwKey, USB\VID_05B8&PID_1004 ; Elecom Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_05B8&PID_1006 ; Elecom Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_2185&PID_0102 ; FF-GP1
+%HidDeviceName% = AddHwKey, USB\VID_0E8F&PID_310D ; GAMEPAD 3 TURBO
+%HidDeviceName% = AddHwKey, USB\VID_0F30&PID_010B ; GGE909 Recoil Pad
+%HidDeviceName% = AddHwKey, USB\VID_0079&PID_0122 ; Game Controller for PC
+%HidDeviceName% = AddHwKey, USB\VID_F766&PID_0001 ; Game VIB Joystick
+%HidDeviceName% = AddHwKey, USB\VID_1949&PID_0402 ; GameSir T4 Pro
+%HidDeviceName% = AddHwKey, USB\VID_05AC&PID_033D ; GameSir
+%HidDeviceName% = AddHwKey, USB\VID_05AC&PID_044D ; GameSir
+%HidDeviceName% = AddHwKey, USB\VID_05AC&PID_061A ; GameSir-T3 2.02
+%HidDeviceName% = AddHwKey, USB\VID_11C0&PID_4001 ; GameStop PS4 Fun Controller
+%HidDeviceName% = AddHwKey, USB\VID_1A5C&PID_3033 ; Genius MaxFire Grandias 12V
+%HidDeviceName% = AddHwKey, USB\VID_0583&PID_B031 ; Genius Maxfire Blaze 3
+%HidDeviceName% = AddHwKey, USB\VID_1345&PID_1000 ; Genius Maxfire Grandias 12
+%HidDeviceName% = AddHwKey, USB\VID_0583&PID_A009 ; Genius
+%HidDeviceName% = AddHwKey, USB\VID_25F0&PID_C121 ; Gioteck PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_25F0&PID_83C3 ; Gioteck VX2 Controller
+%HidDeviceName% = AddHwKey, USB\VID_25F0&PID_83C4 ; Gioteck VX2 Controller
+%HidDeviceName% = AddHwKey, USB\VID_25F0&PID_83C2 ; Gioteck
+%HidDeviceName% = AddHwKey, USB\VID_2563&PID_0526 ; HJD-X
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_0084 ; HORI Fighting Commander
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_0085 ; HORI Fighting Commander
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_006E ; HORIPAD 4 (PS3)
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_0066 ; HORIPAD 4 (PS4)
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_00EE ; HORIPAD mini4
+%HidDeviceName% = AddHwKey, USB\VID_1A34&PID_0203 ; Hama Scorpad
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_0049 ; Hatsune Miku Sho Controller
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_0009 ; Hori Pad 3 Turbo
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_0054 ; Hori Pad 3
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_004D ; Hori Pad A
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_00C1 ; Horipad
+%HidDeviceName% = AddHwKey, USB\VID_05AC&PID_022C ; IPEGA
+%HidDeviceName% = AddHwKey, USB\VID_056E&PID_2005 ; JC-P301U
+%HidDeviceName% = AddHwKey, USB\VID_056E&PID_2003 ; JC-U3613M (DInput)
+%HidDeviceName% = AddHwKey, USB\VID_0079&PID_0002 ; King PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_046D&PID_CAD1 ; Logitech ChillStream
+%HidDeviceName% = AddHwKey, USB\VID_046D&PID_CAD2 ; Logitech Cordless Precision
+%HidDeviceName% = AddHwKey, USB\VID_046D&PID_C216 ; Logitech Dual Action
+%HidDeviceName% = AddHwKey, USB\VID_046D&PID_C218 ; Logitech F510 Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_046D&PID_C219 ; Logitech F710 Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_0738&PID_8263 ; MLG Gamepad PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_24C6&PID_892A ; MOGA XP5-A Plus
+%HidDeviceName% = AddHwKey, USB\VID_24C6&PID_892B ; MOGA XP5-A Plus
+%HidDeviceName% = AddHwKey, USB\VID_24C6&PID_891A ; MOGA XP5-X Plus
+%HidDeviceName% = AddHwKey, USB\VID_24C6&PID_891B ; MOGA XP5-X Plus
+%HidDeviceName% = AddHwKey, USB\VID_0925&PID_8866 ; MP-8866 Super Dual Box
+%HidDeviceName% = AddHwKey, USB\VID_0738&PID_5266 ; Mad Catz C.T.R.L.R
+%HidDeviceName% = AddHwKey, USB\VID_0738&PID_3250 ; Mad Catz FightPad PRO (PS3)
+%HidDeviceName% = AddHwKey, USB\VID_0738&PID_8250 ; Mad Catz FightPad PRO (PS4)
+%HidDeviceName% = AddHwKey, USB\VID_0738&PID_3384 ; Mad Catz FightStick TE S+ (PS3)
+%HidDeviceName% = AddHwKey, USB\VID_0738&PID_8384 ; Mad Catz FightStick TE S+ (PS4)
+%HidDeviceName% = AddHwKey, USB\VID_0738&PID_3481 ; Mad Catz FightStick TE2+ PS3
+%HidDeviceName% = AddHwKey, USB\VID_0738&PID_8481 ; Mad Catz FightStick TE2+ PS4
+%HidDeviceName% = AddHwKey, USB\VID_0738&PID_5262 ; Mad Catz Micro C.T.R.L.R
+%HidDeviceName% = AddHwKey, USB\VID_062A&PID_2410 ; Matricom
+%HidDeviceName% = AddHwKey, USB\VID_0079&PID_1800 ; Mayflash WiiU Pro Game Controller Adapter (DInput)
+%HidDeviceName% = AddHwKey, USB\VID_BEEF&PID_FEED ; Monect Virtual Controller
+%HidDeviceName% = AddHwKey, USB\VID_146B&PID_0C01 ; NACON GC-400ES
+%HidDeviceName% = AddHwKey, USB\VID_2015&PID_8201 ; NGDS
+%HidDeviceName% = AddHwKey, USB\VID_0955&PID_B400 ; NVIDIA Virtual Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_124B&PID_4D01 ; NYKO AIRFLO EX
+%HidDeviceName% = AddHwKey, USB\VID_050D&PID_0803 ; Nostromo N45
+%HidDeviceName% = AddHwKey, USB\VID_20D6&PID_576D ; OPP PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_2378&PID_100A ; Onlive Wireless Controller
+%HidDeviceName% = AddHwKey, USB\VID_146B&PID_A101 ; Orange Controller
+%HidDeviceName% = AddHwKey, USB\VID_2563&PID_0623 ; PS Controller
+%HidDeviceName% = AddHwKey, USB\VID_05E3&PID_0596 ; PS to USB convert cable
+%HidDeviceName% = AddHwKey, USB\VID_0810&PID_0001 ; PS1 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0810&PID_0003 ; PS2 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0925&PID_8888 ; PS2 Controller
+%HidDeviceName% = AddHwKey, USB\VID_6666&PID_0667 ; PS2 Controller
+%HidDeviceName% = AddHwKey, USB\VID_146B&PID_0303 ; PS2 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0D9D&PID_3013 ; PS2 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0925&PID_0005 ; PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_054C&PID_0DF2 ; Description=DualSense Edge Wireless Controller
+%HidDeviceName% = AddHwKey, USB\VID_054C&PID_0E5F ; Description=DualSense Access Wireless Controller
+%HidDeviceName% = AddHwKey, USB\VID_054C&PID_0268 ; PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_2563&PID_0575 ; PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_8888&PID_0308 ; PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0E8F&PID_3114 ; PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0738&PID_A856 ; PS3 RF pad
+%HidDeviceName% = AddHwKey, USB\VID_054C&PID_0BA0 ; PS4 Controller
+%HidDeviceName% = AddHwKey, USB\VID_054C&PID_09CC ; PS4 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0E8F&PID_0003 ; Piranha xtreme
+%HidDeviceName% = AddHwKey, USB\VID_20D6&PID_4026 ; PowerA OPS v1 Wireless Controller
+%HidDeviceName% = AddHwKey, USB\VID_20D6&PID_4033 ; PowerA OPS v3 Pro Wireless Controller
+%HidDeviceName% = AddHwKey, USB\VID_20D6&PID_CA6D ; PowerA Pro Ex
+%HidDeviceName% = AddHwKey, USB\VID_20D6&PID_5795 ; Pro Elite PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_20D6&PID_319F ; Pro Ex mini PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_20D6&PID_57C7 ; Pro Ex mini PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_2C22&PID_2500 ; Qanba Dragon Arcade Joystick
+%HidDeviceName% = AddHwKey, USB\VID_2C22&PID_2302 ; Qanba Obsidian Arcade Joystick (PS3)
+%HidDeviceName% = AddHwKey, USB\VID_2C22&PID_2300 ; Qanba Obsidian Arcade Joystick (PS4)
+%HidDeviceName% = AddHwKey, USB\VID_1532&PID_0402 ; Razer Panthera (PS3)
+%HidDeviceName% = AddHwKey, USB\VID_1532&PID_0401 ; Razer Panthera (PS4)
+%HidDeviceName% = AddHwKey, USB\VID_1532&PID_0705 ; Razer Raiju Mobile
+%HidDeviceName% = AddHwKey, USB\VID_1532&PID_0707 ; Razer Raiju Mobile
+%HidDeviceName% = AddHwKey, USB\VID_1532&PID_1100 ; Razer Raion Fightpad for PS4
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_006A ; Real Arcade Pro.4
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_006B ; Real Arcade Pro.4
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_008A ; Real Arcade Pro.4
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_008B ; Real Arcade Pro.4
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_005B ; Real Arcade Pro.V4
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_005C ; Real Arcade Pro.V4
+%HidDeviceName% = AddHwKey, USB\VID_146B&PID_0D13 ; Revolution Pro Controller 3
+%HidDeviceName% = AddHwKey, USB\VID_146B&PID_0D01 ; Revolution Pro Controller
+%HidDeviceName% = AddHwKey, USB\VID_0E6F&PID_011E ; Rock Candy PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0E6F&PID_0128 ; Rock Candy PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0E6F&PID_012F ; Rock Candy PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_1A34&PID_0802 ; SL-6555-SBK
+%HidDeviceName% = AddHwKey, USB\VID_1A34&PID_0809 ; SL-6566
+%HidDeviceName% = AddHwKey, USB\VID_0079&PID_181C ; STK-7024X
+%HidDeviceName% = AddHwKey, USB\VID_7545&PID_1122 ; SZMY-POWER PC Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_06A3&PID_F623 ; Saitek Cyborg V.1 Game pad
+%HidDeviceName% = AddHwKey, USB\VID_06A3&PID_F51A ; Saitek Cyborg
+%HidDeviceName% = AddHwKey, USB\VID_0F30&PID_0112 ; Saitek Dual Analog Pad
+%HidDeviceName% = AddHwKey, USB\VID_06A3&PID_040C ; Saitek P2900
+%HidDeviceName% = AddHwKey, USB\VID_0F30&PID_0110 ; Saitek P480 Rumble Pad
+%HidDeviceName% = AddHwKey, USB\VID_06A3&PID_0621 ; Saitek PS1000
+%HidDeviceName% = AddHwKey, USB\VID_06A3&PID_F620 ; Saitek PS2700
+%HidDeviceName% = AddHwKey, USB\VID_0E8F&PID_0008 ; SpeedLink Strike FX
+%HidDeviceName% = AddHwKey, USB\VID_11C0&PID_9105 ; Speedlink Torid
+%HidDeviceName% = AddHwKey, USB\VID_0111&PID_1431 ; SteelSeries Stratus Duo
+%HidDeviceName% = AddHwKey, USB\VID_1038&PID_1418 ; SteelSeries Stratus XL
+%HidDeviceName% = AddHwKey, USB\VID_20D6&PID_A711 ; PowerA Wired GameCube Controller
+%HidDeviceName% = AddHwKey, USB\VID_044F&PID_D007 ; T Mini Wireless
+%HidDeviceName% = AddHwKey, USB\VID_19FA&PID_0607 ; Team 5
+%HidDeviceName% = AddHwKey, USB\VID_07B5&PID_0312 ; Techmobility X6-38V
+%HidDeviceName% = AddHwKey, USB\VID_044F&PID_D00E ; ThrustMaster eSwap PRO Controller
+%HidDeviceName% = AddHwKey, USB\VID_044F&PID_B315 ; Thrustmaster Dual Analog 4
+%HidDeviceName% = AddHwKey, USB\VID_044F&PID_B323 ; Thrustmaster Dual Trigger 3-in-1
+%HidDeviceName% = AddHwKey, USB\VID_044F&PID_B304 ; Thrustmaster Firestorm Dual Power 3
+%HidDeviceName% = AddHwKey, USB\VID_044F&PID_B300 ; Thrustmaster Firestorm Dual Power
+%HidDeviceName% = AddHwKey, USB\VID_6666&PID_8804 ; TigerGame PS/PS2 Game Controller Adapter
+%HidDeviceName% = AddHwKey, USB\VID_20D6&PID_0060 ; Tournament PS3 Controller
+%HidDeviceName% = AddHwKey, USB\VID_145F&PID_01C5 ; Trust Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_05B8&PID_1002 ; Trust Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_04D9&PID_0002 ; TwinShock PS2
+%HidDeviceName% = AddHwKey, USB\VID_0F30&PID_0107 ; USB 4-Axis 12-Button Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_1A34&PID_0823 ; USB Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_146B&PID_0302 ; USB Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_0079&PID_000A ; USB Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_25F0&PID_83C1 ; USB Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_11FF&PID_3341 ; USB Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_2563&PID_0523 ; USB Vibration Joystick (BM)
+%HidDeviceName% = AddHwKey, USB\VID_0C45&PID_4320 ; XEOX Gamepad SL-6556-BK
+%HidDeviceName% = AddHwKey, USB\VID_1A34&PID_0806 ; Xeox
+%HidDeviceName% = AddHwKey, USB\VID_2717&PID_3144 ; XiaoMi Game Controller
+%HidDeviceName% = AddHwKey, USB\VID_0079&PID_184F ; ZD-T Android
+%HidDeviceName% = AddHwKey, USB\VID_0C12&PID_1E10 ; ZEROPLUS P4 Wired Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_1DD8&PID_000F ; iBUFFALO BSGP1204 Series
+%HidDeviceName% = AddHwKey, USB\VID_1DD8&PID_0010 ; iBUFFALO BSGP1204P Series
+%HidDeviceName% = AddHwKey, USB\VID_044F&PID_D003 ; run'n'drive
+%HidDeviceName% = AddHwKey, USB\VID_1C10&PID_1C17 ; uRage Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_2DFA&PID_0001 ; 3DRUDDER
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_3019 ; 8BitDo 64 Bluetooth Controller
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_5006 ; 8BitDo M30 Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_0651 ; 8BitDo M30 Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_9020 ; 8BitDo Micro gamepad
+%HidDeviceName% = AddHwKey, USB\VID_1235&PID_AB12 ; 8BitDo NES30 Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_2810&PID_0009 ; 8BitDo SFC30 Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_9012 ; 8BitDo SN30 Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_2862 ; 8BitDo SN30 Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_1235&PID_AB20 ; 8BitDo SNES30 Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_9018 ; 8BitDo Zero 2
+%HidDeviceName% = AddHwKey, USB\VID_2DC8&PID_3230 ; 8BitDo Zero 2
+%HidDeviceName% = AddHwKey, USB\VID_05A0&PID_3232 ; 8BitDo Zero Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_0926&PID_8888 ; Cyber Gadget GameCube Controller
+%HidDeviceName% = AddHwKey, USB\VID_1D79&PID_0301 ; Dual Box WII
+%HidDeviceName% = AddHwKey, USB\VID_1A34&PID_0801 ; EXEQ RF USB Gamepad 8206
+%HidDeviceName% = AddHwKey, USB\VID_0926&PID_2526 ; Gamecube Controller
+%HidDeviceName% = AddHwKey, USB\VID_0428&PID_4001 ; Gamepad Pro USB
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_005F ; Hori Fighting Commander 4 (PS3)
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_005E ; Hori Fighting Commander 4 (PS4)
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_0092 ; Hori Pokken Tournament DX Pro Pad
+%HidDeviceName% = AddHwKey, USB\VID_0E8F&PID_3013 ; HuiJia SNES Controller
+%HidDeviceName% = AddHwKey, USB\VID_07B5&PID_0314 ; Impact Black
+%HidDeviceName% = AddHwKey, USB\VID_056E&PID_2007 ; JC-W01U
+%HidDeviceName% = AddHwKey, USB\VID_046D&PID_C211 ; Logitech Cordless Wingman
+%HidDeviceName% = AddHwKey, USB\VID_046D&PID_C21A ; Logitech Precision Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_0E8F&PID_3010 ; Mayflash USB Adapter for original Sega Saturn controller
+%HidDeviceName% = AddHwKey, USB\VID_0925&PID_03E8 ; Mayflash Wii Classic Controller
+%HidDeviceName% = AddHwKey, USB\VID_0810&PID_E501 ; NEXT SNES Controller
+%HidDeviceName% = AddHwKey, USB\VID_0079&PID_1843 ; Nintendo GameCube Controller
+%HidDeviceName% = AddHwKey, USB\VID_0079&PID_1844 ; Nintendo GameCube Controller
+%HidDeviceName% = AddHwKey, USB\VID_12BD&PID_D015 ; Nintendo Retrolink USB Super SNES Classic Controller
+%HidDeviceName% = AddHwKey, USB\VID_2836&PID_0001 ; OUYA Game Controller
+%HidDeviceName% = AddHwKey, USB\VID_1209&PID_2F07 ; OrangeFox86 DreamPicoPort
+%HidDeviceName% = AddHwKey, USB\VID_0C12&PID_0EF6 ; P4 Wired Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_0E6F&PID_0109 ; PDP Versus Fighting Pad
+%HidDeviceName% = AddHwKey, USB\VID_0E8F&PID_3075 ; PS1 Controller
+%HidDeviceName% = AddHwKey, USB\VID_0F0D&PID_00AD ; RX Gamepad
+%HidDeviceName% = AddHwKey, USB\VID_1532&PID_0300 ; Razer Hydra
+%HidDeviceName% = AddHwKey, USB\VID_F000&PID_0003 ; RetroUSB.com RetroPad
+%HidDeviceName% = AddHwKey, USB\VID_F000&PID_00F1 ; RetroUSB.com Super RetroPort
+%HidDeviceName% = AddHwKey, USB\VID_0079&PID_0011 ; Retrolink SNES Controller
+%HidDeviceName% = AddHwKey, USB\VID_11FF&PID_3331 ; SVEN X-PAD
+%HidDeviceName% = AddHwKey, USB\VID_06A3&PID_FF0C ; Saitek P2500 Force Rumble Pad
+%HidDeviceName% = AddHwKey, USB\VID_0F30&PID_0111 ; Saitek Rumble Pad
+%HidDeviceName% = AddHwKey, USB\VID_0500&PID_9B28 ; Saturn_Adapter_2.0
+%HidDeviceName% = AddHwKey, USB\VID_289B&PID_0005 ; Saturn_Adapter_2.0
+%HidDeviceName% = AddHwKey, USB\VID_0111&PID_1419 ; SteelSeries
+%HidDeviceName% = AddHwKey, USB\VID_3507&PID_0004 ; ZENAIM ARCADE CONTROLLER
+%HidDeviceName% = AddHwKey, USB\VID_0583&PID_2060 ; iBuffalo SNES Controller
+
+
+
+
+[DeviceExtension_Install.NT]
+; No files to copy for this extension INF
+
+[DeviceExtension_Install.NT.HW]
+AddReg = DeviceExtension_HWAddReg
+
+[DeviceExtension_HWAddReg]
+; Set the friendly name for the device
+HKR,,FriendlyName,,%DeviceFriendlyName%
+
+[AddHwKey]
+; No changes
+
+[AddHwKey.HW]
+AddReg=AddHardwareKey
+
+[AddHardwareKey]
+HKR,,"CollectionReenumerateSelfInterfaceEnabled",0x00010001,0x1
+
+[Strings]
+ManufacturerName      = "XBOX"
+DeviceExtensionName   = "XBOX Synthetic Device Extension"
+DeviceFriendlyName    = "XBOX Synthetic Gamepad"
+HidDeviceName         = "XBOX Gamepad Device Extension"

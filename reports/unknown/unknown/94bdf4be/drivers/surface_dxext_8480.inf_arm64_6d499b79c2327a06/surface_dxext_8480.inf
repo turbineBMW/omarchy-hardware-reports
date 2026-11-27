@@ -1,0 +1,131 @@
+; 
+; Copyright (c) 2022-2024 Qualcomm Technologies, Inc.
+; All Rights Reserved.
+; Confidential and Proprietary - Qualcomm Technologies, Inc.
+;
+; Module Name:
+;
+;    surface_dxext.inf
+;
+; Abstract:
+;
+;    Inf file for Qualcomm WDDM DirectX drivers for Windows
+;
+[Version]
+Signature   = "$Windows NT$"
+Class       = Extension
+ClassGUID   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+ExtensionId = {fa84e36f-e341-4603-a0ff-6070f8d4499e}
+Provider    = %SURFACE%
+DriverVer = 06/03/2026,32.0.163.1
+CatalogFile = surface_dxext_8480.cat
+PnpLockDown = 1
+
+[DestinationDirs]
+; 12 = drivers
+; 11 = system32
+; 10 = SysWow64
+; 13 = system32\FileRepository\DriverStore
+
+QCDX.Files.NTarm_13_Outcell = 13
+QCDX.Files.NTarm_13_Incell  = 13
+QCDX.Files.NTarm_15_Incell  = 13
+DISPLAYTOOL_LIBFiles    = 11
+
+
+[SourceDisksNames]
+0 = %DiskDesc%
+
+[SourceDisksFiles]
+qcdxkmext8480_ROT_CDPS0.bin = 0,,		; Outcell Panel
+qcdxkmext8480_ROT_CDPS1.bin = 0,,		; 15inch Incell Panel
+qcdxkmext8480_ROT_CDPS2.bin = 0,,		; 13inch Incell Panel
+displaytoollib.dll = 0,,
+
+[Manufacturer]
+%SURFACE% = SURFACE, NTARM64.10.0...16299
+
+[SURFACE.NTARM64.10.0...16299]
+%QC_Device%          = QCDX_Inst_Ext_8480_Outcell, ACPI\VEN_QCOM&DEV_0F36&SUBSYS_CDPS08480
+%QC_Device84%        = QCDX_Inst_Ext_8480_Outcell, ACPI\VEN_QCOM&DEV_0FF5&SUBSYS_CDPS08480
+%QC_Device%          = QCDX_Inst_Ext_8480_15_Incell, ACPI\VEN_QCOM&DEV_0F36&SUBSYS_CDPS18480
+%QC_Device84%        = QCDX_Inst_Ext_8480_15_Incell, ACPI\VEN_QCOM&DEV_0FF5&SUBSYS_CDPS18480
+%QC_Device%          = QCDX_Inst_Ext_8480_13_Incell, ACPI\VEN_QCOM&DEV_0F36&SUBSYS_CDPS28480
+%QC_Device84%        = QCDX_Inst_Ext_8480_13_Incell, ACPI\VEN_QCOM&DEV_0FF5&SUBSYS_CDPS28480
+
+
+[QCDX_Inst_Ext_8480_Outcell.NT]
+CopyFiles = QCDX.Files.NTarm_13_Outcell, DISPLAYTOOL_LIBFiles
+AddReg    = QCDX_8480_AcpiConfigExt_Outcell, QCDX_8480_PanelcfgOverrides
+
+[QCDX_Inst_Ext_8480_15_Incell.NT]
+CopyFiles = QCDX.Files.NTarm_15_Incell, DISPLAYTOOL_LIBFiles
+AddReg    = QCDX_8480_AcpiConfigExt_15_Incell, QCDX_8480_PanelcfgOverrides
+
+[QCDX_Inst_Ext_8480_13_Incell.NT]
+CopyFiles = QCDX.Files.NTarm_13_Incell, DISPLAYTOOL_LIBFiles
+AddReg    = QCDX_8480_AcpiConfigExt_13_Incell, QCDX_8480_PanelcfgOverrides
+
+[QCDX.Files.NTarm_13_Outcell]
+qcdxkmext8480_ROT_CDPS0.bin
+
+[QCDX.Files.NTarm_15_Incell]
+qcdxkmext8480_ROT_CDPS1.bin
+
+[QCDX.Files.NTarm_13_Incell]
+qcdxkmext8480_ROT_CDPS2.bin
+
+[DISPLAYTOOL_LIBFiles]
+displaytoollib.dll
+
+[QCDX_8480_AcpiConfigExt_Outcell]
+HKR, , AcpiExtFile, %REG_SZ%, %13%\qcdxkmext8480_ROT_CDPS0.bin
+HKR, DISPLAY, DisableMDPBLT, %REG_DWORD%, 1
+HKR, DISPLAY, DisableRotator, %REG_DWORD%, 0
+HKR, DISPLAY, DisableExternal, %REG_DWORD%, 0
+
+[QCDX_8480_AcpiConfigExt_15_Incell]
+HKR, , AcpiExtFile, %REG_SZ%, %13%\qcdxkmext8480_ROT_CDPS1.bin
+HKR, DISPLAY, DisableMDPBLT, %REG_DWORD%, 1
+HKR, DISPLAY, DisableRotator, %REG_DWORD%, 0
+HKR, DISPLAY, DisableExternal, %REG_DWORD%, 0
+
+[QCDX_8480_AcpiConfigExt_13_Incell]
+HKR, , AcpiExtFile, %REG_SZ%, %13%\qcdxkmext8480_ROT_CDPS2.bin
+HKR, DISPLAY, DisableMDPBLT, %REG_DWORD%, 1
+HKR, DISPLAY, DisableRotator, %REG_DWORD%, 0
+HKR, DISPLAY, DisableExternal, %REG_DWORD%, 0
+
+[QCDX_8480_PanelcfgOverrides]
+HKR, Miniport\DISPLAY\Config, PanelCfg1BrightnessMinLuminance, %REG_DWORD%, 2000
+HKR, Miniport\DISPLAY\Config, PanelCfg1BrightnessMaxLuminance, %REG_DWORD%, 600000
+
+[Strings]
+
+;  *******Localizable Strings*******
+QC                 = "Qualcomm Incorporated"
+SURFACE            = "Surface"
+DiskDesc           = "Qualcomm Adreno Graphics"
+QC_Device          = "Qualcomm(R) Adreno(TM) GPU"
+QC_Device84        = "Qualcomm(R) Adreno(TM) GPU"
+QC_Device83        = "Qualcomm(R) Adreno(TM) GPU"
+
+;  *******Non Localizable Strings*******
+
+SERVICE_BOOT_START   = 0
+SERVICE_SYSTEM_START = 1
+SERVICE_AUTO_START   = 2
+SERVICE_DEMAND_START = 3
+SERVICE_DISABLED     = 4
+
+SERVICE_KERNEL_DRIVER  = 0x1
+SERVICE_ERROR_IGNORE   = 0x0
+SERVICE_ERROR_NORMAL   = 0x1
+SERVICE_ERROR_SEVERE   = 0x2
+SERVICE_ERROR_CRITICAL = 0x3
+
+REG_SZ        = 0x00000000
+REG_MULTI_SZ  = 0x00010000
+REG_EXPAND_SZ = 0x00020000
+REG_DWORD     = 0x00010001
+REG_BINARY    = 0x00000001

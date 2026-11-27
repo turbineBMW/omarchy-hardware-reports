@@ -1,0 +1,45 @@
+;
+; SurfaceElabelingCapsule.inf
+; 1.0.0.0
+; Copyright (c) Microsoft Corporation. All Rights Reserved.
+;
+[Version]
+Signature   = "$WINDOWS NT$"
+Provider    = %Provider%
+Class       = Firmware
+ClassGuid   = {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+DriverVer   = 04/04/1975,1.0.7.0
+CatalogFile = SurfaceElabelingCapsule.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%MfgName% = Firmware,NTARM64.10.0...19041
+
+[Firmware.NTARM64.10.0...19041]
+%FirmwareDesc_ELABELING%            = Firmware_Install,UEFI\RES_{0D8E6FB5-51D6-4E23-AE56-C30770E9AD53}
+
+[Firmware_Install.NT]
+CopyFiles = Firmware_CopyFiles
+
+[Firmware_CopyFiles]
+
+[Firmware_Install.NT.Hw]
+AddReg = Firmware_AddReg
+
+[Firmware_AddReg]
+HKR,,FirmwareId,,{0D8E6FB5-51D6-4E23-AE56-C30770E9AD53}
+HKR,,FirmwareVersion,%REG_DWORD%,1
+
+[Firmware_Install.NT.Services]
+AddService =  ,2
+
+
+[Strings]
+; localizable
+Provider     = "Surface" 
+MfgName      = "Microsoft Corporation" 
+FirmwareDesc_ELABELING = "Surface Elabeling"
+
+; non-localizable
+DIRID_WINDOWS = 10
+REG_DWORD     = 0x00010001
