@@ -1,0 +1,171 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; File:               SurfaceTypeCoverV7FwUpdatePackage.inf
+;
+; Description:        Driver installation file Surface Type Cover Fw firmware update.
+;
+; Versions.begin   !DO NOT DELETE!
+; KIP_APP1 10: Version 28.106.139 (0x1C006A8B)
+; KIP_APP2 10: Version 28.106.139 (0x1C006A8B)
+; KIP2_APP1 14: Version 22.106.139 (0x16006A8B)
+; KIP2_APP2 14: Version 22.106.139 (0x16006A8B)
+; KIP3_APP1 10: Version 10.103.139 (0x0A00678B)
+; KIP3_APP2 10: Version 10.103.139 (0x0A00678B)
+; WLC 11: Version 0.2560.34 (0x000A0022)
+; WLC2 12: Version 2.2.16 (0x02000210)
+; FPRA 12: Version 4.6144.1 (0x04180001)
+; FPRB 12: Version 4.6144.1 (0x04180001)
+; TP 13: Version 0.11737.184 (0x002DD9B8)
+; Versions.end   !DO NOT DELETE!
+;
+; Copyright (C) Microsoft Corporation.  All Rights Reserved.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Version]
+Signature="$Windows NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%ManufacturerName%
+ExtensionId = {3FDEC996-430D-4FAA-8AB1-446641826C0E}
+CatalogFile=SurfaceTypeCoverV7FwUpdate.cat
+DriverVer = 07/31/2025,2.131.28.0
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...19041
+
+[Standard.NTARM64.10.0...19041]
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_099C&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_099C&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09CC&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09CC&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_0991&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_0991&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09CD&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09CD&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09CB&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09CB&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09CE&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09CE&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09CF&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09CF&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09D0&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09D0&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09D1&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09D1&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09D2&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09D2&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09D3&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09D3&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09D4&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09D4&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09D5&Col02&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_09D5&Col06&UP:FF0B_U:0101
+%SurfaceTypeCoverV7FwUpdate.ExtensionDesc%=SurfaceTypeCoverV7FwUpdate, HID\VID_045E&PID_0C90&UP:FF0B_U:0101
+
+; =================== UMDF Device ==================================
+
+[SurfaceTypeCoverV7FwUpdate.NT]
+CopyFiles=SurfaceTypeCoverV7FwUpdate.CopyFiles
+
+[SurfaceTypeCoverV7FwUpdate.NT.HW]
+AddReg = SurfaceTypeCoverV7FwUpdate_HWAddReg
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[DestinationDirs]
+SurfaceTypeCoverV7FwUpdate.CopyFiles=13
+
+; =================== FW Information ===========================
+[SurfaceTypeCoverV7FwUpdate_HWAddReg]
+HKR,,FriendlyName,,%FwUpdateFriendlyName%
+HKR,,UsagePage,0x00010001,0xFF0B
+HKR,,Usage,0x00010001, 0x11
+HKR,,Protocol,0x00010001, 1           ;(PROTOCOL-USB)
+HKR,,HidTargetInStack,0x00010001, 1
+
+; FirmwareAddReg.begin   !DO NOT DELETE!
+HKR,CFU\KIP_APP1,Offer, 0x00000000, %13%\SurfaceTypeCoverV7_KIP_APP1.offer.bin 
+HKR,CFU\KIP_APP1,Payload, 0x00000000, %13%\SurfaceTypeCoverV7_KIP_APP1.cfu 
+HKR,CFU\KIP_APP2,Offer, 0x00000000, %13%\SurfaceTypeCoverV7_KIP_APP2.offer.bin 
+HKR,CFU\KIP_APP2,Payload, 0x00000000, %13%\SurfaceTypeCoverV7_KIP_APP2.cfu 
+HKR,CFU\KIP2_APP1,Offer, 0x00000000, %13%\SurfaceTypeCoverV7_KIP2_APP1.offer.bin 
+HKR,CFU\KIP2_APP1,Payload, 0x00000000, %13%\SurfaceTypeCoverV7_KIP2_APP1.cfu 
+HKR,CFU\KIP2_APP2,Offer, 0x00000000, %13%\SurfaceTypeCoverV7_KIP2_APP2.offer.bin 
+HKR,CFU\KIP2_APP2,Payload, 0x00000000, %13%\SurfaceTypeCoverV7_KIP2_APP2.cfu 
+HKR,CFU\KIP3_APP1,Offer, 0x00000000, %13%\SurfaceTypeCoverV7_KIP3_APP1.offer.bin 
+HKR,CFU\KIP3_APP1,Payload, 0x00000000, %13%\SurfaceTypeCoverV7_KIP3_APP1.cfu 
+HKR,CFU\KIP3_APP2,Offer, 0x00000000, %13%\SurfaceTypeCoverV7_KIP3_APP2.offer.bin 
+HKR,CFU\KIP3_APP2,Payload, 0x00000000, %13%\SurfaceTypeCoverV7_KIP3_APP2.cfu 
+HKR,CFU\WLC,Offer, 0x00000000, %13%\SurfaceTypeCoverV7_WLC.offer.bin 
+HKR,CFU\WLC,Payload, 0x00000000, %13%\SurfaceTypeCoverV7_WLC.cfu 
+HKR,CFU\WLC2,Offer, 0x00000000, %13%\SurfaceTypeCoverV7_WLC2.offer.bin 
+HKR,CFU\WLC2,Payload, 0x00000000, %13%\SurfaceTypeCoverV7_WLC2.cfu 
+HKR,CFU\FPRA,Offer, 0x00000000, %13%\SurfaceTypeCoverV7_FPRA.offer.bin 
+HKR,CFU\FPRA,Payload, 0x00000000, %13%\SurfaceTypeCoverV7_FPRA.cfu 
+HKR,CFU\FPRB,Offer, 0x00000000, %13%\SurfaceTypeCoverV7_FPRB.offer.bin 
+HKR,CFU\FPRB,Payload, 0x00000000, %13%\SurfaceTypeCoverV7_FPRB.cfu 
+HKR,CFU\TP,Offer, 0x00000000, %13%\SurfaceTypeCoverV7_TP.offer.bin 
+HKR,CFU\TP,Payload, 0x00000000, %13%\SurfaceTypeCoverV7_TP.cfu 
+; FirmwareAddReg.end   !DO NOT DELETE!
+
+[SourceDisksFiles]
+; SourceDisksFiles.begin   !DO NOT DELETE!
+SurfaceTypeCoverV7_KIP_APP1.offer.bin=1 
+SurfaceTypeCoverV7_KIP_APP1.cfu=1 
+SurfaceTypeCoverV7_KIP_APP2.offer.bin=1 
+SurfaceTypeCoverV7_KIP_APP2.cfu=1 
+SurfaceTypeCoverV7_KIP2_APP1.offer.bin=1 
+SurfaceTypeCoverV7_KIP2_APP1.cfu=1 
+SurfaceTypeCoverV7_KIP2_APP2.offer.bin=1 
+SurfaceTypeCoverV7_KIP2_APP2.cfu=1 
+SurfaceTypeCoverV7_KIP3_APP1.offer.bin=1 
+SurfaceTypeCoverV7_KIP3_APP1.cfu=1 
+SurfaceTypeCoverV7_KIP3_APP2.offer.bin=1 
+SurfaceTypeCoverV7_KIP3_APP2.cfu=1 
+SurfaceTypeCoverV7_WLC.offer.bin=1 
+SurfaceTypeCoverV7_WLC.cfu=1 
+SurfaceTypeCoverV7_WLC2.offer.bin=1 
+SurfaceTypeCoverV7_WLC2.cfu=1 
+SurfaceTypeCoverV7_FPRA.offer.bin=1 
+SurfaceTypeCoverV7_FPRA.cfu=1 
+SurfaceTypeCoverV7_FPRB.offer.bin=1 
+SurfaceTypeCoverV7_FPRB.cfu=1 
+SurfaceTypeCoverV7_TP.offer.bin=1 
+SurfaceTypeCoverV7_TP.cfu=1 
+; SourceDisksFiles.end   !DO NOT DELETE!
+
+[SurfaceTypeCoverV7FwUpdate.CopyFiles]
+; CopyFiles.begin   !DO NOT DELETE!
+SurfaceTypeCoverV7_KIP_APP1.offer.bin 
+SurfaceTypeCoverV7_KIP_APP1.cfu 
+SurfaceTypeCoverV7_KIP_APP2.offer.bin 
+SurfaceTypeCoverV7_KIP_APP2.cfu 
+SurfaceTypeCoverV7_KIP2_APP1.offer.bin 
+SurfaceTypeCoverV7_KIP2_APP1.cfu 
+SurfaceTypeCoverV7_KIP2_APP2.offer.bin 
+SurfaceTypeCoverV7_KIP2_APP2.cfu 
+SurfaceTypeCoverV7_KIP3_APP1.offer.bin 
+SurfaceTypeCoverV7_KIP3_APP1.cfu 
+SurfaceTypeCoverV7_KIP3_APP2.offer.bin 
+SurfaceTypeCoverV7_KIP3_APP2.cfu 
+SurfaceTypeCoverV7_WLC.offer.bin 
+SurfaceTypeCoverV7_WLC.cfu 
+SurfaceTypeCoverV7_WLC2.offer.bin 
+SurfaceTypeCoverV7_WLC2.cfu 
+SurfaceTypeCoverV7_FPRA.offer.bin 
+SurfaceTypeCoverV7_FPRA.cfu 
+SurfaceTypeCoverV7_FPRB.offer.bin 
+SurfaceTypeCoverV7_FPRB.cfu 
+SurfaceTypeCoverV7_TP.offer.bin 
+SurfaceTypeCoverV7_TP.cfu 
+; CopyFiles.end   !DO NOT DELETE!
+
+; =================== Generic ==================================
+
+[Strings]
+ManufacturerName="Surface"
+SurfaceTypeCoverV7FwUpdate.ExtensionDesc="Surface Type Cover v7 Firmware Update"
+DiskName = "Surface Type Cover v7 Firmware Update Installation Disk"
+FwUpdateFriendlyName= "Surface Type Cover v7 Firmware Update"
+

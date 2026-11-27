@@ -1,0 +1,85 @@
+[Version]
+Signature="$Windows NT$"
+Class=Extension
+ClassGuid={e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider=%ManufacturerName%
+CatalogFile=SurfaceOemPanelCustomizationOled.cat
+ExtensionId = {dc94a9b3-76a3-47c9-978e-8903dc192054}                    
+DriverVer = 10/01/2025,0.0.48.0
+PnpLockdown=1
+
+[Manufacturer]
+%ManufacturerName%=SurfaceOemPanelCustomizationOled, NTARM64.10.0...22621
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SurfacesRGB.icm = 1
+SurfaceVivid.icm = 1
+SurfaceHDR.icm = 1
+PQConfig.dv = 1
+DisplayCalibrationConfig.bin = 1
+DisplayCalibrationMeasurements.bin = 1
+
+[DestinationDirs]
+;23 == Windows\system32\spool\drivers\color
+ProfilesCopy_10_0_22621=23
+CalibrationCopy=13
+
+[SurfaceOemPanelCustomizationOled.NTARM64.10.0...22621]
+%DeviceName%=SurfaceOemPanelCustomizationOled_Install_10_0_22621, Monitor\SDC4195 ; OLED Panel
+
+; ============== Installation for i21 and later ===============
+
+[SurfaceOemPanelCustomizationOled_Install_10_0_22621.NT]
+DelReg = DEL_CURRENT_REG
+CopyFiles=ProfilesCopy_10_0_22621, CalibrationCopy
+AddReg=SurfaceOemPanelCustomizationOled_Install_NT_AddReg_10_0_22621
+
+[SurfaceOemPanelCustomizationOled_Install_10_0_22621.NT.Components]
+AddComponent = Vision_SoftwareComponent,, Vision_SoftwareComponent_Inst
+
+[ProfilesCopy_10_0_22621]
+SurfacesRGB.icm
+SurfaceVivid.icm
+SurfaceHDR.icm
+PQConfig.dv
+
+[SurfaceOemPanelCustomizationOled_Install_NT_AddReg_10_0_22621]
+HKR,,ICMProfile,0x00010000,"SurfacesRGB.icm"
+HKR,,ICMProfile,0x00010008,"SurfaceVivid.icm"
+HKR,,ICMProfileAC,0x00010000,"SurfaceHDR.icm"
+HKR,,MicrosoftApprovedAcmSupport,%REG_DWORD%,1
+HKR,,EnableIntegratedPanelHdrByDefault,%REG_DWORD%,1
+HKR,,EnableBoostRefreshRateByDefault,%REG_DWORD%,1
+HKR,,CalibrationConfigTypicalBlobFile, REG_EXPAND_SZ, "%13%\DisplayCalibrationConfig.bin"
+HKR,,CalibrationMeasurementTypicalBlobFile, REG_EXPAND_SZ, "%13%\DisplayCalibrationMeasurements.bin"
+; DOLBY Vision HDR certification GUID below
+HKR,,DisplayHdrLevel,0x00010008,6363AA90-A651-4154-A9E1-2D765C08E68F, 7134A821-9254-4AF4-9973-95B3FCF720CC
+
+[SurfaceOemPanelCustomizationOled_Install_10_0_22621.HW]
+;
+
+; =================== Common ==================================
+[Vision_SoftwareComponent_Inst]
+ComponentIDs = VEN_DOLBY&PID_HSA_DolbyVisionExt
+
+[DEL_CURRENT_REG]
+HKR,,ICMProfile
+
+[CalibrationCopy]
+DisplayCalibrationConfig.bin
+DisplayCalibrationMeasurements.bin
+
+; =================== Generic ==================================
+
+[Strings]
+ManufacturerName="Surface"
+DeviceName="Surface Panel"
+DiskName="Surface Panel Driver Customization Installation Disk"
+REG_EXPAND_SZ          = 0x00020000
+REG_DWORD              = 0x00010001
+REG_MULTI_SZ           = 0x00010000
+REG_BINARY             = 0x00000001
+REG_SZ                 = 0x00000000
