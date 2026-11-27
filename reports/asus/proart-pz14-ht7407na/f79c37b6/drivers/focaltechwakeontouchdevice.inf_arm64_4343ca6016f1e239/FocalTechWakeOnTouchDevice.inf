@@ -1,0 +1,70 @@
+; FocalEnableWOT.inf - 啟用觸控裝置喚醒電腦功能 (Wake-on-Touch)
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = HIDClass
+ClassGuid   = {745A17A0-74D3-11D0-B6FE-00A0C90F57DA}
+Provider    = %Provider%
+CatalogFile = FocalTechWakeOnTouchDevice.cat
+DriverVer   = 12/10/2025,1.0.0.7
+PnpLockdown=1 
+
+; ================= Class section =====================
+[SourceDisksNames]
+1 = %DiskName%,,,
+
+[SourceDisksFiles]
+FocalTouchMonitor.exe = 1
+
+[DestinationDirs]
+;SvcCopy = 11				; 10=%SystemRoot%, 11=%SystemRoot%\system32, 16425=%SystemRoot%\SysWOW64
+SvcCopy = 16425    	; Copy to Driver Store
+
+[SvcCopy]
+FocalTouchMonitor.exe,,,0x00000001		
+
+; Manufacturer Section
+; ---------------------------------------------------------
+[Manufacturer]
+%Provider% = WakeMfg,NTamd64,NTarm64
+
+; Devices Section
+; ---------------------------------------------------------
+[WakeMfg.NTamd64]
+
+[WakeMfg.NTarm64]
+%WakeTouch.DeviceDesc% = WakeTouch_Inst, ACPI\VEN_FTCS&DEV_1000&REV_0001
+%WakeTouch.DeviceDesc% = WakeTouch_Inst, ACPI\VEN_FTCS&DEV_1000
+%WakeTouch.DeviceDesc% = WakeTouch_Inst, ACPI\FTCS1000
+
+; Install Section
+; ---------------------------------------------------------\
+[WakeTouch_Inst.NT]
+include  = hidi2c.inf
+Needs    = hidi2c_Device.NT
+CopyFiles = SvcCopy
+
+[WakeTouch_Inst.NT.HW]
+include = hidi2c.inf,input.inf
+needs   = hidi2c_Device.NT.HW,WakeScreenOnTouch.HW
+
+[WakeTouch_Inst.NT.Services]
+include  = hidi2c.inf
+Needs    = hidi2c_Device.NT.Services
+AddService = FocalTouchMonitor, 0x00000800, Focal_Service_Inst
+
+[Focal_Service_Inst]
+DisplayName     = %WakeTouch.ServiceName%
+Description     = %WakeTouch.ServiceDesc%
+ServiceType     = 0x00000010		;SERVICE_WIN32_OWN_PROCESS
+StartType       = 0x00000002		;SERVICE_AUTO_START
+ErrorControl    = 1							;SERVICE_ERROR_NORMAL
+ServiceBinary   = %16425%\FocalTouchMonitor.exe
+; Strings Section
+; ---------------------------------------------------------
+[Strings]
+Provider = "FocalTech Co., Ltd."
+DiskName = "FocalTech WoT Installer"
+WakeTouch.DeviceDesc = "FocalTech Wake On Touch Device"
+WakeTouch.ServiceName= "FocalTech WOT Service"
+WakeTouch.ServiceDesc= "FocalTech Touch Screen Wake-On-Touch Monitor Service"

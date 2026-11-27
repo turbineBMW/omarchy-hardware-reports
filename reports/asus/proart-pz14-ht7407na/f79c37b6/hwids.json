@@ -1,0 +1,15 @@
+{
+  "type": "devicetree",
+  "name": "ASUS ProArt PZ14 HT7407NA",
+  "compatible": "",
+  "hwids": [
+    "893057af-0f0d-5649-8dec-f4b619285bae",
+    "551ba4bf-1ecc-5993-b829-2ae50f0e9b4c",
+    "2df5f8d3-fbd1-5af3-9168-841b376cdee0",
+    "fe5f498c-9e87-54d8-96ab-66a2c20ab597",
+    "9a35a0bb-7b19-58ef-bc0c-6051ed101c7d",
+    "58c8aa55-813e-56cd-90c7-da03a83020e9",
+    "910b94d0-8475-5f7b-9bf5-b6b1410a0a0b",
+    "e36d34c5-2de6-50c8-b0a2-4497ed734912"
+  ]
+}

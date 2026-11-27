@@ -1,0 +1,109 @@
+;/*++
+;
+;Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;   THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+;   KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+;   IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+;   PURPOSE.
+;
+;Module Name:
+;
+;  MicrosoftEffectPack_extension.INF
+;
+;Abstract:
+;
+;    Extension inf for Microsoft Effect Pack installation
+;
+;--*/
+
+[Version]
+Signature = "$WINDOWS NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider = %ManufacturerName%
+ExtensionId = {e39d28d8-f67c-4f19-aff7-3f146906737b}
+CatalogFile = MicrosoftEffectPack_ext.cat
+DriverVer = 02/06/2026,3.0.9.0
+PnpLockDown=1
+
+[Manufacturer]
+%ManufacturerName% = MEPExtension, NTarm64.10.0...22621
+
+[MEPExtension.NTarm64.10.0...22621]
+%MEP.ExtensionDesc% = MEPExtension_Install, ACPI\QCOMFFF0
+
+[MEPExtension_Install.NTARM64]
+CopyFiles = MEPExtension_CopyFiles
+
+[MEPExtension_CopyFiles]
+PerceptionCore.dll
+PerceptionCoreResources.dll
+QnnHtp.dll
+QnnHtpPrepare.dll
+QnnHtpV81Stub.dll
+QnnSystem.dll
+libQnnHtpV81Skel.so
+onnxruntime_providers_shared.dll
+onnxruntime_providers_qnn.dll
+ps-onnxruntime.dll
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+PerceptionCore.dll = 1
+PerceptionCoreResources.dll = 1
+QnnHtp.dll = 1
+QnnHtpPrepare.dll = 1
+QnnHtpV81Stub.dll = 1
+QnnSystem.dll = 1
+libQnnHtpV81Skel.so = 1
+onnxruntime_providers_shared.dll = 1
+onnxruntime_providers_qnn.dll = 1
+ps-onnxruntime.dll = 1
+
+
+[DestinationDirs]
+MEPExtension_CopyFiles=13
+;Driver package's Driver Store directory
+
+[SignatureAttributes]
+perceptioncore.dll = SignatureAttributes.PETrust
+PerceptionCoreResources.dll = SignatureAttributes.PETrust
+QnnHtp.dll = SignatureAttributes.PETrust
+QnnHtpPrepare.dll = SignatureAttributes.PETrust
+QnnHtpV81Stub.dll = SignatureAttributes.PETrust
+QnnSystem.dll = SignatureAttributes.PETrust
+onnxruntime_providers_shared.dll = SignatureAttributes.PETrust
+onnxruntime_providers_qnn.dll = SignatureAttributes.PETrust
+ps-onnxruntime.dll = SignatureAttributes.PETrust
+
+[SignatureAttributes.PETrust]
+PETrust = true
+
+[MEPExtension_Install.NTARM64.HW]
+AddReg = MEPExtension.AddReg
+
+[MEPExtension.AddReg]
+HKR,,MEPAssets,,%13%
+
+[MEPExtension_Install.NTARM64.Components]
+AddComponent = mep_audio_component,,MEPAudio_ComponentInstall
+AddComponent = mep_camera_component,,MEPCamera_ComponentInstall
+
+[MEPAudio_ComponentInstall]
+ComponentIDs=MEP_AUD&VEN_MSFT_VOICEFOCUS_V3
+Description = "Windows Studio Effects Voice Clarity APO"
+
+[MEPCamera_ComponentInstall]
+ComponentIDs=MEP_CAM&VEN_MSFT_DEV_0FF0
+Description = "Windows Studio Effects Camera"
+
+
+
+[Strings]
+ManufacturerName = "Microsoft Corporation"
+MEP.ExtensionDesc = "Windows Studio Effects Driver"
+DiskName = "install source"
+
