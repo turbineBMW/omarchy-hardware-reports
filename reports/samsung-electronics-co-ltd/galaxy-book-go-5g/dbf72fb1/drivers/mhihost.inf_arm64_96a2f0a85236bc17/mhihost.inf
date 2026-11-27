@@ -1,0 +1,137 @@
+; File: MhiHost.inf 
+; Description: INF file for installing the Qualcomm Mhi Host driver
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile=mhihost.cat
+DriverVer = 08/25/2021,12.14.8.443
+PnpLockdown=1
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+; ================== Install Section ==================
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64
+
+[Standard.NTARM64]
+%PCI\VEN_17CB&DEV_0300.DeviceDesc% = MhiHost_Device, PCI\VEN_17CB&DEV_0300
+%PCI\VEN_17CB&DEV_0301.DeviceDesc% = MhiHost_Device, PCI\VEN_17CB&DEV_0301
+%PCI\VEN_17CB&DEV_0302.DeviceDesc% = MhiHost_Device, PCI\VEN_17CB&DEV_0302
+%PCI\VEN_17CB&DEV_0303.DeviceDesc% = MhiHost_Device, PCI\VEN_17CB&DEV_0303
+%PCI\VEN_17CB&DEV_0304.DeviceDesc% = MhiHost_Device, PCI\VEN_17CB&DEV_0304
+%PCI\VEN_17CB&DEV_0305.DeviceDesc% = MhiHost_Device, PCI\VEN_17CB&DEV_0305
+%PCI\VEN_17CB&DEV_0306.DeviceDesc% = MhiHost_Device, PCI\VEN_17CB&DEV_0306
+%PCI\VEN_17CB&DEV_0308.DeviceDesc% = MhiHost_Device, PCI\VEN_17CB&DEV_0308
+%PCI\VEN_18D7&DEV_0100.DeviceDesc%=MhiHost_Device, PCI\VEN_18D7&DEV_0101
+
+[MhiHost_Device.NT]
+CopyFiles=Drivers_Dir
+AddReg = swbusAddReg
+
+[swbusAddReg]
+; Support Muxing
+HKR,, MuxSupport, 0x00010001, 0x00000000
+; Number of Mux Interfaces
+HKR,, NumMuxIfaces, 0x00010001, 0x00000007
+
+[Drivers_Dir]
+MhiHost.sys
+
+[MhiHost_Device.NT.HW]
+AddReg=MhiHost_Device_Addreg
+Include = PCI.inf
+Needs = PciD3ColdSupported.HW
+
+[MhiHost_Device_Addreg]
+HKR,Interrupt Management,,0x00000010
+HKR,Interrupt Management\MessageSignaledInterruptProperties,,0x00000010
+HKR,Interrupt Management\MessageSignaledInterruptProperties,MSISupported,0x00010001,1
+HKR,Interrupt Management\MessageSignaledInterruptProperties,MessageNumberLimit,0x00010001,16
+HKR,,HwInERIntMod,0x00000001,01,00,00,00;
+HKR,,MhiInactivityThreshold,0x00000001,88,13,00,00,00,00,00,00
+HKR,,MhiTestCase,0x00000001,00,00,00,00
+HKR,,MhiDevResetTimer,0x00000001,00,00,00,00
+HKR,,MhiHostMemBase,0x00000001,00,00,00,00,00,00,00,00
+HKR,,MhiHostMemSize,0x00000001,00,00,00,00,20,00,00,00
+HKR,,RS6OSInfo,0x00000001,70,49,00,0A,00,00,00,00
+HKR,,BurstMode,0x00000001,01,00,00,00
+HKR,,MhiS0IdleExcludeD3,0x00000001,00,00,00,00
+HKR,,MhiAssert,0x00000001,00,00,00,00
+HKR,,BusPdoGuid,%REG_SZ%,%BusPdoGuid%
+HKR,,UdePdo,%REG_SZ%,%UdePdo%
+HKR,,QmuxPdo,%REG_SZ%,%QmuxPdo%
+HKR,,CancelTimeout,%REG_DWORD%,5
+HKLM,SYSTEM\CurrentControlSet\Services\PCI\Parameters,BusIdleTimeoutOverride,%REG_QWORD%,0xF4240
+
+
+; =============== Service installation ================
+
+[MhiHost_Device.NT.Services]
+AddService = MhiHost,%SPSVCINST_ASSOCSERVICE%, MhiHost_Service_Inst
+
+; ========== MhiHost driver install sections ==========
+
+[MhiHost_Service_Inst]
+DisplayName    = %MhiHost.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\MhiHost.sys
+LoadOrderGroup = Extended Base
+
+; ====== MhiHost_Device Coinstaller installation ======
+
+[DestinationDirs]
+DefaultDestDir = 12
+MhiHost_Device_CoInstaller_CopyFiles = 11
+
+[MhiHost_Device.NT.CoInstallers]
+AddReg=MhiHost_Device_CoInstaller_AddReg
+CopyFiles=MhiHost_Device_CoInstaller_CopyFiles
+
+[MhiHost_Device_CoInstaller_AddReg]
+;
+
+
+[MhiHost_Device_CoInstaller_CopyFiles]
+;
+
+
+[SourceDisksFiles]
+MhiHost.sys  = 1,,
+;
+
+
+[MhiHost_Device.NT.Wdf]
+KmdfService =  MhiHost, MhiHost_wdfsect
+[MhiHost_wdfsect]
+KmdfLibraryVersion = 1.23
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Qualcomm Technologies Incorporated" 
+ClassName="Qualcomm Modem Host Interface" 
+DiskName = "MhiHost Installation Disk"
+PCI\VEN_17CB&DEV_0300.DeviceDesc = "MDM9x35"
+PCI\VEN_17CB&DEV_0301.DeviceDesc = "MDM9x45"
+PCI\VEN_17CB&DEV_0302.DeviceDesc = "MDM9x55"
+PCI\VEN_17CB&DEV_0303.DeviceDesc = "MDM9x65"
+PCI\VEN_17CB&DEV_0305.DeviceDesc = "SDX50M"
+PCI\VEN_17CB&DEV_0304.DeviceDesc = "SDX24"
+PCI\VEN_17CB&DEV_0306.DeviceDesc = "SDX55"
+PCI\VEN_17CB&DEV_0308.DeviceDesc = "SDX65"
+PCI\VEN_18D7&DEV_0100.DeviceDesc = "EM7565_QC"
+MhiHost.SVCDESC = "Modem Host Interface Service"
+REG_SZ              = 0x00000000
+REG_DWORD           = 0x00010001
+REG_QWORD           = 0x000B0001
+UdePdo="QcUde"
+QmuxPdo="QcQmux_GalaxyBook"
+BusPdoGuid="{3a4d657c-0a42-4501-9627-ba1b76ffc39d}"

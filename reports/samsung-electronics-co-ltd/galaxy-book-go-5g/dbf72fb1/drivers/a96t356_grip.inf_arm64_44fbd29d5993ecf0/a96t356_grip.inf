@@ -1,0 +1,117 @@
+/*++
+;
+;Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;Module Name:
+;    A96T356_GRIP.INF
+;
+;Abstract:
+;    INF file for installing the Sensors 2.0 A96T356 Proximity Driver
+;
+;--*/
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Sensor
+ClassGuid   = {5175D334-C371-4806-B3BA-71FD53C9258D}
+Provider    = %ProviderName%
+CatalogFile = A96T356_GRIP.cat
+DriverVer = 05/26/2021,0.9.1.4
+
+[DestinationDirs]
+;12 == Windows\System32\Drivers\UMDF
+DefaultDestDir = 12,UMDF
+A96T356ProxDriverCopy = 12,UMDF
+Service_Copy=13
+
+[SourceDisksNames]
+1 = %MediaDescription%,,,""
+
+[SourceDisksFiles]
+A96T356_GRIP.dll   = 1,,
+GripResetService.exe = 1
+
+
+[Manufacturer]
+%ProviderName% = A96T356Prox_Device, NTARM64
+
+
+;*******************************
+; A96T356Prox Install Section
+;*******************************
+
+[A96T356Prox_Device.NTARM64]
+; DisplayName       Section          DeviceId
+; -----------       -------          --------
+%A96T356Prox_DevDesc% = A96T356Prox_Inst, ACPI\VEN_SAMM&DEV_0209
+
+[A96T356Prox_Inst.NT]
+CopyFiles = A96T356ProxDriverCopy
+CopyFiles=Service_Copy
+
+
+[A96T356Prox_Inst.NT.hw]
+AddReg=A96T356Prox_SDDLString
+
+[A96T356Prox_SDDLString]
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GRGW;;;AU)"
+
+[A96T356ProxDriverCopy]
+A96T356_GRIP.dll
+
+;-------------- Service installation
+
+[A96T356Prox_Inst.NT.Services]
+AddService = WUDFRd,0x000001fa,WUDFRD_ServiceInstall
+AddService=Grip sensor Reset service,0x00000c00, GripResetService_ServiceInstall
+
+[A96T356Prox_Inst.NT.CoInstallers]
+AddReg = CoInstallers_AddReg
+
+[WUDFRD_ServiceInstall]
+DisplayName   = %WudfRdDisplayName%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\WUDFRd.sys
+
+; -------------- Grip Reset Service install sections
+[GripResetService_ServiceInstall]
+DisplayName    = %GripResetService.SVCDESC%
+Description    = %GripResetService.SVCDESC%
+ServiceType    = 0x10            ; SERVICE_WIN32_OWN_PROCESS
+StartType      = 2               ; SERVICE_AUTO_START
+ErrorControl   = 0               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\GripResetService.exe
+LoadOrderGroup = Base
+
+[Service_Copy]
+GripResetService.exe
+
+;-------------- WDF specific section
+
+[A96T356Prox_Inst.NT.Wdf]
+UmdfService              = A96T356Prox, A96T356Prox_Install
+UmdfServiceOrder         = A96T356Prox
+UmdfDirectHardwareAccess = AllowDirectHardwareAccess
+UmdfFsContextUsePolicy   = CannotUseFsContexts
+UmdfHostProcessSharing = ProcessSharingDisabled		; Disabled because of GPS
+
+[A96T356Prox_Install]
+UmdfLibraryVersion       = 2.15.0
+ServiceBinary            = %12%\UMDF\A96T356_GRIP.dll
+UmdfExtensions           = SensorsCx0102
+
+[CoInstallers_AddReg]
+HKR,,CoInstallers32,0x00010000,"WudfCoinstaller.dll"
+
+[Strings]
+MediaDescription         = "A96T356 proximity Driver"
+ProviderName             = "Samsung Electronics Co., Ltd."
+A96T356Prox_DevDesc      = "A96T356 Proximity"
+WudfRdDisplayName        = "Windows Driver Foundation - User-mode Driver Framework Reflector"
+GripResetService.SVCDESC = "Grip sensor Reset service"
+
+SERVICE_KERNEL_DRIVER    = 1
+SERVICE_DEMAND_START     = 3
+SERVICE_ERROR_NORMAL     = 1

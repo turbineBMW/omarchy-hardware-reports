@@ -1,0 +1,66 @@
+[Version]
+Signature = "$WINDOWS NT$"
+Class = Extension
+ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider = %ManufacturerName%
+ExtensionId = {4CE61AEE-0259-47ED-AD7C-7D57B2B3F70C}
+CatalogFile = HP_Envy_6000_6400.cat
+
+DriverVer = 11/10/2025,2602.0.1.0
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName% = HPPSA, NTamd64.10.0...19044, NTx86.10.0...19044, NTARM64.10.0...22000
+
+[HPPSA.NTamd64.10.0...19044]
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId2%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId3%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId4%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId5%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId6%
+
+[HPPSA.NTx86.10.0...19044]
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId2%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId3%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId4%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId5%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId6%
+
+[HPPSA.NTARM64.10.0...22000]
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId2%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId3%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId4%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId5%
+%Device.ExtensionDesc% = PSA-Install, %PrinterHardwareId6%
+
+[PSA-Install.NT]
+AddProperty = Add-PSA-Property
+
+[PSA-Install.NT.Software]
+AddSoftware = %SoftwareName%,, HPPSA-PSA-SoftwareInstall
+
+[HPPSA-PSA-SoftwareInstall]
+SoftwareType = %MicrosoftStoreType%
+SoftwareID = pfn://%PackageFamilyName%
+
+[Add-PSA-Property]
+{A925764B-88E0-426D-AFC5-B39768BE59EB}, 1, 0x12,, %AUMID%
+
+[Strings]
+ManufacturerName = "HP Inc."
+SoftwareName = "HPPSA_HPEnvy_6000_6400_2602.0.1.0"
+MicrosoftStoreType = 2
+Device.ExtensionDesc = "HP Print Support App Extension"
+PackageFamilyName = "AD2F1837.HPPrinterDriver_v10z8vjag6ke6"
+AUMID = "AD2F1837.HPPrinterDriver_v10z8vjag6ke6!AD2F1837.HPPrinterDriver"
+PrinterHardwareId = "PSA_HPENVY_6000_seriesFD15"
+PrinterHardwareId2 = "PSA_HPDeskJet_Plus_6000_DE32"
+PrinterHardwareId3 = "PSA_HPENVY_Pro_6400_seriE8A9"
+PrinterHardwareId4 = "PSA_HPDeskJet_Plus_6400_0B73"
+PrinterHardwareId5 = "PSA_HPENVY_6400_series2854"
+PrinterHardwareId6 = "PSA_HPDeskJet_Plus_6000iDDA6"
+
+
