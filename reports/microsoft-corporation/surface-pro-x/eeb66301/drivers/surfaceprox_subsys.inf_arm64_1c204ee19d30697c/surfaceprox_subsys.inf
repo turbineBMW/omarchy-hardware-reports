@@ -1,0 +1,524 @@
+﻿;/*++
+;
+;Copyright (c) 2013-2022 by Qualcomm Technologies, Incorporated.  All Rights Reserved.
+;
+;Module Name:
+;    QCSUBSYS.INX 
+;
+;Abstract:
+;    INF file for installing the combined subsystem driver
+;
+;--*/
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=SYSTEM
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%SURFACE%
+DriverVer = 04/25/2023,1.0.1960.1
+CatalogFile=SurfaceProX_subsys.cat
+PnpLockDown=1
+
+[DestinationDirs]
+Drivers_Dir = 13
+
+[SourceDisksNames]
+1 = %DiskId1%
+
+[SourceDisksFiles]
+qcsubsys8180.sys = 1
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+;*****************************************
+; Subsystem Driver Install Section
+;*****************************************
+
+[Manufacturer]
+%SURFACE%=Standard,NTARM64
+
+[WDTFSOCDeviceCategory]
+{5D078032-6378-437B-8DA5-9B32B7CA3FDD},2,7,,2
+
+[Standard.NTARM64]
+%ADSP.DeviceDesc%=SUBSYS_Device_ADSP, ACPI\QCOM041D
+%SERVICEMANAGER.DeviceDesc%=SUBSYS_Device, ACPI\QCOM0420
+%TEST.DeviceDesc%=SUBSYS_Device, ADSP\DEADCODE
+%TEST.DeviceDesc%=SUBSYS_Device, QCMS\DEADCODE
+%SSDD.DeviceDesc%=SUBSYS_Device, ACPI\QCOM0422
+%CDSP.DeviceDesc%=SUBSYS_Device, ACPI\QCOM0423
+%SPSS.DeviceDesc%=SUBSYS_Device, ACPI\QCOM0499
+
+;Modem Configurations
+%AMSS.DeviceDesc%=SUBSYS_Device_AMSS_MSM, ACPI\VEN_QCOM&DEV_041E&SUBSYS_MTP08180
+%AMSS.DeviceDesc%=SUBSYS_Device_AMSS_MSM, ACPI\VEN_QCOM&DEV_041E&SUBSYS_CDP08180
+%AMSS.DeviceDesc%=SUBSYS_Device_AMSS_MSM, ACPI\VEN_QCOM&DEV_041E&SUBSYS_CLS08180
+%AMSS.DeviceDesc%=SUBSYS_Device_AMSS_MSM_E, ACPI\VEN_QCOM&DEV_041E&SUBSYS_MTPE8180
+%AMSS.DeviceDesc%=SUBSYS_Device_AMSS_MSM_E, ACPI\VEN_QCOM&DEV_041E&SUBSYS_CLSE8180
+%AMSS_NM.DeviceDesc%=SUBSYS_Device_AMSS_APQ_A, ACPI\VEN_QCOM&DEV_041E&SUBSYS_MTPA8180
+%AMSS_NM.DeviceDesc%=SUBSYS_Device_AMSS_APQ_A, ACPI\VEN_QCOM&DEV_041E&SUBSYS_CDPA8180
+%AMSS_NM.DeviceDesc%=SUBSYS_Device_AMSS_APQ_A, ACPI\VEN_QCOM&DEV_041E&SUBSYS_CLSA8180
+%AMSS_NM.DeviceDesc%=SUBSYS_Device_AMSS_B, ACPI\VEN_QCOM&DEV_041E&SUBSYS_MTPB8180
+%AMSS_NM.DeviceDesc%=SUBSYS_Device_AMSS_B, ACPI\VEN_QCOM&DEV_041E&SUBSYS_CLSB8180
+%AMSS_NM.DeviceDesc%=SUBSYS_Device_AMSS_C, ACPI\VEN_QCOM&DEV_041E&SUBSYS_MTPC8180
+%AMSS_NM.DeviceDesc%=SUBSYS_Device_AMSS_C, ACPI\VEN_QCOM&DEV_041E&SUBSYS_CLSC8180
+%AMSS_NM.DeviceDesc%=SUBSYS_Device_AMSS_B, ACPI\VEN_QCOM&DEV_041E&SUBSYS_MTPD8180
+%AMSS_NM.DeviceDesc%=SUBSYS_Device_AMSS_D, ACPI\VEN_QCOM&DEV_041E&SUBSYS_CLSD8180
+%AMSS_NM.DeviceDesc%=SUBSYS_Device_AMSS_F, ACPI\VEN_QCOM&DEV_041E&SUBSYS_MTPF8180
+%AMSS.DeviceDesc%=SUBSYS_Device_AMSS_MSM, ACPI\QCOM041E
+
+%AMSSMPThermal.DeviceDesc%=SUBSYS_Device_AMSS_MPTM, ACPI\QCOM04AF
+
+;Sensors Configurations
+%SCSS.DeviceDesc%=SUBSYS_Device_SCSS, ACPI\QCOM0421
+
+
+[SUBSYS_Device.NT]
+CopyFiles=Drivers_Dir
+AddProperty=WDTFSOCDeviceCategory
+AddReg=SUBSYSReg
+
+[SUBSYS_Device.NT.HW]
+AddReg=SUBSYSACL 
+
+[SUBSYS_Device_ADSP.NT]
+CopyFiles=Drivers_Dir
+AddProperty=WDTFSOCDeviceCategory
+AddReg=SUBSYSReg
+
+[SUBSYS_Device_ADSP.NT.HW]
+AddReg=SUBSYSACL, ADSP_Children, ADSP_PDInfo 
+
+; This installs sensors for all default platforms other than CLS
+[SUBSYS_Device_SCSS.NT]
+CopyFiles=Drivers_Dir
+AddProperty=WDTFSOCDeviceCategory
+AddReg=SUBSYSReg_SCSS
+
+[SUBSYS_Device_SCSS.NT.HW]
+AddReg=SUBSYSACL
+
+;-------------- Service installation
+[SUBSYS_Device.NT.Services]
+AddService = qcsubsys,%SPSVCINST_ASSOCSERVICE%, SUBSYS_Service_Inst
+
+[SUBSYS_Device_SCSS.NT.Services]
+AddService = qcsubsys,%SPSVCINST_ASSOCSERVICE%, SUBSYS_Service_Inst
+
+[SUBSYS_Device_ADSP.NT.Services]
+AddService = qcsubsys,%SPSVCINST_ASSOCSERVICE%, SUBSYS_Service_Inst
+
+[SUBSYS_Device_AMSS_MSM.NT]
+CopyFiles=Drivers_Dir
+AddProperty=WDTFSOCDeviceCategory
+AddReg=SUBSYSReg_AMSS_COMMON,SUBSYSReg_AMSS_MSM
+
+[SUBSYS_Device_AMSS_MSM.NT.HW]
+AddReg=SUBSYSACL, AMSS_Children_MSM, WLAN_Hashmapping, AMSS_PDInfo
+
+[SUBSYS_Device_AMSS_MSM_E.NT]
+CopyFiles=Drivers_Dir
+AddProperty=WDTFSOCDeviceCategory
+AddReg=SUBSYSReg_AMSS_COMMON,SUBSYSReg_AMSS_MSM_E
+
+[SUBSYS_Device_AMSS_MSM_E.NT.HW]
+AddReg=SUBSYSACL, AMSS_Children_MSM_E, WLAN_Hashmapping, AMSS_PDInfo_E
+
+[SUBSYS_Device_AMSS_APQ_A.NT]
+CopyFiles=Drivers_Dir
+AddProperty=WDTFSOCDeviceCategory
+AddReg=SUBSYSReg_AMSS_COMMON,SUBSYSReg_AMSS_APQ_A
+
+[SUBSYS_Device_AMSS_APQ_A.NT.HW]
+AddReg=SUBSYSACL, AMSS_Children_APQ_A, WLAN_Hashmapping, AMSS_PDInfo
+
+[SUBSYS_Device_AMSS_B.NT]
+CopyFiles=Drivers_Dir
+AddProperty=WDTFSOCDeviceCategory
+AddReg=SUBSYSReg_AMSS_COMMON,SUBSYSReg_AMSS_B
+
+[SUBSYS_Device_AMSS_B.NT.HW]
+AddReg=SUBSYSACL, AMSS_Children_B, WLAN_Hashmapping, AMSS_PDInfo
+
+[SUBSYS_Device_AMSS_C.NT]
+CopyFiles=Drivers_Dir
+AddProperty=WDTFSOCDeviceCategory
+AddReg=SUBSYSReg_AMSS_COMMON,SUBSYSReg_AMSS_C
+
+[SUBSYS_Device_AMSS_C.NT.HW]
+AddReg=SUBSYSACL, AMSS_Children_C, WLAN_Hashmapping, AMSS_PDInfo_C
+
+[SUBSYS_Device_AMSS_D.NT]
+CopyFiles=Drivers_Dir
+AddProperty=WDTFSOCDeviceCategory
+AddReg=SUBSYSReg_AMSS_COMMON,SUBSYSReg_AMSS_D
+
+[SUBSYS_Device_AMSS_D.NT.HW]
+AddReg=SUBSYSACL, AMSS_Children_D, WLAN_Hashmapping, AMSS_PDInfo_D
+
+[SUBSYS_Device_AMSS_F.NT]
+CopyFiles=Drivers_Dir
+AddProperty=WDTFSOCDeviceCategory
+AddReg=SUBSYSReg_AMSS_COMMON,SUBSYSReg_AMSS_F
+
+[SUBSYS_Device_AMSS_F.NT.HW]
+AddReg=SUBSYSACL, AMSS_Children_F, WLAN_Hashmapping, AMSS_PDInfo_F
+
+[SUBSYS_Device_AMSS_MPTM.NT]
+AddReg=SUBSYSReg_AMSS_MPTM
+
+[SUBSYS_Device_AMSS_MPTM.NT.HW]
+AddReg=SUBSYSACL
+
+;-------------- Service installation
+[SUBSYS_Device_AMSS_MSM.NT.Services]
+AddService = qcsubsys,%SPSVCINST_ASSOCSERVICE%, SUBSYS_Service_Inst
+
+[SUBSYS_Device_AMSS_MSM_E.NT.Services]
+AddService = qcsubsys,%SPSVCINST_ASSOCSERVICE%, SUBSYS_Service_Inst
+
+[SUBSYS_Device_AMSS_APQ_A.NT.Services]
+AddService = qcsubsys,%SPSVCINST_ASSOCSERVICE%, SUBSYS_Service_Inst
+
+[SUBSYS_Device_AMSS_B.NT.Services]
+AddService = qcsubsys,%SPSVCINST_ASSOCSERVICE%, SUBSYS_Service_Inst
+
+[SUBSYS_Device_AMSS_C.NT.Services]
+AddService = qcsubsys,%SPSVCINST_ASSOCSERVICE%, SUBSYS_Service_Inst
+
+[SUBSYS_Device_AMSS_D.NT.Services]
+AddService = qcsubsys,%SPSVCINST_ASSOCSERVICE%, SUBSYS_Service_Inst
+
+[SUBSYS_Device_AMSS_F.NT.Services]
+AddService = qcsubsys,%SPSVCINST_ASSOCSERVICE%, SUBSYS_Service_Inst
+
+[SUBSYS_Device_AMSS_MPTM.NT.Services]
+AddService = qcsubsys,%SPSVCINST_ASSOCSERVICE%, SUBSYS_Service_Inst
+
+[SUBSYSACL]
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GA;;;S-1-5-84-0-0-0-0-0)" 
+
+[Drivers_Dir]
+qcsubsys8180.sys
+
+[SUBSYSReg_SCSS]
+HKR,0\SCSS,"RPEC",%REG_MULTI_SZ%,"{2c17a886-fe66-4e10-a6ec-9e9ea942eb24}"
+;Interfaces needed for Sensor Image- Always put PIL first in this list
+HKR,0\SCSS,"Interfaces",%REG_MULTI_SZ%,%GUID_DEVINTERFACE_PIL_TZ%,%GUID_DEVINTERFACE_FASTRPC%,%GUID_DEVINTERFACE_GLINK%
+
+[AMSS_PDInfo]
+HKR,PDInfo,"NumPDs",%REG_DWORD%,0x00000001
+HKR,PDInfo\0,"PDName",%REG_SZ%,%WLAN_PD_NAME%
+HKR,PDInfo\0,"GUID",%REG_SZ%,%GUID_WLAN_PD%
+
+[AMSS_PDInfo_C]
+HKR,PDInfo,"NumPDs",%REG_DWORD%,0x00000000
+
+[AMSS_PDInfo_D]
+HKR,PDInfo,"NumPDs",%REG_DWORD%,0x00000000
+
+[AMSS_PDInfo_E]
+HKR,PDInfo,"NumPDs",%REG_DWORD%,0x00000000
+
+[AMSS_PDInfo_F]
+HKR,PDInfo,"NumPDs",%REG_DWORD%,0x00000000
+
+[AMSS_Children_MSM]
+HKR,Desktop,"NumChildren",%REG_DWORD%,0x00000002
+
+HKR,Desktop\0,"_HID",%REG_SZ%,"QCOM042B"
+HKR,Desktop\0,"DeviceType",%REG_DWORD%,0x00000012
+HKR,Desktop\0,"_UID",%REG_DWORD%,0
+HKR,Desktop\0,"SupriseRemoval",%REG_DWORD%,1
+HKR,Desktop\0,"ChildRemoval",%REG_DWORD%,1
+HKR,Desktop\0,"_ADR",%REG_DWORD%,0
+HKR,Desktop\0,"FriendlyName",%REG_SZ%,"WLAN Device"
+HKR,Desktop\0,"SurpriseRemovePD",%REG_SZ%,%GUID_WLAN_PD%
+HKR,Desktop\0,"WaitForD0Entry",%REG_DWORD%,1
+
+HKR,Desktop\1,"_HID",%REG_SZ%,"QCOM0489"
+HKR,Desktop\1,"DeviceType",%REG_DWORD%,0x0000002B
+HKR,Desktop\1,"_UID",%REG_DWORD%,0
+HKR,Desktop\1,"SupriseRemoval",%REG_DWORD%,1
+HKR,Desktop\1,"ChildRemoval",%REG_DWORD%,2
+HKR,Desktop\1,"_ADR",%REG_DWORD%,1
+HKR,Desktop\1,"FriendlyName",%REG_SZ%,"MBB QBI Device"
+
+HKR,Mobile,"NumChildren",%REG_DWORD%,0x00000003
+
+HKR,Mobile\0,"_HID",%REG_SZ%,"QCOM042B"
+HKR,Mobile\0,"DeviceType",%REG_DWORD%,0x00000012
+HKR,Mobile\0,"_UID",%REG_DWORD%,0
+HKR,Mobile\0,"SupriseRemoval",%REG_DWORD%,1
+HKR,Mobile\0,"ChildRemoval",%REG_DWORD%,1
+HKR,Mobile\0,"_ADR",%REG_DWORD%,0
+HKR,Mobile\0,"FriendlyName",%REG_SZ%,"WLAN Device"
+HKR,Mobile\0,"SurpriseRemovePD",%REG_SZ%,%GUID_WLAN_PD%
+HKR,Mobile\0,"WaitForD0Entry",%REG_DWORD%,1
+
+HKR,Mobile\1,"_HID",%REG_SZ%,""
+HKR,Mobile\1,"DeviceType",%REG_DWORD%,0x0000002B
+HKR,Mobile\1,"_UID",%REG_DWORD%,0
+HKR,Mobile\1,"SupriseRemoval",%REG_DWORD%,2
+HKR,Mobile\1,"ChildRemoval",%REG_DWORD%,1
+HKR,Mobile\1,"_ADR",%REG_DWORD%,1
+HKR,Mobile\1,"FriendlyName",%REG_SZ%,"MBB Device 0"
+
+HKR,Mobile\2,"_HID",%REG_SZ%,""
+HKR,Mobile\2,"DeviceType",%REG_DWORD%,0x0000002B
+HKR,Mobile\2,"_UID",%REG_DWORD%,1
+HKR,Mobile\2,"SupriseRemoval",%REG_DWORD%,2
+HKR,Mobile\2,"ChildRemoval",%REG_DWORD%,1
+HKR,Mobile\2,"_ADR",%REG_DWORD%,2
+HKR,Mobile\2,"FriendlyName",%REG_SZ%,"MBB Device 1"
+
+[AMSS_Children_APQ_A]
+HKR,Desktop,"NumChildren",%REG_DWORD%,0x00000001
+
+HKR,Desktop\0,"_HID",%REG_SZ%,"QCOM042B"
+HKR,Desktop\0,"DeviceType",%REG_DWORD%,0x00000012
+HKR,Desktop\0,"_UID",%REG_DWORD%,0
+HKR,Desktop\0,"SupriseRemoval",%REG_DWORD%,1
+HKR,Desktop\0,"ChildRemoval",%REG_DWORD%,1
+HKR,Desktop\0,"_ADR",%REG_DWORD%,0
+HKR,Desktop\0,"FriendlyName",%REG_SZ%,"WLAN Device"
+HKR,Desktop\0,"SurpriseRemovePD",%REG_SZ%,%GUID_WLAN_PD%
+HKR,Desktop\0,"WaitForD0Entry",%REG_DWORD%,1
+
+[AMSS_Children_B]
+HKR,Desktop,"NumChildren",%REG_DWORD%,0x00000001
+
+HKR,Desktop\0,"_HID",%REG_SZ%,"QCOM042B"
+HKR,Desktop\0,"DeviceType",%REG_DWORD%,0x00000012
+HKR,Desktop\0,"_UID",%REG_DWORD%,0
+HKR,Desktop\0,"SupriseRemoval",%REG_DWORD%,1
+HKR,Desktop\0,"ChildRemoval",%REG_DWORD%,1
+HKR,Desktop\0,"_ADR",%REG_DWORD%,0
+HKR,Desktop\0,"FriendlyName",%REG_SZ%,"WLAN Device"
+HKR,Desktop\0,"SurpriseRemovePD",%REG_SZ%,%GUID_WLAN_PD%
+HKR,Desktop\0,"WaitForD0Entry",%REG_DWORD%,1
+
+[AMSS_Children_C]
+HKR,Desktop,"NumChildren",%REG_DWORD%,0x00000000
+
+[AMSS_Children_D]
+HKR,Desktop,"NumChildren",%REG_DWORD%,0x00000000
+
+[AMSS_Children_MSM_E]
+HKR,Desktop,"NumChildren",%REG_DWORD%,0x00000001
+
+HKR,Desktop\0,"_HID",%REG_SZ%,"QCOM0489"
+HKR,Desktop\0,"DeviceType",%REG_DWORD%,0x0000002B
+HKR,Desktop\0,"_UID",%REG_DWORD%,0
+HKR,Desktop\0,"SupriseRemoval",%REG_DWORD%,1
+HKR,Desktop\0,"ChildRemoval",%REG_DWORD%,2
+HKR,Desktop\0,"_ADR",%REG_DWORD%,0
+HKR,Desktop\0,"FriendlyName",%REG_SZ%,"MBB QBI Device"
+
+[AMSS_Children_F]
+HKR,Desktop,"NumChildren",%REG_DWORD%,0x00000000
+
+[ADSP_PDInfo]
+HKR,PDInfo,"NumPDs",%REG_DWORD%,0x00000001
+HKR,PDInfo\0,"PDName",%REG_SZ%,%AUDIO_PD_NAME%
+HKR,PDInfo\0,"GUID",%REG_SZ%,%GUID_AUDIO_PD%
+
+[ADSP_Children]
+HKR,Desktop,"NumChildren",%REG_DWORD%,0x00000002
+
+HKR,Desktop\0,"_HID",%REG_SZ%,"QCOM0410"
+HKR,Desktop\0,"_UID",%REG_DWORD%,0
+HKR,Desktop\0,"_ADR",%REG_DWORD%,0
+HKR,Desktop\0,"DeviceType",%REG_DWORD%,0x0000001D
+HKR,Desktop\0,"SupriseRemoval",%REG_DWORD%,1
+HKR,Desktop\0,"ChildRemoval",%REG_DWORD%,1
+HKR,Desktop\0,"FriendlyName",%REG_SZ%,"Slimbus Device 0"
+HKR,Desktop\0,"SurpriseRemovePD",%REG_SZ%,%GUID_AUDIO_PD%
+
+HKR,Desktop\1,"_HID",%REG_SZ%,"QCOM0410"
+HKR,Desktop\1,"_UID",%REG_DWORD%,1
+HKR,Desktop\1,"_ADR",%REG_DWORD%,1
+HKR,Desktop\1,"DeviceType",%REG_DWORD%,0x0000001D
+HKR,Desktop\1,"SupriseRemoval",%REG_DWORD%,1
+HKR,Desktop\1,"ChildRemoval",%REG_DWORD%,1
+HKR,Desktop\1,"FriendlyName",%REG_SZ%,"Slimbus Device 1"
+HKR,Desktop\1,"SurpriseRemovePD",%REG_SZ%,%GUID_AUDIO_PD%
+
+HKR,Mobile,"NumChildren",%REG_DWORD%,0x00000002
+HKR,Mobile\0,"_HID",%REG_SZ%,"QCOM0410"
+HKR,Mobile\0,"_UID",%REG_DWORD%,0
+HKR,Mobile\0,"_ADR",%REG_DWORD%,0
+HKR,Mobile\0,"DeviceType",%REG_DWORD%,0x0000001D
+HKR,Mobile\0,"SupriseRemoval",%REG_DWORD%,1
+HKR,Mobile\0,"ChildRemoval",%REG_DWORD%,1
+HKR,Mobile\0,"FriendlyName",%REG_SZ%,"Slimbus Device 0"
+HKR,Mobile\0,"SurpriseRemovePD",%REG_SZ%,%GUID_AUDIO_PD%
+
+HKR,Mobile\1,"_HID",%REG_SZ%,"QCOM0410"
+HKR,Mobile\1,"_UID",%REG_DWORD%,1
+HKR,Mobile\1,"_ADR",%REG_DWORD%,1
+HKR,Mobile\1,"DeviceType",%REG_DWORD%,0x0000001D
+HKR,Mobile\1,"SupriseRemoval",%REG_DWORD%,1
+HKR,Mobile\1,"ChildRemoval",%REG_DWORD%,1
+HKR,Mobile\1,"FriendlyName",%REG_SZ%,"Slimbus Device 0"
+HKR,Mobile\1,"SurpriseRemovePD",%REG_SZ%,%GUID_AUDIO_PD%
+
+[SUBSYSReg]
+; RPE clients
+; chipinfo\devicename\
+;CHIPINFO_ID_UNKNOWN    = 0,
+HKR,0\ADSP,"RPEC",%REG_MULTI_SZ%,"{99CA9C16-4E1E-4970-B49E-2CA56753588B}"
+;Interfaces needed by ADSP- Always put PIL first in this list
+HKR,0\ADSP,"Interfaces",%REG_MULTI_SZ%,%GUID_DEVINTERFACE_PIL_TZ%,%GUID_DEVINTERFACE_FASTRPC%,%GUID_DEVINTERFACE_GLINK%
+;HKR,0\CDSP,"RPEC",%REG_MULTI_SZ%,"{DDAE0B76-6595-4469-A254-AD116DC4012A}","{9F85B1CC-A2B6-4CC6-BE0C-26F40FA19F50}"
+;Interfaces needed by CDSP- Always put PIL first in this list
+HKR,0\CDSP,"Interfaces",%REG_MULTI_SZ%,%GUID_DEVINTERFACE_PIL_TZ%,%GUID_DEVINTERFACE_FASTRPC%,%GUID_DEVINTERFACE_GLINK%
+HKR, 0\SPSS, "RPEC",%REG_MULTI_SZ%,"{3692ce30-33e7-4b69-9f09-83efe52e107d}"
+;Interfaces needed by SPSS- Always put PIL first in this list
+HKR,0\SPSS,"Interfaces",%REG_MULTI_SZ%,%GUID_DEVINTERFACE_PIL_TZ%
+;SHUT--Flag to enable modem shutdown (1 is enabled, 0 is disabled)
+
+;DHMS
+HKR,QSM,"DHMS",%REG_MULTI_SZ%,"Diag","{00000000-0000-0000-0000-000000000000}","0"
+;        Package ()
+;        {
+;            // Subsystem Name
+;            "Diag", ;
+;
+;            // no crash-dump for diag
+;            ToUUID ("00000000-0000-0000-0000-000000000000"),
+;
+;            // Max CMA size, 0 = Use carveout
+;            0 
+;
+;        }, // end of Diag region
+;QSMG--QSM General Platform-specific Configuration
+HKR,QSM,"QSMG",%REG_DWORD%,2; // 0 -Disabled, 1- Enabled and HLOS no need to reclaim memory back, 2- Enabled and HLOS need to reclaim memory back.
+;MANU
+HKR,ADSP,"MANU",%REG_DWORD%,0x06be0baf
+
+[SUBSYSReg_AMSS_COMMON]
+;Interfaces needed for AMSS Image- Always put PIL first in this list
+HKR,0\AMSS,"Interfaces",%REG_MULTI_SZ%,%GUID_DEVINTERFACE_PIL_TZ%,%GUID_TFTP_INTERFACE%,%GUID_DEVINTERFACE_GLINK%
+;SHUT--Flag to enable modem shutdown (1 is enabled, 0 is disabled)
+HKR,AMSS,"SHUT",%REG_DWORD%,1; 1, enabled
+;VLMT--Mappings for Power Amplifier from performance percentage to thermal mitigation level
+HKR,AMSS,"VLMT",%REG_BINARY%,0x21,0x03,0x42,0x02,0x63,0x01,0x64,0x00
+;           Percent(<=), TM level,
+;           -----        ----------
+;            Package () { 33,          3 },
+;            Package () { 66,          2 },
+;            Package () { 99,          1 },
+;            Package () { 100,         0 }
+HKR,AMSS,"QMIDeviceName",%REG_SZ%,"pa"
+
+[SUBSYSReg_AMSS_MSM]
+HKR,0\AMSS,"RPEC",%REG_MULTI_SZ%,"{2eaf5c83-4fa9-49b3-a247-bfdd66e5655b}","{184C009C-42CC-83FF-8725-13A57C3201EF}"
+
+[SUBSYSReg_AMSS_MSM_E]
+HKR,0\AMSS,"RPEC",%REG_MULTI_SZ%,"{2eaf5c83-4fa9-49b3-a247-bfdd66e5655b}","{184C009C-42CC-83FF-8725-13A57C3201EF}"
+
+[SUBSYSReg_AMSS_APQ_A]
+HKR,0\AMSS,"RPEC",%REG_MULTI_SZ%,"{2eaf5c83-4fa9-49b3-a247-bfdd66e5655b}"
+
+[SUBSYSReg_AMSS_B]
+HKR,0\AMSS,"RPEC",%REG_MULTI_SZ%,"{2eaf5c83-4fa9-49b3-a247-bfdd66e5655b}"
+HKR,0\AMSS,"LPMEnabled",%REG_DWORD%,0
+
+[SUBSYSReg_AMSS_C]
+HKR,0\AMSS,"RPEC",%REG_MULTI_SZ%,"{2eaf5c83-4fa9-49b3-a247-bfdd66e5655b}"
+HKR,0\AMSS,"LPMEnabled",%REG_DWORD%,0
+
+[SUBSYSReg_AMSS_D]
+HKR,0\AMSS,"RPEC",%REG_MULTI_SZ%,"{2eaf5c83-4fa9-49b3-a247-bfdd66e5655b}"
+
+[SUBSYSReg_AMSS_F]
+HKR,0\AMSS,"RPEC",%REG_MULTI_SZ%,"{2eaf5c83-4fa9-49b3-a247-bfdd66e5655b}"
+
+[SUBSYSReg_AMSS_MPTM]
+;VLMT--Mappings for Modem Proc from performance percentage to thermal mitigation level
+HKR,AMSS_MPTM,"VLMT",%REG_BINARY%,0x21,0x03,0x63,0x01,0x64,0x00
+;           Percent(<=), TM level,
+;           -----        ----------
+;            Package () { 33,          3 },
+;            Package () { 99,          1 },
+;            Package () { 100,         0 }
+HKR,AMSS_MPTM,"QMIDeviceName",%REG_SZ%,"modem"
+
+; -------------- Subsystem driver install sections
+[SUBSYS_Service_Inst]
+DisplayName    = %SUBSYS.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START (3) SERVICE_SYSTEM_START (1) 
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\qcsubsys8180.sys
+AddReg         = SUBSYSINST
+
+[SUBSYSINST]
+HKR,Parameters\DIAG,"FreeReservedMemory",%REG_DWORD%,1
+HKR,Parameters,"DogBiteRegDump",%REG_DWORD%,1
+HKR,Parameters,"DebugSmp2pTimeout",%REG_DWORD%,1
+HKR,Parameters,"SCSSRestartEnabled",%REG_DWORD%,1
+HKR,Parameters,"ADSPRestartEnabled",%REG_DWORD%,0
+HKR,Parameters,"AMSSRestartEnabled",%REG_DWORD%,1
+HKR,Parameters,"CdspRestartEnabled",%REG_DWORD%,0
+HKR,Parameters,"SpssRestartEnabled",%REG_DWORD%,0
+HKR,Parameters,"AMSSIgnoreWdogEnabled",%REG_DWORD%,1
+
+[SUBSYS_Device.NT.Wdf]
+KmdfService =  qcsubsys, SUBSYS_wdfsect
+[SUBSYS_wdfsect]
+KmdfLibraryVersion = 1.25
+
+[WLAN_Hashmapping]
+HKR,WlanPathMapping,Remote,%REG_SZ%,\rfs\msm\mpss\readonly\firmware\image\wlanmdsp.mbn
+
+;***************************************************************************************************************************
+;    DONOT DELETE THE EMPTY PLACEHOLDERS BELOW. THEY WILL BE AUTOPOPULATED DURING BUILD TIME
+;***************************************************************************************************************************
+
+
+
+[Strings]
+; non localizable
+REG_SZ                = 0x00000000
+REG_DWORD             = 0x00010001
+REG_BINARY            = 0x00000001
+REG_MULTI_SZ          = 0x00010000
+SPSVCINST_ASSOCSERVICE= 0x00000002
+REG_QWORD             = 0x000B0001
+FASTRPC = 1
+TFTP = 2
+
+; localizable
+SURFACE = "Surface"                                      
+DiskId1 = "Surface Pro X Combined Subsystem Driver Installation Disk"
+ADSP.DeviceDesc = "Qualcomm(R) Aqstic(TM)"
+AMSS.DeviceDesc = "Snapdragon (TM) X24 LTE Modem"
+; Below modem description will be used for all AMSS configurations
+; where modem subsystem will be used for only for non-modem needs (WLAN & GPS)
+; In other words when MBB is not loaded but other drivers are loaded and using modem
+AMSS_NM.DeviceDesc = "Qualcomm(R) System Manager Device"
+AMSSMPThermal.DeviceDesc = "Qualcomm Modem Limiting Thermal Device"
+TEST.DeviceDesc = "Qualcomm Combined Subsystem Driver Test Device"
+SERVICEMANAGER.DeviceDesc= "Qualcomm Service Manager Device"
+SCSS.DeviceDesc = "Qualcomm(R) All-Ways Aware(TM) Hub"
+SSDD.DeviceDesc = "Qualcomm Subsystem Dependency Device"
+SUBSYS.SVCDESC = "Qualcomm(R) Combined Subsystem Driver"
+CDSP.DeviceDesc = "Qualcomm(R) Hexagon(TM) 690 DSP"
+SPSS.DeviceDesc = "Qualcomm Secure Processor Subsystem Device"
+;Below are Device Interfaces GUIDs needed by different SUBSYS device
+;The GUIDs are as defined in QCDK header files- pilapi.h, tftp_api.h, and fastrpc_api.h in order listed
+GUID_DEVINTERFACE_PIL_TZ = "{E2EB84C1-4068-4994-A48F-F3AC0D38DC29}"
+GUID_TFTP_INTERFACE = "{107A41BF-EB76-4FB8-A567-E7EF56968BBE}"
+GUID_DEVINTERFACE_FASTRPC = "{E022FF1A-C06C-42D8-94FE-90D876FC0B75}"
+GUID_DEVINTERFACE_GLINK = "{F9D15453-8335-434c-AA72-FCD925F135F3}"
+
+;PD GUIDs and names
+GUID_WLAN_PD = "{AAC57310-BE12-4727-8523-76C215D1EC39}"
+WLAN_PD_NAME = "msm/modem/wlan_pd"
+GUID_AUDIO_PD = "{0A35A787-A69F-4A90-8B78-0710BA7BB82C}"
+AUDIO_PD_NAME = "msm/adsp/audio_pd"
+GUID_CHARGER_PD = "{11ADDE1D-F6A0-4DA1-88D6-1B4C457CA668}"
+CHARGER_PD_NAME = "msm/adsp/charger_pd"

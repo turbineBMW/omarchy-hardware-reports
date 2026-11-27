@@ -1,0 +1,39 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Extension
+ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
+Provider    = %Surface%
+ExtensionId = {6fd643bd-be01-4631-89ff-0ab82bac8c9b}
+DriverVer   = 01/29/2021,3.0.0.9
+CatalogFile = SurfaceProX_friendly.cat
+
+[Manufacturer]
+%Surface% = DeviceExtensions,NTarm64
+
+[DeviceExtensions.NTarm64]
+%Device.ExtensionDesc_SQ1% = DeviceExtension_Install_SQ1, ACPI\VEN_QCOM&DEV_043A&SUBSYS_MSWW8180&REV_0D11
+%Device.ExtensionDesc_SQ2% = DeviceExtension_Install_SQ2, ACPI\VEN_QCOM&DEV_043A&SUBSYS_MSWW8180&REV_0D15
+
+[DeviceExtension_Install_SQ1]
+; No changes
+
+[DeviceExtension_Install_SQ2]
+; No changes
+
+[DeviceExtension_Install_SQ1.HW]
+AddReg = FriendlyName_AddReg_SQ1
+
+[DeviceExtension_Install_SQ2.HW]
+AddReg = FriendlyName_AddReg_SQ2
+
+[FriendlyName_AddReg_SQ1]
+HKR,,FriendlyName,, "Microsoft SQ1 Adreno 685 GPU"
+
+[FriendlyName_AddReg_SQ2]
+HKR,,FriendlyName,, "Microsoft SQ2 Adreno 690 GPU"
+
+
+[Strings]
+Surface                  = "Surface"
+Device.ExtensionDesc_SQ1 = "Microsoft SQ1 Adreno 685 GPU"
+Device.ExtensionDesc_SQ2 = "Microsoft SQ2 Adreno 690 GPU"

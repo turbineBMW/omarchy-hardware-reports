@@ -1,0 +1,88 @@
+;
+; SurfaceSystemTelemetryDriver.inf
+;
+; Copyright (C) 2019 Microsoft Corporation.  All Rights Reserved.
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%VENDOR%
+CatalogFile=SurfaceSystemTelemetryDriver.cat
+DriverVer = 04/22/2024,10.105.10.0
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SurfaceSystemTelemetryDriver.sys=1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%VENDOR%=Vendor,NTARM64.10.0...19041
+
+[Vendor.NTARM64.10.0...19041]
+; Load on ACPI node MSHW0300 or be loaded by SID dynamically
+;
+%SurfaceSystemTelemetry%=SurfaceSystemTelemetry.Inst, ACPI\MSHW0300
+
+%SurfaceSystemTelemetry%=SurfaceSystemTelemetry.Inst,  {C56EE0AC-55CF-4E64-B4FF-133FD7BC8E89}\SurfaceSystemTelemetryDriver
+
+
+[SurfaceSystemTelemetry.Inst.NT]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT
+CopyFiles = Drivers_Dir
+
+[SurfaceSystemTelemetry.Inst.NT.HW]
+AddReg = SurfaceSystemTelemetry.Inst.NT.AddReg
+
+[SurfaceSystemTelemetry.Inst.NT.AddReg]
+; Allow access to system, administrators group, and user-mode drivers
+HKR, , Security, , "D:P(A;;GA;;;SY)(A;;GA;;;BA)(A;;GA;;;UD)"
+
+[SurfaceSystemTelemetry.Inst.NT.Events]
+AddEventProvider = {FD325C17-372E-40D1-8388-1BE314CB816A},SurfaceSystemTelemetry_EventProviderInstall
+
+[SurfaceSystemTelemetry_EventProviderInstall]
+ProviderName=Microsoft-Surface-SurfaceSystemTelemetryDriver
+ResourceFile=%13%\SurfaceSystemTelemetryDriver.sys
+MessageFile=%13%\SurfaceSystemTelemetryDriver.sys
+AddChannel= Microsoft-Surface-SurfaceSystemTelemetryDriver/Operational,0x2,SurfaceSystemTelemetry_ChannelInstall
+
+[SurfaceSystemTelemetry_ChannelInstall]
+Isolation         = 2
+Enabled           = 1
+
+;-------------- Service installation
+
+[SurfaceSystemTelemetry.Inst.NT.Services]
+AddService = SurfaceSystemTelemetry,%SERVICE_DEMAND_START%,SurfaceSystemTelemetry_Service_Inst
+
+[Drivers_Dir]
+SurfaceSystemTelemetryDriver.sys
+
+[SurfaceSystemTelemetry_Service_Inst]
+DisplayName    = %SurfaceSystemTelemetry%
+ServiceType    = %SERVICE_KERNEL_DRIVER% 
+StartType      = %SERVICE_DEMAND_START% 
+ErrorControl   = %SERVICE_ERROR_NORMAL% 
+ServiceBinary  = %13%\SurfaceSystemTelemetryDriver.sys 
+
+[Strings] 
+VENDOR="Surface"
+SurfaceSystemTelemetry="Surface System Telemetry Driver"
+DiskName = "Surface System Telemetry Driver Installation Disk"
+
+SERVICE_DEMAND_START   = 0x3 
+SERVICE_KERNEL_DRIVER  = 0x1 
+SERVICE_ERROR_NORMAL   = 0x1 
